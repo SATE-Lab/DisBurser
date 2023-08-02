@@ -13,6 +13,10 @@ For Java, we can force a specific order between nodes in order to reproduce a sp
 
 User guide will soon be uploaded.
 
+# Project
+
+[https://github.com/SATE-Lab/Redit_Bugs_Benchmark](https://github.com/SATE-Lab/Redit_Bugs_Benchmark)
+
 # Questions
 
 You can open an issue in the project to inform us of your problems. 
