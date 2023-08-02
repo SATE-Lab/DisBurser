@@ -3,7 +3,7 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 
-DisBurser(Distributed Systems Bugs Reproduced for Software Engineering Research) is a infrastructure or the **deterministic** reproduction of distributed system failures. DisBurser provides both a dataset of known distributed-systems bugs and a toolset, called Redit. 
+DisBurser(**Di**stributed **S**ystems **Bu**gs **R**eproduced for **S**oftware **E**ngineering **R**esearch) is a infrastructure or the **deterministic** reproduction of distributed system failures. DisBurser provides both a dataset of known distributed-systems bugs and a toolset, called Redit. 
 
 <!-- With dockers running on the machine, we can easily simulate the operation of a real-world distributed system on Redit and find defects of the system by the test events.
 
