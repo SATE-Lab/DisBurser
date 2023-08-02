@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deterministic Failure Injection &mdash; Redit 0.1.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Run Sequence Instrumentation Engine" href="runseq.html" />
+    <link rel="prev" title="Quick Start" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Redit
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prereq.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deterministic Failure Injection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#internal-events">Internal Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-case-events">Test Case Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-run-sequence">The Run Sequence</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="runseq.html">Run Sequence Instrumentation Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newnode.html">Adding New Nodes Dynamically</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jvmservice.html">Creating a Service From JVM Classpath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Running Redit in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Redit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Deterministic Failure Injection</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/deterministic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="deterministic-failure-injection">
+<h1>Deterministic Failure Injection<a class="headerlink" href="#deterministic-failure-injection" title="Permalink to this headline">¶</a></h1>
+<p>Although injecting a failure by calling a method in the middle of a test case is suitable for many of the scenarios, there
+exists scenarios where it is needed to inject failures in a very specific moment. With Redit, for a few supported
+languages, it is possible to inject a failure right before or after a method call where a specific stack trace is present.
+This happens through defining a set of named internal and test case events, ordering those events in a run sequence
+string, and let the Redit’s runtime engine enforce the specified order between the nodes.</p>
+<div class="section" id="internal-events">
+<h2>Internal Events<a class="headerlink" href="#internal-events" title="Permalink to this headline">¶</a></h2>
+<p>Internal events are the ones that happen inside a node. Realizing internal events requires binary instrumentation, and as such,
+is only supported for a few programming languages. You can find more information in <a class="reference internal" href="runseq.html"><span class="doc">Run Sequence Instrumentation Engine</span></a> page.
+Available internal events are:</p>
+<ul class="simple">
+<li><strong>Scheduling Event</strong>: This event can be of type <em>BLOCKING</em> or <em>UNBLOCKING</em> and can happen before or after a specific
+stack trace. The stack trace should come from a stack trace event definition. When defining this kind of events, the
+definition should be a pair of blocking and unblocking events. Basically, make sure to finally unblock everything that
+has been blocked. This event is useful when it is needed to block all the threads for a specific stack trace, do some
+other stuff or let the other threads make progress, and then, unblock the blocked threads.</li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;service1&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">withSchedulingEvent</span><span class="p">(</span><span class="s">&quot;bast1&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">after</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span> <span class="c1">// The name of the stack trace event. An example comes later</span>
+        <span class="p">.</span><span class="na">operation</span><span class="p">(</span><span class="n">SchedulingOperation</span><span class="p">.</span><span class="na">BLOCK</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">and</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">withSchedulingEvent</span><span class="p">(</span><span class="s">&quot;ubast1&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">after</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">operation</span><span class="p">(</span><span class="n">SchedulingOperation</span><span class="p">.</span><span class="na">UNBLOCK</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">and</span><span class="p">()</span>
+    <span class="c1">// The same events using shortcut methods</span>
+    <span class="p">.</span><span class="na">blockAfter</span><span class="p">(</span><span class="s">&quot;bast1&quot;</span><span class="p">,</span> <span class="s">&quot;st1&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">unblockAfter</span><span class="p">(</span><span class="s">&quot;ubast1&quot;</span><span class="p">,</span> <span class="s">&quot;st1&quot;</span><span class="p">)</span>
+<span class="p">.</span><span class="na">and</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><strong>Stack Trace Event</strong>: This event is kind of like a scheduling event except that nothing happens between blocking and
+unblocking. All the threads with the defined stack trace will be blocked until the dependencies of the event are
+satisfied (based on the defined run sequence). The blocking can happen before or after a method. This event can act as
+an indicator that the program has reached a specific method with a specific stack trace. To specify the stack traces,
+the default is to have a list of method signatures with <code class="docutils literal notranslate"><span class="pre">[package].[class].[method]</span></code> where the last called method comes
+at the end. As some languages may not have the concept of class or package, you may want to check <a class="reference internal" href="runseq.html"><span class="doc">Run Sequence Instrumentation Engine</span></a> as well
+for additional instructions for specific languages.</p>
+<p>It is important to note that, the method signatures are not required to be present exactly in the given indices in the
+current stack trace. Only the right order of appearance is sufficient.</p>
+</li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;service1&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">withStackTraceEvent</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">trace</span><span class="p">(</span><span class="s">&quot;io.redit.Hello.worldCaller&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">trace</span><span class="p">(</span><span class="s">&quot;io.redit.Hello.world&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">blockAfter</span><span class="p">().</span><span class="na">and</span><span class="p">()</span>
+    <span class="c1">// The same event using a shortcut method</span>
+    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">,</span> <span class="s">&quot;io.redit.Hello.worldCaller,io.redit.Hello.world&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">.</span><span class="na">and</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>Garbage Collection Event</strong>: This event is for invoking the garbage collector for supported languages e.g. Java.</li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;service1&quot;</span><span class="p">).</span>
+    <span class="p">.</span><span class="na">withGarbageCollectionEvent</span><span class="p">(</span><span class="s">&quot;gc1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+<span class="n">and</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-case-events">
+<h2>Test Case Events<a class="headerlink" href="#test-case-events" title="Permalink to this headline">¶</a></h2>
+<p>Test case events are the connection point between the test case and the Redit’s runtime engine. Internal events’
+orders are enforced by the runtime engine, but it is the test case responsibility to enforce the test case events if they
+are included in the run sequence.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">Deployment</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">testCaseEvents</span><span class="p">(</span><span class="s">&quot;tc1&quot;</span><span class="p">,</span><span class="s">&quot;tc2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-run-sequence">
+<h2>The Run Sequence<a class="headerlink" href="#the-run-sequence" title="Permalink to this headline">¶</a></h2>
+<p>Finally after defining all the necessary events, you should tie them together in the run sequence by using event names
+as the operands, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> as operators and parenthesis. <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> indicate sequential and parallel execution
+respectively.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">Deployment</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">runSequence</span><span class="p">(</span><span class="s">&quot;bast1 * tc1 * ubast1 * (gc1 | x1)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This run sequence blocks all the threads in node <code class="docutils literal notranslate"><span class="pre">n1</span></code> with the stack trace of event <code class="docutils literal notranslate"><span class="pre">st1</span></code> (<code class="docutils literal notranslate"><span class="pre">bast1</span></code>), waits for the
+test case to enforce <code class="docutils literal notranslate"><span class="pre">tc1</span></code>, unblcoks the blocked threads in node <code class="docutils literal notranslate"><span class="pre">n1</span></code> (<code class="docutils literal notranslate"><span class="pre">ubast1</span></code>), and finally, in parallel, performs
+a garbage collection in <code class="docutils literal notranslate"><span class="pre">n1</span></code> (<code class="docutils literal notranslate"><span class="pre">gc1</span></code>) and kills node <code class="docutils literal notranslate"><span class="pre">n2</span></code> (<code class="docutils literal notranslate"><span class="pre">x1</span></code>).</p>
+<p>At any point, a test can use the <cite>ReditRunner`</cite> object to enforce the order of a test case event. Enforcement of a test case
+event in the test case is only needed if something is needed to be done when the event dependencies are satisfied, e.g.
+injecting a failure.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;tc1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">clockDrift</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Here, when the dependencies of event <code class="docutils literal notranslate"><span class="pre">tc1</span></code> are satisified, a clock drift in the amount of -100ms will be applied to node
+<code class="docutils literal notranslate"><span class="pre">n1</span></code>, and <code class="docutils literal notranslate"><span class="pre">tc1</span></code> event will be marked as satisfied. If after 10 seconds the dependencies of <code class="docutils literal notranslate"><span class="pre">tc1</span></code> are not satisfied,
+a <code class="docutils literal notranslate"><span class="pre">TimeoutException</span></code> will be thrown. If the only thing that the test case needs is to wait for an event or its
+dependencies to be satisfied the <code class="docutils literal notranslate"><span class="pre">waitFor</span></code> method can be used.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">waitFor</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here again, if the event dependecies are not satisfied in 10 seconds, a <code class="docutils literal notranslate"><span class="pre">TimeoutException</span></code> will be thrown.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="runseq.html" class="btn btn-neutral float-right" title="Run Sequence Instrumentation Engine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, SATE-Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

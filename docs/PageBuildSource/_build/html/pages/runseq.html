@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Run Sequence Instrumentation Engine &mdash; Redit 0.1.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Adding New Nodes Dynamically" href="newnode.html" />
+    <link rel="prev" title="Deterministic Failure Injection" href="deterministic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Redit
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prereq.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deterministic.html">Deterministic Failure Injection</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run Sequence Instrumentation Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#java">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scala">Scala</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="newnode.html">Adding New Nodes Dynamically</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jvmservice.html">Creating a Service From JVM Classpath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Running Redit in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Redit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Run Sequence Instrumentation Engine</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/runseq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="run-sequence-instrumentation-engine">
+<h1>Run Sequence Instrumentation Engine<a class="headerlink" href="#run-sequence-instrumentation-engine" title="Permalink to this headline">¶</a></h1>
+<p>Redit’s deterministic failure injection requires binary instrumentation. Different programming languages require
+different instrumentors, and thus, if you are going to use this feature, you need to specify the programming language for
+involved services.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withService</span><span class="p">(</span><span class="s">&quot;service1&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">serviceType</span><span class="p">(</span><span class="n">ServiceType</span><span class="p">.</span><span class="na">JAVA</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, for each service, you may need to mark some paths as library or instrumentable paths. Check specific language
+instructions as this may differ based on the programming language in use.</p>
+<div class="section" id="java">
+<h2>Java<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h2>
+<p>You need to choose <code class="docutils literal notranslate"><span class="pre">ServiceType.JAVA</span></code> as your service type. <a class="reference external" href="https://www.eclipse.org/aspectj/">AspectJ</a> is used for Java instrumentation. AspectJ 1.8+ should work perfectly with
+Redit. You need to install Aspectj on your machine and expose <code class="docutils literal notranslate"><span class="pre">ASPECTJ_HOME</span></code> environment variable pointing to the
+home directory of AspectJ in your machine. Also, you need to include AspectJ and Redit runtime dependencies to your
+project. Example dependencies to be added to your pom file with AspectJ 1.8.12 are as follows:</p>
+<pre class="literal-block">
+&lt;dependency&gt;
+    &lt;groupId&gt;io.redit&lt;/groupId&gt;
+    &lt;artifactId&gt;reditrt&lt;/artifactId&gt;
+    &lt;version&gt;0.1.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
+    &lt;artifactId&gt;aspectjrt&lt;/artifactId&gt;
+    &lt;version&gt;1.8.12&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+<p>Finally, you need to mark:</p>
+<ul class="simple">
+<li>all the required jar files or class file directories to run your application as <strong>library path</strong>.</li>
+<li>all the jar files or class file directories which contain a method included as the last method in one of the stack
+trace events as <strong>instrumentable path</strong></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withService</span><span class="p">(</span><span class="s">&quot;service1&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;./projectFiles&quot;</span><span class="p">,</span> <span class="s">&quot;/project&quot;</span><span class="p">)</span>
+    <span class="c1">// It is possible to use wildcard paths for marking library paths</span>
+    <span class="p">.</span><span class="na">libraryPath</span><span class="p">(</span><span class="s">&quot;/project/libs/*.jar&quot;</span><span class="p">)</span> <span class="c1">// This is a target path in the node.</span>
+    <span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;target/classes&quot;</span><span class="p">,</span> <span class="s">&quot;/project/libs/classes&quot;</span><span class="p">,</span> <span class="n">PathAttr</span><span class="p">.</span><span class="na">LIBRARY</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;./extraLib.jar&quot;</span><span class="p">,</span> <span class="s">&quot;/project/libs/extraLib.jar&quot;</span><span class="p">,</span> <span class="n">PathAttr</span><span class="p">.</span><span class="na">LIBRARY</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">instrumentablePath</span><span class="p">(</span><span class="s">&quot;/project/libs/main.jar&quot;</span><span class="p">)</span> <span class="c1">// This is a target path in the node</span>
+    <span class="p">.</span><span class="na">instrumentablePath</span><span class="p">(</span><span class="s">&quot;/project/libs/classes&quot;</span><span class="p">)</span>
+<span class="p">.</span><span class="na">and</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scala">
+<h2>Scala<a class="headerlink" href="#scala" title="Permalink to this headline">¶</a></h2>
+<p>You need to choose <code class="docutils literal notranslate"><span class="pre">ServiceType.SCALA</span></code> as your service type. The requirements for Scala is the same as Java as again
+<a class="reference external" href="https://www.eclipse.org/aspectj/">AspectJ</a> is used for the instrumentation. There is only a subtle point when
+specifying the stack traces with Scala. When it is intended to instrument a Scala <code class="docutils literal notranslate"><span class="pre">object</span></code>, you need to add a trailing
+<code class="docutils literal notranslate"><span class="pre">$</span></code> to the name of the object. This is because internally when such a code compiles to JVM bytecodes, a new class with
+trailing <code class="docutils literal notranslate"><span class="pre">$</span></code> will be created and the original class will proxy calls to itself to that class. However, if internal methods
+of your Scala <code class="docutils literal notranslate"><span class="pre">object</span></code> call each other, the proxy class will be bypassed. As such, in order to be in the safe corner,
+it is advisable to use a trailing <code class="docutils literal notranslate"><span class="pre">$</span></code> when referring to an Scala <code class="docutils literal notranslate"><span class="pre">object</span></code> in your stack traces. Here is an example:</p>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">object</span> <span class="nc">Object1</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="n">method1</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="o">..</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="o">..</span>
+
+<span class="n">withNode</span><span class="o">(</span><span class="s">&quot;n1&quot;</span><span class="o">,</span> <span class="s">&quot;service1&quot;</span><span class="o">)</span>
+    <span class="o">.</span><span class="n">stackTrace</span><span class="o">(</span><span class="s">&quot;e1&quot;</span><span class="o">,</span> <span class="s">&quot;Object1$.method1&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>As you can see, when defining the stack trace <code class="docutils literal notranslate"><span class="pre">e1</span></code>, a <code class="docutils literal notranslate"><span class="pre">$</span></code> is present after the name of <code class="docutils literal notranslate"><span class="pre">Object1</span></code> object.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="deterministic.html" class="btn btn-neutral float-left" title="Deterministic Failure Injection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="newnode.html" class="btn btn-neutral float-right" title="Adding New Nodes Dynamically" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, SATE-Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

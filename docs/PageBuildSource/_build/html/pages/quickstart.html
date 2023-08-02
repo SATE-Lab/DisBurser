@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start &mdash; Redit 0.1.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Deterministic Failure Injection" href="deterministic.html" />
+    <link rel="prev" title="Prerequisites" href="prereq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Redit
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prereq.html">Prerequisites</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adding-dependencies">Adding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-dockerfile">Creating a Dockerfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-test-case">Adding a Test Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logger-configuration">Logger Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-test-case">Running the Test Case</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deterministic.html">Deterministic Failure Injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runseq.html">Run Sequence Instrumentation Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newnode.html">Adding New Nodes Dynamically</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jvmservice.html">Creating a Service From JVM Classpath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Running Redit in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Redit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Quick Start</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/quickstart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<p>Redit is a Java-based end-to-end testing framework. So, you will need to write your test cases In Java, or languages that
+can use Java libraries like the ones that can run on JVM, e.g. Scala. Redit can be used alongside the popular testing
+frameworks in your programming language of choice e.g. JUnit in Java. Here, we use Java and JUnit . We also use Maven as
+the build system.</p>
+<div class="section" id="adding-dependencies">
+<h2>Adding dependencies<a class="headerlink" href="#adding-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>First, create a simple Maven application and add Redit’s dependency to your pom file.</p>
+<pre class="literal-block">
+&lt;dependency&gt;
+    &lt;groupId&gt;io.redit&lt;/groupId&gt;
+    &lt;artifactId&gt;redit&lt;/artifactId&gt;
+    &lt;version&gt;0.1.0&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+<p>Also add failsafe plugin to your pom file to be able to run integration tests.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;project&gt;</span>
+  [...]
+  <span class="nt">&lt;build&gt;</span>
+    <span class="nt">&lt;plugins&gt;</span>
+      <span class="nt">&lt;plugin&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>3.0.0-M3<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;executions&gt;</span>
+          <span class="nt">&lt;execution&gt;</span>
+            <span class="nt">&lt;goals&gt;</span>
+              <span class="nt">&lt;goal&gt;</span>integration-test<span class="nt">&lt;/goal&gt;</span>
+              <span class="nt">&lt;goal&gt;</span>verify<span class="nt">&lt;/goal&gt;</span>
+            <span class="nt">&lt;/goals&gt;</span>
+          <span class="nt">&lt;/execution&gt;</span>
+        <span class="nt">&lt;/executions&gt;</span>
+      <span class="nt">&lt;/plugin&gt;</span>
+    <span class="nt">&lt;/plugins&gt;</span>
+  <span class="nt">&lt;/build&gt;</span>
+  [...]
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-dockerfile">
+<h2>Creating a Dockerfile<a class="headerlink" href="#creating-a-dockerfile" title="Permalink to this headline">¶</a></h2>
+<p>Next, you need to create a Dockerfile for your application and that Dockerfile should add any dependency that may be
+needed by your application. In case you want to use the network partition capability
+of Redit, you need to install <code class="docutils literal notranslate"><span class="pre">iptables</span></code> package as well. Network delay and loss will also need the <code class="docutils literal notranslate"><span class="pre">iproute</span></code>
+package to be installed. Here, we assume the application under test is written in Java.
+So, we create a Dockerfile in the <code class="docutils literal notranslate"><span class="pre">docker/Dockerfile</span></code> address with the following content:</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">openjdk:8-stretch</span>
+
+<span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> apt install -y iptables iproute
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">In case you are using Docker Toolbox (and consequently boot2docker) on Windows or Mac, be aware that your currently
+installed boot2docker image may be missing <code class="docutils literal notranslate"><span class="pre">sched_netem</span></code> kernel module which is included in most of the
+linux distributions and is needed for <code class="docutils literal notranslate"><span class="pre">tc</span></code> command in the <code class="docutils literal notranslate"><span class="pre">iproute</span></code> package to work. So, unless you upgrade your
+boot2docker image (normally through running <code class="docutils literal notranslate"><span class="pre">docker-machine</span> <span class="pre">upgrade</span> <span class="pre">[machine_name]</span></code>, you won’t be able to use the
+network operation capabilities of Redit.</p>
+</div>
+</div>
+<div class="section" id="adding-a-test-case">
+<h2>Adding a Test Case<a class="headerlink" href="#adding-a-test-case" title="Permalink to this headline">¶</a></h2>
+<p>Now, create a JUnit integration test case  (ending with IT so failsafe picks it up) in the project’s test directory. Here,
+we provide an example for testing the situation of multithread. You can find the full code in the Redit project.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MultithreadTest</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">MultithreadTest</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleDefinition</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">DeploymentVerificationException</span><span class="p">,</span> <span class="n">RuntimeEngineException</span><span class="p">,</span> <span class="n">TimeoutException</span><span class="p">,</span> <span class="n">WorkspaceException</span> <span class="p">{</span>
+        <span class="n">Deployment</span> <span class="n">deployment</span> <span class="o">=</span> <span class="n">Deployment</span><span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;sample-multithread&quot;</span><span class="p">)</span>
+                <span class="c1">// Service Definitions</span>
+                <span class="p">.</span><span class="na">withServiceFromJvmClasspath</span><span class="p">(</span><span class="s">&quot;s1&quot;</span><span class="p">,</span> <span class="s">&quot;target/classes&quot;</span><span class="p">,</span> <span class="s">&quot;**commons-io*.jar&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">startCommand</span><span class="p">(</span><span class="s">&quot;java -cp ${REDIT_JVM_CLASSPATH} io.redit.samples.multithread.Main&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">dockerImageName</span><span class="p">(</span><span class="s">&quot;redit/sample-multithread&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">dockerFileAddress</span><span class="p">(</span><span class="s">&quot;../sample-multithread/docker/Dockerfile&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">logFile</span><span class="p">(</span><span class="s">&quot;/var/log/sample1&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">logDirectory</span><span class="p">(</span><span class="s">&quot;/var/log/samples&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">serviceType</span><span class="p">(</span><span class="n">ServiceType</span><span class="p">.</span><span class="na">JAVA</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+                <span class="c1">// Node Definitions</span>
+                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e1&quot;</span><span class="p">,</span> <span class="s">&quot;io.redit.samples.multithread.Main.helloWorld1,&quot;</span> <span class="o">+</span>
+                            <span class="s">&quot;io.redit.samples.multithread.Main.hello&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e2&quot;</span><span class="p">,</span> <span class="s">&quot;io.redit.samples.multithread.Main.helloWorld2,&quot;</span> <span class="o">+</span>
+                            <span class="s">&quot;io.redit.samples.multithread.Main.helloWorld&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e3&quot;</span><span class="p">,</span> <span class="s">&quot;io.redit.samples.multithread.Main.helloWorld3,&quot;</span> <span class="o">+</span>
+                            <span class="s">&quot;io.redit.samples.multithread.Main.hello&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e4&quot;</span><span class="p">,</span> <span class="s">&quot;org.apache.commons.io.FilenameUtils.normalize&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">blockBefore</span><span class="p">(</span><span class="s">&quot;bbe2&quot;</span><span class="p">,</span> <span class="s">&quot;e2&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">unblockBefore</span><span class="p">(</span><span class="s">&quot;ubbe2&quot;</span><span class="p">,</span> <span class="s">&quot;e2&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">garbageCollection</span><span class="p">(</span><span class="s">&quot;g1&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">and</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">offOnStartup</span><span class="p">().</span><span class="na">and</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n3&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n4&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+                <span class="c1">// Test Case Events</span>
+                <span class="p">.</span><span class="na">testCaseEvents</span><span class="p">(</span><span class="s">&quot;x1&quot;</span><span class="p">,</span> <span class="s">&quot;x2&quot;</span><span class="p">)</span>
+                <span class="c1">// Run Sequence Definition</span>
+                <span class="p">.</span><span class="na">runSequence</span><span class="p">(</span><span class="s">&quot;bbe2 * e1 * ubbe2 * x1 *  e2  * e3 * x2 * e4&quot;</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">sharedDirectory</span><span class="p">(</span><span class="s">&quot;/redit&quot;</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+        <span class="n">ReditRunner</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">ReditRunner</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">deployment</span><span class="p">);</span>
+        <span class="c1">// Starting node n2</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;x1&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">startNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">));</span>
+        <span class="c1">// Adding new nodes to the deployed environment</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="n">Node</span><span class="p">.</span><span class="na">limitedBuilder</span><span class="p">(</span><span class="s">&quot;n5&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">));</span>
+        <span class="c1">// Imposing overlapping network partitions</span>
+        <span class="n">NetPart</span> <span class="n">netPart1</span> <span class="o">=</span> <span class="n">NetPart</span><span class="p">.</span><span class="na">partitions</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="s">&quot;n2&quot;</span><span class="p">).</span><span class="na">connect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">NetPart</span><span class="p">.</span><span class="na">REST</span><span class="p">,</span> <span class="kc">false</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+        <span class="n">NetPart</span> <span class="n">netPart2</span> <span class="o">=</span> <span class="n">NetPart</span><span class="p">.</span><span class="na">partitions</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="s">&quot;n2,n3&quot;</span><span class="p">).</span><span class="na">connect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">NetPart</span><span class="p">.</span><span class="na">REST</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkPartition</span><span class="p">(</span><span class="n">netPart1</span><span class="p">);</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkPartition</span><span class="p">(</span><span class="n">netPart2</span><span class="p">);</span>
+        <span class="c1">// Imposing 10 secs of clock drift in node n1</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">clockDrift</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">10000</span><span class="p">);</span>
+        <span class="c1">// Applying network delay and loss on node n2 before restarting it</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkOperation</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">30</span><span class="p">));</span>
+        <span class="c1">// removing the first network partition and restarting node n2</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;x2&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">removeNetworkPartition</span><span class="p">(</span><span class="n">netPart1</span><span class="p">);</span>
+            <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">restartNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="c1">// removing the second network partition</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">removeNetworkPartition</span><span class="p">(</span><span class="n">netPart2</span><span class="p">);</span>
+        <span class="c1">// Applying different kinds of network operations in different orders</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkOperation</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+                <span class="n">NetOp</span><span class="p">.</span><span class="na">removeDelay</span><span class="p">(),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">removeLoss</span><span class="p">(),</span>
+                <span class="n">NetOp</span><span class="p">.</span><span class="na">removeDelay</span><span class="p">(),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">removeLoss</span><span class="p">());</span>
+        <span class="c1">// Waiting for the run sequence to be completed</span>
+        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">waitForRunSequenceCompletion</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Each Redit test case should start with defining a new <code class="docutils literal notranslate"><span class="pre">Deployment</span></code> object. A deployment definition consists of a a set
+of service and node definitions. A Service is a node template and defines the docker image for the node, the start bash
+command, required environment variables, common paths, etc. for a specific type of node.</p>
+<p>Line 8-14 defines <code class="docutils literal notranslate"><span class="pre">service1</span></code> service. Line 9 defines the start command for the node, and in this case, it is using the <code class="docutils literal notranslate"><span class="pre">start.sh</span></code> bash file and it feeding it with <code class="docutils literal notranslate"><span class="pre">-conf</span> <span class="pre">/config.cfg</span></code> argument. This
+config file will be provided separately through node definitions later. Line 14 concludes the service definition by marking it as a Java application.
+If the programming language in use is listed in <code class="docutils literal notranslate"><span class="pre">ServiceType</span></code> enum, make sure to mark your application with the right
+<code class="docutils literal notranslate"><span class="pre">ServiceType</span></code>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If your program runs on JVM and your programming language in use is not listed in  the <code class="docutils literal notranslate"><span class="pre">ServiceType</span></code>
+enum, just choose <code class="docutils literal notranslate"><span class="pre">ServiceType.Java</span></code> as the service type.</p>
+</div>
+<p>Lines 16-30 defines four nodes named <code class="docutils literal notranslate"><span class="pre">n1</span></code>, <code class="docutils literal notranslate"><span class="pre">n2</span></code>, <code class="docutils literal notranslate"><span class="pre">n3</span></code> and <code class="docutils literal notranslate"><span class="pre">n4</span></code> from <code class="docutils literal notranslate"><span class="pre">service1</span></code> service and is adding a separate local config file
+to each of them which will be located at the same target address <code class="docutils literal notranslate"><span class="pre">/config.cfg</span></code>. Most of the service configuration can be
+overriden by nodes.</p>
+<p>Line 38 starts the defined deployment and line 64 stops the deployment after all tests are executed.</p>
+<p>Line 42 shows how to start node while running. In
+this case, a clock dirft of 100ms will be applied to node <code class="docutils literal notranslate"><span class="pre">n1</span></code>. Line 44-47 shows how a network partition can be defined
+and imposed. Here, each of the nodes will be in a separate partition. Line 45 shows an example of imposing network delay and loss on all the interfaces of a specific node.
+Here, a network delay from a uniform distribution with mean=100 and variance=10 will be applied on <code class="docutils literal notranslate"><span class="pre">n1</span></code> and 30% of the
+packets will be lost.</p>
+</div>
+<div class="section" id="logger-configuration">
+<h2>Logger Configuration<a class="headerlink" href="#logger-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Redit uses SLF4J for logging. As such, you can configure your logging tool of choice. A sample configuration with
+Logback can be like this:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;Console&quot;</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;layout</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.classic.PatternLayout&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Pattern&gt;</span>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n<span class="nt">&lt;/Pattern&gt;</span>
+        <span class="nt">&lt;/layout&gt;</span>
+    <span class="nt">&lt;/appender&gt;</span>
+
+    <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;io.redit&quot;</span> <span class="na">level=</span><span class="s">&quot;DEBUG&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;root</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&quot;Console&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/root&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-test-case">
+<h2>Running the Test Case<a class="headerlink" href="#running-the-test-case" title="Permalink to this headline">¶</a></h2>
+<p>Finally, to run the test cases, run the following bash command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$  mvn clean verify
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="prereq.html" class="btn btn-neutral float-left" title="Prerequisites" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="deterministic.html" class="btn btn-neutral float-right" title="Deterministic Failure Injection" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, SATE-Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

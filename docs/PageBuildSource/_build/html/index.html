@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redit &mdash; Redit 0.1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Prerequisites" href="pages/prereq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> Redit
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/prereq.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/deterministic.html">Deterministic Failure Injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/runseq.html">Run Sequence Instrumentation Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/newnode.html">Adding New Nodes Dynamically</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/jvmservice.html">Creating a Service From JVM Classpath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/docker.html">Running Redit in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Redit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Redit</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="redit">
+<h1>Redit<a class="headerlink" href="#redit" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Redit is a test framework for end-to-end testing of distributed systems. It can be used to deterministically inject
+failures during a normal test case execution. Currently, node failure, network partition, network delay, network packet loss, and clock drift is supported. For a few supported languages, it is possible to enforce a specific order between
+nodes in order to reproduce a specific time-sensitive scenario and inject failures before or after a specific method is
+called when a specific stack trace is present.</p>
+</div>
+<div class="section" id="bugs-reproduced-by-redit">
+<h2>Bugs Reproduced by Redit<a class="headerlink" href="#bugs-reproduced-by-redit" title="Permalink to this headline">¶</a></h2>
+<p>We applied Redit to 19 versions of 8 widely-used cloud systems including Cassandra-3.11.6, HDFS-3.3.0, HDFS-3.1.2, ZK-3.7.0,
+and HBASE-2.4.12. The following table shows the bugs reproduced by Redit in these systems.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="22%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Bug ID</th>
+<th class="head">Bug Description</th>
+<th class="head">Redit Code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/HBASE-26114">HBASE-26114</a></td>
+<td>HMaster cannot start normally</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Hbase-26114">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/HBASE-23682">HBASE-23682</a></td>
+<td>HMaster cannot become active master</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Hbase-23682">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/HBASE-21487">HBASE-21487</a></td>
+<td>Concurrent modify table ops lead to unexpected results</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Hbase-21487">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/CASSANDRA-16836">CASSANDRA-16836</a></td>
+<td>Materialized views incorrect quoting of UDF</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Cassandra-16836">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/CASSANDRA-14365">CASSANDRA-14365</a></td>
+<td>Commit log replay failure</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Cassandra-14365">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/CASSANDRA-13669">CASSANDRA-13669</a></td>
+<td>Error when starting cassandra</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Cassandra-13669">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/KAFKA-13563">KAFKA-13563</a></td>
+<td>Coordinator never get found</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Kafka-13563">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/KAFKA-12866">KAFKA-12866</a></td>
+<td>Root access Error</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Kafka-12866">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/KAFKA-7192">KAFKA-7192</a></td>
+<td>State-store can desynchronise with changelog</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Kafka-7192">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/KAFKA-12702">KAFKA-12702</a></td>
+<td>NPE caused by host address lost in configure</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Kafka-12702">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/HDFS-13998">HDFS-13998</a></td>
+<td>EC policy get failure</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-HDFS-13998">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/HDFS-14987">HDFS-14987</a></td>
+<td>EC policy store state get error</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-HDFS-14987">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/HDFS-16381">HDFS-16381</a></td>
+<td>Lease related errors</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-HDFS-16381">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/ROCKETMQ-255">ROCKETMQ-255</a></td>
+<td>Consumer service crash</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Rocketmq-255">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/ROCKETMQ-257">ROCKETMQ-257</a></td>
+<td>Producer communication error</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Rocketmq-257">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/ROCKETMQ-189">ROCKETMQ-189</a></td>
+<td>Misleading message for timestamp exception</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Rocketmq-189">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/ZOOKEEPER-4508">ZOOKEEPER-4508</a></td>
+<td>Client endless loop</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Zookeeper-4508">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/ZOOKEEPER-2355">ZOOKEEPER-2355</a></td>
+<td>Ephemeral node is never deleted if follower fails</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Zookeeper-2355">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/ZOOKEEPER-3479">ZOOKEEPER-3479</a></td>
+<td>Logging false leader election times</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Zookeeper-3479">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/AMQ-8050">AMQ-8050</a></td>
+<td>XAException when failing over in a transaction</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Activemq-8050">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://issues.apache.org/jira/browse/AMQ-7337">AMQ-7337</a></td>
+<td>Fail to re-establish message pull state</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Activemq-7337">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://issues.apache.org/jira/browse/AMQ-6430">AMQ-6430</a></td>
+<td>Failure after client reconnection</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Activemq-6430">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/elastic/elasticsearch/pull/8321">Elasticsearch-8321</a></td>
+<td>Cluster refuse to vote leader</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Elasticsearch-minimum-master-nodes">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/elastic/elasticsearch/pull/9051">Elasticsearch-9051</a></td>
+<td>Cluster refuse to vote leader</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Elasticsearch-minimum-master-nodes">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/elastic/elasticsearch/pull/2488">Elasticsearch-2488</a></td>
+<td>split-brain</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Elasticsearch-2488">Code</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/elastic/elasticsearch/issues/19269">Elasticsearch-19269</a></td>
+<td>version info conflict due to network partition</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Elasticsearch-19269">Code</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/elastic/elasticsearch/issues/14671">Elasticsearch-14671</a></td>
+<td>Network partition for stale replicas</td>
+<td><a class="reference external" href="https://github.com/SATE-Lab/Redit-Benchmark/tree/main/Special-bug/Redit-Elasticsearch-14671">Code</a></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/prereq.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/deterministic.html">Deterministic Failure Injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/runseq.html">Run Sequence Instrumentation Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/newnode.html">Adding New Nodes Dynamically</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/jvmservice.html">Creating a Service From JVM Classpath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/docker.html">Running Redit in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/changelog.html">Changelog</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pages/prereq.html" class="btn btn-neutral float-right" title="Prerequisites" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, SATE-Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
