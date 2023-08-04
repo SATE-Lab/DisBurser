@@ -13,9 +13,9 @@ For Java, we can force a specific order between nodes in order to reproduce a sp
 
 User guide will soon be uploaded.
 
-# Project
+# Dataset
 
-[https://github.com/SATE-Lab/Redit_Bugs_Benchmark](https://github.com/SATE-Lab/Redit_Bugs_Benchmark)
+[https://github.com/SATE-Lab/DisBurser_Dataset](https://github.com/SATE-Lab/DisBurser_Dataset)
 
 # Questions
 
