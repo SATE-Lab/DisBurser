@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quick Start &mdash; Redit 0.1.0 documentation</title>
@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,14 +29,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Redit
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Redit
           </a>
               <div class="version">
                 0.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -74,7 +78,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Quick Start</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/pages/quickstart.rst.txt" rel="nofollow"> View page source</a>
@@ -101,25 +105,25 @@ the build system.</p>
 &lt;/dependency&gt;</pre>
 <p>Also add failsafe plugin to your pom file to be able to run integration tests.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;project&gt;</span>
-  [...]
-  <span class="nt">&lt;build&gt;</span>
-    <span class="nt">&lt;plugins&gt;</span>
-      <span class="nt">&lt;plugin&gt;</span>
-        <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
-        <span class="nt">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;version&gt;</span>3.0.0-M3<span class="nt">&lt;/version&gt;</span>
-        <span class="nt">&lt;executions&gt;</span>
-          <span class="nt">&lt;execution&gt;</span>
-            <span class="nt">&lt;goals&gt;</span>
-              <span class="nt">&lt;goal&gt;</span>integration-test<span class="nt">&lt;/goal&gt;</span>
-              <span class="nt">&lt;goal&gt;</span>verify<span class="nt">&lt;/goal&gt;</span>
-            <span class="nt">&lt;/goals&gt;</span>
-          <span class="nt">&lt;/execution&gt;</span>
-        <span class="nt">&lt;/executions&gt;</span>
-      <span class="nt">&lt;/plugin&gt;</span>
-    <span class="nt">&lt;/plugins&gt;</span>
-  <span class="nt">&lt;/build&gt;</span>
-  [...]
+<span class="w">  </span>[...]
+<span class="w">  </span><span class="nt">&lt;build&gt;</span>
+<span class="w">    </span><span class="nt">&lt;plugins&gt;</span>
+<span class="w">      </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>3.0.0-M3<span class="nt">&lt;/version&gt;</span>
+<span class="w">        </span><span class="nt">&lt;executions&gt;</span>
+<span class="w">          </span><span class="nt">&lt;execution&gt;</span>
+<span class="w">            </span><span class="nt">&lt;goals&gt;</span>
+<span class="w">              </span><span class="nt">&lt;goal&gt;</span>integration-test<span class="nt">&lt;/goal&gt;</span>
+<span class="w">              </span><span class="nt">&lt;goal&gt;</span>verify<span class="nt">&lt;/goal&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/goals&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/execution&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/executions&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/plugins&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/build&gt;</span>
+<span class="w">  </span>[...]
 <span class="nt">&lt;/project&gt;</span>
 </pre></div>
 </div>
@@ -133,7 +137,7 @@ package to be installed. Here, we assume the application under test is written i
 So, we create a Dockerfile in the <code class="docutils literal notranslate"><span class="pre">docker/Dockerfile</span></code> address with the following content:</p>
 <div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">openjdk:8-stretch</span>
 
-<span class="k">RUN</span><span class="w"> </span>apt update <span class="o">&amp;&amp;</span> apt install -y iptables iproute
+<span class="k">RUN</span><span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>iptables<span class="w"> </span>iproute
 </pre></div>
 </div>
 <div class="admonition important">
@@ -149,71 +153,71 @@ network operation capabilities of Redit.</p>
 <h2>Adding a Test Case<a class="headerlink" href="#adding-a-test-case" title="Permalink to this heading"></a></h2>
 <p>Now, create a JUnit integration test case  (ending with IT so failsafe picks it up) in the project’s test directory. Here,
 we provide an example for testing the situation of multithread. You can find the full code in the Redit project.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MultithreadTest</span> <span class="p">{</span>
-<span class="linenos"> 2</span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">MultithreadTest</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MultithreadTest</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">MultithreadTest</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span>    <span class="nd">@Test</span>
-<span class="linenos"> 5</span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleDefinition</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">DeploymentVerificationException</span><span class="p">,</span> <span class="n">RuntimeEngineException</span><span class="p">,</span> <span class="n">TimeoutException</span><span class="p">,</span> <span class="n">WorkspaceException</span> <span class="p">{</span>
-<span class="linenos"> 6</span>        <span class="n">Deployment</span> <span class="n">deployment</span> <span class="o">=</span> <span class="n">Deployment</span><span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;sample-multithread&quot;</span><span class="p">)</span>
-<span class="linenos"> 7</span>                <span class="c1">// Service Definitions</span>
-<span class="linenos"> 8</span>                <span class="p">.</span><span class="na">withServiceFromJvmClasspath</span><span class="p">(</span><span class="s">&quot;s1&quot;</span><span class="p">,</span> <span class="s">&quot;target/classes&quot;</span><span class="p">,</span> <span class="s">&quot;**commons-io*.jar&quot;</span><span class="p">)</span>
-<span class="linenos"> 9</span>                    <span class="p">.</span><span class="na">startCommand</span><span class="p">(</span><span class="s">&quot;java -cp ${REDIT_JVM_CLASSPATH} io.redit.samples.multithread.Main&quot;</span><span class="p">)</span>
-<span class="linenos">10</span>                    <span class="p">.</span><span class="na">dockerImageName</span><span class="p">(</span><span class="s">&quot;redit/sample-multithread&quot;</span><span class="p">)</span>
-<span class="linenos">11</span>                    <span class="p">.</span><span class="na">dockerFileAddress</span><span class="p">(</span><span class="s">&quot;../sample-multithread/docker/Dockerfile&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
-<span class="linenos">12</span>                    <span class="p">.</span><span class="na">logFile</span><span class="p">(</span><span class="s">&quot;/var/log/sample1&quot;</span><span class="p">)</span>
-<span class="linenos">13</span>                    <span class="p">.</span><span class="na">logDirectory</span><span class="p">(</span><span class="s">&quot;/var/log/samples&quot;</span><span class="p">)</span>
-<span class="linenos">14</span>                    <span class="p">.</span><span class="na">serviceType</span><span class="p">(</span><span class="n">ServiceType</span><span class="p">.</span><span class="na">JAVA</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
-<span class="linenos">15</span>                <span class="c1">// Node Definitions</span>
-<span class="linenos">16</span>                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">)</span>
-<span class="linenos">17</span>                    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e1&quot;</span><span class="p">,</span> <span class="s">&quot;io.redit.samples.multithread.Main.helloWorld1,&quot;</span> <span class="o">+</span>
-<span class="linenos">18</span>                            <span class="s">&quot;io.redit.samples.multithread.Main.hello&quot;</span><span class="p">)</span>
-<span class="linenos">19</span>                    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e2&quot;</span><span class="p">,</span> <span class="s">&quot;io.redit.samples.multithread.Main.helloWorld2,&quot;</span> <span class="o">+</span>
-<span class="linenos">20</span>                            <span class="s">&quot;io.redit.samples.multithread.Main.helloWorld&quot;</span><span class="p">)</span>
-<span class="linenos">21</span>                    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e3&quot;</span><span class="p">,</span> <span class="s">&quot;io.redit.samples.multithread.Main.helloWorld3,&quot;</span> <span class="o">+</span>
-<span class="linenos">22</span>                            <span class="s">&quot;io.redit.samples.multithread.Main.hello&quot;</span><span class="p">)</span>
-<span class="linenos">23</span>                    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e4&quot;</span><span class="p">,</span> <span class="s">&quot;org.apache.commons.io.FilenameUtils.normalize&quot;</span><span class="p">)</span>
-<span class="linenos">24</span>                    <span class="p">.</span><span class="na">blockBefore</span><span class="p">(</span><span class="s">&quot;bbe2&quot;</span><span class="p">,</span> <span class="s">&quot;e2&quot;</span><span class="p">)</span>
-<span class="linenos">25</span>                    <span class="p">.</span><span class="na">unblockBefore</span><span class="p">(</span><span class="s">&quot;ubbe2&quot;</span><span class="p">,</span> <span class="s">&quot;e2&quot;</span><span class="p">)</span>
-<span class="linenos">26</span>                    <span class="p">.</span><span class="na">garbageCollection</span><span class="p">(</span><span class="s">&quot;g1&quot;</span><span class="p">)</span>
-<span class="linenos">27</span>                    <span class="p">.</span><span class="na">and</span><span class="p">()</span>
-<span class="linenos">28</span>                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">offOnStartup</span><span class="p">().</span><span class="na">and</span><span class="p">()</span>
-<span class="linenos">29</span>                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n3&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
-<span class="linenos">30</span>                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n4&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
-<span class="linenos">31</span>                <span class="c1">// Test Case Events</span>
-<span class="linenos">32</span>                <span class="p">.</span><span class="na">testCaseEvents</span><span class="p">(</span><span class="s">&quot;x1&quot;</span><span class="p">,</span> <span class="s">&quot;x2&quot;</span><span class="p">)</span>
-<span class="linenos">33</span>                <span class="c1">// Run Sequence Definition</span>
-<span class="linenos">34</span>                <span class="p">.</span><span class="na">runSequence</span><span class="p">(</span><span class="s">&quot;bbe2 * e1 * ubbe2 * x1 *  e2  * e3 * x2 * e4&quot;</span><span class="p">)</span>
-<span class="linenos">35</span>                <span class="p">.</span><span class="na">sharedDirectory</span><span class="p">(</span><span class="s">&quot;/redit&quot;</span><span class="p">)</span>
-<span class="linenos">36</span>                <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nd">@Test</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">simpleDefinition</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">DeploymentVerificationException</span><span class="p">,</span><span class="w"> </span><span class="n">RuntimeEngineException</span><span class="p">,</span><span class="w"> </span><span class="n">TimeoutException</span><span class="p">,</span><span class="w"> </span><span class="n">WorkspaceException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">        </span><span class="n">Deployment</span><span class="w"> </span><span class="n">deployment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Deployment</span><span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;sample-multithread&quot;</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="w">                </span><span class="c1">// Service Definitions</span>
+<span class="linenos"> 8</span><span class="w">                </span><span class="p">.</span><span class="na">withServiceFromJvmClasspath</span><span class="p">(</span><span class="s">&quot;s1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;**commons-io*.jar&quot;</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="w">                    </span><span class="p">.</span><span class="na">startCommand</span><span class="p">(</span><span class="s">&quot;java -cp ${REDIT_JVM_CLASSPATH} io.redit.samples.multithread.Main&quot;</span><span class="p">)</span>
+<span class="linenos">10</span><span class="w">                    </span><span class="p">.</span><span class="na">dockerImageName</span><span class="p">(</span><span class="s">&quot;redit/sample-multithread&quot;</span><span class="p">)</span>
+<span class="linenos">11</span><span class="w">                    </span><span class="p">.</span><span class="na">dockerFileAddress</span><span class="p">(</span><span class="s">&quot;../sample-multithread/docker/Dockerfile&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="linenos">12</span><span class="w">                    </span><span class="p">.</span><span class="na">logFile</span><span class="p">(</span><span class="s">&quot;/var/log/sample1&quot;</span><span class="p">)</span>
+<span class="linenos">13</span><span class="w">                    </span><span class="p">.</span><span class="na">logDirectory</span><span class="p">(</span><span class="s">&quot;/var/log/samples&quot;</span><span class="p">)</span>
+<span class="linenos">14</span><span class="w">                    </span><span class="p">.</span><span class="na">serviceType</span><span class="p">(</span><span class="n">ServiceType</span><span class="p">.</span><span class="na">JAVA</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+<span class="linenos">15</span><span class="w">                </span><span class="c1">// Node Definitions</span>
+<span class="linenos">16</span><span class="w">                </span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s1&quot;</span><span class="p">)</span>
+<span class="linenos">17</span><span class="w">                    </span><span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;io.redit.samples.multithread.Main.helloWorld1,&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">18</span><span class="w">                            </span><span class="s">&quot;io.redit.samples.multithread.Main.hello&quot;</span><span class="p">)</span>
+<span class="linenos">19</span><span class="w">                    </span><span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;io.redit.samples.multithread.Main.helloWorld2,&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">20</span><span class="w">                            </span><span class="s">&quot;io.redit.samples.multithread.Main.helloWorld&quot;</span><span class="p">)</span>
+<span class="linenos">21</span><span class="w">                    </span><span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;io.redit.samples.multithread.Main.helloWorld3,&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">22</span><span class="w">                            </span><span class="s">&quot;io.redit.samples.multithread.Main.hello&quot;</span><span class="p">)</span>
+<span class="linenos">23</span><span class="w">                    </span><span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;e4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;org.apache.commons.io.FilenameUtils.normalize&quot;</span><span class="p">)</span>
+<span class="linenos">24</span><span class="w">                    </span><span class="p">.</span><span class="na">blockBefore</span><span class="p">(</span><span class="s">&quot;bbe2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;e2&quot;</span><span class="p">)</span>
+<span class="linenos">25</span><span class="w">                    </span><span class="p">.</span><span class="na">unblockBefore</span><span class="p">(</span><span class="s">&quot;ubbe2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;e2&quot;</span><span class="p">)</span>
+<span class="linenos">26</span><span class="w">                    </span><span class="p">.</span><span class="na">garbageCollection</span><span class="p">(</span><span class="s">&quot;g1&quot;</span><span class="p">)</span>
+<span class="linenos">27</span><span class="w">                    </span><span class="p">.</span><span class="na">and</span><span class="p">()</span>
+<span class="linenos">28</span><span class="w">                </span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">offOnStartup</span><span class="p">().</span><span class="na">and</span><span class="p">()</span>
+<span class="linenos">29</span><span class="w">                </span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+<span class="linenos">30</span><span class="w">                </span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+<span class="linenos">31</span><span class="w">                </span><span class="c1">// Test Case Events</span>
+<span class="linenos">32</span><span class="w">                </span><span class="p">.</span><span class="na">testCaseEvents</span><span class="p">(</span><span class="s">&quot;x1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x2&quot;</span><span class="p">)</span>
+<span class="linenos">33</span><span class="w">                </span><span class="c1">// Run Sequence Definition</span>
+<span class="linenos">34</span><span class="w">                </span><span class="p">.</span><span class="na">runSequence</span><span class="p">(</span><span class="s">&quot;bbe2 * e1 * ubbe2 * x1 *  e2  * e3 * x2 * e4&quot;</span><span class="p">)</span>
+<span class="linenos">35</span><span class="w">                </span><span class="p">.</span><span class="na">sharedDirectory</span><span class="p">(</span><span class="s">&quot;/redit&quot;</span><span class="p">)</span>
+<span class="linenos">36</span><span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
 <span class="linenos">37</span>
-<span class="linenos">38</span>        <span class="n">ReditRunner</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">ReditRunner</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">deployment</span><span class="p">);</span>
-<span class="linenos">39</span>        <span class="c1">// Starting node n2</span>
-<span class="linenos">40</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;x1&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">startNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">));</span>
-<span class="linenos">41</span>        <span class="c1">// Adding new nodes to the deployed environment</span>
-<span class="linenos">42</span>        <span class="n">runner</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="n">Node</span><span class="p">.</span><span class="na">limitedBuilder</span><span class="p">(</span><span class="s">&quot;n5&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">));</span>
-<span class="linenos">43</span>        <span class="c1">// Imposing overlapping network partitions</span>
-<span class="linenos">44</span>        <span class="n">NetPart</span> <span class="n">netPart1</span> <span class="o">=</span> <span class="n">NetPart</span><span class="p">.</span><span class="na">partitions</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="s">&quot;n2&quot;</span><span class="p">).</span><span class="na">connect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">NetPart</span><span class="p">.</span><span class="na">REST</span><span class="p">,</span> <span class="kc">false</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
-<span class="linenos">45</span>        <span class="n">NetPart</span> <span class="n">netPart2</span> <span class="o">=</span> <span class="n">NetPart</span><span class="p">.</span><span class="na">partitions</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="s">&quot;n2,n3&quot;</span><span class="p">).</span><span class="na">connect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">NetPart</span><span class="p">.</span><span class="na">REST</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
-<span class="linenos">46</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkPartition</span><span class="p">(</span><span class="n">netPart1</span><span class="p">);</span>
-<span class="linenos">47</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkPartition</span><span class="p">(</span><span class="n">netPart2</span><span class="p">);</span>
-<span class="linenos">48</span>        <span class="c1">// Imposing 10 secs of clock drift in node n1</span>
-<span class="linenos">49</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">clockDrift</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">10000</span><span class="p">);</span>
-<span class="linenos">50</span>        <span class="c1">// Applying network delay and loss on node n2 before restarting it</span>
-<span class="linenos">51</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkOperation</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">30</span><span class="p">));</span>
-<span class="linenos">52</span>        <span class="c1">// removing the first network partition and restarting node n2</span>
-<span class="linenos">53</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;x2&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">{</span>
-<span class="linenos">54</span>            <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">removeNetworkPartition</span><span class="p">(</span><span class="n">netPart1</span><span class="p">);</span>
-<span class="linenos">55</span>            <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">restartNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-<span class="linenos">56</span>        <span class="p">});</span>
-<span class="linenos">57</span>        <span class="c1">// removing the second network partition</span>
-<span class="linenos">58</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">removeNetworkPartition</span><span class="p">(</span><span class="n">netPart2</span><span class="p">);</span>
-<span class="linenos">59</span>        <span class="c1">// Applying different kinds of network operations in different orders</span>
-<span class="linenos">60</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkOperation</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-<span class="linenos">61</span>                <span class="n">NetOp</span><span class="p">.</span><span class="na">removeDelay</span><span class="p">(),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">removeLoss</span><span class="p">(),</span>
-<span class="linenos">62</span>                <span class="n">NetOp</span><span class="p">.</span><span class="na">removeDelay</span><span class="p">(),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">NetOp</span><span class="p">.</span><span class="na">removeLoss</span><span class="p">());</span>
-<span class="linenos">63</span>        <span class="c1">// Waiting for the run sequence to be completed</span>
-<span class="linenos">64</span>        <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">waitForRunSequenceCompletion</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
-<span class="linenos">65</span>    <span class="p">}</span>
+<span class="linenos">38</span><span class="w">        </span><span class="n">ReditRunner</span><span class="w"> </span><span class="n">runner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReditRunner</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">deployment</span><span class="p">);</span>
+<span class="linenos">39</span><span class="w">        </span><span class="c1">// Starting node n2</span>
+<span class="linenos">40</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;x1&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">startNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">));</span>
+<span class="linenos">41</span><span class="w">        </span><span class="c1">// Adding new nodes to the deployed environment</span>
+<span class="linenos">42</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="n">Node</span><span class="p">.</span><span class="na">limitedBuilder</span><span class="p">(</span><span class="s">&quot;n5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s1&quot;</span><span class="p">));</span>
+<span class="linenos">43</span><span class="w">        </span><span class="c1">// Imposing overlapping network partitions</span>
+<span class="linenos">44</span><span class="w">        </span><span class="n">NetPart</span><span class="w"> </span><span class="n">netPart1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NetPart</span><span class="p">.</span><span class="na">partitions</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="s">&quot;n2&quot;</span><span class="p">).</span><span class="na">connect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">NetPart</span><span class="p">.</span><span class="na">REST</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+<span class="linenos">45</span><span class="w">        </span><span class="n">NetPart</span><span class="w"> </span><span class="n">netPart2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NetPart</span><span class="p">.</span><span class="na">partitions</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="s">&quot;n2,n3&quot;</span><span class="p">).</span><span class="na">connect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">NetPart</span><span class="p">.</span><span class="na">REST</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+<span class="linenos">46</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkPartition</span><span class="p">(</span><span class="n">netPart1</span><span class="p">);</span>
+<span class="linenos">47</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkPartition</span><span class="p">(</span><span class="n">netPart2</span><span class="p">);</span>
+<span class="linenos">48</span><span class="w">        </span><span class="c1">// Imposing 10 secs of clock drift in node n1</span>
+<span class="linenos">49</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">clockDrift</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10000</span><span class="p">);</span>
+<span class="linenos">50</span><span class="w">        </span><span class="c1">// Applying network delay and loss on node n2 before restarting it</span>
+<span class="linenos">51</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkOperation</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">30</span><span class="p">));</span>
+<span class="linenos">52</span><span class="w">        </span><span class="c1">// removing the first network partition and restarting node n2</span>
+<span class="linenos">53</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;x2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">54</span><span class="w">            </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">removeNetworkPartition</span><span class="p">(</span><span class="n">netPart1</span><span class="p">);</span>
+<span class="linenos">55</span><span class="w">            </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">restartNode</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="linenos">56</span><span class="w">        </span><span class="p">});</span>
+<span class="linenos">57</span><span class="w">        </span><span class="c1">// removing the second network partition</span>
+<span class="linenos">58</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">removeNetworkPartition</span><span class="p">(</span><span class="n">netPart2</span><span class="p">);</span>
+<span class="linenos">59</span><span class="w">        </span><span class="c1">// Applying different kinds of network operations in different orders</span>
+<span class="linenos">60</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">networkOperation</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<span class="linenos">61</span><span class="w">                </span><span class="n">NetOp</span><span class="p">.</span><span class="na">removeDelay</span><span class="p">(),</span><span class="w"> </span><span class="n">NetOp</span><span class="p">.</span><span class="na">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="na">jitter</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">NetOp</span><span class="p">.</span><span class="na">removeLoss</span><span class="p">(),</span>
+<span class="linenos">62</span><span class="w">                </span><span class="n">NetOp</span><span class="p">.</span><span class="na">removeDelay</span><span class="p">(),</span><span class="w"> </span><span class="n">NetOp</span><span class="p">.</span><span class="na">loss</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="n">NetOp</span><span class="p">.</span><span class="na">removeLoss</span><span class="p">());</span>
+<span class="linenos">63</span><span class="w">        </span><span class="c1">// Waiting for the run sequence to be completed</span>
+<span class="linenos">64</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">waitForRunSequenceCompletion</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="linenos">65</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">66</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -245,17 +249,17 @@ packets will be lost.</p>
 Logback can be like this:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;configuration&gt;</span>
-    <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;Console&quot;</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;layout</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.classic.PatternLayout&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;Pattern&gt;</span>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n<span class="nt">&lt;/Pattern&gt;</span>
-        <span class="nt">&lt;/layout&gt;</span>
-    <span class="nt">&lt;/appender&gt;</span>
+<span class="w">    </span><span class="nt">&lt;appender</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Console&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;layout</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;ch.qos.logback.classic.PatternLayout&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Pattern&gt;</span>%d{HH:mm:ss.SSS}<span class="w"> </span>[%thread]<span class="w"> </span>%-5level<span class="w"> </span>%logger{36}<span class="w"> </span>-<span class="w"> </span>%msg%n<span class="nt">&lt;/Pattern&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/layout&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/appender&gt;</span>
 
-    <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;io.redit&quot;</span> <span class="na">level=</span><span class="s">&quot;DEBUG&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;io.redit&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;DEBUG&quot;</span><span class="nt">/&gt;</span>
 
-    <span class="nt">&lt;root</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&quot;Console&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/root&gt;</span>
+<span class="w">    </span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;appender-ref</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;Console&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/root&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
 </pre></div>
 </div>
@@ -263,7 +267,7 @@ Logback can be like this:</p>
 <section id="running-the-test-case">
 <h2>Running the Test Case<a class="headerlink" href="#running-the-test-case" title="Permalink to this heading"></a></h2>
 <p>Finally, to run the test cases, run the following bash command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$  mvn clean verify
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w">  </span>mvn<span class="w"> </span>clean<span class="w"> </span>verify
 </pre></div>
 </div>
 </section>

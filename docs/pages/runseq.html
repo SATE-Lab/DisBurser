@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Run Sequence Instrumentation Engine &mdash; Redit 0.1.0 documentation</title>
@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,14 +29,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Redit
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Redit
           </a>
               <div class="version">
                 0.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -71,7 +75,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Run Sequence Instrumentation Engine</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/pages/runseq.rst.txt" rel="nofollow"> View page source</a>
@@ -88,7 +92,7 @@
 different instrumentors, and thus, if you are going to use this feature, you need to specify the programming language for
 involved services.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withService</span><span class="p">(</span><span class="s">&quot;service1&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">serviceType</span><span class="p">(</span><span class="n">ServiceType</span><span class="p">.</span><span class="na">JAVA</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">serviceType</span><span class="p">(</span><span class="n">ServiceType</span><span class="p">.</span><span class="na">JAVA</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Next, for each service, you may need to mark some paths as library or instrumentable paths. Check specific language
@@ -116,13 +120,13 @@ project. Example dependencies to be added to your pom file with AspectJ 1.8.12 a
 trace events as <strong>instrumentable path</strong></p></li>
 </ul>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withService</span><span class="p">(</span><span class="s">&quot;service1&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;./projectFiles&quot;</span><span class="p">,</span> <span class="s">&quot;/project&quot;</span><span class="p">)</span>
-    <span class="c1">// It is possible to use wildcard paths for marking library paths</span>
-    <span class="p">.</span><span class="na">libraryPath</span><span class="p">(</span><span class="s">&quot;/project/libs/*.jar&quot;</span><span class="p">)</span> <span class="c1">// This is a target path in the node.</span>
-    <span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;target/classes&quot;</span><span class="p">,</span> <span class="s">&quot;/project/libs/classes&quot;</span><span class="p">,</span> <span class="n">PathAttr</span><span class="p">.</span><span class="na">LIBRARY</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;./extraLib.jar&quot;</span><span class="p">,</span> <span class="s">&quot;/project/libs/extraLib.jar&quot;</span><span class="p">,</span> <span class="n">PathAttr</span><span class="p">.</span><span class="na">LIBRARY</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">instrumentablePath</span><span class="p">(</span><span class="s">&quot;/project/libs/main.jar&quot;</span><span class="p">)</span> <span class="c1">// This is a target path in the node</span>
-    <span class="p">.</span><span class="na">instrumentablePath</span><span class="p">(</span><span class="s">&quot;/project/libs/classes&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;./projectFiles&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/project&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// It is possible to use wildcard paths for marking library paths</span>
+<span class="w">    </span><span class="p">.</span><span class="na">libraryPath</span><span class="p">(</span><span class="s">&quot;/project/libs/*.jar&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// This is a target path in the node.</span>
+<span class="w">    </span><span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;target/classes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/project/libs/classes&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PathAttr</span><span class="p">.</span><span class="na">LIBRARY</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">applicationPath</span><span class="p">(</span><span class="s">&quot;./extraLib.jar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/project/libs/extraLib.jar&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PathAttr</span><span class="p">.</span><span class="na">LIBRARY</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">instrumentablePath</span><span class="p">(</span><span class="s">&quot;/project/libs/main.jar&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// This is a target path in the node</span>
+<span class="w">    </span><span class="p">.</span><span class="na">instrumentablePath</span><span class="p">(</span><span class="s">&quot;/project/libs/classes&quot;</span><span class="p">)</span>
 <span class="p">.</span><span class="na">and</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -136,16 +140,16 @@ specifying the stack traces with Scala. When it is intended to instrument a Scal
 trailing <code class="docutils literal notranslate"><span class="pre">$</span></code> will be created and the original class will proxy calls to itself to that class. However, if internal methods
 of your Scala <code class="docutils literal notranslate"><span class="pre">object</span></code> call each other, the proxy class will be bypassed. As such, in order to be in the safe corner,
 it is advisable to use a trailing <code class="docutils literal notranslate"><span class="pre">$</span></code> when referring to an Scala <code class="docutils literal notranslate"><span class="pre">object</span></code> in your stack traces. Here is an example:</p>
-<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">object</span> <span class="nc">Object1</span> <span class="p">{</span>
-    <span class="k">def</span> <span class="nf">method1</span><span class="p">():</span> <span class="nc">Unit</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="p">..</span>
-    <span class="p">}</span>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">object</span><span class="w"> </span><span class="nc">Object1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">method1</span><span class="p">():</span><span class="w"> </span><span class="nc">Unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">..</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="p">..</span>
 
-<span class="n">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;service1&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="n">stackTrace</span><span class="p">(</span><span class="s">&quot;e1&quot;</span><span class="p">,</span> <span class="s">&quot;Object1$.method1&quot;</span><span class="p">)</span>
+<span class="n">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;service1&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">stackTrace</span><span class="p">(</span><span class="s">&quot;e1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Object1$.method1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>As you can see, when defining the stack trace <code class="docutils literal notranslate"><span class="pre">e1</span></code>, a <code class="docutils literal notranslate"><span class="pre">$</span></code> is present after the name of <code class="docutils literal notranslate"><span class="pre">Object1</span></code> object.</p>

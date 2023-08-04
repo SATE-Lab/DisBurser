@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deterministic Failure Injection &mdash; Redit 0.1.0 documentation</title>
@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,14 +29,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Redit
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Redit
           </a>
               <div class="version">
                 0.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -72,7 +76,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Deterministic Failure Injection</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/pages/deterministic.rst.txt" rel="nofollow"> View page source</a>
@@ -102,18 +106,18 @@ definition should be a pair of blocking and unblocking events. Basically, make s
 has been blocked. This event is useful when it is needed to block all the threads for a specific stack trace, do some
 other stuff or let the other threads make progress, and then, unblock the blocked threads.</p></li>
 </ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;service1&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">withSchedulingEvent</span><span class="p">(</span><span class="s">&quot;bast1&quot;</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">after</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span> <span class="c1">// The name of the stack trace event. An example comes later</span>
-        <span class="p">.</span><span class="na">operation</span><span class="p">(</span><span class="n">SchedulingOperation</span><span class="p">.</span><span class="na">BLOCK</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">and</span><span class="p">()</span>
-    <span class="p">.</span><span class="na">withSchedulingEvent</span><span class="p">(</span><span class="s">&quot;ubast1&quot;</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">after</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">operation</span><span class="p">(</span><span class="n">SchedulingOperation</span><span class="p">.</span><span class="na">UNBLOCK</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">and</span><span class="p">()</span>
-    <span class="c1">// The same events using shortcut methods</span>
-    <span class="p">.</span><span class="na">blockAfter</span><span class="p">(</span><span class="s">&quot;bast1&quot;</span><span class="p">,</span> <span class="s">&quot;st1&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">unblockAfter</span><span class="p">(</span><span class="s">&quot;ubast1&quot;</span><span class="p">,</span> <span class="s">&quot;st1&quot;</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;service1&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">withSchedulingEvent</span><span class="p">(</span><span class="s">&quot;bast1&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">after</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// The name of the stack trace event. An example comes later</span>
+<span class="w">        </span><span class="p">.</span><span class="na">operation</span><span class="p">(</span><span class="n">SchedulingOperation</span><span class="p">.</span><span class="na">BLOCK</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">and</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">withSchedulingEvent</span><span class="p">(</span><span class="s">&quot;ubast1&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">after</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">operation</span><span class="p">(</span><span class="n">SchedulingOperation</span><span class="p">.</span><span class="na">UNBLOCK</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">and</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">// The same events using shortcut methods</span>
+<span class="w">    </span><span class="p">.</span><span class="na">blockAfter</span><span class="p">(</span><span class="s">&quot;bast1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;st1&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">unblockAfter</span><span class="p">(</span><span class="s">&quot;ubast1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;st1&quot;</span><span class="p">)</span>
 <span class="p">.</span><span class="na">and</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -129,21 +133,21 @@ for additional instructions for specific languages.</p>
 current stack trace. Only the right order of appearance is sufficient.</p>
 </li>
 </ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;service1&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">withStackTraceEvent</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">trace</span><span class="p">(</span><span class="s">&quot;io.redit.Hello.worldCaller&quot;</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">trace</span><span class="p">(</span><span class="s">&quot;io.redit.Hello.world&quot;</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">blockAfter</span><span class="p">().</span><span class="na">and</span><span class="p">()</span>
-    <span class="c1">// The same event using a shortcut method</span>
-    <span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">,</span> <span class="s">&quot;io.redit.Hello.worldCaller,io.redit.Hello.world&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;service1&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">withStackTraceEvent</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">trace</span><span class="p">(</span><span class="s">&quot;io.redit.Hello.worldCaller&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">trace</span><span class="p">(</span><span class="s">&quot;io.redit.Hello.world&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">blockAfter</span><span class="p">().</span><span class="na">and</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">// The same event using a shortcut method</span>
+<span class="w">    </span><span class="p">.</span><span class="na">stackTrace</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;io.redit.Hello.worldCaller,io.redit.Hello.world&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
 <span class="p">.</span><span class="na">and</span><span class="p">()</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><strong>Garbage Collection Event</strong>: This event is for invoking the garbage collector for supported languages e.g. Java.</p></li>
 </ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;service1&quot;</span><span class="p">).</span>
-    <span class="p">.</span><span class="na">withGarbageCollectionEvent</span><span class="p">(</span><span class="s">&quot;gc1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;service1&quot;</span><span class="p">).</span>
+<span class="w">    </span><span class="p">.</span><span class="na">withGarbageCollectionEvent</span><span class="p">(</span><span class="s">&quot;gc1&quot;</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
 <span class="n">and</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -153,8 +157,8 @@ current stack trace. Only the right order of appearance is sufficient.</p>
 <p>Test case events are the connection point between the test case and the Redit’s runtime engine. Internal events’
 orders are enforced by the runtime engine, but it is the test case responsibility to enforce the test case events if they
 are included in the run sequence.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">Deployment</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">testCaseEvents</span><span class="p">(</span><span class="s">&quot;tc1&quot;</span><span class="p">,</span><span class="s">&quot;tc2&quot;</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span><span class="w"> </span><span class="n">Deployment</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">testCaseEvents</span><span class="p">(</span><span class="s">&quot;tc1&quot;</span><span class="p">,</span><span class="s">&quot;tc2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -163,8 +167,8 @@ are included in the run sequence.</p>
 <p>Finally after defining all the necessary events, you should tie them together in the run sequence by using event names
 as the operands, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> as operators and parenthesis. <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> indicate sequential and parallel execution
 respectively.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">Deployment</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="na">runSequence</span><span class="p">(</span><span class="s">&quot;bast1 * tc1 * ubast1 * (gc1 | x1)&quot;</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span><span class="w"> </span><span class="n">Deployment</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">runSequence</span><span class="p">(</span><span class="s">&quot;bast1 * tc1 * ubast1 * (gc1 | x1)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This run sequence blocks all the threads in node <code class="docutils literal notranslate"><span class="pre">n1</span></code> with the stack trace of event <code class="docutils literal notranslate"><span class="pre">st1</span></code> (<code class="docutils literal notranslate"><span class="pre">bast1</span></code>), waits for the
@@ -173,14 +177,14 @@ a garbage collection in <code class="docutils literal notranslate"><span class="
 <p>At any point, a test can use the <cite>ReditRunner`</cite> object to enforce the order of a test case event. Enforcement of a test case
 event in the test case is only needed if something is needed to be done when the event dependencies are satisfied, e.g.
 injecting a failure.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;tc1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">clockDrift</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">));</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">enforceOrder</span><span class="p">(</span><span class="s">&quot;tc1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">clockDrift</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Here, when the dependencies of event <code class="docutils literal notranslate"><span class="pre">tc1</span></code> are satisified, a clock drift in the amount of -100ms will be applied to node
 <code class="docutils literal notranslate"><span class="pre">n1</span></code>, and <code class="docutils literal notranslate"><span class="pre">tc1</span></code> event will be marked as satisfied. If after 10 seconds the dependencies of <code class="docutils literal notranslate"><span class="pre">tc1</span></code> are not satisfied,
 a <code class="docutils literal notranslate"><span class="pre">TimeoutException</span></code> will be thrown. If the only thing that the test case needs is to wait for an event or its
 dependencies to be satisfied the <code class="docutils literal notranslate"><span class="pre">waitFor</span></code> method can be used.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">waitFor</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">runner</span><span class="p">.</span><span class="na">runtime</span><span class="p">().</span><span class="na">waitFor</span><span class="p">(</span><span class="s">&quot;st1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Here again, if the event dependecies are not satisfied in 10 seconds, a <code class="docutils literal notranslate"><span class="pre">TimeoutException</span></code> will be thrown.</p>
