@@ -15,7 +15,7 @@ User guide will soon be uploaded.
 
 # Dataset
 
-[https://github.com/SATE-Lab/DisBurser_Dataset](https://github.com/SATE-Lab/DisBurser_Dataset)
+[https://sate-lab.github.io/DisBurser/](https://sate-lab.github.io/DisBurser/)
 
 # Questions
 
