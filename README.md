@@ -15,7 +15,7 @@ User guide will soon be uploaded.
 
 # Dataset
 
-[dataset](https://anonymous.4open.science/w/DisBurser-2DB8/)
+[dataset](https://github.com/SATE-Lab/DisBurser_Dataset)
 
 # Questions
 
