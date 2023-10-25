@@ -1,23 +1,57 @@
 # DisBurser_Dataset
 
-## Benchmark
 
-*Benchmarks of distributed systems*
+## Environment Requirement
+1. Ubuntu 20.04.1 LTS
+2.  Git lfs. **Attention: git lfs must be explicitly stated**
+3. Java 8 recommended
+4. Docker 1.13+
+5. AspectJ 1.8+
+6. Maven 3.x~~(or use build-in Maven3 in IDEA)~~
+7. Run under ROOT authority 
+## Environment Setting
+Steps:
 
-| Systems | Versions | Reference | Download URL |
-| :----: | :----: | :----: | :----: |
-|       Activemq      |       5.12.0, 5.14.0, 5.15.9        |          https://github.com/apache/activemq         | https://activemq.apache.org/download-archives |
-|       Cassandra     |       2.2.16, 3.7, 3.11.3, 3.11.6        |          https://github.com/apache/cassandra        | https://archive.apache.org/dist/cassandra/        |
-|       Elasticsearch |       1.2.1, 1.4.0, 1.4.5        |          https://github.com/elastic/elasticsearch   | https://github.com/elastic/elasticsearch/tags |
-|       Hadoop        |       2.7.0, 3.1.2, 3.2.0, 3.3.0        |          https://github.com/apache/hadoop           | https://archive.apache.org/dist/hadoop/common/ |
-|       Hbase         |       1.4.8, 2.2.0, 2.4.9, 2.4.11        |          https://github.com/apache/hbase            | https://archive.apache.org/dist/hbase/ |
-|       Kafka         |       2.0.0, 2.8.0, 3.0.0, 3.2.0        |          https://github.com/apache/kafka            | https://kafka.apache.org/downloads |
-|       Rocketmq      |       4.0.0, 4.1.0        |          https://github.com/apache/rocketmq         | https://rocketmq.apache.org/download |
-|       Zookeeper     |       3.4.3, 3.5.0, 3.5.3, 3.5.5, 3.7.1, 3.8.0        |          https://github.com/apache/zookeeper        |https://github.com/apache/zookeeper/tags|
+1. Download docker
+```python
+# Install curl tool
+sudo apt install curl
+
+# Download docker from Aliyun
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
+Enter following command to promise the docker can use the local port.
+```python
+# Add docker group
+sudo groupadd docker
+
+# Add current user to docker group
+sudo usermod -aG docker $USER
+
+# Restart docker service to enable the setting
+sudo systemctl restart docker
+```
+
+2. Setting environment variable.
+
+Clean all openjdk on machine.
+
+Set the path of JDK, Maven3, AspectJ. 
+**Don't use the apt tool to download them.**
+
+For IDEA user, you have to enter the ASPECTJ_HOME manually in "Run - Edit Configurations -Environment variables"
 
 
 
-## Explanation
+## Run Tests
+Steps:
+1. Clone code
+2. Add dependency in pom.xml
+3. Run project in specific test case
+
+
+
+<!-- ## Explanation
 
 - Due to the large storage space occupied by the source code packages and binary packages of the distributed system, these packages in this anonymous project will be omitted and download URLs will be provided.
 
@@ -29,4 +63,4 @@
 
   In short, the first method is more in line with the patch repair process, and the second method is more convenient and simple.
 
-- We involved some other system versions when building test cases, so some additional versions are included in the benchmark for use by test cases, which are temporarily out of the scope of benchmark and do not include test suites. I think these versions will be involved in the subsequent expansion of the benchmark.
+- We involved some other system versions when building test cases, so some additional versions are included in the benchmark for use by test cases, which are temporarily out of the scope of benchmark and do not include test suites. I think these versions will be involved in the subsequent expansion of the benchmark. -->
