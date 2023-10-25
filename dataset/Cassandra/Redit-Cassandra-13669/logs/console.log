@@ -1,0 +1,174 @@
+17:24:49.955 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+17:24:50.166 [main] INFO  com.datastax.driver.core - DataStax Java driver 3.11.2 for Apache Cassandra
+17:24:50.183 [main] INFO  c.d.driver.core.GuavaCompatibility - Detected Guava >= 19 in the classpath, using modern compatibility layer
+17:24:50.188 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NEW_NODE_DELAY_SECONDS is undefined, using default value 1
+17:24:50.188 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NOTIF_LOCK_TIMEOUT_SECONDS is undefined, using default value 60
+17:24:50.222 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.USE_NATIVE_CLOCK is undefined, using default value true
+17:24:50.346 [main] INFO  c.datastax.driver.core.ClockFactory - Using native clock to generate timestamps.
+17:24:50.361 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NON_BLOCKING_EXECUTOR_SIZE is undefined, using default value 2
+17:24:50.423 [main] DEBUG com.datastax.driver.core.Cluster - Starting new cluster with contact points [/10.2.0.3:9042]
+17:24:50.475 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.FORCE_NIO is undefined, using default value false
+17:24:50.480 [main] WARN  com.datastax.driver.core.NettyUtil - Found Netty's native epoll transport in the classpath, but epoll is not available. Using NIO instead.
+java.lang.UnsatisfiedLinkError: could not load a native library: netty_transport_native_epoll_x86_64
+	at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:224)
+	at io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:219)
+	at io.netty.channel.epoll.Native.<clinit>(Native.java:57)
+	at io.netty.channel.epoll.Epoll.<clinit>(Epoll.java:39)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at com.datastax.driver.core.NettyUtil.<clinit>(NettyUtil.java:57)
+	at com.datastax.driver.core.NettyOptions.eventLoopGroup(NettyOptions.java:95)
+	at com.datastax.driver.core.Connection$Factory.<init>(Connection.java:993)
+	at com.datastax.driver.core.Cluster$Manager.init(Cluster.java:1665)
+	at com.datastax.driver.core.Cluster.init(Cluster.java:214)
+	at com.datastax.driver.core.Cluster.connectAsync(Cluster.java:387)
+	at com.datastax.driver.core.Cluster.connectAsync(Cluster.java:366)
+	at com.datastax.driver.core.Cluster.connect(Cluster.java:311)
+	at io.redit.samples.cassandra13669.SampleTest.makeUUID(SampleTest.java:75)
+	at io.redit.samples.cassandra13669.SampleTest.lambda$testMakeUUIDFromSASIIndex$0(SampleTest.java:50)
+	at io.redit.execution.RuntimeEngine.enforceOrder(RuntimeEngine.java:317)
+	at io.redit.execution.RuntimeEngine.enforceOrder(RuntimeEngine.java:300)
+	at io.redit.samples.cassandra13669.SampleTest.testMakeUUIDFromSASIIndex(SampleTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)
+	Suppressed: java.lang.UnsatisfiedLinkError: could not load a native library: netty_transport_native_epoll
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:224)
+		at io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:222)
+		... 41 common frames omitted
+	Caused by: java.io.FileNotFoundException: META-INF/native/libnetty_transport_native_epoll.so
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:171)
+		... 42 common frames omitted
+		Suppressed: java.lang.UnsatisfiedLinkError: no netty_transport_native_epoll in java.library.path
+			at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+			at java.lang.Runtime.loadLibrary0(Runtime.java:843)
+			at java.lang.System.loadLibrary(System.java:1136)
+			at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:376)
+			at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:146)
+			... 42 common frames omitted
+			Suppressed: java.lang.UnsatisfiedLinkError: no netty_transport_native_epoll in java.library.path
+				at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+				at java.lang.Runtime.loadLibrary0(Runtime.java:843)
+				at java.lang.System.loadLibrary(System.java:1136)
+				at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+				at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+				at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+				at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+				at java.lang.reflect.Method.invoke(Method.java:498)
+				at io.netty.util.internal.NativeLibraryLoader$1.run(NativeLibraryLoader.java:410)
+				at java.security.AccessController.doPrivileged(Native Method)
+				at io.netty.util.internal.NativeLibraryLoader.loadLibraryByHelper(NativeLibraryLoader.java:402)
+				at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:368)
+				... 43 common frames omitted
+Caused by: java.io.FileNotFoundException: META-INF/native/libnetty_transport_native_epoll_x86_64.so
+	at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:171)
+	... 42 common frames omitted
+	Suppressed: java.lang.UnsatisfiedLinkError: no netty_transport_native_epoll_x86_64 in java.library.path
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:843)
+		at java.lang.System.loadLibrary(System.java:1136)
+		at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+		at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:376)
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:146)
+		... 42 common frames omitted
+		Suppressed: java.lang.UnsatisfiedLinkError: no netty_transport_native_epoll_x86_64 in java.library.path
+			at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+			at java.lang.Runtime.loadLibrary0(Runtime.java:843)
+			at java.lang.System.loadLibrary(System.java:1136)
+			at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+			at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+			at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+			at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+			at java.lang.reflect.Method.invoke(Method.java:498)
+			at io.netty.util.internal.NativeLibraryLoader$1.run(NativeLibraryLoader.java:410)
+			at java.security.AccessController.doPrivileged(Native Method)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibraryByHelper(NativeLibraryLoader.java:402)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:368)
+			... 43 common frames omitted
+17:24:50.514 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.EXTENDED_PEER_CHECK is undefined, using default value true
+17:24:50.600 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 1
+17:24:50.602 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.DISABLE_COALESCING is undefined, using default value false
+17:24:50.602 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.FLUSHER_SCHEDULE_PERIOD_NS is undefined, using default value 10000
+17:24:50.695 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=false] Connection established, initializing transport
+17:24:50.782 [cluster1-nio-worker-0] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NATIVE_TRANSPORT_MAX_FRAME_SIZE_IN_MB is undefined, using default value 256
+17:24:50.787 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - [/10.2.0.3:9042] Host does not support protocol version V5
+17:24:50.788 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] closing connection
+17:24:50.793 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] closed, remaining = 0
+17:24:50.802 [main] INFO  com.datastax.driver.core.Cluster - Cannot connect with protocol version V5, trying with V4
+17:24:50.803 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 1
+17:24:50.803 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] has already terminated
+17:24:50.807 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-2, inFlight=0, closed=false] Connection established, initializing transport
+17:24:50.822 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-2, inFlight=0, closed=false] Transport initialized, connection ready
+17:24:50.853 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing node list and token map
+17:24:50.941 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema
+17:24:51.065 [main] DEBUG com.datastax.driver.core.Host.STATES - [Control connection] established to /10.2.0.3:9042
+17:24:51.065 [main] INFO  c.d.d.c.p.DCAwareRoundRobinPolicy - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+17:24:51.066 [main] INFO  com.datastax.driver.core.Cluster - New Cassandra host /10.2.0.3:9042 added
+17:24:51.068 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.CHECK_IO_DEADLOCKS is undefined, using default value true
+17:24:51.070 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 2
+17:24:51.075 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=0, closed=false] Connection established, initializing transport
+17:24:51.081 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-3, inFlight=0, closed=false] Transport initialized, connection ready
+17:24:51.083 [cluster1-nio-worker-2] DEBUG c.d.driver.core.HostConnectionPool - Created connection pool to host /10.2.0.3:9042 (1 connections needed, 1 successfully opened)
+17:24:51.083 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Session - Added connection pool for /10.2.0.3:9042
+17:24:51.209 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT CREATED KEYSPACE test, scheduling delivery
+17:24:51.229 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for test
+17:24:51.273 [cluster1-worker-0] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [0483e2bf-f03f-30e3-bd26-aeff538ed41f]
+17:24:51.275 [cluster1-worker-1] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for test
+17:24:51.317 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Setting keyspace test
+17:24:51.319 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Keyspace set to test
+17:24:51.485 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT CREATED TABLE test.test_table, scheduling delivery
+17:24:51.500 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for test.test_table (TABLE)
+17:24:51.504 [cluster1-worker-0] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [aa7132f6-0373-3444-b7a0-2ac02fbd5abb]
+17:24:51.504 [cluster1-worker-1] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for test.test_table (TABLE)
+17:24:51.641 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT UPDATED TABLE test.test_table, scheduling delivery
+17:24:51.665 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for test.test_table (TABLE)
+17:24:51.676 [cluster1-worker-0] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [b77ef08c-ebb7-3859-861d-5d30fe8088d2]
+17:24:51.676 [cluster1-worker-1] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for test.test_table (TABLE)
+17:24:51.722 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=0, closed=true] closing connection
+17:24:51.722 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-3, inFlight=0, closed=true] closed, remaining = 1
+17:24:51.725 [main] DEBUG com.datastax.driver.core.Cluster - Shutting down
+17:24:51.726 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-2, inFlight=0, closed=true] closing connection
+17:24:51.726 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-2, inFlight=0, closed=true] closed, remaining = 0
+17:24:53.764 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+17:24:54.098 [qtp211968962-16] INFO  io.redit.execution.EventService - Event E1 received!
+17:24:54.099 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event X1 ...
+17:24:54.100 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Restarting node server1 ...
+17:25:05.529 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server1 is restarted!
+17:25:06.228 [main] INFO  i.r.s.cassandra13669.SampleTest - server1: cd /cassandra/apache-cassandra-3.11.3 && bin/nodetool status
+17:25:06.228 [main] INFO  i.r.s.cassandra13669.SampleTest -
+17:25:06.228 [main] WARN  i.r.s.cassandra13669.SampleTest - nodetool: Failed to connect to '127.0.0.1:7199' - ConnectException: 'Connection refused (Connection refused)'.
+
+17:25:06.228 [main] INFO  i.r.s.cassandra13669.SampleTest - server1 startServer...
+17:25:06.229 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event X1 ...
+17:25:06.237 [qtp211968962-16] INFO  io.redit.execution.EventService - Event X1 received!
+17:25:11.238 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+17:25:11.961 [main] INFO  i.r.s.cassandra13669.SampleTest - server1: cd /cassandra/apache-cassandra-3.11.3 && bin/nodetool status
+17:25:11.961 [main] INFO  i.r.s.cassandra13669.SampleTest -
+17:25:11.961 [main] WARN  i.r.s.cassandra13669.SampleTest - nodetool: Failed to connect to '127.0.0.1:7199' - ConnectException: 'Connection refused (Connection refused)'.
+
+17:25:11.961 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+17:25:11.967 [qtp211968962-15] INFO  io.redit.execution.EventService - Event E2 received!
+17:25:11.967 [main] INFO  io.redit.execution.RuntimeEngine - The run sequence is completed!
+17:25:11.967 [main] INFO  i.r.s.cassandra13669.SampleTest - completed !!!
