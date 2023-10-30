@@ -5,13 +5,12 @@
 1. Ubuntu 20.04.1 LTS recommended
 2. Git lfs. **Attention: git lfs must be explicitly stated**
 3. Java 8 recommended
-4. Docker 1.13+
-6. Maven 3.x
-7. Run under ROOT authority 
+4. Maven 3.x
+5. Run under ROOT authority 
 ## Environment Setting
 Steps:
 
-1. Download docker
+<!-- 1. Download docker
 ```python
 # Install curl tool
 sudo apt install curl
@@ -29,9 +28,9 @@ sudo usermod -aG docker $USER
 
 # Restart docker service to enable the setting
 sudo systemctl restart docker
-```
+``` -->
 
-2. Setting environment variable.
+1. Setting environment variable.
 
 Clean all openjdk on machine.
 
@@ -41,13 +40,12 @@ Set the path of JDK, Maven3, AspectJ.
 For IDEA user, you have to enter the ASPECTJ_HOME manually in "Run - Edit Configurations -Environment variables"
 
 
-
-
-## Run Tests
+## Switch Version
 Steps:
 1. Clone code
-2. Add dependency in pom.xml
-3. Run project in specific test case
+2. Check build.sh under the specific system version
+3. Confirm the issue which is need for trigger or not, delete the unnecessary macro definiton in bash
+4. Run bash and will get the package of the reuqired version of issue
 
 
 
