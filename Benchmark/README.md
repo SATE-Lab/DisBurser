@@ -1,5 +1,5 @@
 # DisBurser_Benchmark
-
+Dataset include the Benchmark we collect from JIRA, with various versions of specific distributed systems.
 
 ## Environment Requirement
 1. Ubuntu 20.04.1 LTS recommended
@@ -35,7 +35,7 @@ sudo systemctl restart docker
 Clean all openjdk on machine.
 
 Set the path of JDK, Maven3, AspectJ. 
-**Don't use the apt tool to download them.**
+**DON'T use the apt tool to download them. It will need more effort to set them.**
 
 For IDEA user, you have to enter the ASPECTJ_HOME manually in "Run - Edit Configurations -Environment variables"
 
