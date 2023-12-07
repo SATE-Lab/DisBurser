@@ -1,9 +1,9 @@
-# DisBurser
+# RediB
 
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 
-DisBurser(**Di**stributed **S**ystems **Bu**gs **R**eproduced for **S**oftware **E**ngineering **R**esearch) is a infrastructure or the **deterministic** reproduction of distributed system failures. DisBurser provides both a dataset of known distributed-systems bugs and a toolset, called Redit. 
+RediB(**Re**gression framework for **Di**stributed system **B**enchmark) is an infrastructure or the **deterministic** reproduction of distributed system failures. RediB provides both a dataset of known distributed-systems bugs called RediD and a toolset called RediT. 
 
 <!-- With dockers running on the machine, we can easily simulate the operation of a real-world distributed system on Redit and find defects of the system by the test events.
 
@@ -26,4 +26,4 @@ You can open an issue in the project to inform us of your problems.
 
 # License
 
-Redit is licensed under [MIT](https://opensource.org/licenses/MIT) and is freely available on Github.
+RediB is licensed under [MIT](https://opensource.org/licenses/MIT) and is freely available on Github.
