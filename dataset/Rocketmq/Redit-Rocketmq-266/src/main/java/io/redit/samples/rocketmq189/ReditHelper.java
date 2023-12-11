@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 2;
     private static final int HTTP_PORT = 9876;
-    private static final String dir = "rocketmq-4.1.0-incubating";
+    private static final String dir = "rocketmq-all-4.1.0-incubating";
     public static String getRocketmqHomeDir(){
         return "/rocketmq/" + dir;
     }
@@ -26,6 +26,8 @@ public class ReditHelper {
         Deployment.Builder builder = Deployment.builder("sample-rocketmq")
                 .withService("rocketmq")
                 .applicationPath(compressedPath, "/rocketmq",  PathAttr.COMPRESSED)
+                .applicationPath("conf/runserver.sh", getRocketmqHomeDir() + "/bin/runserver.sh")
+                .applicationPath("conf/runbroker.sh", getRocketmqHomeDir() + "/bin/runbroker.sh")
                 .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getRocketmqHomeDir() + "/lib/*.jar")
                 .logDirectory(getRocketmqHomeDir() + "/logs")

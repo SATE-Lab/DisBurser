@@ -1,0 +1,74 @@
+15:56:03.108 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+15:56:06.765 [main] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = /rocketmq/rocketmq-all-4.9.0/bin/mqadmin getAccessConfigSubCommand -n localhost:9876 -c RaftCluster
+15:56:06.765 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() =
+globalWhiteRemoteAddresses: [10.10.103.*, 192.168.0.*]
+
+accounts:
+  accessKey         : RocketMQ
+  secretKey         : 12345678
+  whiteRemoteAddress:
+  admin             : false
+  defaultTopicPerm  : DENY
+  defaultGroupPerm  : SUB
+  topicPerms        : [topicA=DENY, topicB=PUB|SUB, topicC=SUB]
+  groupPerms        : [groupA=DENY, groupB=PUB|SUB, groupC=SUB]
+
+  accessKey         : rocketmq2
+  secretKey         : 12345678
+  whiteRemoteAddress: 192.168.1.*
+  admin             : true
+  defaultTopicPerm  :
+  defaultGroupPerm  :
+  topicPerms        :
+  groupPerms        :
+
+
+15:56:06.765 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() = RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.PlatformDependent0).
+RocketMQLog:WARN Please initialize the logger system properly.
+
+15:56:10.353 [main] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = /rocketmq/rocketmq-all-4.9.0/bin/mqadmin  updateAclConfig -n localhost:9876 -a RocketMQ -s 12345678 -c RaftCluster -g groupa=SUB
+15:56:10.353 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() = create or update plain access config to 10.2.0.4:30911 success.
+org.apache.rocketmq.common.PlainAccessConfig@28701274
+15:56:10.353 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() = RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.PlatformDependent0).
+RocketMQLog:WARN Please initialize the logger system properly.
+
+15:56:10.353 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+15:56:10.557 [qtp63468833-32] INFO  io.redit.execution.EventService - Event E1 received!
+15:56:10.558 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+15:56:15.095 [Thread-27] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = /rocketmq/rocketmq-all-4.9.0/bin/mqadmin  updateAclConfig -n localhost:9876 -a RocketMQ -s 12345678 -c RaftCluster -g "" && echo done
+15:56:15.095 [Thread-27] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() = create or update plain access config to 10.2.0.4:30911 success.
+org.apache.rocketmq.common.PlainAccessConfig@4d5d943ddone
+
+15:56:15.095 [Thread-27] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() = RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.PlatformDependent0).
+RocketMQLog:WARN Please initialize the logger system properly.
+
+15:56:18.126 [main] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = /rocketmq/rocketmq-all-4.9.0/bin/mqadmin getAccessConfigSubCommand -n localhost:9876 -c RaftCluster
+15:56:18.126 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() =
+globalWhiteRemoteAddresses: [10.10.103.*, 192.168.0.*]
+
+accounts:
+  accessKey         : rocketmq2
+  secretKey         : 12345678
+  whiteRemoteAddress: 192.168.1.*
+  admin             : true
+  defaultTopicPerm  :
+  defaultGroupPerm  :
+  topicPerms        :
+  groupPerms        :
+
+  accessKey         : RocketMQ
+  secretKey         : 12345678
+  whiteRemoteAddress:
+  admin             : false
+  defaultTopicPerm  : DENY
+  defaultGroupPerm  : SUB
+  topicPerms        : [topicA=DENY, topicB=PUB|SUB, topicC=SUB]
+  groupPerms        : [groupa=SUB]
+
+
+15:56:18.126 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() = RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.PlatformDependent0).
+RocketMQLog:WARN Please initialize the logger system properly.
+
+15:56:18.126 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+15:56:18.131 [qtp63468833-21] INFO  io.redit.execution.EventService - Event E2 received!
+15:56:18.131 [main] INFO  i.r.s.rocketmqexample.SampleTest - completed !!!

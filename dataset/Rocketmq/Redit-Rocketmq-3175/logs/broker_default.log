@@ -1,0 +1,76 @@
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@4f51b3e0
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@15bb6bea
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@41ee392b
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@1e67a849
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@57d5872c
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@22a637e7
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@15eb5ee5
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@2145b572
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@39529185
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@72f926e6
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3daa422a
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@31c88ec8
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@1cbbffcd
+2023-11-10 12:47:33 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@27ce24aa
+2023-11-10 12:47:33 INFO main - Looking for a resource file of name [META-INF/service/org.apache.rocketmq.acl.AccessValidator] ...
+2023-11-10 12:47:33 INFO main - Creating an instance as specified by file META-INF/service/org.apache.rocketmq.acl.AccessValidator which was present in the path of the context classloader.
+2023-11-10 12:47:33 INFO main - Loaded class org.apache.rocketmq.acl.plain.PlainAccessValidator from classloader sun.misc.Launcher$AppClassLoader@606548741
+2023-11-10 12:47:33 INFO main - Looking for a resource file of name [META-INF/service/org.apache.rocketmq.remoting.RPCHook] ...
+2023-11-10 12:47:33 WARN main - No resource file with name [META-INF/service/org.apache.rocketmq.remoting.RPCHook] found.
+2023-11-10 12:47:33 INFO StateMaintainer - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n0","term":0,"voteResult":"ACCEPT"}
+2023-11-10 12:47:33 INFO NettyClientPublicExecutor_2 - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n2","term":0,"voteResult":"REJECT_ALREADY_VOTED"}
+2023-11-10 12:47:33 INFO NettyClientPublicExecutor_1 - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n1","term":0,"voteResult":"REJECT_ALREADY_VOTED"}
+2023-11-10 12:47:33 INFO StateMaintainer - [n0] [PARSE_VOTE_RESULT] cost=78 term=0 memberNum=3 allNum=3 acceptedNum=1 notReadyTermNum=0 biggerLedgerNum=0 alreadyHasLeader=false maxTerm=0 result=WAIT_TO_VOTE_NEXT
+2023-11-10 12:47:34 INFO StateMaintainer - n0_[INCREASE_TERM] from 0 to 1
+2023-11-10 12:47:34 INFO StateMaintainer - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n0","term":1,"voteResult":"ACCEPT"}
+2023-11-10 12:47:34 INFO NettyClientPublicExecutor_3 - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n2","term":0,"voteResult":"REJECT_TERM_NOT_READY"}
+2023-11-10 12:47:34 INFO NettyClientPublicExecutor_4 - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n1","term":0,"voteResult":"REJECT_TERM_NOT_READY"}
+2023-11-10 12:47:34 INFO StateMaintainer - [n0] [PARSE_VOTE_RESULT] cost=3 term=1 memberNum=3 allNum=3 acceptedNum=1 notReadyTermNum=2 biggerLedgerNum=0 alreadyHasLeader=false maxTerm=1 result=REVOTE_IMMEDIATELY
+2023-11-10 12:47:34 INFO StateMaintainer - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n0","term":1,"voteResult":"ACCEPT"}
+2023-11-10 12:47:34 INFO NettyClientPublicExecutor_6 - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n1","term":1,"voteResult":"ACCEPT"}
+2023-11-10 12:47:34 INFO NettyClientPublicExecutor_5 - [n0][GetVoteResponse] {"code":200,"group":"RaftNode00","leaderId":"n0","remoteId":"n2","term":1,"voteResult":"ACCEPT"}
+2023-11-10 12:47:34 INFO StateMaintainer - [n0] [PARSE_VOTE_RESULT] cost=3 term=1 memberNum=3 allNum=2 acceptedNum=2 notReadyTermNum=0 biggerLedgerNum=0 alreadyHasLeader=false maxTerm=1 result=PASSED
+2023-11-10 12:47:34 INFO StateMaintainer - [n0] [VOTE_RESULT] has been elected to be the leader in term 1
+2023-11-10 12:47:34 INFO StateMaintainer - [n0] [ChangeRoleToLeader] from term: 1 and currTerm: 1
+2023-11-10 12:47:34 INFO EntryDispatcher-n0-n2 - [Push-n2]Change state from COMPARE to COMPARE at -1
+2023-11-10 12:47:34 INFO QuorumAckChecker-n0 - Initialize the pending append map in QuorumAckChecker for term=1
+2023-11-10 12:47:34 INFO QuorumAckChecker-n0 - Initialize the watermark in QuorumAckChecker for term=1
+2023-11-10 12:47:34 INFO EntryDispatcher-n0-n1 - [Push-n1]Change state from COMPARE to COMPARE at -1
+2023-11-10 12:47:36 INFO QuorumAckChecker-n0 - [n0][LEADER] term=1 ledgerBegin=-1 ledgerEnd=-1 committed=-1 watermarks={1:{"n0":-1,"n1":-1,"n2":-1}}
+2023-11-10 12:47:39 INFO QuorumAckChecker-n0 - [n0][LEADER] term=1 ledgerBegin=-1 ledgerEnd=-1 committed=-1 watermarks={1:{"n0":-1,"n1":-1,"n2":-1}}
+2023-11-10 12:47:42 INFO QuorumAckChecker-n0 - [n0][LEADER] term=1 ledgerBegin=-1 ledgerEnd=-1 committed=-1 watermarks={1:{"n0":-1,"n1":-1,"n2":-1}}
+2023-11-10 12:47:42 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@4f51b3e0
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@15bb6bea
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@41ee392b
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@1e67a849
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@57d5872c
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@22a637e7
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@15eb5ee5
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@2145b572
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@39529185
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@72f926e6
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3daa422a
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@31c88ec8
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@1cbbffcd
+2023-11-10 12:47:43 INFO main - instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@27ce24aa
+2023-11-10 12:47:43 INFO main - Looking for a resource file of name [META-INF/service/org.apache.rocketmq.acl.AccessValidator] ...
+2023-11-10 12:47:43 INFO main - Creating an instance as specified by file META-INF/service/org.apache.rocketmq.acl.AccessValidator which was present in the path of the context classloader.
+2023-11-10 12:47:43 INFO main - Loaded class org.apache.rocketmq.acl.plain.PlainAccessValidator from classloader sun.misc.Launcher$AppClassLoader@606548741
+2023-11-10 12:47:43 ERROR main - Unable to init service.
+org.apache.rocketmq.acl.common.AclException: The accessKey=aaaaaaaaaak and secretKey=null cannot be null and length should longer than 6
+	at org.apache.rocketmq.acl.plain.PlainPermissionManager.buildPlainAccessResource(PlainPermissionManager.java:370) ~[rocketmq-acl-4.9.0.jar:4.9.0]
+	at org.apache.rocketmq.acl.plain.PlainPermissionManager.load(PlainPermissionManager.java:91) ~[rocketmq-acl-4.9.0.jar:4.9.0]
+	at org.apache.rocketmq.acl.plain.PlainPermissionManager.<init>(PlainPermissionManager.java:64) ~[rocketmq-acl-4.9.0.jar:4.9.0]
+	at org.apache.rocketmq.acl.plain.PlainAccessValidator.<init>(PlainAccessValidator.java:48) ~[rocketmq-acl-4.9.0.jar:4.9.0]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_242]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_242]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_242]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_242]
+	at java.lang.Class.newInstance(Class.java:442) ~[na:1.8.0_242]
+	at org.apache.rocketmq.broker.util.ServiceProvider.initService(ServiceProvider.java:176) [rocketmq-broker-4.9.0.jar:4.9.0]
+	at org.apache.rocketmq.broker.util.ServiceProvider.load(ServiceProvider.java:119) [rocketmq-broker-4.9.0.jar:4.9.0]
+	at org.apache.rocketmq.broker.BrokerController.initialAcl(BrokerController.java:510) [rocketmq-broker-4.9.0.jar:4.9.0]
+	at org.apache.rocketmq.broker.BrokerController.initialize(BrokerController.java:483) [rocketmq-broker-4.9.0.jar:4.9.0]
+	at org.apache.rocketmq.broker.BrokerStartup.createBrokerController(BrokerStartup.java:222) [rocketmq-broker-4.9.0.jar:4.9.0]
+	at org.apache.rocketmq.broker.BrokerStartup.main(BrokerStartup.java:58) [rocketmq-broker-4.9.0.jar:4.9.0]
+2023-11-10 12:47:45 INFO QuorumAckChecker-n0 - [n0][LEADER] term=1 ledgerBegin=-1 ledgerEnd=-1 committed=-1 watermarks={1:{"n0":-1,"n1":-1,"n2":-1}}

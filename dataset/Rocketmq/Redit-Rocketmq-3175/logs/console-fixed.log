@@ -1,0 +1,20 @@
+12:45:50.478 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+12:45:51.529 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+12:45:51.746 [qtp351028485-21] INFO  io.redit.execution.EventService - Event E1 received!
+12:45:51.747 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+12:45:52.643 [main] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = cd /rocketmq/rocketmq-all-4.9.1 && ./bin/mqshutdown broker
+12:45:52.643 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() = The mqbroker(75) is running...
+Send shutdown request to mqbroker(75) OK
+
+12:45:52.643 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() =
+12:45:54.775 [main] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = cd /rocketmq/rocketmq-all-4.9.1 && ./bin/mqbroker -c conf/dledger/broker-n0.conf && echo done
+12:45:54.775 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() =
+12:45:54.775 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() = java.lang.RuntimeException: Lock failed,MQ already started
+	at org.apache.rocketmq.store.DefaultMessageStore.start(DefaultMessageStore.java:228)
+	at org.apache.rocketmq.broker.BrokerController.start(BrokerController.java:853)
+	at org.apache.rocketmq.broker.BrokerStartup.start(BrokerStartup.java:64)
+	at org.apache.rocketmq.broker.BrokerStartup.main(BrokerStartup.java:58)
+
+12:45:57.775 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+12:45:57.780 [qtp351028485-22] INFO  io.redit.execution.EventService - Event E2 received!
+12:45:57.781 [main] INFO  i.r.s.rocketmqexample.SampleTest - completed !!!

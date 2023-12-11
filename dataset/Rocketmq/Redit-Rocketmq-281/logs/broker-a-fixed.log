@@ -1,0 +1,5 @@
+java.lang.RuntimeException: Lock failed,MQ already started
+	at org.apache.rocketmq.store.DefaultMessageStore.start(DefaultMessageStore.java:214)
+	at org.apache.rocketmq.broker.BrokerController.start(BrokerController.java:654)
+	at org.apache.rocketmq.broker.BrokerStartup.start(BrokerStartup.java:62)
+	at org.apache.rocketmq.broker.BrokerStartup.main(BrokerStartup.java:56)

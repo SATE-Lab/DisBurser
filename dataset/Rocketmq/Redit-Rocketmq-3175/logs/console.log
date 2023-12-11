@@ -1,0 +1,26 @@
+12:47:39.184 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+12:47:40.239 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+12:47:40.465 [qtp351028485-21] INFO  io.redit.execution.EventService - Event E1 received!
+12:47:40.466 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+12:47:41.373 [Thread-23] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = /rocketmq/rocketmq-all-4.9.0/bin/mqadmin  updateAclConfig -c RaftCluster -a aaaaaaaaaak -n 127.0.0.1:9876 &
+12:47:41.373 [Thread-23] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() = create or update plain access config to 10.2.0.4:30911 success.
+org.apache.rocketmq.common.PlainAccessConfig@618b19ad
+12:47:41.373 [Thread-23] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() = RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.PlatformDependent0).
+RocketMQLog:WARN Please initialize the logger system properly.
+
+12:47:41.379 [main] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = cd /rocketmq/rocketmq-all-4.9.0 && ./bin/mqshutdown broker
+12:47:41.379 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() = The mqbroker(76) is running...
+Send shutdown request to mqbroker(76) OK
+
+12:47:41.379 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() =
+12:47:43.330 [main] INFO  i.r.s.rocketmqexample.SampleTest - orignal command = cd /rocketmq/rocketmq-all-4.9.0 && ./bin/mqbroker -c conf/dledger/broker-n0.conf && echo done
+12:47:43.330 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stdout() =
+12:47:43.330 [main] INFO  i.r.s.rocketmqexample.SampleTest - commandResults.stderr() = java.lang.ClassCastException: java.lang.Class cannot be cast to org.apache.rocketmq.acl.AccessValidator
+	at org.apache.rocketmq.broker.BrokerController.initialAcl(BrokerController.java:516)
+	at org.apache.rocketmq.broker.BrokerController.initialize(BrokerController.java:483)
+	at org.apache.rocketmq.broker.BrokerStartup.createBrokerController(BrokerStartup.java:222)
+	at org.apache.rocketmq.broker.BrokerStartup.main(BrokerStartup.java:58)
+
+12:47:46.330 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+12:47:46.335 [qtp351028485-22] INFO  io.redit.execution.EventService - Event E2 received!
+12:47:46.335 [main] INFO  i.r.s.rocketmqexample.SampleTest - completed !!!
