@@ -96,4 +96,7 @@
             <version>3.3.1</version>
         </dependency>
     </dependencies>
+<build>
+        <testSourceDirectory>src/main/java</testSourceDirectory>
+    </build>
 </project>

@@ -96,4 +96,7 @@
             <version>2.8.0</version>
         </dependency>
     </dependencies>
+<build>
+        <testSourceDirectory>src/main/java</testSourceDirectory>
+    </build>
 </project>

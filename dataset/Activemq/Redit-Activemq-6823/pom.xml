@@ -107,4 +107,7 @@
             <version>1.4.11.1</version>
         </dependency>
     </dependencies>
+<build>
+        <testSourceDirectory>src/main/java</testSourceDirectory>
+    </build>
 </project>

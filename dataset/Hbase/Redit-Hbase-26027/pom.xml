@@ -105,4 +105,7 @@
             <version>2.4.9</version>
         </dependency>
     </dependencies>
+<build>
+        <testSourceDirectory>src/main/java</testSourceDirectory>
+    </build>
 </project>

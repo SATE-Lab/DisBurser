@@ -112,4 +112,7 @@
             <version>3.11.2</version>
         </dependency>
     </dependencies>
+<build>
+        <testSourceDirectory>src/main/java</testSourceDirectory>
+    </build>
 </project>
