@@ -1,0 +1,395 @@
+16:22:54.514 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+16:22:54.606 [main] INFO  i.r.samples.hbase24189.SampleTest - hbase.zookeeper.quorum: 10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181
+16:22:54.615 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=zdc-pc-linux
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.8.0_392
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Private Build
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=/home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/lib/idea_rt.jar:/home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/plugins/junit/lib/junit5-rt.jar:/home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/plugins/junit/lib/junit-rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/zdc/DataLinux/code2/DisBurser_Dataset/Redit-Bug-Testcase/Hbase/Redit-Hbase-24189/target/classes:/home/zdc/.m2/repository/io/github/martylinzy/redit/0.1.0/redit-0.1.0.jar:/home/zdc/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/zdc/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-server/9.4.12.v20180830/jetty-server-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-http/9.4.12.v20180830/jetty-http-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.12.v20180830/jetty-servlet-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-security/9.4.12.v20180830/jetty-security-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/glassfish/jersey/core/jersey-server/2.22.2/jersey-server-2.22.2.jar:/home/zdc/.m2/repository/org/glassfish/jersey/core/jersey-client/2.22.2/jersey-client-2.22.2.jar:/home/zdc/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/media/jersey-media-jaxb/2.22.2/jersey-media-jaxb-2.22.2.jar:/home/zdc/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/home/zdc/.m2/repository/org/glassfish/hk2/hk2-api/2.4.0-b34/hk2-api-2.4.0-b34.jar:/home/zdc/.m2/repository/org/glassfish/hk2/hk2-utils/2.4.0-b34/hk2-utils-2.4.0-b34.jar:/home/zdc/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.4.0-b34/aopalliance-repackaged-2.4.0-b34.jar:/home/zdc/.m2/repository/org/glassfish/hk2/external/javax.inject/2.4.0-b34/javax.inject-2.4.0-b34.jar:/home/zdc/.m2/repository/org/glassfish/hk2/hk2-locator/2.4.0-b34/hk2-locator-2.4.0-b34.jar:/home/zdc/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/home/zdc/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/home/zdc/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.22.2/jersey-container-servlet-core-2.22.2.jar:/home/zdc/.m2/repository/com/spotify/docker-client/8.15.1/docker-client-8.15.1-shaded.jar:/home/zdc/.m2/repository/com/google/guava/guava/20.0/guava-20.0.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.9.8/jackson-jaxrs-json-provider-2.9.8.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.9.8/jackson-jaxrs-base-2.9.8.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.9.8/jackson-module-jaxb-annotations-2.9.8.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-guava/2.9.8/jackson-datatype-guava-2.9.8.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar:/home/zdc/.m2/repository/org/glassfish/jersey/connectors/jersey-apache-connector/2.22.2/jersey-apache-connector-2.22.2.jar:/home/zdc/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.22.2/jersey-media-json-jackson-2.22.2.jar:/home/zdc/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/zdc/.m2/repository/org/apache/commons/commons-compress/1.18/commons-compress-1.18.jar:/home/zdc/.m2/repository/org/apache/httpcomponents/httpclient/4.5/httpclient-4.5.jar:/home/zdc/.m2/repository/org/apache/httpcomponents/httpcore/4.4.5/httpcore-4.4.5.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-unixsocket/0.18/jnr-unixsocket-0.18.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-ffi/2.1.4/jnr-ffi-2.1.4.jar:/home/zdc/.m2/repository/com/github/jnr/jffi/1.2.15/jffi-1.2.15.jar:/home/zdc/.m2/repository/com/github/jnr/jffi/1.2.15/jffi-1.2.15-native.jar:/home/zdc/.m2/repository/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar:/home/zdc/.m2/repository/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar:/home/zdc/.m2/repository/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.jar:/home/zdc/.m2/repository/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar:/home/zdc/.m2/repository/org/ow2/asm/asm-util/5.0.3/asm-util-5.0.3.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-constants/0.9.8/jnr-constants-0.9.8.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-enxio/0.16/jnr-enxio-0.16.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-posix/3.0.35/jnr-posix-3.0.35.jar:/home/zdc/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/zdc/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar:/home/zdc/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar:/home/zdc/.m2/repository/net/lingala/zip4j/zip4j/1.3.2/zip4j-1.3.2.jar:/home/zdc/.m2/repository/io/github/martylinzy/reditrt/0.1.0/reditrt-0.1.0.jar:/home/zdc/.m2/repository/io/redit/helpers/helper/1.0-SNAPSHOT/helper-1.0-SNAPSHOT.jar:/home/zdc/.m2/repository/org/apache/hadoop/hadoop-hdfs-client/3.1.1/hadoop-hdfs-client-3.1.1.jar:/home/zdc/.m2/repository/com/squareup/okhttp/okhttp/2.7.5/okhttp-2.7.5.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.7.8/jackson-annotations-2.7.8.jar:/home/zdc/.m2/repository/org/apache/hadoop/hadoop-common/3.1.1/hadoop-common-3.1.1.jar:/home/zdc/.m2/repository/org/apache/hadoop/hadoop-annotations/3.1.1/hadoop-annotations-3.1.1.jar:/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar:/home/zdc/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/zdc/.m2/repository/org/apache/commons/commons-math3/3.1.1/commons-math3-3.1.1.jar:/home/zdc/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/home/zdc/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-webapp/9.3.19.v20170502/jetty-webapp-9.3.19.v20170502.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-xml/9.3.19.v20170502/jetty-xml-9.3.19.v20170502.jar:/home/zdc/.m2/repository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar:/home/zdc/.m2/repository/com/sun/jersey/jersey-core/1.19/jersey-core-1.19.jar:/home/zdc/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/home/zdc/.m2/repository/com/sun/jersey/jersey-servlet/1.19/jersey-servlet-1.19.jar:/home/zdc/.m2/repository/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.jar:/home/zdc/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/home/zdc/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/home/zdc/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/home/zdc/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.2/jackson-mapper-asl-1.9.2.jar:/home/zdc/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.2/jackson-jaxrs-1.9.2.jar:/home/zdc/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.2/jackson-xc-1.9.2.jar:/home/zdc/.m2/repository/com/sun/jersey/jersey-server/1.19/jersey-server-1.19.jar:/home/zdc/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/home/zdc/.m2/repository/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.jar:/home/zdc/.m2/repository/org/apache/commons/commons-configuration2/2.1.1/commons-configuration2-2.1.1.jar:/home/zdc/.m2/repository/org/apache/avro/avro/1.7.7/avro-1.7.7.jar:/home/zdc/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/home/zdc/.m2/repository/org/xerial/snappy/snappy-java/1.0.5/snappy-java-1.0.5.jar:/home/zdc/.m2/repository/com/google/re2j/re2j/1.1/re2j-1.1.jar:/home/zdc/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/home/zdc/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar:/home/zdc/.m2/repository/org/apache/curator/curator-client/2.12.0/curator-client-2.12.0.jar:/home/zdc/.m2/repository/org/apache/curator/curator-recipes/2.12.0/curator-recipes-2.12.0.jar:/home/zdc/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-simplekdc/1.0.1/kerb-simplekdc-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-client/1.0.1/kerb-client-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-config/1.0.1/kerby-config-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-core/1.0.1/kerb-core-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-pkix/1.0.1/kerby-pkix-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-asn1/1.0.1/kerby-asn1-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-util/1.0.1/kerby-util-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-common/1.0.1/kerb-common-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-crypto/1.0.1/kerb-crypto-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-util/1.0.1/kerb-util-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/token-provider/1.0.1/token-provider-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-admin/1.0.1/kerb-admin-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-server/1.0.1/kerb-server-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-identity/1.0.1/kerb-identity-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-xdr/1.0.1/kerby-xdr-1.0.1.jar:/home/zdc/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/home/zdc/.m2/repository/com/fasterxml/woodstox/woodstox-core/5.0.3/woodstox-core-5.0.3.jar:/home/zdc/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/zdc/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/zdc/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/home/zdc/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/home/zdc/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/media/jersey-media-moxy/2.25.1/jersey-media-moxy-2.25.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/core/jersey-common/2.25.1/jersey-common-2.25.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.25.1/jersey-guava-2.25.1.jar:/home/zdc/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.25.1/jersey-entity-filtering-2.25.1.jar:/home/zdc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.0/org.eclipse.persistence.moxy-2.6.0.jar:/home/zdc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.6.0/org.eclipse.persistence.core-2.6.0.jar:/home/zdc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.0/org.eclipse.persistence.asm-2.6.0.jar:/home/zdc/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:/home/zdc/.m2/repository/org/eclipse/persistence/javax.persistence/2.0.0/javax.persistence-2.0.0.jar:/home/zdc/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/zdc/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-util/9.4.12.v20180830/jetty-util-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-io/9.4.12.v20180830/jetty-io-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.jar:/home/zdc/.m2/repository/com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0.jar:/home/zdc/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/zdc/.m2/repository/org/apache/hbase/hbase-client/2.2.2/hbase-client-2.2.2.jar:/home/zdc/.m2/repository/org/apache/hbase/thirdparty/hbase-shaded-protobuf/2.2.1/hbase-shaded-protobuf-2.2.1.jar:/home/zdc/.m2/repository/org/apache/hbase/hbase-hadoop-compat/2.2.2/hbase-hadoop-compat-2.2.2.jar:/home/zdc/.m2/repository/org/apache/hbase/hbase-metrics-api/2.2.2/hbase-metrics-api-2.2.2.jar:/home/zdc/.m2/repository/org/apache/hbase/hbase-hadoop2-compat/2.2.2/hbase-hadoop2-compat-2.2.2.jar:/home/zdc/.m2/repository/org/apache/hbase/hbase-metrics/2.2.2/hbase-metrics-2.2.2.jar:/home/zdc/.m2/repository/org/apache/hbase/hbase-protocol-shaded/2.2.2/hbase-protocol-shaded-2.2.2.jar:/home/zdc/.m2/repository/org/apache/hbase/hbase-protocol/2.2.2/hbase-protocol-2.2.2.jar:/home/zdc/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/home/zdc/.m2/repository/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar:/home/zdc/.m2/repository/org/apache/hbase/thirdparty/hbase-shaded-miscellaneous/2.2.1/hbase-shaded-miscellaneous-2.2.1.jar:/home/zdc/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.3/error_prone_annotations-2.3.3.jar:/home/zdc/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/home/zdc/.m2/repository/org/apache/hbase/thirdparty/hbase-shaded-netty/2.2.1/hbase-shaded-netty-2.2.1.jar:/home/zdc/.m2/repository/org/apache/zookeeper/zookeeper/3.4.10/zookeeper-3.4.10.jar:/home/zdc/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar:/home/zdc/.m2/repository/org/apache/htrace/htrace-core4/4.2.0-incubating/htrace-core4-4.2.0-incubating.jar:/home/zdc/.m2/repository/org/jruby/jcodings/jcodings/1.0.18/jcodings-1.0.18.jar:/home/zdc/.m2/repository/org/jruby/joni/joni/2.1.11/joni-2.1.11.jar:/home/zdc/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.6/metrics-core-3.2.6.jar:/home/zdc/.m2/repository/org/apache/commons/commons-crypto/1.0.0/commons-crypto-1.0.0.jar:/home/zdc/.m2/repository/org/apache/hadoop/hadoop-auth/2.8.5/hadoop-auth-2.8.5.jar:/home/zdc/.m2/repository/com/nimbusds/nimbus-jose-jwt/4.41.1/nimbus-jose-jwt-4.41.1.jar:/home/zdc/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/home/zdc/.m2/repository/org/apache/directory/server/apacheds-kerberos-codec/2.0.0-M15/apacheds-kerberos-codec-2.0.0-M15.jar:/home/zdc/.m2/repository/org/apache/directory/server/apacheds-i18n/2.0.0-M15/apacheds-i18n-2.0.0-M15.jar:/home/zdc/.m2/repository/org/apache/directory/api/api-asn1-api/1.0.0-M20/api-asn1-api-1.0.0-M20.jar:/home/zdc/.m2/repository/org/apache/directory/api/api-util/1.0.0-M20/api-util-1.0.0-M20.jar:/home/zdc/.m2/repository/org/apache/curator/curator-framework/2.7.1/curator-framework-2.7.1.jar:/home/zdc/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/home/zdc/.m2/repository/org/apache/hbase/hbase-common/2.2.2/hbase-common-2.2.2.jar:/home/zdc/.m2/repository/com/github/stephenc/findbugs/findbugs-annotations/1.3.9-1/findbugs-annotations-1.3.9-1.jar:/home/zdc/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/lib/idea_rt.jar
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=/tmp
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Linux
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.2.0-37-generic
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=zdc
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=/home/zdc
+16:22:54.684 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=/home/zdc/DataLinux/code2/DisBurser_Dataset/Redit-Bug-Testcase/Hbase/Redit-Hbase-24189
+16:22:54.685 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181 sessionTimeout=90000 watcher=org.apache.hadoop.hbase.zookeeper.ReadOnlyZKClient$$Lambda$66/564512539@62008079
+16:22:54.691 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8-SendThread(10.2.0.13:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 10.2.0.13/10.2.0.13:2181. Will not attempt to authenticate using SASL (unknown error)
+16:22:54.691 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8-SendThread(10.2.0.13:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 10.2.0.13/10.2.0.13:2181, initiating session
+16:22:54.723 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8-SendThread(10.2.0.13:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 10.2.0.13/10.2.0.13:2181, sessionid = 0x300011888c30004, negotiated timeout = 40000
+connection: hconnection-0x5e7c141d
+admin: org.apache.hadoop.hbase.client.HBaseAdmin@43af351a
+16:22:58.230 [main] INFO  o.a.hadoop.hbase.client.HBaseAdmin - Operation: CREATE, Table Name: default:test, procId: 9 completed
+16:22:58.299 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+16:22:58.563 [qtp433287555-22] INFO  io.redit.execution.EventService - Event E1 received!
+16:22:58.564 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+serverToKill: server3
+16:22:59.571 [main] INFO  o.a.hadoop.hbase.client.HBaseAdmin - Started disable of test
+16:23:00.813 [main] INFO  o.a.hadoop.hbase.client.HBaseAdmin - Operation: DISABLE, Table Name: default:test, procId: 12 completed
+16:23:01.248 [main] INFO  o.a.hadoop.hbase.client.HBaseAdmin - Operation: DELETE, Table Name: default:test, procId: 15 completed
+16:23:01.248 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+16:23:01.253 [qtp433287555-73] INFO  io.redit.execution.EventService - Event E2 received!
+16:23:01.253 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event X1 ...
+16:23:01.254 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Killing node server3 ...
+16:23:01.272 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8-SendThread(10.2.0.13:2181)] INFO  org.apache.zookeeper.ClientCnxn - Unable to read additional data from server sessionid 0x300011888c30004, likely server has closed socket, closing socket connection and attempting reconnect
+16:23:01.479 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server3 is killed!
+16:23:02.209 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8-SendThread(10.2.0.6:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 10.2.0.6/10.2.0.6:2181. Will not attempt to authenticate using SASL (unknown error)
+16:23:02.210 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8-SendThread(10.2.0.6:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 10.2.0.6/10.2.0.6:2181, initiating session
+16:23:02.210 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8-SendThread(10.2.0.6:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 10.2.0.6/10.2.0.6:2181, sessionid = 0x300011888c30004, negotiated timeout = 40000
+16:23:23.461 [main] INFO  i.r.samples.hbase24189.SampleTest - Dead region server(s)：
+16:23:23.461 [main] INFO  i.r.samples.hbase24189.SampleTest - server3,16020,1701937359438
+16:23:23.664 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:23.868 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:24.071 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:24.274 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:24.477 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:24.680 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:24.882 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:25.085 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:25.288 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:25.490 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:25.693 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:25.896 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:26.100 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:26.303 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:26.506 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:26.709 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:26.912 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:27.115 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:27.322 [main] INFO  i.r.samples.hbase24189.SampleTest - Regions in transition：
+16:23:27.322 [main] INFO  i.r.samples.hbase24189.SampleTest - {1588230740 state=OPEN, ts=1701937407176, server=null}
+16:23:27.525 [main] INFO  i.r.samples.hbase24189.SampleTest - Regions in transition：
+16:23:27.525 [main] INFO  i.r.samples.hbase24189.SampleTest - {1588230740 state=OPENING, ts=1701937407332, server=null}
+16:23:27.728 [main] INFO  i.r.samples.hbase24189.SampleTest - Regions in transition：
+16:23:27.728 [main] INFO  i.r.samples.hbase24189.SampleTest - {1588230740 state=OPENING, ts=1701937407332, server=null}
+16:23:27.931 [main] INFO  i.r.samples.hbase24189.SampleTest - Regions in transition：
+16:23:27.931 [main] INFO  i.r.samples.hbase24189.SampleTest - {1588230740 state=OPENING, ts=1701937407332, server=null}
+16:23:28.134 [main] INFO  i.r.samples.hbase24189.SampleTest - Regions in transition：
+16:23:28.134 [main] INFO  i.r.samples.hbase24189.SampleTest - {1588230740 state=OPENING, ts=1701937407332, server=null}
+16:23:28.337 [main] INFO  i.r.samples.hbase24189.SampleTest - Regions in transition：
+16:23:28.338 [main] INFO  i.r.samples.hbase24189.SampleTest - {1588230740 state=OPENING, ts=1701937407332, server=null}
+16:23:28.541 [main] INFO  i.r.samples.hbase24189.SampleTest - Regions in transition：
+16:23:28.541 [main] INFO  i.r.samples.hbase24189.SampleTest - {1588230740 state=OPENING, ts=1701937407332, server=null}
+16:23:28.744 [main] INFO  i.r.samples.hbase24189.SampleTest - Regions in transition：
+16:23:28.744 [main] INFO  i.r.samples.hbase24189.SampleTest - {1588230740 state=OPENING, ts=1701937407332, server=null}
+16:23:28.947 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:29.150 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:29.353 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:29.556 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:29.759 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:29.962 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:30.165 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:30.368 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:30.571 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:30.774 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:30.976 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:31.179 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:31.382 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:31.585 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:31.789 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:31.992 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:32.195 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:32.398 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:32.601 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:32.804 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:33.007 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:33.210 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:33.414 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:33.617 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:33.820 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:34.023 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:34.227 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:34.430 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:34.633 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:34.836 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:35.038 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:35.241 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:35.444 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:35.647 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:35.849 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:36.052 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:36.254 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:36.457 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:36.660 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:36.862 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:37.065 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:37.267 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:37.470 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:37.673 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:37.876 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:38.079 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:38.282 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:38.537 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:38.740 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:38.943 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:39.146 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:39.348 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:39.551 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:39.754 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:39.957 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:40.160 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:40.362 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:40.565 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:40.768 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:40.970 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:41.173 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:41.375 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:41.578 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:41.780 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:41.983 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:42.185 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:42.388 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:42.590 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:42.793 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:42.995 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:43.197 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:43.400 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:43.602 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:43.805 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:44.008 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:44.211 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:44.414 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:44.616 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:44.818 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:45.022 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:45.225 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:45.427 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:45.629 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:45.831 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:46.033 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:46.235 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:46.438 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:46.640 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:46.843 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:47.045 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:47.248 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:47.450 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:47.653 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:47.855 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:48.058 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:48.261 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:48.464 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:48.668 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:48.871 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:49.073 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:49.274 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:49.477 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:49.679 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:49.881 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:50.084 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:50.286 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:50.489 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:50.691 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:50.894 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:51.100 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:51.303 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:51.505 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:51.708 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:51.910 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:52.112 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:52.315 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:52.517 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:52.719 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:52.921 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:53.123 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:53.326 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:53.528 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:53.730 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:53.933 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:54.135 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:54.338 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:54.541 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:54.743 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:54.946 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:55.148 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:55.350 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:55.553 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:55.755 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:55.958 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:56.161 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:56.363 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:56.566 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:56.768 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:56.971 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:57.174 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:57.377 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:57.579 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:57.782 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:57.985 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:58.188 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:58.260 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8] INFO  org.apache.zookeeper.ZooKeeper - Session: 0x300011888c30004 closed
+16:23:58.260 [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x7fd26ad8-EventThread] INFO  org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x300011888c30004
+16:23:58.390 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:58.592 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:58.794 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:58.995 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:59.198 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:59.400 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:59.602 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:23:59.804 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:00.007 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:00.208 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:00.411 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:00.612 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:00.814 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:01.016 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:01.218 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:01.421 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:01.623 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:01.825 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:02.028 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:02.230 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:02.432 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:02.634 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:02.836 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:03.038 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:03.240 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:03.442 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:03.644 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:03.846 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:04.048 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:04.250 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:04.452 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:04.654 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:04.856 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:05.058 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:05.260 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:05.462 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:05.664 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:05.867 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:06.069 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:06.271 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:06.474 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:06.676 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:06.878 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:07.080 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:07.283 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:07.486 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:07.688 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:07.890 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:08.092 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:08.294 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:08.496 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:08.699 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:08.900 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:09.102 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:09.303 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:09.505 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:09.707 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:09.909 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:10.111 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:10.313 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:10.515 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:10.717 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:10.920 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:11.122 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:11.325 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:11.527 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:11.729 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:11.931 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:12.133 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:12.335 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:12.537 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:12.739 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:12.941 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:13.143 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:13.345 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:13.547 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:13.749 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:13.951 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:14.153 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:14.355 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:14.557 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:14.759 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:14.961 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:15.163 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:15.365 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:15.567 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:15.769 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:15.971 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:16.173 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:16.375 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:16.577 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:16.779 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:16.981 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:17.182 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:17.385 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:17.587 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:17.789 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:17.991 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:18.193 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:18.395 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:18.598 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:18.799 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:19.001 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:19.203 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:19.405 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:19.606 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:19.808 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:20.010 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:20.212 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:20.414 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:20.616 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:20.817 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:21.019 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:21.221 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:21.423 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:21.625 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:21.826 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:22.028 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:22.230 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:22.432 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:22.634 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:22.835 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:23.037 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:23.238 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:23.440 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:23.642 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:23.844 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:24.045 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:24.247 [main] INFO  i.r.samples.hbase24189.SampleTest - No regions in transition
+16:24:24.247 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event X1 ...
+16:24:24.252 [qtp433287555-73] INFO  io.redit.execution.EventService - Event X1 received!
+16:24:24.252 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E3 ...
+16:24:24.465 [main] INFO  i.r.samples.hbase24189.SampleTest - File under /hbase/data/default:  File name: test, File size: 0
+
+java.lang.AssertionError: Values should be different. Actual: test
+
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failEquals(Assert.java:185)
+	at org.junit.Assert.assertNotEquals(Assert.java:161)
+	at org.junit.Assert.assertNotEquals(Assert.java:175)
+	at io.redit.samples.hbase24189.SampleTest.lambda$testWALSplitWithDeletedTableData$3(SampleTest.java:145)
+	at io.redit.execution.RuntimeEngine.enforceOrder(RuntimeEngine.java:317)
+	at io.redit.execution.RuntimeEngine.enforceOrder(RuntimeEngine.java:300)
+	at io.redit.samples.hbase24189.SampleTest.testWALSplitWithDeletedTableData(SampleTest.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+

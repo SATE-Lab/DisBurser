@@ -6,15 +6,16 @@ Title: ***Comparator of NOT_EQUAL NULL is invalid for checkAndMutate***
 
 JIRA link：[https://issues.apache.org/jira/browse/HBASE-26742](https://issues.apache.org/jira/browse/HBASE-26742)
 
-|         Label         |        Value        |      Label      |         Value          |
-|:---------------------:|:-------------------:|:---------------:|:----------------------:|
-|       **Type**        |         Bug         |  **Priority**   |         Major          |
-|      **Status**       |      RESOLVED       | **Resolution**  |         Fixed          |
+|         Label         |             Value             |       Label       |            Value             |
+|:---------------------:|:-----------------------------:|:-----------------:|:----------------------------:|
+|       **Type**        |              Bug              |   **Priority**    |            Major             |
+|      **Status**       |           RESOLVED            |  **Resolution**   |            Fixed             |
 | **Affects Version/s** | 1.8.0 , 3.0.0-alpha-2 , 2.4.9 | **Fix Version/s** | 2.5.0, 3.0.0-alpha-3, 2.4.10 |
 
 ### Description
 
-In server side, checkAndMutate ignores CompareOperator for null or empty comparator value, but NOT_EQUAL should be treated specially.
+In server side, checkAndMutate ignores CompareOperator for null or empty comparator value, but NOT_EQUAL should be
+treated specially.
 
 The check logic in HRegion#checkAndMutateInternal is as follows,
 
@@ -34,7 +35,7 @@ if (result.isEmpty() && valueIsNull) {
 }
 ```
 
-For current logics, here are some  counter examples(Comparator value is set null),
+For current logics, here are some counter examples(Comparator value is set null),
 
 1. result is null, operator is NOT_EQUAL, but matches is true;
 2. result size >0, the value of the first cell is empty, operator is NOT_EQUAL, but matches is true;
@@ -45,9 +46,11 @@ For current logics, here are some  counter examples(Comparator value is set null
 Reproduced version：2.4.9
 
 Steps to reproduce：
-1. Connect to the cluster and get the admin object. 
+
+1. Connect to the cluster and get the admin object.
 2. Create a table, add test data to the table.
 3. Use the checkAndMutate method to generate a Failure:
+
 ```
 org.junit.ComparisonFailure: 
 Expected :v1

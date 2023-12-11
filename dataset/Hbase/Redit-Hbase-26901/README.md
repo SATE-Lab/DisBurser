@@ -6,15 +6,16 @@ Title: ***delete with null columnQualifier occurs NullPointerException when NewV
 
 JIRA link：[https://issues.apache.org/jira/browse/HBASE-26901](https://issues.apache.org/jira/browse/HBASE-26901)
 
-|         Label         |        Value        |      Label      |         Value          |
-|:---------------------:|:-------------------:|:---------------:|:----------------------:|
-|       **Type**        |         Bug         |  **Priority**   |         Major          |
-|      **Status**       |      RESOLVED       | **Resolution**  |         Fixed          |
-| **Affects Version/s** | 3.0.0-alpha-2, 2.4.11 | **Fix Version/s** |    2.5.0, 3.0.0-alpha-3, 2.4.12   |
+|         Label         |         Value         |       Label       |            Value             |
+|:---------------------:|:---------------------:|:-----------------:|:----------------------------:|
+|       **Type**        |          Bug          |   **Priority**    |            Major             |
+|      **Status**       |       RESOLVED        |  **Resolution**   |            Fixed             |
+| **Affects Version/s** | 3.0.0-alpha-2, 2.4.11 | **Fix Version/s** | 2.5.0, 3.0.0-alpha-3, 2.4.12 |
 
 ### Description
 
-since  HBASE-15616, setting column qualifier as null is possible, but when NewVersionBehavior is on, delete with null columnQualifier occurs NullPointerException.
+since HBASE-15616, setting column qualifier as null is possible, but when NewVersionBehavior is on, delete with null
+columnQualifier occurs NullPointerException.
 
 ```
 @Test
@@ -36,11 +37,14 @@ Caused by: java.lang.NullPointerException at org.apache.hadoop.hbase.regionserve
 
 ### Testcase
 
-Reproduced version：2.4.11
+Reproduced version：2.4.9, 2.4.11
 
 Steps to reproduce：
+
 1. Connect to the cluster and get the admin object.
-2. Setting NewVersionBehavior to true when creating a table and deleting with null columnQualifier will result in a NullPointerException as follows:
+2. Setting NewVersionBehavior to true when creating a table and deleting with null columnQualifier will result in a
+   NullPointerException as follows:
+
 ```
 17:25:56.918 [main] DEBUG org.apache.hadoop.hbase.client.RpcRetryingCallerImpl - Call exception, tries=6, retries=16, started=4279 ms ago, cancelled=false, msg=java.io.IOException
 	at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:460)

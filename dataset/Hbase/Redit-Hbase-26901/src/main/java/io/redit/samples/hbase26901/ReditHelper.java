@@ -21,7 +21,7 @@ public class ReditHelper {
     private static int numOfJNs = 3;
     public static final String hadoopDir = "hadoop-3.1.2";
     public static final String zookeeperDir = "apache-zookeeper-3.7.1-bin";
-    public static final String hbaseDir = "hbase-2.4.11";
+    public static final String hbaseDir = "hbase-2.4.9";
     public static String getHadoopHomeDir(){
         return "/hadoop/" + hadoopDir;
     }
@@ -36,7 +36,7 @@ public class ReditHelper {
         String workDir = System.getProperty("user.dir");
         String hadoopCompressedPath = workDir + "/../../../Benchmark/Hadoop/v3.1.2/" + hadoopDir + ".tar.gz";
         String zookeeperCompressedPath = workDir + "/../../../Benchmark/Zookeeper/v3.7.1/" + zookeeperDir + ".tar.gz";
-        String hbaseCompressedPath = workDir + "/../../../Benchmark/Hbase/v2.4.11/" + hbaseDir + ".tar.gz";
+        String hbaseCompressedPath = workDir + "/../../../Benchmark/Hbase/v2.4.9/" + hbaseDir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-hbase-26901")
                 .withService("hadoop-base")
@@ -55,7 +55,6 @@ public class ReditHelper {
                 .applicationPath("conf/zoo.cfg", getZookeeperHomeDir() + "/conf/zoo.cfg")
                 .applicationPath(hbaseCompressedPath, "/hbase",  PathAttr.COMPRESSED)
                 .applicationPath("conf/hbase-env.sh", getHbaseHomeDir() + "/conf/hbase-env.sh")
-                .applicationPath("conf/hbase-site.xml", getHbaseHomeDir() + "/conf/hbase-site.xml")
                 .applicationPath("conf/regionservers", getHbaseHomeDir() + "/conf/regionservers")
                 .applicationPath("conf/hdfs-site.xml", getHbaseHomeDir() + "/conf/hdfs-site.xml")
                 .applicationPath("conf/core-site.xml", getHbaseHomeDir() + "/conf/core-site.xml")
@@ -88,10 +87,13 @@ public class ReditHelper {
         builder.withService("server", "hbase").and()
                 .nodeInstances(numOfServers, "server", "server", true)
                 .node("server1")
+                .applicationPath("conf/server1/hbase-site.xml", getHbaseHomeDir() + "/conf/hbase-site.xml")
                 .applicationPath("conf/server1/myid", getZookeeperHomeDir() + "/zkdata/myid").and()
                 .node("server2")
+                .applicationPath("conf/server2/hbase-site.xml", getHbaseHomeDir() + "/conf/hbase-site.xml")
                 .applicationPath("conf/server2/myid", getZookeeperHomeDir() + "/zkdata/myid").and()
                 .node("server3")
+                .applicationPath("conf/server3/hbase-site.xml", getHbaseHomeDir() + "/conf/hbase-site.xml")
                 .applicationPath("conf/server3/myid", getZookeeperHomeDir() + "/zkdata/myid").and();
 
         builder.node("server1").and().testCaseEvents("E1", "E2").runSequence("E1 * E2");
