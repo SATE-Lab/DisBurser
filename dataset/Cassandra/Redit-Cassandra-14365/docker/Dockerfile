@@ -21,5 +21,5 @@
 # SOFTWARE.
 
 FROM openjdk:8-stretch
-
+RUN echo "deb http://archive.debian.org/debian stretch main contrib non-free" > /etc/apt/sources.list
 RUN apt update && apt install -y iptables iproute2 python libjemalloc1

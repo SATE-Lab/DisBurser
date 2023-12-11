@@ -1,0 +1,394 @@
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:/home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/lib/idea_rt.jar=34937:/home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin -Dfile.encoding=UTF-8 -classpath /home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/lib/idea_rt.jar:/home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/plugins/junit/lib/junit5-rt.jar:/home/zdc/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/plugins/junit/lib/junit-rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/zdc/DataLinux/code2/DisBurser_Dataset/Redit-Bug-Testcase/Cassandra/Redit-Cassandra-15814/target/classes:/home/zdc/.m2/repository/io/github/martylinzy/redit/0.1.0/redit-0.1.0.jar:/home/zdc/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/zdc/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-server/9.4.12.v20180830/jetty-server-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-http/9.4.12.v20180830/jetty-http-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.12.v20180830/jetty-servlet-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-security/9.4.12.v20180830/jetty-security-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/glassfish/jersey/core/jersey-server/2.22.2/jersey-server-2.22.2.jar:/home/zdc/.m2/repository/org/glassfish/jersey/core/jersey-client/2.22.2/jersey-client-2.22.2.jar:/home/zdc/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/media/jersey-media-jaxb/2.22.2/jersey-media-jaxb-2.22.2.jar:/home/zdc/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/home/zdc/.m2/repository/org/glassfish/hk2/hk2-api/2.4.0-b34/hk2-api-2.4.0-b34.jar:/home/zdc/.m2/repository/org/glassfish/hk2/hk2-utils/2.4.0-b34/hk2-utils-2.4.0-b34.jar:/home/zdc/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.4.0-b34/aopalliance-repackaged-2.4.0-b34.jar:/home/zdc/.m2/repository/org/glassfish/hk2/external/javax.inject/2.4.0-b34/javax.inject-2.4.0-b34.jar:/home/zdc/.m2/repository/org/glassfish/hk2/hk2-locator/2.4.0-b34/hk2-locator-2.4.0-b34.jar:/home/zdc/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/home/zdc/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/home/zdc/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.22.2/jersey-container-servlet-core-2.22.2.jar:/home/zdc/.m2/repository/com/spotify/docker-client/8.15.1/docker-client-8.15.1-shaded.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.9.8/jackson-jaxrs-json-provider-2.9.8.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.9.8/jackson-jaxrs-base-2.9.8.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.9.8/jackson-module-jaxb-annotations-2.9.8.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-guava/2.9.8/jackson-datatype-guava-2.9.8.jar:/home/zdc/.m2/repository/org/glassfish/jersey/connectors/jersey-apache-connector/2.22.2/jersey-apache-connector-2.22.2.jar:/home/zdc/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.22.2/jersey-media-json-jackson-2.22.2.jar:/home/zdc/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/zdc/.m2/repository/org/apache/commons/commons-compress/1.18/commons-compress-1.18.jar:/home/zdc/.m2/repository/org/apache/httpcomponents/httpclient/4.5/httpclient-4.5.jar:/home/zdc/.m2/repository/org/apache/httpcomponents/httpcore/4.4.5/httpcore-4.4.5.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-unixsocket/0.18/jnr-unixsocket-0.18.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-enxio/0.16/jnr-enxio-0.16.jar:/home/zdc/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/zdc/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar:/home/zdc/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar:/home/zdc/.m2/repository/net/lingala/zip4j/zip4j/1.3.2/zip4j-1.3.2.jar:/home/zdc/.m2/repository/io/github/martylinzy/reditrt/0.1.0/reditrt-0.1.0.jar:/home/zdc/.m2/repository/io/redit/helpers/helper/1.0-SNAPSHOT/helper-1.0-SNAPSHOT.jar:/home/zdc/.m2/repository/org/apache/hadoop/hadoop-hdfs-client/3.3.1/hadoop-hdfs-client-3.3.1.jar:/home/zdc/.m2/repository/com/squareup/okhttp/okhttp/2.7.5/okhttp-2.7.5.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.5/jackson-annotations-2.10.5.jar:/home/zdc/.m2/repository/org/apache/hadoop/hadoop-common/3.3.1/hadoop-common-3.3.1.jar:/home/zdc/.m2/repository/org/apache/hadoop/thirdparty/hadoop-shaded-protobuf_3_7/1.1.1/hadoop-shaded-protobuf_3_7-1.1.1.jar:/home/zdc/.m2/repository/org/apache/hadoop/hadoop-annotations/3.3.1/hadoop-annotations-3.3.1.jar:/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar:/home/zdc/.m2/repository/org/apache/hadoop/thirdparty/hadoop-shaded-guava/1.1.1/hadoop-shaded-guava-1.1.1.jar:/home/zdc/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/zdc/.m2/repository/org/apache/commons/commons-math3/3.1.1/commons-math3-3.1.1.jar:/home/zdc/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/zdc/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/home/zdc/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/zdc/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-webapp/9.4.40.v20210413/jetty-webapp-9.4.40.v20210413.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-xml/9.4.40.v20210413/jetty-xml-9.4.40.v20210413.jar:/home/zdc/.m2/repository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar:/home/zdc/.m2/repository/com/sun/jersey/jersey-core/1.19/jersey-core-1.19.jar:/home/zdc/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/home/zdc/.m2/repository/com/sun/jersey/jersey-servlet/1.19/jersey-servlet-1.19.jar:/home/zdc/.m2/repository/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.jar:/home/zdc/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/home/zdc/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/home/zdc/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/home/zdc/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.2/jackson-mapper-asl-1.9.2.jar:/home/zdc/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.2/jackson-jaxrs-1.9.2.jar:/home/zdc/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.2/jackson-xc-1.9.2.jar:/home/zdc/.m2/repository/com/sun/jersey/jersey-server/1.19/jersey-server-1.19.jar:/home/zdc/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/home/zdc/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/zdc/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/home/zdc/.m2/repository/org/apache/commons/commons-configuration2/2.1.1/commons-configuration2-2.1.1.jar:/home/zdc/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/home/zdc/.m2/repository/org/apache/commons/commons-text/1.4/commons-text-1.4.jar:/home/zdc/.m2/repository/org/apache/avro/avro/1.7.7/avro-1.7.7.jar:/home/zdc/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/home/zdc/.m2/repository/com/google/re2j/re2j/1.1/re2j-1.1.jar:/home/zdc/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/home/zdc/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/home/zdc/.m2/repository/org/apache/hadoop/hadoop-auth/3.3.1/hadoop-auth-3.3.1.jar:/home/zdc/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.8.1/nimbus-jose-jwt-9.8.1.jar:/home/zdc/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/home/zdc/.m2/repository/net/minidev/json-smart/2.4.2/json-smart-2.4.2.jar:/home/zdc/.m2/repository/net/minidev/accessors-smart/2.4.2/accessors-smart-2.4.2.jar:/home/zdc/.m2/repository/org/apache/curator/curator-framework/4.2.0/curator-framework-4.2.0.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-simplekdc/1.0.1/kerb-simplekdc-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-client/1.0.1/kerb-client-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-config/1.0.1/kerby-config-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-common/1.0.1/kerb-common-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-crypto/1.0.1/kerb-crypto-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-util/1.0.1/kerb-util-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/token-provider/1.0.1/token-provider-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-admin/1.0.1/kerb-admin-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-server/1.0.1/kerb-server-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-identity/1.0.1/kerb-identity-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-xdr/1.0.1/kerby-xdr-1.0.1.jar:/home/zdc/.m2/repository/com/jcraft/jsch/0.1.55/jsch-0.1.55.jar:/home/zdc/.m2/repository/org/apache/curator/curator-client/4.2.0/curator-client-4.2.0.jar:/home/zdc/.m2/repository/org/apache/curator/curator-recipes/4.2.0/curator-recipes-4.2.0.jar:/home/zdc/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/zdc/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/home/zdc/.m2/repository/org/apache/zookeeper/zookeeper/3.5.6/zookeeper-3.5.6.jar:/home/zdc/.m2/repository/org/apache/zookeeper/zookeeper-jute/3.5.6/zookeeper-jute-3.5.6.jar:/home/zdc/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/home/zdc/.m2/repository/io/netty/netty-transport-native-epoll/4.1.42.Final/netty-transport-native-epoll-4.1.42.Final.jar:/home/zdc/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.42.Final/netty-transport-native-unix-common-4.1.42.Final.jar:/home/zdc/.m2/repository/org/apache/kerby/kerb-core/1.0.1/kerb-core-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-pkix/1.0.1/kerby-pkix-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-asn1/1.0.1/kerby-asn1-1.0.1.jar:/home/zdc/.m2/repository/org/apache/kerby/kerby-util/1.0.1/kerby-util-1.0.1.jar:/home/zdc/.m2/repository/org/codehaus/woodstox/stax2-api/4.2.1/stax2-api-4.2.1.jar:/home/zdc/.m2/repository/com/fasterxml/woodstox/woodstox-core/5.3.0/woodstox-core-5.3.0.jar:/home/zdc/.m2/repository/dnsjava/dnsjava/2.1.7/dnsjava-2.1.7.jar:/home/zdc/.m2/repository/org/xerial/snappy/snappy-java/1.1.8.2/snappy-java-1.1.8.2.jar:/home/zdc/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/zdc/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/zdc/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/home/zdc/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/home/zdc/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/media/jersey-media-moxy/2.25.1/jersey-media-moxy-2.25.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/core/jersey-common/2.25.1/jersey-common-2.25.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.25.1/jersey-guava-2.25.1.jar:/home/zdc/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar:/home/zdc/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.25.1/jersey-entity-filtering-2.25.1.jar:/home/zdc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.0/org.eclipse.persistence.moxy-2.6.0.jar:/home/zdc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.6.0/org.eclipse.persistence.core-2.6.0.jar:/home/zdc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.0/org.eclipse.persistence.asm-2.6.0.jar:/home/zdc/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:/home/zdc/.m2/repository/org/eclipse/persistence/javax.persistence/2.0.0/javax.persistence-2.0.0.jar:/home/zdc/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/zdc/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/zdc/.m2/repository/com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0.jar:/home/zdc/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-util/9.4.12.v20180830/jetty-util-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/eclipse/jetty/jetty-io/9.4.12.v20180830/jetty-io-9.4.12.v20180830.jar:/home/zdc/.m2/repository/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.jar:/home/zdc/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23.jar:/home/zdc/.m2/repository/com/datastax/cassandra/cassandra-driver-core/3.11.2/cassandra-driver-core-3.11.2.jar:/home/zdc/.m2/repository/io/netty/netty-handler/4.1.75.Final/netty-handler-4.1.75.Final.jar:/home/zdc/.m2/repository/io/netty/netty-common/4.1.75.Final/netty-common-4.1.75.Final.jar:/home/zdc/.m2/repository/io/netty/netty-resolver/4.1.75.Final/netty-resolver-4.1.75.Final.jar:/home/zdc/.m2/repository/io/netty/netty-buffer/4.1.75.Final/netty-buffer-4.1.75.Final.jar:/home/zdc/.m2/repository/io/netty/netty-transport/4.1.75.Final/netty-transport-4.1.75.Final.jar:/home/zdc/.m2/repository/io/netty/netty-codec/4.1.75.Final/netty-codec-4.1.75.Final.jar:/home/zdc/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar:/home/zdc/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.2/metrics-core-3.2.2.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-ffi/2.1.7/jnr-ffi-2.1.7.jar:/home/zdc/.m2/repository/com/github/jnr/jffi/1.2.16/jffi-1.2.16.jar:/home/zdc/.m2/repository/com/github/jnr/jffi/1.2.16/jffi-1.2.16-native.jar:/home/zdc/.m2/repository/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar:/home/zdc/.m2/repository/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar:/home/zdc/.m2/repository/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.jar:/home/zdc/.m2/repository/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar:/home/zdc/.m2/repository/org/ow2/asm/asm-util/5.0.3/asm-util-5.0.3.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-posix/3.0.44/jnr-posix-3.0.44.jar:/home/zdc/.m2/repository/com/github/jnr/jnr-constants/0.9.9/jnr-constants-0.9.9.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.7.9.7/jackson-databind-2.7.9.7.jar:/home/zdc/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.7.9/jackson-core-2.7.9.jar:/home/zdc/.m2/repository/com/datastax/cassandra/cassandra-driver-extras/3.11.2/cassandra-driver-extras-3.11.2.jar com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit4 io.redit.samples.cassandra15814.SampleTest
+15:21:00,886 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+15:21:00,886 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+15:21:00,886 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/home/zdc/DataLinux/code2/DisBurser_Dataset/Redit-Bug-Testcase/Cassandra/Redit-Cassandra-15814/target/classes/logback.xml]
+15:21:00,915 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+15:21:00,916 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+15:21:00,919 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [Console]
+15:21:00,937 |-WARN in ch.qos.logback.core.ConsoleAppender[Console] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+15:21:00,937 |-WARN in ch.qos.logback.core.ConsoleAppender[Console] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+15:21:00,937 |-WARN in ch.qos.logback.core.ConsoleAppender[Console] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+15:21:00,938 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [io.redit] to DEBUG
+15:21:00,938 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax] to DEBUG
+15:21:00,938 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+15:21:00,938 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [Console] to Logger[ROOT]
+15:21:00,939 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+15:21:00,939 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@5ae63ade - Registering current configuration as safe fallback point
+
+15:21:00.946 [main] WARN  io.redit.dsl.entities.Deployment - The node server1 is being redefined in the deployment definition!
+15:21:00.947 [main] WARN  io.redit.dsl.entities.Deployment - The node server2 is being redefined in the deployment definition!
+15:21:00.947 [main] WARN  io.redit.dsl.entities.Deployment - The node server1 is being redefined in the deployment definition!
+15:21:00.947 [main] INFO  io.redit.ReditRunner - Starting ReditRunner ...
+15:21:00.950 [main] INFO  io.redit.ReditRunner - Verifying the deployment definition ...
+15:21:00.950 [main] INFO  io.redit.ReditRunner - Creating the nodes' workspaces ...
+15:21:00.950 [main] INFO  io.redit.workspace.WorkspaceManager - Creating the working directory at /home/zdc/DataLinux/code2/DisBurser_Dataset/Redit-Bug-Testcase/Cassandra/Redit-Cassandra-15814/.ReditWorkingDirectory/sample-cassandra_2023-十月-28_15-21-00-948
+15:21:02.747 [main] INFO  io.redit.workspace.WorkspaceManager - Creating workspace for node server2
+15:21:02.774 [main] INFO  io.redit.workspace.WorkspaceManager - Creating workspace for node server1
+15:21:02.775 [main] INFO  io.redit.ReditRunner - Starting the instrumentation process ...
+15:21:02.776 [main] INFO  io.redit.ReditRunner - Instrumenting using io.redit.instrumentation.runseq.RunSequenceInstrumentationEngine
+15:21:02.776 [main] INFO  io.redit.ReditRunner - Instrumentation process is completed!
+15:21:02.776 [main] INFO  io.redit.ReditRunner - Starting the runtime engine ...
+15:21:02.791 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @2038ms to org.eclipse.jetty.util.log.Slf4jLog
+15:21:02.825 [main] INFO  io.redit.execution.RuntimeEngine - Starting event server ...
+15:21:02.826 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_382-8u382-ga-1~22.04.1-b05
+15:21:02.844 [main] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+15:21:02.844 [main] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+15:21:02.845 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+15:21:03.087 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@235a0c16{/,null,AVAILABLE}
+15:21:03.094 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@2374d36a{HTTP/1.1,[http/1.1]}{0.0.0.0:40235}
+15:21:03.094 [main] INFO  org.eclipse.jetty.server.Server - Started @2340ms
+15:21:03.094 [main] INFO  io.redit.execution.RuntimeEngine - Starting nodes ...
+15:21:03.258 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Building docker images ...
+15:21:03.258 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Building docker image `mengpo1106/redit` for service server ...
+log4j:WARN No appenders could be found for logger (com.spotify.docker.client.shaded.org.apache.http.client.protocol.RequestAddCookies).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+15:21:03.567 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Step 1/3 : FROM openjdk:8-stretch, error=null, progress=null, progressDetail=null}
+15:21:03.567 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=
+, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> 0bfcee65c8ca
+, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Step 2/3 : RUN echo "deb http://archive.debian.org/debian stretch main contrib non-free" > /etc/apt/sources.list, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=
+, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> Using cache
+, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> 53236f49342d
+, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Step 3/3 : RUN apt update && apt install -y iptables iproute2 python libjemalloc1, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=
+, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> Using cache
+, error=null, progress=null, progressDetail=null}
+15:21:03.568 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> ec536d9d41bd
+, error=null, progress=null, progressDetail=null}
+15:21:03.569 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=null, error=null, progress=null, progressDetail=null}
+15:21:03.570 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Successfully built ec536d9d41bd
+, error=null, progress=null, progressDetail=null}
+15:21:03.575 [pool-4-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Successfully tagged mengpo1106/redit:latest
+, error=null, progress=null, progressDetail=null}
+15:21:03.575 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Building docker image `mengpo1106/redit` for service cassandra ...
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Step 1/3 : FROM openjdk:8-stretch, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=
+, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> 0bfcee65c8ca
+, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Step 2/3 : RUN echo "deb http://archive.debian.org/debian stretch main contrib non-free" > /etc/apt/sources.list, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=
+, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> Using cache
+, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> 53236f49342d
+, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Step 3/3 : RUN apt update && apt install -y iptables iproute2 python libjemalloc1, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=
+, error=null, progress=null, progressDetail=null}
+15:21:03.584 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> Using cache
+, error=null, progress=null, progressDetail=null}
+15:21:03.585 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream= ---> ec536d9d41bd
+, error=null, progress=null, progressDetail=null}
+15:21:03.585 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=null, error=null, progress=null, progressDetail=null}
+15:21:03.585 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Successfully built ec536d9d41bd
+, error=null, progress=null, progressDetail=null}
+15:21:03.587 [pool-5-thread-1] INFO  c.s.d.client.LoggingBuildHandler - build: ProgressMessage{id=null, status=null, stream=Successfully tagged mengpo1106/redit:latest
+, error=null, progress=null, progressDetail=null}
+15:21:03.691 [main] INFO  i.r.e.s.DockerNetworkManager - Docker network fc27b811ec320edd912882807451ebeff00a5fd63eb0513944dbd1264d5e0627 is created!
+15:21:03.691 [main] INFO  i.r.e.s.DockerNetworkManager - Gateway is 10.2.0.1
+15:21:03.691 [main] INFO  i.r.e.s.DockerNetworkManager - Subnet is 10.2.0.0/16
+15:21:03.700 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Creating a container for each of the nodes ...
+15:21:03.773 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Container 4ac2e67ccc2a40fa09863c8770129f36ce2e02de02bd7ada93f482e9fee293e0 for node server2 is created!
+15:21:03.773 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Skipping node server2 on startup since it is off!
+15:21:03.789 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Container fe74308056e3c26b0690f6dab25e9a81956cd156b5efb759eb990fc40263cd16 for node server1 is created!
+15:21:03.789 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Skipping node server1 on startup since it is off!
+15:21:03.789 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server2 ip address is: 10.2.0.2
+15:21:03.789 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server1 ip address is: 10.2.0.3
+15:21:03.789 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Starting node server1 ...
+15:21:03.789 [main] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: fe74308056e3c26b0690f6dab25e9a81956cd156b5efb759eb990fc40263cd16
+15:21:04.120 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server1 is started!
+15:21:05.120 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Starting node server2 ...
+15:21:05.120 [main] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: 4ac2e67ccc2a40fa09863c8770129f36ce2e02de02bd7ada93f482e9fee293e0
+15:21:05.429 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server2 is started!
+15:21:06.429 [main] INFO  i.r.s.cassandra15814.SampleTest - cassandra.yaml is already configured !!!
+15:21:06.678 [main] INFO  i.r.s.cassandra15814.SampleTest - wait for Cassandra ...
+15:21:06.678 [main] INFO  i.r.s.cassandra15814.SampleTest - server1 startServer...
+15:21:11.679 [main] INFO  i.r.s.cassandra15814.SampleTest - server2 startServer...
+15:21:22.267 [main] INFO  i.r.s.cassandra15814.SampleTest - server2: cd /cassandra/apache-cassandra-2.2.16 && bin/nodetool netstats
+15:21:22.267 [main] INFO  i.r.s.cassandra15814.SampleTest - Result output:
+Mode: JOINING
+Not sending any streams.
+Read Repair Statistics:
+Attempted: 0
+Mismatch (Blocking): 0
+Mismatch (Background): 0
+Pool Name                    Active   Pending      Completed   Dropped
+Large messages                  n/a         0              0         0
+Small messages                  n/a         0              4         0
+Gossip messages                 n/a         0             26         0
+
+15:21:22.919 [main] INFO  i.r.s.cassandra15814.SampleTest - server1: cd /cassandra/apache-cassandra-2.2.16 && bin/nodetool status
+15:21:22.919 [main] INFO  i.r.s.cassandra15814.SampleTest - Result output:
+Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address   Load       Tokens       Owns (effective)  Host ID                               Rack
+UJ  10.2.0.2  93.06 KB   256          ?                 216653e9-5f8b-4d03-aeb5-3c30fd43f7c8  rack1
+UN  10.2.0.3  97.11 KB   256          100.0%            d87e820a-72c9-4b9d-8fbc-8d169e514e35  rack1
+
+
+15:21:22.921 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+15:21:22.967 [main] INFO  com.datastax.driver.core - DataStax Java driver 3.11.2 for Apache Cassandra
+15:21:22.972 [main] INFO  c.d.driver.core.GuavaCompatibility - Detected Guava >= 19 in the classpath, using modern compatibility layer
+15:21:22.972 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NEW_NODE_DELAY_SECONDS is undefined, using default value 1
+15:21:22.972 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NOTIF_LOCK_TIMEOUT_SECONDS is undefined, using default value 60
+15:21:22.979 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.USE_NATIVE_CLOCK is undefined, using default value true
+15:21:23.031 [main] INFO  c.datastax.driver.core.ClockFactory - Using native clock to generate timestamps.
+15:21:23.038 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NON_BLOCKING_EXECUTOR_SIZE is undefined, using default value 16
+15:21:23.060 [main] DEBUG com.datastax.driver.core.Cluster - Starting new cluster with contact points [/10.2.0.3:9042]
+15:21:23.083 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.FORCE_NIO is undefined, using default value false
+15:21:23.086 [main] WARN  com.datastax.driver.core.NettyUtil - Found Netty's native epoll transport in the classpath, but epoll is not available. Using NIO instead.
+java.lang.UnsatisfiedLinkError: could not load a native library: netty_transport_native_epoll_x86_64
+	at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:224)
+	at io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:219)
+	at io.netty.channel.epoll.Native.<clinit>(Native.java:57)
+	at io.netty.channel.epoll.Epoll.<clinit>(Epoll.java:39)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at com.datastax.driver.core.NettyUtil.<clinit>(NettyUtil.java:57)
+	at com.datastax.driver.core.NettyOptions.eventLoopGroup(NettyOptions.java:95)
+	at com.datastax.driver.core.Connection$Factory.<init>(Connection.java:993)
+	at com.datastax.driver.core.Cluster$Manager.init(Cluster.java:1665)
+	at com.datastax.driver.core.Cluster.init(Cluster.java:214)
+	at com.datastax.driver.core.Cluster.connectAsync(Cluster.java:387)
+	at com.datastax.driver.core.Cluster.connectAsync(Cluster.java:366)
+	at com.datastax.driver.core.Cluster.connect(Cluster.java:311)
+	at io.redit.samples.cassandra15814.SampleTest.createTableAndInsert(SampleTest.java:63)
+	at io.redit.samples.cassandra15814.SampleTest.lambda$TestClusteringKeyUsageWithReverseOrderSet$0(SampleTest.java:50)
+	at io.redit.execution.RuntimeEngine.enforceOrder(RuntimeEngine.java:317)
+	at io.redit.execution.RuntimeEngine.enforceOrder(RuntimeEngine.java:300)
+	at io.redit.samples.cassandra15814.SampleTest.TestClusteringKeyUsageWithReverseOrderSet(SampleTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+	Suppressed: java.lang.UnsatisfiedLinkError: could not load a native library: netty_transport_native_epoll
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:224)
+		at io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:222)
+		... 43 common frames omitted
+	Caused by: java.io.FileNotFoundException: META-INF/native/libnetty_transport_native_epoll.so
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:171)
+		... 44 common frames omitted
+		Suppressed: java.lang.UnsatisfiedLinkError: no netty_transport_native_epoll in java.library.path
+			at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+			at java.lang.Runtime.loadLibrary0(Runtime.java:843)
+			at java.lang.System.loadLibrary(System.java:1136)
+			at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:376)
+			at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:146)
+			... 44 common frames omitted
+			Suppressed: java.lang.UnsatisfiedLinkError: no netty_transport_native_epoll in java.library.path
+				at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+				at java.lang.Runtime.loadLibrary0(Runtime.java:843)
+				at java.lang.System.loadLibrary(System.java:1136)
+				at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+				at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+				at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+				at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+				at java.lang.reflect.Method.invoke(Method.java:498)
+				at io.netty.util.internal.NativeLibraryLoader$1.run(NativeLibraryLoader.java:410)
+				at java.security.AccessController.doPrivileged(Native Method)
+				at io.netty.util.internal.NativeLibraryLoader.loadLibraryByHelper(NativeLibraryLoader.java:402)
+				at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:368)
+				... 45 common frames omitted
+Caused by: java.io.FileNotFoundException: META-INF/native/libnetty_transport_native_epoll_x86_64.so
+	at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:171)
+	... 44 common frames omitted
+	Suppressed: java.lang.UnsatisfiedLinkError: no netty_transport_native_epoll_x86_64 in java.library.path
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:843)
+		at java.lang.System.loadLibrary(System.java:1136)
+		at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+		at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:376)
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:146)
+		... 44 common frames omitted
+		Suppressed: java.lang.UnsatisfiedLinkError: no netty_transport_native_epoll_x86_64 in java.library.path
+			at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+			at java.lang.Runtime.loadLibrary0(Runtime.java:843)
+			at java.lang.System.loadLibrary(System.java:1136)
+			at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+			at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+			at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+			at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+			at java.lang.reflect.Method.invoke(Method.java:498)
+			at io.netty.util.internal.NativeLibraryLoader$1.run(NativeLibraryLoader.java:410)
+			at java.security.AccessController.doPrivileged(Native Method)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibraryByHelper(NativeLibraryLoader.java:402)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:368)
+			... 45 common frames omitted
+15:21:23.103 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.EXTENDED_PEER_CHECK is undefined, using default value true
+15:21:23.138 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 1
+15:21:23.140 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.DISABLE_COALESCING is undefined, using default value false
+15:21:23.140 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.FLUSHER_SCHEDULE_PERIOD_NS is undefined, using default value 10000
+15:21:23.196 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=false] Connection established, initializing transport
+15:21:23.231 [cluster1-nio-worker-0] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NATIVE_TRANSPORT_MAX_FRAME_SIZE_IN_MB is undefined, using default value 256
+15:21:23.233 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - [/10.2.0.3:9042] Host does not support protocol version V5 but V4
+15:21:23.234 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] closing connection
+15:21:23.234 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] closed, remaining = 0
+15:21:23.235 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] has already terminated
+15:21:23.235 [main] INFO  com.datastax.driver.core.Cluster - Cannot connect with protocol version V5, trying with V4
+15:21:23.235 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 1
+15:21:23.236 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-2, inFlight=0, closed=false] Connection established, initializing transport
+15:21:23.240 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-2, inFlight=0, closed=false] Transport initialized, connection ready
+15:21:23.249 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing node list and token map
+15:21:23.279 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema
+15:21:23.311 [main] DEBUG com.datastax.driver.core.Host.STATES - [Control connection] established to /10.2.0.3:9042
+15:21:23.312 [main] INFO  c.d.d.c.p.DCAwareRoundRobinPolicy - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+15:21:23.312 [main] INFO  com.datastax.driver.core.Cluster - New Cassandra host /10.2.0.3:9042 added
+15:21:23.314 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.CHECK_IO_DEADLOCKS is undefined, using default value true
+15:21:23.316 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 2
+15:21:23.317 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=0, closed=false] Connection established, initializing transport
+15:21:23.320 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-3, inFlight=0, closed=false] Transport initialized, connection ready
+15:21:23.321 [cluster1-nio-worker-2] DEBUG c.d.driver.core.HostConnectionPool - Created connection pool to host /10.2.0.3:9042 (1 connections needed, 1 successfully opened)
+15:21:23.321 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Session - Added connection pool for /10.2.0.3:9042
+15:21:23.361 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT CREATED KEYSPACE test, scheduling delivery
+15:21:23.366 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for test
+15:21:23.371 [cluster1-worker-0] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [3b60a21d-5ec0-3c91-8a12-0e157c8fac01]
+15:21:23.372 [cluster1-worker-1] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for test
+15:21:23.382 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Setting keyspace test
+15:21:23.383 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Keyspace set to test
+15:21:23.457 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT UPDATED KEYSPACE test, scheduling delivery
+15:21:23.459 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT CREATED TABLE test.software, scheduling delivery
+15:21:23.463 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for test.software (TABLE)
+15:21:23.465 [cluster1-worker-2] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [d4e0c6f0-9a1f-3002-a5ed-55364556b032]
+15:21:23.466 [cluster1-worker-3] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for test
+com.datastax.driver.core.exceptions.InvalidQueryException: Invalid list literal for version of type frozen<list<int>>
+	at com.datastax.driver.core.exceptions.InvalidQueryException.copy(InvalidQueryException.java:50)
+	at com.datastax.driver.core.DriverThrowables.propagateCause(DriverThrowables.java:35)
+	at com.datastax.driver.core.DefaultResultSetFuture.getUninterruptibly(DefaultResultSetFuture.java:293)
+	at com.datastax.driver.core.AbstractSession.execute(AbstractSession.java:58)
+	at com.datastax.driver.core.AbstractSession.execute(AbstractSession.java:39)
+	at io.redit.samples.cassandra15814.SampleTest.createTableAndInsert(SampleTest.java:78)
+	at io.redit.samples.cassandra15814.SampleTest.lambda$TestClusteringKeyUsageWithReverseOrderSet$0(SampleTest.java:50)
+	at io.redit.execution.RuntimeEngine.enforceOrder(RuntimeEngine.java:317)
+	at io.redit.execution.RuntimeEngine.enforceOrder(RuntimeEngine.java:300)
+	at io.redit.samples.cassandra15814.SampleTest.TestClusteringKeyUsageWithReverseOrderSet(SampleTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: com.datastax.driver.core.exceptions.InvalidQueryException: Invalid list literal for version of type frozen<list<int>>
+	at com.datastax.driver.core.Responses$Error.asException(Responses.java:193)
+	at com.datastax.driver.core.DefaultResultSetFuture.onSet(DefaultResultSetFuture.java:215)
+	at com.datastax.driver.core.RequestHandler.setFinalResult(RequestHandler.java:235)
+	at com.datastax.driver.core.RequestHandler.access$2600(RequestHandler.java:61)
+	at com.datastax.driver.core.RequestHandler$SpeculativeExecution.setFinalResult(RequestHandler.java:1011)
+	at com.datastax.driver.core.RequestHandler$SpeculativeExecution.onSet(RequestHandler.java:814)
+	at com.datastax.driver.core.Connection$Dispatcher.channelRead0(Connection.java:1290)
+	at com.datastax.driver.core.Connection$Dispatcher.channelRead0(Connection.java:1208)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:299)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at com.datastax.driver.core.InboundTrafficMeter.channelRead(InboundTrafficMeter.java:38)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+15:21:23.476 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=0, closed=true] closing connection
+15:21:23.477 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-3, inFlight=0, closed=true] closed, remaining = 1
+15:21:23.478 [main] DEBUG com.datastax.driver.core.Cluster - Shutting down
+15:21:23.479 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-2, inFlight=0, closed=true] closing connection
+15:21:23.479 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-2, inFlight=0, closed=true] closed, remaining = 0
+15:21:25.492 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+15:21:25.677 [qtp889729797-23] INFO  io.redit.execution.EventService - Event E1 received!
+15:21:25.677 [main] INFO  i.r.s.cassandra15814.SampleTest - completed !!!
+15:21:25.677 [main] INFO  io.redit.ReditRunner - Stopping ReditRunner ...
+15:21:25.677 [main] INFO  io.redit.execution.RuntimeEngine - Stopping the runtime engine ...
+15:21:25.677 [main] INFO  io.redit.execution.RuntimeEngine - Stopping nodes ...
+15:21:25.677 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Stopping containers ...
+15:21:25.677 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Killing node server2 ...
+15:21:25.970 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server2 is killed!
+15:21:25.970 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Removing container for node server2 ...
+15:21:25.979 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server2 container is removed!
+15:21:25.979 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Killing node server1 ...
+15:21:26.353 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server1 is killed!
+15:21:26.353 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Removing container for node server1 ...
+15:21:26.362 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server1 container is removed!
+15:21:26.362 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Deleting docker network fc27b811ec320edd912882807451ebeff00a5fd63eb0513944dbd1264d5e0627 ...
+15:21:26.702 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Docker network is deleted successfully!
+15:21:26.702 [main] INFO  io.redit.execution.RuntimeEngine - Stopping event server ...
+15:21:26.705 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@2374d36a{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
+15:21:26.705 [main] INFO  org.eclipse.jetty.server.session - node0 Stopped scavenging
+15:21:26.707 [main] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@235a0c16{/,null,UNAVAILABLE}
+
+Process finished with exit code 0
