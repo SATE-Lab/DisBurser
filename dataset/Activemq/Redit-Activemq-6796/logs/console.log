@@ -1,0 +1,97 @@
+20:36:16.982 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+20:36:17.052 [main] INFO  i.r.s.activemqexample.SampleTest - create ActiveMQConnectionFactory ...
+20:36:17.064 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+20:36:17.249 [qtp2104028992-22] INFO  io.redit.execution.EventService - Event E1 received!
+20:36:17.250 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+20:36:17.251 [main] INFO  i.r.s.activemqexample.SampleTest - create a producer and send a message ...
+20:36:17.373 [main] DEBUG o.a.a.transport.WireFormatNegotiator - Sending: WireFormatInfo { version=12, properties={StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_382, 25.382-b05, Private Build, OS: Linux, 6.2.0-36-generic, amd64, CacheEnabled=true, Host=10.2.0.3, TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, TightEncodingEnabled=true, MaxFrameSize=9223372036854775807, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.15.0}, magic=[A,c,t,i,v,e,M,Q]}
+20:36:17.376 [ActiveMQ Transport: tcp:///10.2.0.3:61616@56184] DEBUG o.a.a.transport.InactivityMonitor - Using min of local: WireFormatInfo { version=12, properties={StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_382, 25.382-b05, Private Build, OS: Linux, 6.2.0-36-generic, amd64, CacheEnabled=true, Host=10.2.0.3, TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, TightEncodingEnabled=true, MaxFrameSize=9223372036854775807, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.15.0}, magic=[A,c,t,i,v,e,M,Q]} and remote: WireFormatInfo { version=12, properties={TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_242, 25.242-b08, Oracle Corporation, OS: Linux, 6.2.0-36-generic, amd64, CacheEnabled=true, TightEncodingEnabled=true, MaxFrameSize=104857600, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.15.0}, magic=[A,c,t,i,v,e,M,Q]}
+20:36:17.376 [ActiveMQ Transport: tcp:///10.2.0.3:61616@56184] DEBUG o.a.a.transport.WireFormatNegotiator - Received WireFormat: WireFormatInfo { version=12, properties={TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_242, 25.242-b08, Oracle Corporation, OS: Linux, 6.2.0-36-generic, amd64, CacheEnabled=true, TightEncodingEnabled=true, MaxFrameSize=104857600, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.15.0}, magic=[A,c,t,i,v,e,M,Q]}
+20:36:17.376 [ActiveMQ Transport: tcp:///10.2.0.3:61616@56184] DEBUG o.a.a.transport.WireFormatNegotiator - tcp:///10.2.0.3:61616@56184 before negotiation: OpenWireFormat{version=12, cacheEnabled=false, stackTraceEnabled=false, tightEncodingEnabled=false, sizePrefixDisabled=false, maxFrameSize=9223372036854775807}
+20:36:17.376 [ActiveMQ Transport: tcp:///10.2.0.3:61616@56184] DEBUG o.a.a.transport.WireFormatNegotiator - tcp:///10.2.0.3:61616@56184 after negotiation: OpenWireFormat{version=12, cacheEnabled=true, stackTraceEnabled=true, tightEncodingEnabled=true, sizePrefixDisabled=false, maxFrameSize=104857600}
+20:36:17.416 [main] DEBUG o.a.activemq.util.ThreadPoolUtils - Shutdown of ExecutorService: java.util.concurrent.ThreadPoolExecutor@34819867[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0] is shutdown: true and terminated: true took: 0.000 seconds.
+20:36:17.416 [main] DEBUG o.a.activemq.util.ThreadPoolUtils - Shutdown of ExecutorService: java.util.concurrent.ThreadPoolExecutor@118102ee[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0] is shutdown: true and terminated: true took: 0.000 seconds.
+20:36:17.417 [main] DEBUG o.a.a.transport.tcp.TcpTransport - Stopping transport tcp:///10.2.0.3:61616@56184
+20:36:17.418 [main] DEBUG o.a.a.thread.TaskRunnerFactory - Initialized TaskRunnerFactory[ActiveMQ Task] using ExecutorService: java.util.concurrent.ThreadPoolExecutor@45d64d27[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+20:36:17.418 [ActiveMQ Task-1] DEBUG o.a.a.transport.tcp.TcpTransport - Closed socket Socket[addr=/10.2.0.3,port=61616,localport=56184]
+20:36:17.418 [main] DEBUG o.a.activemq.util.ThreadPoolUtils - Forcing shutdown of ExecutorService: java.util.concurrent.ThreadPoolExecutor@45d64d27[Running, pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1]
+20:36:18.419 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+20:36:18.424 [qtp2104028992-33] INFO  io.redit.execution.EventService - Event E2 received!
+20:36:18.424 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E3 ...
+20:36:18.425 [main] INFO  i.r.s.activemqexample.SampleTest - receive message via stomp ...
+20:36:18.432 [main] INFO  i.r.s.activemqexample.SampleTest - received frame:
+CONNECTED
+server:ActiveMQ/5.15.0
+heart-beat:0,0
+session:test-client
+version:1.1
+
+
+
+20:36:18.558 [main] INFO  i.r.s.activemqexample.SampleTest - queue test-queue size: 2
+20:36:18.609 [main] INFO  i.r.s.activemqexample.SampleTest - received frame:
+MESSAGE
+expires:0
+destination:/queue/test-queue
+subscription:12345
+priority:4
+message-id:ID:zdc-pc-linux-35851-1698928577270-1:1:1:1:1
+persistent:true
+timestamp:1698928577403
+
+Message 1
+
+20:36:18.610 [main] INFO  i.r.s.activemqexample.SampleTest - received frame:
+MESSAGE
+expires:0
+destination:/queue/test-queue
+subscription:12345
+priority:4
+message-id:ID:zdc-pc-linux-35851-1698928577270-1:1:1:1:2
+persistent:true
+timestamp:1698928577412
+
+Message 2
+
+20:36:19.215 [main] INFO  i.r.s.activemqexample.SampleTest - received frame:
+
+ERROR
+content-type:text/plain
+message:Unmatched acknowledge\c MessageAck {commandId = 0, responseRequired = false, ackType = 2, consumerId = ID\cserver1-39373-1698928572430-7\c1\c-1\c1, firstMessageId = null, lastMessageId = ID\czdc-pc-linux-35851-1698928577270-1\c1\c1\c1\c1, destination = queue\c//test-queue, transactionId = null, messageCount = 2, poisonCause = null}; Expected message count (2) differs from count in dispatched-list (1)
+
+javax.jms.JMSException: Unmatched acknowledge: MessageAck {commandId = 0, responseRequired = false, ackType = 2, consumerId = ID:server1-39373-1698928572430-7:1:-1:1, firstMessageId = null, lastMessageId = ID:zdc-pc-linux-35851-1698928577270-1:1:1:1:1, destination = queue://test-queue, transactionId = null, messageCount = 2, poisonCause = null}; Expected message count (2) differs from count in dispatched-list (1)
+	at org.apache.activemq.broker.region.PrefetchSubscription.assertAckMatchesDispatched(PrefetchSubscription.java:519)
+	at org.apache.activemq.broker.region.PrefetchSubscription.acknowledge(PrefetchSubscription.java:211)
+	at org.apache.activemq.broker.region.AbstractRegion.acknowledge(AbstractRegion.java:528)
+	at org.apache.activemq.broker.region.RegionBroker.acknowledge(RegionBroker.java:475)
+	at org.apache.activemq.broker.BrokerFilter.acknowledge(BrokerFilter.java:89)
+	at org.apache.activemq.broker.BrokerFilter.acknowledge(BrokerFilter.java:89)
+	at org.apache.activemq.broker.TransactionBroker.acknowledge(TransactionBroker.java:276)
+	at org.apache.activemq.broker.BrokerFilter.acknowledge(BrokerFilter.java:89)
+	at org.apache.activemq.broker.TransportConnection.processMessageAck(TransportConnection.java:581)
+	at org.apache.activemq.command.MessageAck.visit(MessageAck.java:245)
+	at org.apache.activemq.broker.TransportConnection.service(TransportConnection.java:330)
+	at org.apache.activemq.broker.TransportConnection$1.onCommand(TransportConnection.java:194)
+	at org.apache.activemq.transport.MutexTransport.onCommand(MutexTransport.java:45)
+	at org.apache.activemq.transport.AbstractInactivityMonitor.onCommand(AbstractInactivityMonitor.java:301)
+	at org.apache.activemq.transport.stomp.StompTransportFilter.sendToActiveMQ(StompTransportFilter.java:97)
+	at org.apache.activemq.transport.stomp.StompSubscription.onStompCommit(StompSubscription.java:125)
+	at org.apache.activemq.transport.stomp.ProtocolConverter.onStompCommit(ProtocolConverter.java:521)
+	at org.apache.activemq.transport.stomp.ProtocolConverter.onStompCommand(ProtocolConverter.java:256)
+	at org.apache.activemq.transport.stomp.StompTransportFilter.onCommand(StompTransportFilter.java:85)
+	at org.apache.activemq.transport.TransportSupport.doConsume(TransportSupport.java:83)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:233)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:215)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+20:36:20.310 [main] INFO  i.r.s.activemqexample.SampleTest - queue test-queue size: 0
+20:36:20.310 [main] INFO  i.r.s.activemqexample.SampleTest - received frame:
+RECEIPT
+receipt-id:1
+
+
+
+20:36:20.310 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E3 ...
+20:36:20.315 [qtp2104028992-53] INFO  io.redit.execution.EventService - Event E3 received!
+20:36:20.315 [main] INFO  i.r.s.activemqexample.SampleTest - completed !!!

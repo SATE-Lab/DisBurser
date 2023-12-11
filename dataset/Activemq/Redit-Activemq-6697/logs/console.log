@@ -1,0 +1,48 @@
+19:08:29.889 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+19:08:29.959 [main] INFO  i.r.s.activemqexample.SampleTest - create ActiveMQConnectionFactory ...
+19:08:29.971 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+19:08:30.169 [qtp680779399-22] INFO  io.redit.execution.EventService - Event E1 received!
+19:08:30.169 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+19:08:30.295 [main] DEBUG o.a.a.transport.WireFormatNegotiator - Sending: WireFormatInfo { version=12, properties={StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_382, 25.382-b05, Private Build, OS: Linux, 6.2.0-35-generic, amd64, CacheEnabled=true, Host=10.2.0.3, TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, TightEncodingEnabled=true, MaxFrameSize=9223372036854775807, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.14.0}, magic=[A,c,t,i,v,e,M,Q]}
+19:08:30.301 [ActiveMQ Transport: tcp:///10.2.0.3:61616@57652] DEBUG o.a.a.transport.InactivityMonitor - Using min of local: WireFormatInfo { version=12, properties={StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_382, 25.382-b05, Private Build, OS: Linux, 6.2.0-35-generic, amd64, CacheEnabled=true, Host=10.2.0.3, TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, TightEncodingEnabled=true, MaxFrameSize=9223372036854775807, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.14.0}, magic=[A,c,t,i,v,e,M,Q]} and remote: WireFormatInfo { version=12, properties={TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_242, 25.242-b08, Oracle Corporation, OS: Linux, 6.2.0-35-generic, amd64, CacheEnabled=true, TightEncodingEnabled=true, MaxFrameSize=104857600, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.14.0}, magic=[A,c,t,i,v,e,M,Q]}
+19:08:30.302 [ActiveMQ Transport: tcp:///10.2.0.3:61616@57652] DEBUG o.a.a.transport.WireFormatNegotiator - Received WireFormat: WireFormatInfo { version=12, properties={TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_242, 25.242-b08, Oracle Corporation, OS: Linux, 6.2.0-35-generic, amd64, CacheEnabled=true, TightEncodingEnabled=true, MaxFrameSize=104857600, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.14.0}, magic=[A,c,t,i,v,e,M,Q]}
+19:08:30.302 [ActiveMQ Transport: tcp:///10.2.0.3:61616@57652] DEBUG o.a.a.transport.WireFormatNegotiator - tcp:///10.2.0.3:61616@57652 before negotiation: OpenWireFormat{version=12, cacheEnabled=false, stackTraceEnabled=false, tightEncodingEnabled=false, sizePrefixDisabled=false, maxFrameSize=9223372036854775807}
+19:08:30.302 [ActiveMQ Transport: tcp:///10.2.0.3:61616@57652] DEBUG o.a.a.transport.WireFormatNegotiator - tcp:///10.2.0.3:61616@57652 after negotiation: OpenWireFormat{version=12, cacheEnabled=true, stackTraceEnabled=true, tightEncodingEnabled=true, sizePrefixDisabled=false, maxFrameSize=104857600}
+19:08:30.351 [main] INFO  i.r.s.activemqexample.SampleTest - received CONNECTED frame:
+CONNECTED
+server:ActiveMQ/5.14.0
+heart-beat:0,0
+session:test
+version:1.1
+19:08:30.352 [main] INFO  i.r.s.activemqexample.SampleTest - start transaction
+19:08:30.402 [main] INFO  i.r.s.activemqexample.SampleTest - received MESSAGE frame:
+MESSAGE
+expires:0
+destination:/queue/test-topic
+subscription:12345
+priority:4
+message-id:ID:zdc-pc-linux-34239-1698836910193-1:1:1:1:1
+persistent:true
+timestamp:1698836910335
+Hello
+19:08:30.551 [main] INFO  i.r.s.activemqexample.SampleTest - queue size after 1st attempt to ask: 1
+19:08:31.664 [main] INFO  i.r.s.activemqexample.SampleTest - queue size after 2nd attempt to ask: 1
+19:08:31.665 [main] INFO  i.r.s.activemqexample.SampleTest - Expect to receive RECEIPT frame:
+ERROR
+content-type:text/plain
+message:Unexpected ACK received for message-id [ID\czdc-pc-linux-34239-1698836910193-1\c1\c1\c1\c1]
+org.apache.activemq.transport.stomp.ProtocolException: Unexpected ACK received for message-id [ID:zdc-pc-linux-34239-1698836910193-1:1:1:1:1]
+	at org.apache.activemq.transport.stomp.ProtocolConverter.onStompAck(ProtocolConverter.java:475)
+	at org.apache.activemq.transport.stomp.ProtocolConverter.onStompCommand(ProtocolConverter.java:250)
+	at org.apache.activemq.transport.stomp.StompTransportFilter.onCommand(StompTransportFilter.java:85)
+	at org.apache.activemq.transport.TransportSupport.doConsume(TransportSupport.java:83)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:233)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:215)
+	at java.lang.Thread.run(Thread.java:748)
+19:08:31.668 [main] DEBUG o.a.activemq.util.ThreadPoolUtils - Shutdown of ExecutorService: java.util.concurrent.ThreadPoolExecutor@783115d9[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0] is shutdown: true and terminated: true took: 0.000 seconds.
+19:08:31.669 [main] DEBUG o.a.a.transport.tcp.TcpTransport - Stopping transport tcp:///10.2.0.3:61616@57652
+19:08:31.670 [main] DEBUG o.a.a.thread.TaskRunnerFactory - Initialized TaskRunnerFactory[ActiveMQ Task] using ExecutorService: java.util.concurrent.ThreadPoolExecutor@7ee3d262[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+19:08:31.671 [ActiveMQ Task-1] DEBUG o.a.a.transport.tcp.TcpTransport - Closed socket Socket[addr=/10.2.0.3,port=61616,localport=57652]
+19:08:31.671 [main] DEBUG o.a.activemq.util.ThreadPoolUtils - Forcing shutdown of ExecutorService: java.util.concurrent.ThreadPoolExecutor@7ee3d262[Running, pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1]
+19:08:31.671 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+19:08:31.677 [qtp680779399-33] INFO  io.redit.execution.EventService - Event E2 received!

@@ -1,0 +1,48 @@
+19:14:19.237 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+19:14:19.306 [main] INFO  i.r.s.activemqexample.SampleTest - create ActiveMQConnectionFactory ...
+19:14:19.318 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+19:14:19.513 [qtp785447854-22] INFO  io.redit.execution.EventService - Event E1 received!
+19:14:19.514 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+19:14:19.638 [main] DEBUG o.a.a.transport.WireFormatNegotiator - Sending: WireFormatInfo { version=12, properties={StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_382, 25.382-b05, Private Build, OS: Linux, 6.2.0-35-generic, amd64, CacheEnabled=true, Host=10.2.0.3, TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, TightEncodingEnabled=true, MaxFrameSize=9223372036854775807, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.14.0}, magic=[A,c,t,i,v,e,M,Q]}
+19:14:19.643 [ActiveMQ Transport: tcp:///10.2.0.3:61616@48056] DEBUG o.a.a.transport.InactivityMonitor - Using min of local: WireFormatInfo { version=12, properties={StackTraceEnabled=true, PlatformDetails=JVM: 1.8.0_382, 25.382-b05, Private Build, OS: Linux, 6.2.0-35-generic, amd64, CacheEnabled=true, Host=10.2.0.3, TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, TightEncodingEnabled=true, MaxFrameSize=9223372036854775807, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.14.0}, magic=[A,c,t,i,v,e,M,Q]} and remote: WireFormatInfo { version=12, properties={TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, StackTraceEnabled=true, PlatformDetails=Java, CacheEnabled=true, TightEncodingEnabled=true, MaxFrameSize=104857600, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.15.9}, magic=[A,c,t,i,v,e,M,Q]}
+19:14:19.644 [ActiveMQ Transport: tcp:///10.2.0.3:61616@48056] DEBUG o.a.a.transport.WireFormatNegotiator - Received WireFormat: WireFormatInfo { version=12, properties={TcpNoDelayEnabled=true, SizePrefixDisabled=false, CacheSize=1024, ProviderName=ActiveMQ, StackTraceEnabled=true, PlatformDetails=Java, CacheEnabled=true, TightEncodingEnabled=true, MaxFrameSize=104857600, MaxInactivityDuration=30000, MaxInactivityDurationInitalDelay=10000, ProviderVersion=5.15.9}, magic=[A,c,t,i,v,e,M,Q]}
+19:14:19.644 [ActiveMQ Transport: tcp:///10.2.0.3:61616@48056] DEBUG o.a.a.transport.WireFormatNegotiator - tcp:///10.2.0.3:61616@48056 before negotiation: OpenWireFormat{version=12, cacheEnabled=false, stackTraceEnabled=false, tightEncodingEnabled=false, sizePrefixDisabled=false, maxFrameSize=9223372036854775807}
+19:14:19.644 [ActiveMQ Transport: tcp:///10.2.0.3:61616@48056] DEBUG o.a.a.transport.WireFormatNegotiator - tcp:///10.2.0.3:61616@48056 after negotiation: OpenWireFormat{version=12, cacheEnabled=true, stackTraceEnabled=true, tightEncodingEnabled=true, sizePrefixDisabled=false, maxFrameSize=104857600}
+19:14:19.692 [main] INFO  i.r.s.activemqexample.SampleTest - received CONNECTED frame:
+CONNECTED
+server:ActiveMQ/5.15.9
+heart-beat:0,0
+session:test
+version:1.1
+
+
+
+19:14:19.692 [main] INFO  i.r.s.activemqexample.SampleTest - start transaction
+19:14:19.741 [main] INFO  i.r.s.activemqexample.SampleTest - received MESSAGE frame:
+MESSAGE
+expires:0
+destination:/queue/test-topic
+subscription:12345
+priority:4
+message-id:ID:zdc-pc-linux-37819-1698837259535-1:1:1:1:1
+persistent:true
+timestamp:1698837259678
+
+Hello
+
+19:14:19.904 [main] INFO  i.r.s.activemqexample.SampleTest - queue size after 1st attempt to ask: 1
+19:14:20.993 [main] INFO  i.r.s.activemqexample.SampleTest - queue size after 2nd attempt to ask: 0
+19:14:20.995 [main] INFO  i.r.s.activemqexample.SampleTest - Expect to receive RECEIPT frame:
+
+RECEIPT
+receipt-id:1
+
+
+
+19:14:20.997 [main] DEBUG o.a.activemq.util.ThreadPoolUtils - Shutdown of ExecutorService: java.util.concurrent.ThreadPoolExecutor@39008c9f[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0] is shutdown: true and terminated: true took: 0.000 seconds.
+19:14:20.997 [main] DEBUG o.a.a.transport.tcp.TcpTransport - Stopping transport tcp:///10.2.0.3:61616@48056
+19:14:20.998 [main] DEBUG o.a.a.thread.TaskRunnerFactory - Initialized TaskRunnerFactory[ActiveMQ Task] using ExecutorService: java.util.concurrent.ThreadPoolExecutor@25da615a[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+19:14:20.999 [ActiveMQ Task-1] DEBUG o.a.a.transport.tcp.TcpTransport - Closed socket Socket[addr=/10.2.0.3,port=61616,localport=48056]
+19:14:20.999 [main] DEBUG o.a.activemq.util.ThreadPoolUtils - Forcing shutdown of ExecutorService: java.util.concurrent.ThreadPoolExecutor@25da615a[Running, pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1]
+19:14:20.999 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+19:14:21.005 [qtp785447854-33] INFO  io.redit.execution.EventService - Event E2 received!

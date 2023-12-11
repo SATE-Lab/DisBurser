@@ -1,0 +1,9 @@
+18:52:29.181 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+18:52:29.250 [main] INFO  i.r.s.activemqexample.SampleTest - create ActiveMQConnectionFactory ...
+18:52:29.584 [main] INFO  o.a.a.t.http.HttpClientTransport - Broker Servlet supports GZip compression.
+18:52:29.792 [main] DEBUG o.a.a.thread.TaskRunnerFactory - Initialized TaskRunnerFactory[ActiveMQ Session Task] using ExecutorService: java.util.concurrent.ThreadPoolExecutor@173a6728[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+18:52:30.815 [main] INFO  i.r.s.activemqexample.SampleTest - message1: null
+18:52:30.818 [main] DEBUG o.a.activemq.ActiveMQMessageConsumer - remove: ID:zdc-pc-linux-43353-1698922349274-2:1:1:1, lastDeliveredSequenceId: -1
+18:52:30.822 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+18:52:31.025 [qtp315860201-25] INFO  io.redit.execution.EventService - Event E1 received!
+18:52:31.026 [main] INFO  i.r.s.activemqexample.SampleTest - completed !!!

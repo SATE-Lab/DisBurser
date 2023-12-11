@@ -1,0 +1,104 @@
+14:14:38.222 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+14:14:38.402 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+14:14:38.595 [qtp274722023-24] INFO  io.redit.execution.EventService - Event E1 received!
+14:14:38.596 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+TestQueue Received: ActiveMQTextMessage {commandId = 6, responseRequired = true, messageId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1, originalDestination = null, originalTransactionId = null, producerId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1, destination = queue://TestQueue, transactionId = null, expiration = 0, timestamp = 1698819279636, arrival = 0, brokerInTime = 1698819279637, brokerOutTime = 1698819279640, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@2121aba2, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 0, properties = null, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false, text = test-message} on queue://TestQueue
+Producer Sent message: ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1
+14:14:40.642 [ActiveMQ Session Task-1] INFO  i.r.s.activemqexample.SampleTest - Consumer throw exception, message moved to DLQ
+14:14:40.644 [ActiveMQ Session Task-1] ERROR o.a.activemq.ActiveMQMessageConsumer - ID:zdc-pc-linux-39563-1698819278299-1:1:1:1 Exception while processing message: ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1
+java.lang.RuntimeException: Horrible exception
+	at io.redit.samples.activemq6847.SampleTest$1.onMessage(SampleTest.java:99)
+	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:1401)
+	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:131)
+	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:202)
+	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:133)
+	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+14:14:40.646 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+14:14:40.652 [qtp274722023-33] INFO  io.redit.execution.EventService - Event E2 received!
+14:14:40.652 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E3 ...
+14:14:40.654 [main] INFO  i.r.s.activemqexample.SampleTest - retry DLQ message
+TestQueue Received: ActiveMQTextMessage {commandId = 6, responseRequired = true, messageId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1, originalDestination = queue://ActiveMQ.DLQ, originalTransactionId = null, producerId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1, destination = queue://TestQueue, transactionId = null, expiration = 0, timestamp = 1698819279636, arrival = 0, brokerInTime = 1698819280783, brokerOutTime = 1698819280783, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@4f7af0ca, marshalledProperties = org.apache.activemq.util.ByteSequence@1e936dec, dataStructure = null, redeliveryCounter = 0, size = 0, properties = {originalExpiration=0, dlqDeliveryFailureCause=java.lang.Throwable: Exceeded redelivery policy limit:RedeliveryPolicy {destination = null, collisionAvoidanceFactor = 0.15, maximumRedeliveries = 0, maximumRedeliveryDelay = -1, initialRedeliveryDelay = 1000, useCollisionAvoidance = false, useExponentialBackOff = false, backOffMultiplier = 5.0, redeliveryDelay = 1000}, cause:java.lang.RuntimeException: Horrible exception}, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false, text = test-message} on queue://TestQueue
+14:14:41.304 [main] INFO  i.r.s.activemqexample.SampleTest - check DLQ EnqueueCount
+14:14:41.383 [main] INFO  i.r.s.activemqexample.SampleTest - DLQ EnqueueCount: 1
+14:14:41.784 [ActiveMQ Session Task-1] INFO  i.r.s.activemqexample.SampleTest - Consumer throw exception, message moved to DLQ
+14:14:41.784 [ActiveMQ Session Task-1] ERROR o.a.activemq.ActiveMQMessageConsumer - ID:zdc-pc-linux-39563-1698819278299-1:1:1:1 Exception while processing message: ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1
+java.lang.RuntimeException: Horrible exception
+	at io.redit.samples.activemq6847.SampleTest$1.onMessage(SampleTest.java:99)
+	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:1401)
+	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:131)
+	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:202)
+	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:133)
+	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+14:14:41.883 [main] INFO  i.r.s.activemqexample.SampleTest - retry DLQ message
+TestQueue Received: ActiveMQTextMessage {commandId = 6, responseRequired = true, messageId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1, originalDestination = queue://ActiveMQ.DLQ, originalTransactionId = null, producerId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1, destination = queue://TestQueue, transactionId = null, expiration = 0, timestamp = 1698819279636, arrival = 0, brokerInTime = 1698819281989, brokerOutTime = 1698819281990, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@2aa706ae, marshalledProperties = org.apache.activemq.util.ByteSequence@455480d, dataStructure = null, redeliveryCounter = 0, size = 0, properties = {originalExpiration=0, dlqDeliveryFailureCause=java.lang.Throwable: Exceeded redelivery policy limit:RedeliveryPolicy {destination = null, collisionAvoidanceFactor = 0.15, maximumRedeliveries = 0, maximumRedeliveryDelay = -1, initialRedeliveryDelay = 1000, useCollisionAvoidance = false, useExponentialBackOff = false, backOffMultiplier = 5.0, redeliveryDelay = 1000}, cause:java.lang.RuntimeException: Horrible exception}, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false, text = test-message} on queue://TestQueue
+14:14:42.505 [main] INFO  i.r.s.activemqexample.SampleTest - check DLQ EnqueueCount
+14:14:42.591 [main] INFO  i.r.s.activemqexample.SampleTest - DLQ EnqueueCount: 2
+14:14:42.990 [ActiveMQ Session Task-1] INFO  i.r.s.activemqexample.SampleTest - Consumer throw exception, message moved to DLQ
+14:14:42.990 [ActiveMQ Session Task-1] ERROR o.a.activemq.ActiveMQMessageConsumer - ID:zdc-pc-linux-39563-1698819278299-1:1:1:1 Exception while processing message: ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1
+java.lang.RuntimeException: Horrible exception
+	at io.redit.samples.activemq6847.SampleTest$1.onMessage(SampleTest.java:99)
+	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:1401)
+	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:131)
+	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:202)
+	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:133)
+	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+14:14:43.091 [main] INFO  i.r.s.activemqexample.SampleTest - retry DLQ message
+TestQueue Received: ActiveMQTextMessage {commandId = 6, responseRequired = true, messageId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1, originalDestination = queue://ActiveMQ.DLQ, originalTransactionId = null, producerId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1, destination = queue://TestQueue, transactionId = null, expiration = 0, timestamp = 1698819279636, arrival = 0, brokerInTime = 1698819283186, brokerOutTime = 1698819283187, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@1c3114ed, marshalledProperties = org.apache.activemq.util.ByteSequence@19c8f68a, dataStructure = null, redeliveryCounter = 0, size = 0, properties = {originalExpiration=0, dlqDeliveryFailureCause=java.lang.Throwable: Exceeded redelivery policy limit:RedeliveryPolicy {destination = null, collisionAvoidanceFactor = 0.15, maximumRedeliveries = 0, maximumRedeliveryDelay = -1, initialRedeliveryDelay = 1000, useCollisionAvoidance = false, useExponentialBackOff = false, backOffMultiplier = 5.0, redeliveryDelay = 1000}, cause:java.lang.RuntimeException: Horrible exception}, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false, text = test-message} on queue://TestQueue
+14:14:43.701 [main] INFO  i.r.s.activemqexample.SampleTest - check DLQ EnqueueCount
+14:14:43.783 [main] INFO  i.r.s.activemqexample.SampleTest - DLQ EnqueueCount: 3
+14:14:44.187 [ActiveMQ Session Task-1] INFO  i.r.s.activemqexample.SampleTest - Consumer throw exception, message moved to DLQ
+14:14:44.187 [ActiveMQ Session Task-1] ERROR o.a.activemq.ActiveMQMessageConsumer - ID:zdc-pc-linux-39563-1698819278299-1:1:1:1 Exception while processing message: ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1
+java.lang.RuntimeException: Horrible exception
+	at io.redit.samples.activemq6847.SampleTest$1.onMessage(SampleTest.java:99)
+	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:1401)
+	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:131)
+	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:202)
+	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:133)
+	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+14:14:44.283 [main] INFO  i.r.s.activemqexample.SampleTest - retry DLQ message
+TestQueue Received: ActiveMQTextMessage {commandId = 6, responseRequired = true, messageId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1, originalDestination = queue://ActiveMQ.DLQ, originalTransactionId = null, producerId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1, destination = queue://TestQueue, transactionId = null, expiration = 0, timestamp = 1698819279636, arrival = 0, brokerInTime = 1698819284385, brokerOutTime = 1698819284386, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@b48016b, marshalledProperties = org.apache.activemq.util.ByteSequence@25f3252f, dataStructure = null, redeliveryCounter = 0, size = 0, properties = {originalExpiration=0, dlqDeliveryFailureCause=java.lang.Throwable: Exceeded redelivery policy limit:RedeliveryPolicy {destination = null, collisionAvoidanceFactor = 0.15, maximumRedeliveries = 0, maximumRedeliveryDelay = -1, initialRedeliveryDelay = 1000, useCollisionAvoidance = false, useExponentialBackOff = false, backOffMultiplier = 5.0, redeliveryDelay = 1000}, cause:java.lang.RuntimeException: Horrible exception}, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false, text = test-message} on queue://TestQueue
+14:14:44.900 [main] INFO  i.r.s.activemqexample.SampleTest - check DLQ EnqueueCount
+14:14:44.982 [main] INFO  i.r.s.activemqexample.SampleTest - DLQ EnqueueCount: 4
+14:14:45.386 [ActiveMQ Session Task-1] INFO  i.r.s.activemqexample.SampleTest - Consumer throw exception, message moved to DLQ
+14:14:45.386 [ActiveMQ Session Task-1] ERROR o.a.activemq.ActiveMQMessageConsumer - ID:zdc-pc-linux-39563-1698819278299-1:1:1:1 Exception while processing message: ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1
+java.lang.RuntimeException: Horrible exception
+	at io.redit.samples.activemq6847.SampleTest$1.onMessage(SampleTest.java:99)
+	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:1401)
+	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:131)
+	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:202)
+	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:133)
+	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+14:14:45.482 [main] INFO  i.r.s.activemqexample.SampleTest - retry DLQ message
+TestQueue Received: ActiveMQTextMessage {commandId = 6, responseRequired = true, messageId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1, originalDestination = queue://ActiveMQ.DLQ, originalTransactionId = null, producerId = ID:zdc-pc-linux-39563-1698819278299-1:1:1:1, destination = queue://TestQueue, transactionId = null, expiration = 0, timestamp = 1698819279636, arrival = 0, brokerInTime = 1698819285588, brokerOutTime = 1698819285588, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@3171cb00, marshalledProperties = org.apache.activemq.util.ByteSequence@6fd31702, dataStructure = null, redeliveryCounter = 0, size = 0, properties = {originalExpiration=0, dlqDeliveryFailureCause=java.lang.Throwable: Exceeded redelivery policy limit:RedeliveryPolicy {destination = null, collisionAvoidanceFactor = 0.15, maximumRedeliveries = 0, maximumRedeliveryDelay = -1, initialRedeliveryDelay = 1000, useCollisionAvoidance = false, useExponentialBackOff = false, backOffMultiplier = 5.0, redeliveryDelay = 1000}, cause:java.lang.RuntimeException: Horrible exception}, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false, text = test-message} on queue://TestQueue
+14:14:46.103 [main] INFO  i.r.s.activemqexample.SampleTest - check DLQ EnqueueCount
+14:14:46.178 [main] INFO  i.r.s.activemqexample.SampleTest - DLQ EnqueueCount: 5
+14:14:46.589 [ActiveMQ Session Task-1] INFO  i.r.s.activemqexample.SampleTest - Consumer throw exception, message moved to DLQ
+14:14:46.589 [ActiveMQ Session Task-1] ERROR o.a.activemq.ActiveMQMessageConsumer - ID:zdc-pc-linux-39563-1698819278299-1:1:1:1 Exception while processing message: ID:zdc-pc-linux-39563-1698819278299-1:1:1:1:1
+java.lang.RuntimeException: Horrible exception
+	at io.redit.samples.activemq6847.SampleTest$1.onMessage(SampleTest.java:99)
+	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:1401)
+	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:131)
+	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:202)
+	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:133)
+	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+14:14:46.678 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E3 ...
+14:14:46.682 [qtp274722023-23] INFO  io.redit.execution.EventService - Event E3 received!
+14:14:46.683 [main] INFO  i.r.s.activemqexample.SampleTest - completed !!!
