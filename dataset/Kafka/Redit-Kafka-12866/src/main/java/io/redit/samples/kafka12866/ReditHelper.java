@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 3;
     public static final String zookeeperDir = "apache-zookeeper-3.7.1-bin";
-    public static final String kafkaDir = "kafka_2.13-3.0.0";
+    public static final String kafkaDir = "kafka_2.13-2.8.0";
     public static String getZookeeperHomeDir(){
         return "/zookeeper/" + zookeeperDir;
     }
@@ -25,7 +25,7 @@ public class ReditHelper {
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
         String zookeeperCompressedPath = workDir + "/../../../Benchmark/Zookeeper/v3.7.1/" + zookeeperDir + ".tar.gz";
-        String kafkaCompressedPath = workDir + "/../../../Benchmark/Kafka/v3.0.0/" + kafkaDir + ".tar.gz";
+        String kafkaCompressedPath = workDir + "/../../../Benchmark/Kafka/v2.8.0/" + kafkaDir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-kafka")
                 .withService("kafka")

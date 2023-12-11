@@ -1,0 +1,153 @@
+22:39:55.551 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+22:39:55.611 [main] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values:
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [10.2.0.4:9092, 10.2.0.3:9092, 10.2.0.2:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id =
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 10000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+22:39:55.633 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+22:39:55.635 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+22:39:55.637 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.2.0.3:9092 (id: -2 rack: null), 10.2.0.2:9092 (id: -3 rack: null), 10.2.0.4:9092 (id: -1 rack: null)], partitions = [], controller = null)
+22:39:55.637 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name errors
+22:39:55.640 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+22:39:55.643 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+22:39:55.643 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+22:39:55.643 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name successful-authentication:
+22:39:55.643 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name failed-authentication:
+22:39:55.643 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+22:39:55.644 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+22:39:55.644 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+22:39:55.644 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name select-time:
+22:39:55.644 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name io-time:
+22:39:55.646 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name batch-size
+22:39:55.646 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+22:39:55.646 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name queue-time
+22:39:55.646 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name request-time
+22:39:55.647 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+22:39:55.647 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name record-retries
+22:39:55.647 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name record-size
+22:39:55.647 [main] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name batch-split-rate
+22:39:55.648 [kafka-producer-network-thread | producer-1] DEBUG o.a.k.c.producer.internals.Sender - [Producer clientId=producer-1] Starting Kafka producer I/O thread.
+22:39:55.648 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version : 2.1.0
+22:39:55.648 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId : eec43959745f444f
+22:39:55.649 [main] DEBUG o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Kafka producer started
+Calling KafkaProducer.send() at Tue Nov 28 22:39:55 CST 2023
+22:39:55.650 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initialize connection to node 10.2.0.4:9092 (id: -1 rack: null) for sending metadata request
+22:39:55.650 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initiating connection to node 10.2.0.4:9092 (id: -1 rack: null) using address /10.2.0.4
+22:39:55.652 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+22:39:55.653 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+22:39:55.653 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+22:39:55.653 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.network.Selector - [Producer clientId=producer-1] Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+22:39:55.694 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Completed connection to node -1. Fetching API versions.
+22:39:55.694 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initiating API versions fetch from node -1.
+22:39:55.696 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initialize connection to node 10.2.0.3:9092 (id: -2 rack: null) for sending metadata request
+22:39:55.696 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initiating connection to node 10.2.0.3:9092 (id: -2 rack: null) using address /10.2.0.3
+22:39:55.696 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--2.bytes-sent
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--2.bytes-received
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--2.latency
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.network.Selector - [Producer clientId=producer-1] Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -2
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Completed connection to node -2. Fetching API versions.
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initiating API versions fetch from node -2.
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initialize connection to node 10.2.0.2:9092 (id: -3 rack: null) for sending metadata request
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initiating connection to node 10.2.0.2:9092 (id: -3 rack: null) using address /10.2.0.2
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--3.bytes-sent
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--3.bytes-received
+22:39:55.697 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Added sensor with name node--3.latency
+22:39:55.698 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.network.Selector - [Producer clientId=producer-1] Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -3
+22:39:55.698 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Completed connection to node -3. Fetching API versions.
+22:39:55.698 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Initiating API versions fetch from node -3.
+22:39:55.703 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Recorded API versions for node -1: (Produce(0): 0 to 7 [usable: 7], Fetch(1): 0 to 10 [usable: 10], ListOffsets(2): 0 to 4 [usable: 4], Metadata(3): 0 to 7 [usable: 7], LeaderAndIsr(4): 0 to 1 [usable: 1], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 4 [usable: 4], ControlledShutdown(7): 0 to 1 [usable: 1], OffsetCommit(8): 0 to 6 [usable: 6], OffsetFetch(9): 0 to 5 [usable: 5], FindCoordinator(10): 0 to 2 [usable: 2], JoinGroup(11): 0 to 3 [usable: 3], Heartbeat(12): 0 to 2 [usable: 2], LeaveGroup(13): 0 to 2 [usable: 2], SyncGroup(14): 0 to 2 [usable: 2], DescribeGroups(15): 0 to 2 [usable: 2], ListGroups(16): 0 to 2 [usable: 2], SaslHandshake(17): 0 to 1 [usable: 1], ApiVersions(18): 0 to 2 [usable: 2], CreateTopics(19): 0 to 3 [usable: 3], DeleteTopics(20): 0 to 3 [usable: 3], DeleteRecords(21): 0 to 1 [usable: 1], InitProducerId(22): 0 to 1 [usable: 1], OffsetForLeaderEpoch(23): 0 to 2 [usable: 2], AddPartitionsToTxn(24): 0 to 1 [usable: 1], AddOffsetsToTxn(25): 0 to 1 [usable: 1], EndTxn(26): 0 to 1 [usable: 1], WriteTxnMarkers(27): 0 [usable: 0], TxnOffsetCommit(28): 0 to 2 [usable: 2], DescribeAcls(29): 0 to 1 [usable: 1], CreateAcls(30): 0 to 1 [usable: 1], DeleteAcls(31): 0 to 1 [usable: 1], DescribeConfigs(32): 0 to 2 [usable: 2], AlterConfigs(33): 0 to 1 [usable: 1], AlterReplicaLogDirs(34): 0 to 1 [usable: 1], DescribeLogDirs(35): 0 to 1 [usable: 1], SaslAuthenticate(36): 0 [usable: 0], CreatePartitions(37): 0 to 1 [usable: 1], CreateDelegationToken(38): 0 to 1 [usable: 1], RenewDelegationToken(39): 0 to 1 [usable: 1], ExpireDelegationToken(40): 0 to 1 [usable: 1], DescribeDelegationToken(41): 0 to 1 [usable: 1], DeleteGroups(42): 0 to 1 [usable: 1])
+22:39:55.703 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Sending metadata request (type=MetadataRequest, topics=abc/someStreamName) to node 10.2.0.4:9092 (id: -1 rack: null)
+22:39:55.704 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Recorded API versions for node -2: (Produce(0): 0 to 7 [usable: 7], Fetch(1): 0 to 10 [usable: 10], ListOffsets(2): 0 to 4 [usable: 4], Metadata(3): 0 to 7 [usable: 7], LeaderAndIsr(4): 0 to 1 [usable: 1], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 4 [usable: 4], ControlledShutdown(7): 0 to 1 [usable: 1], OffsetCommit(8): 0 to 6 [usable: 6], OffsetFetch(9): 0 to 5 [usable: 5], FindCoordinator(10): 0 to 2 [usable: 2], JoinGroup(11): 0 to 3 [usable: 3], Heartbeat(12): 0 to 2 [usable: 2], LeaveGroup(13): 0 to 2 [usable: 2], SyncGroup(14): 0 to 2 [usable: 2], DescribeGroups(15): 0 to 2 [usable: 2], ListGroups(16): 0 to 2 [usable: 2], SaslHandshake(17): 0 to 1 [usable: 1], ApiVersions(18): 0 to 2 [usable: 2], CreateTopics(19): 0 to 3 [usable: 3], DeleteTopics(20): 0 to 3 [usable: 3], DeleteRecords(21): 0 to 1 [usable: 1], InitProducerId(22): 0 to 1 [usable: 1], OffsetForLeaderEpoch(23): 0 to 2 [usable: 2], AddPartitionsToTxn(24): 0 to 1 [usable: 1], AddOffsetsToTxn(25): 0 to 1 [usable: 1], EndTxn(26): 0 to 1 [usable: 1], WriteTxnMarkers(27): 0 [usable: 0], TxnOffsetCommit(28): 0 to 2 [usable: 2], DescribeAcls(29): 0 to 1 [usable: 1], CreateAcls(30): 0 to 1 [usable: 1], DeleteAcls(31): 0 to 1 [usable: 1], DescribeConfigs(32): 0 to 2 [usable: 2], AlterConfigs(33): 0 to 1 [usable: 1], AlterReplicaLogDirs(34): 0 to 1 [usable: 1], DescribeLogDirs(35): 0 to 1 [usable: 1], SaslAuthenticate(36): 0 [usable: 0], CreatePartitions(37): 0 to 1 [usable: 1], CreateDelegationToken(38): 0 to 1 [usable: 1], RenewDelegationToken(39): 0 to 1 [usable: 1], ExpireDelegationToken(40): 0 to 1 [usable: 1], DescribeDelegationToken(41): 0 to 1 [usable: 1], DeleteGroups(42): 0 to 1 [usable: 1])
+22:39:55.704 [kafka-producer-network-thread | producer-1] DEBUG o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Recorded API versions for node -3: (Produce(0): 0 to 7 [usable: 7], Fetch(1): 0 to 10 [usable: 10], ListOffsets(2): 0 to 4 [usable: 4], Metadata(3): 0 to 7 [usable: 7], LeaderAndIsr(4): 0 to 1 [usable: 1], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 4 [usable: 4], ControlledShutdown(7): 0 to 1 [usable: 1], OffsetCommit(8): 0 to 6 [usable: 6], OffsetFetch(9): 0 to 5 [usable: 5], FindCoordinator(10): 0 to 2 [usable: 2], JoinGroup(11): 0 to 3 [usable: 3], Heartbeat(12): 0 to 2 [usable: 2], LeaveGroup(13): 0 to 2 [usable: 2], SyncGroup(14): 0 to 2 [usable: 2], DescribeGroups(15): 0 to 2 [usable: 2], ListGroups(16): 0 to 2 [usable: 2], SaslHandshake(17): 0 to 1 [usable: 1], ApiVersions(18): 0 to 2 [usable: 2], CreateTopics(19): 0 to 3 [usable: 3], DeleteTopics(20): 0 to 3 [usable: 3], DeleteRecords(21): 0 to 1 [usable: 1], InitProducerId(22): 0 to 1 [usable: 1], OffsetForLeaderEpoch(23): 0 to 2 [usable: 2], AddPartitionsToTxn(24): 0 to 1 [usable: 1], AddOffsetsToTxn(25): 0 to 1 [usable: 1], EndTxn(26): 0 to 1 [usable: 1], WriteTxnMarkers(27): 0 [usable: 0], TxnOffsetCommit(28): 0 to 2 [usable: 2], DescribeAcls(29): 0 to 1 [usable: 1], CreateAcls(30): 0 to 1 [usable: 1], DeleteAcls(31): 0 to 1 [usable: 1], DescribeConfigs(32): 0 to 2 [usable: 2], AlterConfigs(33): 0 to 1 [usable: 1], AlterReplicaLogDirs(34): 0 to 1 [usable: 1], DescribeLogDirs(35): 0 to 1 [usable: 1], SaslAuthenticate(36): 0 [usable: 0], CreatePartitions(37): 0 to 1 [usable: 1], CreateDelegationToken(38): 0 to 1 [usable: 1], RenewDelegationToken(39): 0 to 1 [usable: 1], ExpireDelegationToken(40): 0 to 1 [usable: 1], DescribeDelegationToken(41): 0 to 1 [usable: 1], DeleteGroups(42): 0 to 1 [usable: 1])
+22:39:55.720 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Error while fetching metadata with correlation id 3 : {abc/someStreamName=INVALID_TOPIC_EXCEPTION}
+22:39:55.720 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - Cluster ID: 2Io0OzhwSzCEyETAnK0-ng
+22:39:55.720 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 2Io0OzhwSzCEyETAnK0-ng, nodes = [10.2.0.4:9092 (id: 0 rack: null), 10.2.0.2:9092 (id: 2 rack: null), 10.2.0.3:9092 (id: 1 rack: null)], partitions = [], controller = 10.2.0.4:9092 (id: 0 rack: null))
+22:39:55.721 [main] DEBUG o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Exception occurred during message send:
+org.apache.kafka.common.errors.InvalidTopicException: abc/someStreamName
+org.apache.kafka.common.errors.InvalidTopicException: abc/someStreamName
+KafkaProducer.send() completed at Tue Nov 28 22:39:55 CST 2023
+22:39:55.722 [main] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+22:39:55.722 [kafka-producer-network-thread | producer-1] DEBUG o.a.k.c.producer.internals.Sender - [Producer clientId=producer-1] Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+22:39:55.722 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name connections-closed:
+22:39:55.722 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name connections-created:
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name successful-authentication:
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name failed-authentication:
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name bytes-sent-received:
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name bytes-sent:
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name bytes-received:
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name select-time:
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name io-time:
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--1.bytes-sent
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--1.bytes-received
+22:39:55.723 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--1.latency
+22:39:55.724 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--2.bytes-sent
+22:39:55.724 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--2.bytes-received
+22:39:55.724 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--2.latency
+22:39:55.724 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--3.bytes-sent
+22:39:55.724 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--3.bytes-received
+22:39:55.724 [kafka-producer-network-thread | producer-1] DEBUG o.a.kafka.common.metrics.Metrics - Removed sensor with name node--3.latency
+22:39:55.724 [kafka-producer-network-thread | producer-1] DEBUG o.a.k.c.producer.internals.Sender - [Producer clientId=producer-1] Shutdown of Kafka producer I/O thread has completed.
+22:39:55.724 [main] DEBUG o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Kafka producer has been closed
+22:39:55.724 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+22:39:55.927 [qtp1979313356-22] INFO  io.redit.execution.EventService - Event E1 received!
+22:39:55.927 [main] INFO  io.redit.execution.RuntimeEngine - The run sequence is completed!
+22:39:55.927 [main] INFO  i.r.samples.kafkaexample.SampleTest - completed !!!

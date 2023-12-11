@@ -1,5 +1,5 @@
-16:44:29.342 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
-16:44:31.106 [main] ERROR i.r.samples.kafka13964.SampleTest - Error while executing config command with args '--bootstrap-server 10.2.0.4:9092 --describe --user CN=encrypted-arnost'
+21:26:01.935 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+21:26:03.162 [main] ERROR i.r.samples.kafka13964.SampleTest - Error while executing config command with args '--bootstrap-server 10.2.0.4:9092 --describe --user CN=encrypted-arnost'
 java.util.concurrent.ExecutionException: org.apache.kafka.common.errors.UnsupportedVersionException: The broker does not support DESCRIBE_USER_SCRAM_CREDENTIALS
 	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357)
 	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1928)
@@ -11,7 +11,7 @@ java.util.concurrent.ExecutionException: org.apache.kafka.common.errors.Unsuppor
 	at kafka.admin.ConfigCommand.main(ConfigCommand.scala)
 Caused by: org.apache.kafka.common.errors.UnsupportedVersionException: The broker does not support DESCRIBE_USER_SCRAM_CREDENTIALS
 
-16:44:31.106 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
-16:44:31.486 [qtp1426329391-14] INFO  io.redit.execution.EventService - Event E1 received!
-16:44:31.486 [main] INFO  io.redit.execution.RuntimeEngine - The run sequence is completed!
-16:44:31.487 [main] INFO  i.r.samples.kafka13964.SampleTest - completed !!!
+21:26:03.162 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+21:26:03.359 [qtp1150284200-24] INFO  io.redit.execution.EventService - Event E1 received!
+21:26:03.359 [main] INFO  io.redit.execution.RuntimeEngine - The run sequence is completed!
+21:26:03.359 [main] INFO  i.r.samples.kafka13964.SampleTest - completed !!!

@@ -1,0 +1,6 @@
+21:30:09.550 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+21:30:10.735 [main] ERROR i.r.samples.kafka13964.SampleTest -
+21:30:10.735 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+21:30:10.923 [qtp1150284200-22] INFO  io.redit.execution.EventService - Event E1 received!
+21:30:10.923 [main] INFO  io.redit.execution.RuntimeEngine - The run sequence is completed!
+21:30:10.923 [main] INFO  i.r.samples.kafka13964.SampleTest - completed !!!

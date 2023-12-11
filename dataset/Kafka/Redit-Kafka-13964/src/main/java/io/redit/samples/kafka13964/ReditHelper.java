@@ -8,14 +8,14 @@ import io.redit.exceptions.RuntimeEngineException;
 
 public class ReditHelper {
     public static int numOfServers = 3;
-    public static final String kafkaDir = "kafka_2.13-3.2.0";
+    public static final String kafkaDir = "kafka_2.13-3.0.0";
     public static String getKafkaHomeDir(){
         return "/kafka/" + kafkaDir;
     }
 
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
-        String kafkaCompressedPath = workDir + "/../../../Benchmark/Kafka/v3.2.0/" + kafkaDir + ".tar.gz";
+        String kafkaCompressedPath = workDir + "/../../../Benchmark/Kafka/v3.0.0/" + kafkaDir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-kafka")
                 .withService("kafka")
