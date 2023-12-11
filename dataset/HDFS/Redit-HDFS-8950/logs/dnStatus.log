@@ -1,0 +1,134 @@
+Configured Capacity: 528108675072 (491.84 GB)
+Present Capacity: 149901094912 (139.61 GB)
+DFS Remaining: 149901021184 (139.61 GB)
+DFS Used: 73728 (72 KB)
+DFS Used%: 0.00%
+Under replicated blocks: 0
+Blocks with corrupt replicas: 0
+Missing blocks: 0
+Missing blocks (with replication factor 1): 0
+
+-------------------------------------------------
+Live datanodes (3):
+
+Name: 10.2.0.5:50010 (redit_sample-hdfs_dn3_1700226683.redit_sample-hdfs_1700226682)
+Hostname: dn3
+Decommission Status : Normal
+Configured Capacity: 176036225024 (163.95 GB)
+DFS Used: 24576 (24 KB)
+Non DFS Used: 126069149696 (117.41 GB)
+DFS Remaining: 49967050752 (46.54 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 28.38%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Fri Nov 17 13:11:45 UTC 2023
+
+
+Name: 10.2.0.6:50010 (redit_sample-hdfs_dn2_1700226683.redit_sample-hdfs_1700226682)
+Hostname: dn2
+Decommission Status : Normal
+Configured Capacity: 176036225024 (163.95 GB)
+DFS Used: 24576 (24 KB)
+Non DFS Used: 126069760000 (117.41 GB)
+DFS Remaining: 49966440448 (46.53 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 28.38%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Fri Nov 17 13:11:46 UTC 2023
+
+
+Name: 10.2.0.4:50010 (redit_sample-hdfs_dn1_1700226683.redit_sample-hdfs_1700226682)
+Hostname: dn1
+Decommission Status : Normal
+Configured Capacity: 176036225024 (163.95 GB)
+DFS Used: 24576 (24 KB)
+Non DFS Used: 126068670464 (117.41 GB)
+DFS Remaining: 49967529984 (46.54 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 28.38%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Fri Nov 17 13:11:45 UTC 2023
+
+
+Configured Capacity: 528108675072 (491.84 GB)
+Present Capacity: 149856952320 (139.57 GB)
+DFS Remaining: 149856878592 (139.57 GB)
+DFS Used: 73728 (72 KB)
+DFS Used%: 0.00%
+Under replicated blocks: 0
+Blocks with corrupt replicas: 0
+Missing blocks: 0
+Missing blocks (with replication factor 1): 0
+
+-------------------------------------------------
+Live datanodes (3):
+
+Name: 10.2.0.5:50010 (10.2.0.5)
+Hostname: dn3
+Decommission Status : Normal
+Configured Capacity: 176036225024 (163.95 GB)
+DFS Used: 24576 (24 KB)
+Non DFS Used: 126069149696 (117.41 GB)
+DFS Remaining: 49967050752 (46.54 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 28.38%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Fri Nov 17 13:11:45 UTC 2023
+
+
+Name: 10.2.0.6:50010 (redit_sample-hdfs_dn2_1700226683.redit_sample-hdfs_1700226682)
+Hostname: dn2
+Decommission Status : Normal
+Configured Capacity: 176036225024 (163.95 GB)
+DFS Used: 24576 (24 KB)
+Non DFS Used: 126091837440 (117.43 GB)
+DFS Remaining: 49944363008 (46.51 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 28.37%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Fri Nov 17 13:11:58 UTC 2023
+
+
+Name: 10.2.0.4:50010 (redit_sample-hdfs_dn1_1700226683.redit_sample-hdfs_1700226682)
+Hostname: dn1
+Decommission Status : Normal
+Configured Capacity: 176036225024 (163.95 GB)
+DFS Used: 24576 (24 KB)
+Non DFS Used: 126090735616 (117.43 GB)
+DFS Remaining: 49945464832 (46.52 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 28.37%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Fri Nov 17 13:11:57 UTC 2023
+
+

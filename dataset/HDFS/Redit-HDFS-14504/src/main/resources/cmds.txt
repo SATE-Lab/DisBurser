@@ -1,0 +1,15 @@
+/hdfs dfs -mkdir /dir2
+/hdfs dfsadmin -setQuota 3 /dir2
+/hdfs dfsadmin -allowSnapshot /dir2
+/hdfs dfs -touchz /dir2/file1
+/hdfs dfs -createSnapshot /dir2 snap1
+/hdfs dfs -mv /dir2/file1 /dir2/file2
+/hdfs dfs -ls /dir2
+/hdfs dfs -touchz /dir2/filex
+/hdfs dfs -createSnapshot /dir2 snap2
+/hdfs dfs -ls /dir2
+/hdfs dfs -mv /dir2/file2 /dir2/file3
+/hdfs dfs -touchz /dir2/filey
+/hdfs dfs -createSnapshot /dir2 snap3
+/hdfs dfs -mv /dir2/file3 /dir2/file4
+/hdfs dfs -touchz /dir2/filez

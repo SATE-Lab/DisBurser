@@ -1,0 +1,131 @@
+18:11:45.602 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+18:11:45.787 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+18:11:45.981 [qtp631659383-22] INFO  io.redit.execution.EventService - Event E1 received!
+18:11:45.982 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+18:11:46.045 [main] WARN  o.a.h.metrics2.impl.MetricsConfig - Cannot locate configuration: tried hadoop-metrics2-jobtracker.properties,hadoop-metrics2.properties
+18:11:46.147 [main] INFO  o.a.h.m.impl.MetricsSystemImpl - Scheduled Metric snapshot period at 10 second(s).
+18:11:46.147 [main] INFO  o.a.h.m.impl.MetricsSystemImpl - JobTracker metrics system started
+18:11:46.153 [main] WARN  o.a.h.m.impl.MetricsSystemImpl - JobTracker metrics system already initialized!
+18:11:46.203 [main] INFO  o.a.h.conf.Configuration.deprecation - io.sort.mb is deprecated. Instead, use mapreduce.task.io.sort.mb
+18:11:46.203 [main] INFO  o.a.h.conf.Configuration.deprecation - io.sort.factor is deprecated. Instead, use mapreduce.task.io.sort.factor
+18:11:46.219 [main] WARN  o.a.h.m.impl.MetricsSystemImpl - JobTracker metrics system already initialized!
+18:11:46.227 [main] WARN  o.a.h.mapreduce.JobResourceUploader - Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18:11:46.245 [main] INFO  o.a.hadoop.mapreduce.JobSubmitter - number of splits:1
+18:11:46.280 [main] INFO  o.a.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_local2093952429_0001
+18:11:46.280 [main] INFO  o.a.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+18:11:46.332 [main] INFO  org.apache.hadoop.mapreduce.Job - The url to track the job: http://localhost:8080/
+18:11:46.332 [main] INFO  org.apache.hadoop.mapreduce.Job - Running job: job_local2093952429_0001
+18:11:46.332 [Thread-61] INFO  o.a.hadoop.mapred.LocalJobRunner - OutputCommitter set in config null
+18:11:46.335 [Thread-61] INFO  o.a.h.m.l.output.FileOutputCommitter - File Output Committer Algorithm version is 2
+18:11:46.335 [Thread-61] INFO  o.a.h.m.l.output.FileOutputCommitter - FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18:11:46.335 [Thread-61] INFO  o.a.hadoop.mapred.LocalJobRunner - OutputCommitter is org.apache.hadoop.tools.mapred.CopyCommitter
+18:11:46.351 [Thread-61] INFO  o.a.hadoop.mapred.LocalJobRunner - Waiting for map tasks
+18:11:46.351 [LocalJobRunner Map Task Executor #0] INFO  o.a.hadoop.mapred.LocalJobRunner - Starting task: attempt_local2093952429_0001_m_000000_0
+18:11:46.360 [LocalJobRunner Map Task Executor #0] INFO  o.a.h.m.l.output.FileOutputCommitter - File Output Committer Algorithm version is 2
+18:11:46.360 [LocalJobRunner Map Task Executor #0] INFO  o.a.h.m.l.output.FileOutputCommitter - FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18:11:46.367 [LocalJobRunner Map Task Executor #0] INFO  org.apache.hadoop.mapred.Task -  Using ResourceCalculatorProcessTree : [ ]
+18:11:46.368 [LocalJobRunner Map Task Executor #0] INFO  org.apache.hadoop.mapred.MapTask - Processing split: file:/tmp/hadoop/mapred/staging/zdc1288009785/.staging/_distcp-679960477/fileList.seq:0+356
+18:11:46.371 [LocalJobRunner Map Task Executor #0] INFO  o.a.h.m.l.output.FileOutputCommitter - File Output Committer Algorithm version is 2
+18:11:46.371 [LocalJobRunner Map Task Executor #0] INFO  o.a.h.m.l.output.FileOutputCommitter - FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18:11:46.438 [LocalJobRunner Map Task Executor #0] INFO  o.a.hadoop.mapred.LocalJobRunner -
+18:11:46.441 [LocalJobRunner Map Task Executor #0] INFO  org.apache.hadoop.mapred.Task - Task:attempt_local2093952429_0001_m_000000_0 is done. And is in the process of committing
+18:11:46.441 [LocalJobRunner Map Task Executor #0] INFO  o.a.hadoop.mapred.LocalJobRunner -
+18:11:46.441 [LocalJobRunner Map Task Executor #0] INFO  org.apache.hadoop.mapred.Task - Task attempt_local2093952429_0001_m_000000_0 is allowed to commit now
+18:11:46.442 [LocalJobRunner Map Task Executor #0] INFO  o.a.h.m.l.output.FileOutputCommitter - Saved output of task 'attempt_local2093952429_0001_m_000000_0' to file:/tmp/hadoop/mapred/staging/zdc1288009785/.staging/_distcp-679960477/_logs
+18:11:46.442 [LocalJobRunner Map Task Executor #0] INFO  o.a.hadoop.mapred.LocalJobRunner - Copying hdfs://mycluster/source/data/f1 to hdfs://mycluster/target/data/f1
+18:11:46.442 [LocalJobRunner Map Task Executor #0] INFO  org.apache.hadoop.mapred.Task - Task 'attempt_local2093952429_0001_m_000000_0' done.
+18:11:46.446 [LocalJobRunner Map Task Executor #0] INFO  org.apache.hadoop.mapred.Task - Final Counters for attempt_local2093952429_0001_m_000000_0: Counters: 25
+	File System Counters
+		FILE: Number of bytes read=186314
+		FILE: Number of bytes written=692921
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=0
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=16
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=0
+		Input split bytes=150
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=434634752
+	File Input Format Counters
+		Bytes Read=388
+	File Output Format Counters
+		Bytes Written=8
+	DistCp Counters
+		Bandwidth in Btyes=0
+		Bytes Copied=0
+		Bytes Expected=0
+		Files Copied=1
+		DIR_COPY=1
+18:11:46.446 [LocalJobRunner Map Task Executor #0] INFO  o.a.hadoop.mapred.LocalJobRunner - Finishing task: attempt_local2093952429_0001_m_000000_0
+18:11:46.446 [Thread-61] INFO  o.a.hadoop.mapred.LocalJobRunner - map task executor complete.
+18:11:46.454 [Thread-61] INFO  o.a.h.tools.mapred.CopyCommitter - Cleaning up temporary work folder: file:/tmp/hadoop/mapred/staging/zdc1288009785/.staging/_distcp-679960477
+18:11:47.333 [main] INFO  org.apache.hadoop.mapreduce.Job - Job job_local2093952429_0001 running in uber mode : false
+18:11:47.333 [main] INFO  org.apache.hadoop.mapreduce.Job -  map 100% reduce 0%
+18:11:47.334 [main] INFO  org.apache.hadoop.mapreduce.Job - Job job_local2093952429_0001 completed successfully
+18:11:47.337 [main] INFO  org.apache.hadoop.mapreduce.Job - Counters: 25
+	File System Counters
+		FILE: Number of bytes read=186314
+		FILE: Number of bytes written=692921
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=0
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=16
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=0
+		Input split bytes=150
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=434634752
+	File Input Format Counters
+		Bytes Read=388
+	File Output Format Counters
+		Bytes Written=8
+	DistCp Counters
+		Bandwidth in Btyes=0
+		Bytes Copied=0
+		Bytes Expected=0
+		Files Copied=1
+		DIR_COPY=1
+18:11:48.353 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+18:11:48.359 [qtp631659383-51] INFO  io.redit.execution.EventService - Event E2 received!
+18:11:48.360 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E3 ...
+18:11:49.391 [main] WARN  o.a.h.m.impl.MetricsSystemImpl - JobTracker metrics system already initialized!
+18:11:49.394 [main] WARN  o.a.h.m.impl.MetricsSystemImpl - JobTracker metrics system already initialized!
+18:11:49.453 [main] WARN  o.a.h.m.impl.MetricsSystemImpl - JobTracker metrics system already initialized!
+18:11:49.457 [main] WARN  o.a.h.mapreduce.JobResourceUploader - Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18:11:49.468 [main] INFO  o.a.hadoop.mapreduce.JobSubmitter - number of splits:0
+18:11:49.475 [main] INFO  o.a.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_local729581622_0002
+18:11:49.475 [main] INFO  o.a.hadoop.mapreduce.JobSubmitter - Executing with tokens: []
+18:11:49.500 [main] INFO  org.apache.hadoop.mapreduce.Job - The url to track the job: http://localhost:8080/
+18:11:49.500 [main] INFO  org.apache.hadoop.mapreduce.Job - Running job: job_local729581622_0002
+18:11:49.500 [Thread-106] INFO  o.a.hadoop.mapred.LocalJobRunner - OutputCommitter set in config null
+18:11:49.500 [Thread-106] INFO  o.a.h.m.l.output.FileOutputCommitter - File Output Committer Algorithm version is 2
+18:11:49.500 [Thread-106] INFO  o.a.h.m.l.output.FileOutputCommitter - FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+18:11:49.500 [Thread-106] INFO  o.a.hadoop.mapred.LocalJobRunner - OutputCommitter is org.apache.hadoop.tools.mapred.CopyCommitter
+18:11:49.504 [Thread-106] INFO  o.a.hadoop.mapred.LocalJobRunner - Waiting for map tasks
+18:11:49.504 [Thread-106] INFO  o.a.hadoop.mapred.LocalJobRunner - map task executor complete.
+18:11:49.509 [Thread-106] INFO  o.a.h.tools.mapred.CopyCommitter - Cleaning up temporary work folder: file:/tmp/hadoop/mapred/staging/zdc1183436081/.staging/_distcp-2144173056
+18:11:50.500 [main] INFO  org.apache.hadoop.mapreduce.Job - Job job_local729581622_0002 running in uber mode : false
+18:11:50.500 [main] INFO  org.apache.hadoop.mapreduce.Job -  map 0% reduce 0%
+18:11:50.500 [main] INFO  org.apache.hadoop.mapreduce.Job - Job job_local729581622_0002 completed successfully
+18:11:50.500 [main] INFO  org.apache.hadoop.mapreduce.Job - Counters: 0
+18:11:52.500 [main] INFO  i.redit.samples.hdfs14869.SampleTest - Files in /target:
+18:11:52.502 [main] INFO  i.redit.samples.hdfs14869.SampleTest - hdfs://mycluster/target/data
+18:11:52.502 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E3 ...
+18:11:52.506 [qtp631659383-23] INFO  io.redit.execution.EventService - Event E3 received!

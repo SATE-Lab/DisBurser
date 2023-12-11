@@ -1,0 +1,9 @@
+./hdfs dfs -mkdir /dir1
+./hdfs dfsadmin -setQuota 2 /dir1
+./hdfs dfsadmin -allowSnapshot /dir1
+./hdfs dfs -touchz /dir1/file1
+./hdfs dfs -createSnapshot /dir1 snap1
+./hdfs dfs -count -v -q /dir1
+./hdfs dfs -rm /dir1/file1
+./hdfs dfs -count -v -q /dir1
+./hdfs dfs -touchz /dir1/file1

@@ -1,0 +1,13 @@
+20:23:14.394 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+20:23:15.089 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+20:23:15.285 [qtp1002191352-22] INFO  io.redit.execution.EventService - Event E1 received!
+20:23:15.285 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+20:23:16.144 [main] INFO  i.r.samples.hdfsexample.SampleTest - Cmd :cd /hadoop/hadoop-2.7.4 &&  ./bin/hadoop fs -mv hdfs://10.2.0.2:8020/test.txt hdfs://10.2.0.2/test1.txt
+20:23:16.144 [main] INFO  i.r.samples.hdfsexample.SampleTest - StdOut :
+20:23:16.144 [main] INFO  i.r.samples.hdfsexample.SampleTest - StdErr :OpenJDK 64-Bit Server VM warning: You have loaded library /hadoop/hadoop-2.7.4/lib/native/libhadoop.so which might have disabled stack guard. The VM will try to fix the stack guard now.
+It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
+23/11/18 12:23:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+20:23:16.144 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+20:23:16.149 [qtp1002191352-50] INFO  io.redit.execution.EventService - Event E2 received!
+20:23:16.149 [main] INFO  i.r.samples.hdfsexample.SampleTest - completed !!!

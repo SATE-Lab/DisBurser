@@ -1,0 +1,15 @@
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfs -mkdir /dir1 >> /hadoop/hadoop-3.3.0/logs/console.log &
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfsadmin -setQuota 2 /dir1 >> /hadoop/hadoop-3.3.0/logs/console.log &
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfsadmin -allowSnapshot /dir1 >> /hadoop/hadoop-3.3.0/logs/console.log &
+Allowing snapshot on /dir1 succeeded
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfs -touchz /dir1/file1 >> /hadoop/hadoop-3.3.0/logs/console.log &
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfs -createSnapshot /dir1 snap1 >> /hadoop/hadoop-3.3.0/logs/console.log &
+Created snapshot /dir1/.snapshot/snap1
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfs -count -v -q /dir1 >> /hadoop/hadoop-3.3.0/logs/console.log &
+       QUOTA       REM_QUOTA     SPACE_QUOTA REM_SPACE_QUOTA    DIR_COUNT   FILE_COUNT       CONTENT_SIZE PATHNAME
+           2               0            none             inf            1            1                  0 /dir1
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfs -rm /dir1/file1 >> /hadoop/hadoop-3.3.0/logs/console.log &
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfs -count -v -q /dir1 >> /hadoop/hadoop-3.3.0/logs/console.log &
+       QUOTA       REM_QUOTA     SPACE_QUOTA REM_SPACE_QUOTA    DIR_COUNT   FILE_COUNT       CONTENT_SIZE PATHNAME
+           2               0            none             inf            1            1                  0 /dir1
+cd /hadoop/hadoop-3.3.0 && ./bin/./hdfs dfs -touchz /dir1/file1 >> /hadoop/hadoop-3.3.0/logs/console.log &

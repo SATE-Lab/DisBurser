@@ -1,0 +1,812 @@
+2023-11-21 05:12:50,662 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = nn2/10.2.0.4
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 3.3.1
+STARTUP_MSG:   classpath = /hadoop/hadoop-3.3.1/etc/hadoop:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/guava-27.0-jre.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jersey-json-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-config-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jul-to-slf4j-1.7.30.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/httpclient-4.5.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-identity-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/slf4j-api-1.7.30.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/token-provider-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jsp-api-2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/hadoop-auth-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-xdr-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-util-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/zookeeper-3.5.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/nimbus-jose-jwt-9.8.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-collections-3.2.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/zookeeper-jute-3.5.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jettison-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/failureaccess-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/log4j-1.2.17.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/hadoop-annotations-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/asm-5.0.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-core-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/metrics-core-3.2.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jakarta.activation-api-1.2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/avro-1.7.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/stax2-api-4.2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jersey-servlet-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-daemon-1.0.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/dnsjava-2.1.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-cli-1.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jersey-server-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-text-1.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/json-smart-2.4.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/paranamer-2.3.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/curator-recipes-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/checker-qual-2.5.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/animal-sniffer-annotations-1.17.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-codec-1.11.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-simplekdc-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-http-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-io-2.8.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/woodstox-core-5.3.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-common-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jersey-core-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-crypto-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-admin-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-server-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jsr311-api-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-beanutils-1.9.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-pkix-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-logging-1.1.3.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jaxb-api-2.2.11.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/gson-2.2.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-lang3-3.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/curator-framework-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/audience-annotations-0.5.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/accessors-smart-2.4.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-io-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-net-3.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-util-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-configuration2-2.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-compress-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/curator-client-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jsch-0.1.55.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/j2objc-annotations-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/re2j-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-asn1-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jcip-annotations-1.0-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/htrace-core4-4.1.0-incubating.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-servlet-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-annotations-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-core-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/slf4j-log4j12-1.7.30.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-util-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-xml-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/netty-3.10.6.Final.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-client-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-databind-2.10.5.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-server-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/hadoop-shaded-guava-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-webapp-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/hadoop-shaded-protobuf_3_7-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/javax.servlet-api-3.1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-math3-3.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-util-ajax-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-security-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/httpcore-4.4.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jsr305-3.0.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/snappy-java-1.1.8.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-common-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/reditrt-0.1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/aspectjrt-1.9.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-common-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-nfs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-kms-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-registry-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/guava-27.0-jre.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jersey-json-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-config-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/httpclient-4.5.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-identity-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/token-provider-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/hadoop-auth-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-xdr-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-util-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/zookeeper-3.5.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/nimbus-jose-jwt-9.8.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-collections-3.2.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/zookeeper-jute-3.5.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jettison-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/failureaccess-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/hadoop-annotations-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/asm-5.0.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-core-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jakarta.activation-api-1.2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/avro-1.7.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/stax2-api-4.2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jersey-servlet-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/json-simple-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-xc-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/dnsjava-2.1.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jersey-server-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-text-1.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/json-smart-2.4.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/paranamer-2.3.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/curator-recipes-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/checker-qual-2.5.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/animal-sniffer-annotations-1.17.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-codec-1.11.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-simplekdc-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-http-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-io-2.8.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/woodstox-core-5.3.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-common-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jersey-core-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-crypto-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-admin-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-server-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jsr311-api-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-beanutils-1.9.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-pkix-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jaxb-api-2.2.11.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/gson-2.2.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-lang3-3.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/curator-framework-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-jaxrs-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/audience-annotations-0.5.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/accessors-smart-2.4.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-io-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-net-3.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-util-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-configuration2-2.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jaxb-impl-2.2.3-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-compress-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/curator-client-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jsch-0.1.55.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/okio-1.6.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/j2objc-annotations-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/re2j-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-asn1-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jcip-annotations-1.0-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/htrace-core4-4.1.0-incubating.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-servlet-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-annotations-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/okhttp-2.7.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-core-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-util-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-xml-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/netty-3.10.6.Final.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-client-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-databind-2.10.5.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-server-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/hadoop-shaded-guava-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-webapp-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/hadoop-shaded-protobuf_3_7-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/javax.servlet-api-3.1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/netty-all-4.1.61.Final.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-math3-3.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-util-ajax-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-security-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/httpcore-4.4.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jsr305-3.0.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/snappy-java-1.1.8.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-client-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-rbf-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-native-client-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-nfs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-client-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-native-client-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-rbf-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-httpfs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-nativetask-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-uploader-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-app-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/HikariCP-java7-2.4.12.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/bcpkix-jdk15on-1.60.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-servlet-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/java-util-1.9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jersey-client-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax.websocket-client-api-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/fst-2.50.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jakarta.xml.bind-api-2.3.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/guice-4.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/metrics-core-3.2.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jackson-jaxrs-base-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/asm-analysis-9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax-websocket-server-impl-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jetty-plus-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jetty-jndi-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax-websocket-client-impl-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jersey-guice-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/asm-tree-9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/objenesis-2.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jackson-module-jaxb-annotations-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax.inject-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/asm-commons-9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-client-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/ehcache-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/swagger-annotations-1.5.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-server-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/guice-servlet-4.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jetty-annotations-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-common-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jna-5.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/json-io-2.5.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jackson-jaxrs-json-provider-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/geronimo-jcache_1.0_spec-1.0-alpha-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax.websocket-api-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/bcprov-jdk15on-1.60.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-api-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jetty-client-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jline-3.9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/snakeyaml-1.26.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/aopalliance-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-applications-mawo-core-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-web-proxy-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-tests-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-services-core-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-services-api-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-api-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-registry-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-nodemanager-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-common-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-router-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-client-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-common-3.3.1.jar
+STARTUP_MSG:   build = https://github.com/apache/hadoop.git -r a3b9c37a397ad4188041dd80621bdeefc46885f2; compiled by 'ubuntu' on 2021-06-15T05:13Z
+STARTUP_MSG:   java = 1.8.0_242
+************************************************************/
+2023-11-21 05:12:50,668 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: registered UNIX signal handlers for [TERM, HUP, INT]
+2023-11-21 05:12:50,721 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: createNameNode []
+2023-11-21 05:12:50,799 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: Loaded properties from hadoop-metrics2.properties
+2023-11-21 05:12:50,860 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2023-11-21 05:12:50,861 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: NameNode metrics system started
+2023-11-21 05:12:50,896 INFO org.apache.hadoop.hdfs.server.namenode.NameNodeUtils: fs.defaultFS is hdfs://mycluster
+2023-11-21 05:12:50,896 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Clients should use mycluster to access this namenode/service.
+2023-11-21 05:12:50,910 WARN org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-11-21 05:12:50,988 INFO org.apache.hadoop.util.JvmPauseMonitor: Starting JVM pause monitor
+2023-11-21 05:12:51,003 INFO org.apache.hadoop.hdfs.DFSUtil: Filter initializers set : org.apache.hadoop.http.lib.StaticUserWebFilter,org.apache.hadoop.hdfs.web.AuthFilterInitializer
+2023-11-21 05:12:51,006 INFO org.apache.hadoop.hdfs.DFSUtil: Starting Web-server for hdfs at: http://nn2:50070
+2023-11-21 05:12:51,014 INFO org.eclipse.jetty.util.log: Logging initialized @716ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-11-21 05:12:51,105 INFO org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2023-11-21 05:12:51,115 INFO org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.namenode is not defined
+2023-11-21 05:12:51,125 INFO org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2023-11-21 05:12:51,128 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hdfs
+2023-11-21 05:12:51,128 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2023-11-21 05:12:51,128 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2023-11-21 05:12:51,131 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context hdfs
+2023-11-21 05:12:51,131 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context logs
+2023-11-21 05:12:51,131 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context static
+2023-11-21 05:12:51,168 INFO org.apache.hadoop.http.HttpServer2: addJerseyResourcePackage: packageName=org.apache.hadoop.hdfs.server.namenode.web.resources;org.apache.hadoop.hdfs.web.resources, pathSpec=/webhdfs/v1/*
+2023-11-21 05:12:51,175 INFO org.apache.hadoop.http.HttpServer2: Jetty bound to port 50070
+2023-11-21 05:12:51,176 INFO org.eclipse.jetty.server.Server: jetty-9.4.40.v20210413; built: 2021-04-13T20:42:42.668Z; git: b881a572662e1943a14ae12e7e1207989f218b74; jvm 1.8.0_242-b08
+2023-11-21 05:12:51,194 INFO org.eclipse.jetty.server.session: DefaultSessionIdManager workerName=node0
+2023-11-21 05:12:51,194 INFO org.eclipse.jetty.server.session: No SessionScavenger set, using defaults
+2023-11-21 05:12:51,196 INFO org.eclipse.jetty.server.session: node0 Scavenging every 600000ms
+2023-11-21 05:12:51,207 INFO org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2023-11-21 05:12:51,209 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@3de8f619{logs,/logs,file:///hadoop/hadoop-3.3.1/logs/,AVAILABLE}
+2023-11-21 05:12:51,209 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@740fb309{static,/static,file:///hadoop/hadoop-3.3.1/share/hadoop/hdfs/webapps/static/,AVAILABLE}
+2023-11-21 05:12:51,262 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.w.WebAppContext@7cb502c{hdfs,/,file:///hadoop/hadoop-3.3.1/share/hadoop/hdfs/webapps/hdfs/,AVAILABLE}{file:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/webapps/hdfs}
+2023-11-21 05:12:51,268 INFO org.eclipse.jetty.server.AbstractConnector: Started ServerConnector@51891008{HTTP/1.1, (http/1.1)}{nn2:50070}
+2023-11-21 05:12:51,268 INFO org.eclipse.jetty.server.Server: Started @970ms
+2023-11-21 05:12:51,437 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:12:51,438 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:12:51,438 WARN org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Only one image storage directory (dfs.namenode.name.dir) configured. Beware of data loss due to lack of redundant storage directories!
+2023-11-21 05:12:51,441 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:12:51,442 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:12:51,463 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Edit logging is async:true
+2023-11-21 05:12:51,478 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: KeyProvider: null
+2023-11-21 05:12:51,479 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsLock is fair: true
+2023-11-21 05:12:51,479 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Detailed lock hold time metrics enabled: false
+2023-11-21 05:12:51,483 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner                = root (auth:SIMPLE)
+2023-11-21 05:12:51,483 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup             = supergroup
+2023-11-21 05:12:51,483 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled    = false
+2023-11-21 05:12:51,483 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isStoragePolicyEnabled = true
+2023-11-21 05:12:51,483 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Determined nameservice ID: mycluster
+2023-11-21 05:12:51,483 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: HA Enabled: true
+2023-11-21 05:12:51,508 INFO org.apache.hadoop.hdfs.server.common.Util: dfs.datanode.fileio.profiling.sampling.percentage set to 0. Disabling file IO profiling
+2023-11-21 05:12:51,513 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.block.invalidate.limit: configured=1000, counted=60, effected=1000
+2023-11-21 05:12:51,513 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true
+2023-11-21 05:12:51,517 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2023-11-21 05:12:51,517 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: The block deletion will start around 2023 Nov 21 05:12:51
+2023-11-21 05:12:51,519 INFO org.apache.hadoop.util.GSet: Computing capacity for map BlocksMap
+2023-11-21 05:12:51,519 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2023-11-21 05:12:51,520 INFO org.apache.hadoop.util.GSet: 2.0% max memory 910.5 MB = 18.2 MB
+2023-11-21 05:12:51,520 INFO org.apache.hadoop.util.GSet: capacity      = 2^21 = 2097152 entries
+2023-11-21 05:12:51,526 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: Storage policy satisfier is disabled
+2023-11-21 05:12:51,526 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.block.access.token.enable = false
+2023-11-21 05:12:51,531 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.threshold-pct = 0.999
+2023-11-21 05:12:51,531 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.min.datanodes = 0
+2023-11-21 05:12:51,531 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.extension = 30000
+2023-11-21 05:12:51,531 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: defaultReplication         = 3
+2023-11-21 05:12:51,532 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplication             = 512
+2023-11-21 05:12:51,532 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: minReplication             = 1
+2023-11-21 05:12:51,532 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplicationStreams      = 2
+2023-11-21 05:12:51,532 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: redundancyRecheckInterval  = 3000ms
+2023-11-21 05:12:51,532 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: encryptDataTransfer        = false
+2023-11-21 05:12:51,532 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxNumBlocksToLog          = 1000
+2023-11-21 05:12:51,553 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: GLOBAL serial map: bits=29 maxEntries=536870911
+2023-11-21 05:12:51,553 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: USER serial map: bits=24 maxEntries=16777215
+2023-11-21 05:12:51,553 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: GROUP serial map: bits=24 maxEntries=16777215
+2023-11-21 05:12:51,553 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: XATTR serial map: bits=24 maxEntries=16777215
+2023-11-21 05:12:51,562 INFO org.apache.hadoop.util.GSet: Computing capacity for map INodeMap
+2023-11-21 05:12:51,562 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2023-11-21 05:12:51,562 INFO org.apache.hadoop.util.GSet: 1.0% max memory 910.5 MB = 9.1 MB
+2023-11-21 05:12:51,562 INFO org.apache.hadoop.util.GSet: capacity      = 2^20 = 1048576 entries
+2023-11-21 05:12:51,562 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: ACLs enabled? true
+2023-11-21 05:12:51,562 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: POSIX ACL inheritance enabled? true
+2023-11-21 05:12:51,562 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: XAttrs enabled? true
+2023-11-21 05:12:51,562 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occurring more than 10 times
+2023-11-21 05:12:51,566 INFO org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotManager: Loaded config captureOpenFiles: false, skipCaptureAccessTimeOnlyChange: false, snapshotDiffAllowSnapRootDescendant: true, maxSnapshotLimit: 65536
+2023-11-21 05:12:51,567 INFO org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotManager: SkipList is disabled
+2023-11-21 05:12:51,570 INFO org.apache.hadoop.util.GSet: Computing capacity for map cachedBlocks
+2023-11-21 05:12:51,570 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2023-11-21 05:12:51,571 INFO org.apache.hadoop.util.GSet: 0.25% max memory 910.5 MB = 2.3 MB
+2023-11-21 05:12:51,571 INFO org.apache.hadoop.util.GSet: capacity      = 2^18 = 262144 entries
+2023-11-21 05:12:51,576 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10
+2023-11-21 05:12:51,576 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10
+2023-11-21 05:12:51,576 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+2023-11-21 05:12:51,580 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Retry cache on namenode is enabled
+2023-11-21 05:12:51,581 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis
+2023-11-21 05:12:51,582 INFO org.apache.hadoop.util.GSet: Computing capacity for map NameNodeRetryCache
+2023-11-21 05:12:51,583 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2023-11-21 05:12:51,583 INFO org.apache.hadoop.util.GSet: 0.029999999329447746% max memory 910.5 MB = 279.7 KB
+2023-11-21 05:12:51,583 INFO org.apache.hadoop.util.GSet: capacity      = 2^15 = 32768 entries
+2023-11-21 05:12:51,598 INFO org.apache.hadoop.hdfs.server.common.Storage: Lock on /var/lib/hdfs/name/in_use.lock acquired by nodename 130@nn2
+2023-11-21 05:12:51,783 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: No edit log streams selected.
+2023-11-21 05:12:51,783 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Planning to load image: FSImageFile(file=/var/lib/hdfs/name/current/fsimage_0000000000000000000, cpktTxId=0000000000000000000)
+2023-11-21 05:12:51,816 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Loading 1 INodes.
+2023-11-21 05:12:51,822 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Successfully loaded 1 inodes
+2023-11-21 05:12:51,827 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Completed update blocks map and name cache, total waiting duration 0ms.
+2023-11-21 05:12:51,831 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Loaded FSImage in 0 seconds.
+2023-11-21 05:12:51,831 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded image for txid 0 from /var/lib/hdfs/name/current/fsimage_0000000000000000000
+2023-11-21 05:12:51,834 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Need to save fs image? false (staleImage=false, haEnabled=true, isRollingUpgrade=false)
+2023-11-21 05:12:51,835 INFO org.apache.hadoop.hdfs.server.namenode.NameCache: initialized with 0 entries 0 lookups
+2023-11-21 05:12:51,835 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Finished loading FSImage in 248 msecs
+2023-11-21 05:12:51,937 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: RPC server is binding to nn2:8020
+2023-11-21 05:12:51,937 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Enable NameNode state context:false
+2023-11-21 05:12:51,939 INFO org.apache.hadoop.ipc.CallQueueManager: Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 10000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2023-11-21 05:12:51,945 INFO org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 8020
+2023-11-21 05:12:52,075 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Registered FSNamesystemState, ReplicatedBlocksState and ECBlockGroupsState MBeans.
+2023-11-21 05:12:52,076 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:12:52,083 INFO org.apache.hadoop.hdfs.server.namenode.LeaseManager: Number of blocks under construction: 0
+2023-11-21 05:12:52,089 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor: Initialized the Default Decommission and Maintenance monitor
+2023-11-21 05:12:52,091 INFO org.apache.hadoop.hdfs.StateChange: STATE* Leaving safe mode after 0 secs
+2023-11-21 05:12:52,091 INFO org.apache.hadoop.hdfs.StateChange: STATE* Network topology has 0 racks and 0 datanodes
+2023-11-21 05:12:52,091 INFO org.apache.hadoop.hdfs.StateChange: STATE* UnderReplicatedBlocks has 0 blocks
+2023-11-21 05:12:52,116 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2023-11-21 05:12:52,116 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 8020: starting
+2023-11-21 05:12:52,147 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: NameNode RPC up at: nn2/10.2.0.4:8020
+2023-11-21 05:12:52,149 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Starting services required for standby state
+2023-11-21 05:12:52,194 INFO org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Will roll logs on active node every 5 seconds.
+2023-11-21 05:12:52,198 INFO org.apache.hadoop.hdfs.server.namenode.ha.StandbyCheckpointer: Starting standby checkpoint thread...
+Checkpointing active NN to possible NNs: [http://nn1:50070, http://nn3:50070]
+Serving checkpoints at http://nn2:50070
+2023-11-21 05:12:52,489 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.7:9866, datanodeUuid=9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd
+2023-11-21 05:12:52,490 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.7:9866
+2023-11-21 05:12:52,490 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockReportLeaseManager: Registered DN 9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd (10.2.0.7:9866).
+2023-11-21 05:12:52,492 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.5:9866, datanodeUuid=87350b76-1f1a-49ac-b771-1838d24e5c76, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 87350b76-1f1a-49ac-b771-1838d24e5c76
+2023-11-21 05:12:52,492 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.5:9866
+2023-11-21 05:12:52,492 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockReportLeaseManager: Registered DN 87350b76-1f1a-49ac-b771-1838d24e5c76 (10.2.0.5:9866).
+2023-11-21 05:12:52,515 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeDescriptor: Adding new storage ID DS-06b9e776-9b8b-4ee7-983a-cca3a592f96d for DN 10.2.0.5:9866
+2023-11-21 05:12:52,516 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeDescriptor: Adding new storage ID DS-99d6121b-1747-4c6d-adc2-03304d810f8e for DN 10.2.0.7:9866
+2023-11-21 05:12:52,529 INFO BlockStateChange: BLOCK* processReport 0x9f460fc10f2696d9: Processing first storage report for DS-06b9e776-9b8b-4ee7-983a-cca3a592f96d from datanode 87350b76-1f1a-49ac-b771-1838d24e5c76
+2023-11-21 05:12:52,530 INFO BlockStateChange: BLOCK* processReport 0x9f460fc10f2696d9: from storage DS-06b9e776-9b8b-4ee7-983a-cca3a592f96d node DatanodeRegistration(10.2.0.5:9866, datanodeUuid=87350b76-1f1a-49ac-b771-1838d24e5c76, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123), blocks: 0, hasStaleStorage: false, processing time: 1 msecs, invalidatedBlocks: 0
+2023-11-21 05:12:52,554 INFO BlockStateChange: BLOCK* processReport 0x61d44f2ff13115ac: Processing first storage report for DS-99d6121b-1747-4c6d-adc2-03304d810f8e from datanode 9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd
+2023-11-21 05:12:52,554 INFO BlockStateChange: BLOCK* processReport 0x61d44f2ff13115ac: from storage DS-99d6121b-1747-4c6d-adc2-03304d810f8e node DatanodeRegistration(10.2.0.7:9866, datanodeUuid=9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123), blocks: 0, hasStaleStorage: false, processing time: 0 msecs, invalidatedBlocks: 0
+2023-11-21 05:12:52,925 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.6:9866, datanodeUuid=542667ec-b084-4e20-bb5d-5370cab61940, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 542667ec-b084-4e20-bb5d-5370cab61940
+2023-11-21 05:12:52,925 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.6:9866
+2023-11-21 05:12:52,925 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockReportLeaseManager: Registered DN 542667ec-b084-4e20-bb5d-5370cab61940 (10.2.0.6:9866).
+2023-11-21 05:12:52,926 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeDescriptor: Adding new storage ID DS-ecdb3366-e7a3-4b96-8c04-ab73380a274f for DN 10.2.0.6:9866
+2023-11-21 05:12:52,927 INFO BlockStateChange: BLOCK* processReport 0xa122596b80dea585: Processing first storage report for DS-ecdb3366-e7a3-4b96-8c04-ab73380a274f from datanode 542667ec-b084-4e20-bb5d-5370cab61940
+2023-11-21 05:12:52,927 INFO BlockStateChange: BLOCK* processReport 0xa122596b80dea585: from storage DS-ecdb3366-e7a3-4b96-8c04-ab73380a274f node DatanodeRegistration(10.2.0.6:9866, datanodeUuid=542667ec-b084-4e20-bb5d-5370cab61940, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123), blocks: 0, hasStaleStorage: false, processing time: 0 msecs, invalidatedBlocks: 0
+2023-11-21 05:12:57,201 INFO org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Triggering log roll on remote NameNode
+2023-11-21 05:12:57,225 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn1, ipcAddress=nn1/10.2.0.2:8020, httpAddress=http://nn1:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:12:57,231 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn3, ipcAddress=nn3/10.2.0.3:8020, httpAddress=http://nn3:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:12:57,233 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn1, ipcAddress=nn1/10.2.0.2:8020, httpAddress=http://nn1:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:12:57,235 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn3, ipcAddress=nn3/10.2.0.3:8020, httpAddress=http://nn3:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:12:57,236 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn1, ipcAddress=nn1/10.2.0.2:8020, httpAddress=http://nn1:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:12:57,238 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn3, ipcAddress=nn3/10.2.0.3:8020, httpAddress=http://nn3:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:12:57,238 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Unable to trigger a roll of the active NN
+java.util.concurrent.ExecutionException: java.io.IOException: Cannot find any valid remote NN to service request!
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:206)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer.triggerActiveLogRoll(EditLogTailer.java:425)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$EditLogTailerThread.doWork(EditLogTailer.java:484)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$EditLogTailerThread.access$400(EditLogTailer.java:450)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$EditLogTailerThread$1.run(EditLogTailer.java:467)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:503)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$EditLogTailerThread.run(EditLogTailer.java:463)
+Caused by: java.io.IOException: Cannot find any valid remote NN to service request!
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:582)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:13:02,240 INFO org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Triggering log roll on remote NameNode
+2023-11-21 05:13:02,241 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn1, ipcAddress=nn1/10.2.0.2:8020, httpAddress=http://nn1:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:13:02,243 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn3, ipcAddress=nn3/10.2.0.3:8020, httpAddress=http://nn3:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:13:02,244 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn1, ipcAddress=nn1/10.2.0.2:8020, httpAddress=http://nn1:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:13:02,244 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn3, ipcAddress=nn3/10.2.0.3:8020, httpAddress=http://nn3:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:13:02,245 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn1, ipcAddress=nn1/10.2.0.2:8020, httpAddress=http://nn1:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:13:02,246 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Exception from remote name node RemoteNameNodeInfo [nnId=nn3, ipcAddress=nn3/10.2.0.3:8020, httpAddress=http://nn3:50070], try next.
+org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category JOURNAL is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:108)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:2092)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1543)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.rollEditLog(FSNamesystem.java:5088)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.rollEditLog(NameNodeRpcServer.java:1356)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolServerSideTranslatorPB.rollEditLog(NamenodeProtocolServerSideTranslatorPB.java:148)
+	at org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$NamenodeProtocolService$2.callBlockingMethod(NamenodeProtocolProtos.java:16688)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at com.sun.proxy.$Proxy16.rollEditLog(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.NamenodeProtocolTranslatorPB.rollEditLog(NamenodeProtocolTranslatorPB.java:152)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:410)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$2.doWork(EditLogTailer.java:407)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:571)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:13:02,247 WARN org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Unable to trigger a roll of the active NN
+java.util.concurrent.ExecutionException: java.io.IOException: Cannot find any valid remote NN to service request!
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:206)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer.triggerActiveLogRoll(EditLogTailer.java:425)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$EditLogTailerThread.doWork(EditLogTailer.java:484)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$EditLogTailerThread.access$400(EditLogTailer.java:450)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$EditLogTailerThread$1.run(EditLogTailer.java:467)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:503)
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$EditLogTailerThread.run(EditLogTailer.java:463)
+Caused by: java.io.IOException: Cannot find any valid remote NN to service request!
+	at org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer$MultipleNameNodeProxy.call(EditLogTailer.java:582)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-21 05:13:07,250 INFO org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Triggering log roll on remote NameNode
+2023-11-21 05:13:07,323 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Reading org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream@1c7e9a77 expecting start txid #1
+2023-11-21 05:13:07,323 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Start loading edits file http://jn1:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true maxTxnsToRead = 9223372036854775807
+2023-11-21 05:13:07,325 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:07,325 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:07,404 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded 1 edits file(s) (the last named http://jn1:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true) of total size 42.0, total edits 2.0, total load time 73.0 ms
+2023-11-21 05:13:12,405 INFO org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Triggering log roll on remote NameNode
+2023-11-21 05:13:12,452 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Reading org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream@3cd4c277 expecting start txid #3
+2023-11-21 05:13:12,452 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Start loading edits file http://jn1:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true maxTxnsToRead = 9223372036854775807
+2023-11-21 05:13:12,452 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 3
+2023-11-21 05:13:12,452 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 3
+2023-11-21 05:13:12,454 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded 1 edits file(s) (the last named http://jn1:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true) of total size 42.0, total edits 2.0, total load time 2.0 ms
+2023-11-21 05:13:12,454 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn3:8480/getJournal?jid=mycluster&segmentTxId=5&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn1:8480/getJournal?jid=mycluster&segmentTxId=5&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 3
+2023-11-21 05:13:12,454 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn3:8480/getJournal?jid=mycluster&segmentTxId=5&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 3
+2023-11-21 05:13:17,516 INFO org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Triggering log roll on remote NameNode
+2023-11-21 05:13:17,546 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Reading org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream@3e4fe27b expecting start txid #11; suppressed logging for 1 edit reads
+2023-11-21 05:13:17,546 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Start loading edits file http://jn3:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true maxTxnsToRead = 9223372036854775807
+2023-11-21 05:13:17,546 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn3:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 11
+2023-11-21 05:13:17,546 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn3:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 11
+2023-11-21 05:13:17,548 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded 1 edits file(s) (the last named http://jn3:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true) of total size 42.0, total edits 2.0, total load time 3.0 ms
+2023-11-21 05:13:17,549 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn2:8480/getJournal?jid=mycluster&segmentTxId=13&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=13&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 11
+2023-11-21 05:13:17,549 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn2:8480/getJournal?jid=mycluster&segmentTxId=13&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 11
+2023-11-21 05:13:19,120 ERROR org.apache.hadoop.hdfs.server.namenode.NameNode: RECEIVED SIGNAL 15: SIGTERM
+2023-11-21 05:13:19,121 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at nn2/10.2.0.4
+************************************************************/
+2023-11-21 05:13:31,191 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = nn2/10.2.0.4
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 3.3.1
+STARTUP_MSG:   classpath = /hadoop/hadoop-3.3.1/etc/hadoop:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/guava-27.0-jre.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jersey-json-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-config-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jul-to-slf4j-1.7.30.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/httpclient-4.5.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-identity-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/slf4j-api-1.7.30.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/token-provider-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jsp-api-2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/hadoop-auth-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-xdr-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-util-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/zookeeper-3.5.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/nimbus-jose-jwt-9.8.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-collections-3.2.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/zookeeper-jute-3.5.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jettison-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/failureaccess-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/log4j-1.2.17.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/hadoop-annotations-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/asm-5.0.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-core-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/metrics-core-3.2.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jakarta.activation-api-1.2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/avro-1.7.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/stax2-api-4.2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jersey-servlet-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-daemon-1.0.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/dnsjava-2.1.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-cli-1.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jersey-server-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-text-1.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/json-smart-2.4.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/paranamer-2.3.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/curator-recipes-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/checker-qual-2.5.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/animal-sniffer-annotations-1.17.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-codec-1.11.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-simplekdc-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-http-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-io-2.8.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/woodstox-core-5.3.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-common-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jersey-core-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-crypto-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-admin-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-server-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jsr311-api-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-beanutils-1.9.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-pkix-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-logging-1.1.3.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jaxb-api-2.2.11.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/gson-2.2.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-lang3-3.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/curator-framework-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/audience-annotations-0.5.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/accessors-smart-2.4.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-io-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-net-3.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-util-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-configuration2-2.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-compress-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/curator-client-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jsch-0.1.55.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/j2objc-annotations-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/re2j-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-asn1-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jcip-annotations-1.0-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/htrace-core4-4.1.0-incubating.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-servlet-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-annotations-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-core-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/slf4j-log4j12-1.7.30.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerby-util-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-xml-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/netty-3.10.6.Final.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/kerb-client-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jackson-databind-2.10.5.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-server-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/hadoop-shaded-guava-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-webapp-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/hadoop-shaded-protobuf_3_7-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/javax.servlet-api-3.1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/commons-math3-3.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-util-ajax-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jetty-security-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/httpcore-4.4.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/jsr305-3.0.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/lib/snappy-java-1.1.8.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-common-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/reditrt-0.1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/aspectjrt-1.9.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-common-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-nfs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-kms-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/common/hadoop-registry-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/guava-27.0-jre.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jersey-json-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-config-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/httpclient-4.5.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-identity-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/token-provider-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/hadoop-auth-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-xdr-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-util-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/zookeeper-3.5.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/nimbus-jose-jwt-9.8.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-collections-3.2.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/zookeeper-jute-3.5.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jettison-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/failureaccess-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/hadoop-annotations-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/asm-5.0.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-core-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jakarta.activation-api-1.2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/avro-1.7.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/stax2-api-4.2.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jersey-servlet-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/json-simple-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-xc-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/dnsjava-2.1.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jersey-server-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-text-1.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/json-smart-2.4.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/paranamer-2.3.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/curator-recipes-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/checker-qual-2.5.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/animal-sniffer-annotations-1.17.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-codec-1.11.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-simplekdc-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-http-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-io-2.8.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/woodstox-core-5.3.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-common-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jersey-core-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-crypto-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-admin-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-server-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jsr311-api-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-beanutils-1.9.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-pkix-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jaxb-api-2.2.11.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/gson-2.2.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-lang3-3.7.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/curator-framework-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-jaxrs-1.9.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/audience-annotations-0.5.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/accessors-smart-2.4.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-io-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-net-3.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-util-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-configuration2-2.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jaxb-impl-2.2.3-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-compress-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/curator-client-4.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jsch-0.1.55.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/okio-1.6.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/j2objc-annotations-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/re2j-1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-asn1-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jcip-annotations-1.0-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/htrace-core4-4.1.0-incubating.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-servlet-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-annotations-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/okhttp-2.7.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-core-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerby-util-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-xml-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/netty-3.10.6.Final.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/kerb-client-1.0.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jackson-databind-2.10.5.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-server-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/hadoop-shaded-guava-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-webapp-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/hadoop-shaded-protobuf_3_7-1.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/javax.servlet-api-3.1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/netty-all-4.1.61.Final.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/commons-math3-3.1.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-util-ajax-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jetty-security-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/httpcore-4.4.13.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/jsr305-3.0.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/lib/snappy-java-1.1.8.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-client-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-rbf-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-native-client-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-nfs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-client-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-native-client-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-rbf-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-httpfs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/hadoop-hdfs-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-nativetask-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.3.1-tests.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-uploader-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/mapreduce/hadoop-mapreduce-client-app-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/HikariCP-java7-2.4.12.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/bcpkix-jdk15on-1.60.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-servlet-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/java-util-1.9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jersey-client-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax.websocket-client-api-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/fst-2.50.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jakarta.xml.bind-api-2.3.2.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/guice-4.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/metrics-core-3.2.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jackson-jaxrs-base-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/asm-analysis-9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax-websocket-server-impl-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jetty-plus-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jetty-jndi-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax-websocket-client-impl-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jersey-guice-1.19.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/asm-tree-9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/objenesis-2.6.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jackson-module-jaxb-annotations-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax.inject-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/asm-commons-9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-client-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/ehcache-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/swagger-annotations-1.5.4.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-server-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/guice-servlet-4.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jetty-annotations-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-common-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jna-5.2.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/json-io-2.5.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jackson-jaxrs-json-provider-2.10.5.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/geronimo-jcache_1.0_spec-1.0-alpha-1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/javax.websocket-api-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/bcprov-jdk15on-1.60.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/websocket-api-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jetty-client-9.4.40.v20210413.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/jline-3.9.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/snakeyaml-1.26.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/lib/aopalliance-1.0.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-applications-mawo-core-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-web-proxy-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-tests-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-services-core-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-services-api-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-api-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-registry-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-nodemanager-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-common-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-server-router-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-client-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.3.1.jar:/hadoop/hadoop-3.3.1/share/hadoop/yarn/hadoop-yarn-common-3.3.1.jar
+STARTUP_MSG:   build = https://github.com/apache/hadoop.git -r a3b9c37a397ad4188041dd80621bdeefc46885f2; compiled by 'ubuntu' on 2021-06-15T05:13Z
+STARTUP_MSG:   java = 1.8.0_242
+************************************************************/
+2023-11-21 05:13:31,195 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: registered UNIX signal handlers for [TERM, HUP, INT]
+2023-11-21 05:13:31,235 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: createNameNode []
+2023-11-21 05:13:31,284 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: Loaded properties from hadoop-metrics2.properties
+2023-11-21 05:13:31,323 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2023-11-21 05:13:31,323 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: NameNode metrics system started
+2023-11-21 05:13:31,346 INFO org.apache.hadoop.hdfs.server.namenode.NameNodeUtils: fs.defaultFS is hdfs://mycluster
+2023-11-21 05:13:31,347 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Clients should use mycluster to access this namenode/service.
+2023-11-21 05:13:31,356 WARN org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-11-21 05:13:31,411 INFO org.apache.hadoop.util.JvmPauseMonitor: Starting JVM pause monitor
+2023-11-21 05:13:31,423 INFO org.apache.hadoop.hdfs.DFSUtil: Filter initializers set : org.apache.hadoop.http.lib.StaticUserWebFilter,org.apache.hadoop.hdfs.web.AuthFilterInitializer
+2023-11-21 05:13:31,426 INFO org.apache.hadoop.hdfs.DFSUtil: Starting Web-server for hdfs at: http://nn2:50070
+2023-11-21 05:13:31,431 INFO org.eclipse.jetty.util.log: Logging initialized @514ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-11-21 05:13:31,483 INFO org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2023-11-21 05:13:31,488 INFO org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.namenode is not defined
+2023-11-21 05:13:31,492 INFO org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2023-11-21 05:13:31,494 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hdfs
+2023-11-21 05:13:31,494 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2023-11-21 05:13:31,494 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2023-11-21 05:13:31,495 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context hdfs
+2023-11-21 05:13:31,495 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context logs
+2023-11-21 05:13:31,495 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context static
+2023-11-21 05:13:31,517 INFO org.apache.hadoop.http.HttpServer2: addJerseyResourcePackage: packageName=org.apache.hadoop.hdfs.server.namenode.web.resources;org.apache.hadoop.hdfs.web.resources, pathSpec=/webhdfs/v1/*
+2023-11-21 05:13:31,522 INFO org.apache.hadoop.http.HttpServer2: Jetty bound to port 50070
+2023-11-21 05:13:31,523 INFO org.eclipse.jetty.server.Server: jetty-9.4.40.v20210413; built: 2021-04-13T20:42:42.668Z; git: b881a572662e1943a14ae12e7e1207989f218b74; jvm 1.8.0_242-b08
+2023-11-21 05:13:31,537 INFO org.eclipse.jetty.server.session: DefaultSessionIdManager workerName=node0
+2023-11-21 05:13:31,537 INFO org.eclipse.jetty.server.session: No SessionScavenger set, using defaults
+2023-11-21 05:13:31,538 INFO org.eclipse.jetty.server.session: node0 Scavenging every 660000ms
+2023-11-21 05:13:31,546 INFO org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2023-11-21 05:13:31,547 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@3de8f619{logs,/logs,file:///hadoop/hadoop-3.3.1/logs/,AVAILABLE}
+2023-11-21 05:13:31,547 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@740fb309{static,/static,file:///hadoop/hadoop-3.3.1/share/hadoop/hdfs/webapps/static/,AVAILABLE}
+2023-11-21 05:13:31,580 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.w.WebAppContext@7cb502c{hdfs,/,file:///hadoop/hadoop-3.3.1/share/hadoop/hdfs/webapps/hdfs/,AVAILABLE}{file:/hadoop/hadoop-3.3.1/share/hadoop/hdfs/webapps/hdfs}
+2023-11-21 05:13:31,584 INFO org.eclipse.jetty.server.AbstractConnector: Started ServerConnector@51891008{HTTP/1.1, (http/1.1)}{nn2:50070}
+2023-11-21 05:13:31,585 INFO org.eclipse.jetty.server.Server: Started @668ms
+2023-11-21 05:13:31,680 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:13:31,681 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:13:31,681 WARN org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Only one image storage directory (dfs.namenode.name.dir) configured. Beware of data loss due to lack of redundant storage directories!
+2023-11-21 05:13:31,684 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:13:31,684 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:13:31,703 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Edit logging is async:true
+2023-11-21 05:13:31,715 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: KeyProvider: null
+2023-11-21 05:13:31,716 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsLock is fair: true
+2023-11-21 05:13:31,716 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Detailed lock hold time metrics enabled: false
+2023-11-21 05:13:31,718 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner                = root (auth:SIMPLE)
+2023-11-21 05:13:31,719 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup             = supergroup
+2023-11-21 05:13:31,719 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled    = false
+2023-11-21 05:13:31,719 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isStoragePolicyEnabled = true
+2023-11-21 05:13:31,719 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Determined nameservice ID: mycluster
+2023-11-21 05:13:31,719 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: HA Enabled: true
+2023-11-21 05:13:31,736 INFO org.apache.hadoop.hdfs.server.common.Util: dfs.datanode.fileio.profiling.sampling.percentage set to 0. Disabling file IO profiling
+2023-11-21 05:13:31,740 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.block.invalidate.limit: configured=1000, counted=60, effected=1000
+2023-11-21 05:13:31,740 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true
+2023-11-21 05:13:31,743 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2023-11-21 05:13:31,743 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: The block deletion will start around 2023 Nov 21 05:13:31
+2023-11-21 05:13:31,744 INFO org.apache.hadoop.util.GSet: Computing capacity for map BlocksMap
+2023-11-21 05:13:31,744 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2023-11-21 05:13:31,744 INFO org.apache.hadoop.util.GSet: 2.0% max memory 910.5 MB = 18.2 MB
+2023-11-21 05:13:31,744 INFO org.apache.hadoop.util.GSet: capacity      = 2^21 = 2097152 entries
+2023-11-21 05:13:31,748 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: Storage policy satisfier is disabled
+2023-11-21 05:13:31,748 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: dfs.block.access.token.enable = false
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.threshold-pct = 0.999
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.min.datanodes = 0
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.extension = 30000
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: defaultReplication         = 3
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplication             = 512
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: minReplication             = 1
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxReplicationStreams      = 2
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: redundancyRecheckInterval  = 3000ms
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: encryptDataTransfer        = false
+2023-11-21 05:13:31,752 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: maxNumBlocksToLog          = 1000
+2023-11-21 05:13:31,765 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: GLOBAL serial map: bits=29 maxEntries=536870911
+2023-11-21 05:13:31,765 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: USER serial map: bits=24 maxEntries=16777215
+2023-11-21 05:13:31,765 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: GROUP serial map: bits=24 maxEntries=16777215
+2023-11-21 05:13:31,765 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: XATTR serial map: bits=24 maxEntries=16777215
+2023-11-21 05:13:31,771 INFO org.apache.hadoop.util.GSet: Computing capacity for map INodeMap
+2023-11-21 05:13:31,772 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2023-11-21 05:13:31,772 INFO org.apache.hadoop.util.GSet: 1.0% max memory 910.5 MB = 9.1 MB
+2023-11-21 05:13:31,772 INFO org.apache.hadoop.util.GSet: capacity      = 2^20 = 1048576 entries
+2023-11-21 05:13:31,772 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: ACLs enabled? true
+2023-11-21 05:13:31,772 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: POSIX ACL inheritance enabled? true
+2023-11-21 05:13:31,772 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: XAttrs enabled? true
+2023-11-21 05:13:31,772 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occurring more than 10 times
+2023-11-21 05:13:31,774 INFO org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotManager: Loaded config captureOpenFiles: false, skipCaptureAccessTimeOnlyChange: false, snapshotDiffAllowSnapRootDescendant: true, maxSnapshotLimit: 65536
+2023-11-21 05:13:31,775 INFO org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotManager: SkipList is disabled
+2023-11-21 05:13:31,777 INFO org.apache.hadoop.util.GSet: Computing capacity for map cachedBlocks
+2023-11-21 05:13:31,777 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2023-11-21 05:13:31,777 INFO org.apache.hadoop.util.GSet: 0.25% max memory 910.5 MB = 2.3 MB
+2023-11-21 05:13:31,777 INFO org.apache.hadoop.util.GSet: capacity      = 2^18 = 262144 entries
+2023-11-21 05:13:31,781 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10
+2023-11-21 05:13:31,781 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10
+2023-11-21 05:13:31,781 INFO org.apache.hadoop.hdfs.server.namenode.top.metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+2023-11-21 05:13:31,784 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Retry cache on namenode is enabled
+2023-11-21 05:13:31,784 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis
+2023-11-21 05:13:31,785 INFO org.apache.hadoop.util.GSet: Computing capacity for map NameNodeRetryCache
+2023-11-21 05:13:31,785 INFO org.apache.hadoop.util.GSet: VM type       = 64-bit
+2023-11-21 05:13:31,785 INFO org.apache.hadoop.util.GSet: 0.029999999329447746% max memory 910.5 MB = 279.7 KB
+2023-11-21 05:13:31,785 INFO org.apache.hadoop.util.GSet: capacity      = 2^15 = 32768 entries
+2023-11-21 05:13:31,800 INFO org.apache.hadoop.hdfs.server.common.Storage: Lock on /var/lib/hdfs/name/in_use.lock acquired by nodename 48@nn2
+2023-11-21 05:13:31,946 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Planning to load image: FSImageFile(file=/var/lib/hdfs/name/current/fsimage_0000000000000000000, cpktTxId=0000000000000000000)
+2023-11-21 05:13:31,975 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Loading 1 INodes.
+2023-11-21 05:13:31,979 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Successfully loaded 1 inodes
+2023-11-21 05:13:31,983 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Completed update blocks map and name cache, total waiting duration 0ms.
+2023-11-21 05:13:31,986 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Loaded FSImage in 0 seconds.
+2023-11-21 05:13:31,986 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded image for txid 0 from /var/lib/hdfs/name/current/fsimage_0000000000000000000
+2023-11-21 05:13:31,989 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Reading org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream@18cebaa5 expecting start txid #1
+2023-11-21 05:13:31,989 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Start loading edits file http://jn1:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true maxTxnsToRead = 9223372036854775807
+2023-11-21 05:13:31,990 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:31,990 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,016 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded 1 edits file(s) (the last named http://jn1:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=1&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true) of total size 42.0, total edits 2.0, total load time 19.0 ms
+2023-11-21 05:13:32,017 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,017 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=3&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,018 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn3:8480/getJournal?jid=mycluster&segmentTxId=5&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=5&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn1:8480/getJournal?jid=mycluster&segmentTxId=5&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,019 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn3:8480/getJournal?jid=mycluster&segmentTxId=5&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,042 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,042 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=11&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,043 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=13&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=13&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=13&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,043 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=13&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,045 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn3:8480/getJournal?jid=mycluster&segmentTxId=15&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn1:8480/getJournal?jid=mycluster&segmentTxId=15&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=15&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,045 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn3:8480/getJournal?jid=mycluster&segmentTxId=15&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,046 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=17&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=17&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=17&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,046 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=17&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,047 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=19&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn3:8480/getJournal?jid=mycluster&segmentTxId=19&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=19&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,047 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=19&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 1
+2023-11-21 05:13:32,049 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Need to save fs image? false (staleImage=false, haEnabled=true, isRollingUpgrade=false)
+2023-11-21 05:13:32,049 INFO org.apache.hadoop.hdfs.server.namenode.NameCache: initialized with 0 entries 0 lookups
+2023-11-21 05:13:32,049 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Finished loading FSImage in 262 msecs
+2023-11-21 05:13:32,125 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: RPC server is binding to nn2:8020
+2023-11-21 05:13:32,125 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Enable NameNode state context:false
+2023-11-21 05:13:32,127 INFO org.apache.hadoop.ipc.CallQueueManager: Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 10000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2023-11-21 05:13:32,133 INFO org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 8020
+2023-11-21 05:13:32,249 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Registered FSNamesystemState, ReplicatedBlocksState and ECBlockGroupsState MBeans.
+2023-11-21 05:13:32,250 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /var/lib/hdfs/name in configuration.
+2023-11-21 05:13:32,255 INFO org.apache.hadoop.hdfs.server.namenode.LeaseManager: Number of blocks under construction: 0
+2023-11-21 05:13:32,259 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor: Initialized the Default Decommission and Maintenance monitor
+2023-11-21 05:13:32,260 INFO org.apache.hadoop.hdfs.StateChange: STATE* Leaving safe mode after 0 secs
+2023-11-21 05:13:32,260 INFO org.apache.hadoop.hdfs.StateChange: STATE* Network topology has 0 racks and 0 datanodes
+2023-11-21 05:13:32,260 INFO org.apache.hadoop.hdfs.StateChange: STATE* UnderReplicatedBlocks has 0 blocks
+2023-11-21 05:13:32,276 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2023-11-21 05:13:32,276 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 8020: starting
+2023-11-21 05:13:32,283 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: NameNode RPC up at: nn2/10.2.0.4:8020
+2023-11-21 05:13:32,284 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Starting services required for standby state
+2023-11-21 05:13:32,287 INFO org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Will roll logs on active node every 5 seconds.
+2023-11-21 05:13:32,290 INFO org.apache.hadoop.hdfs.server.namenode.ha.StandbyCheckpointer: Starting standby checkpoint thread...
+Checkpointing active NN to possible NNs: [http://nn1:50070, http://nn3:50070]
+Serving checkpoints at http://nn2:50070
+2023-11-21 05:13:32,604 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.7:9866, datanodeUuid=9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd
+2023-11-21 05:13:32,605 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.7:9866
+2023-11-21 05:13:32,605 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockReportLeaseManager: Registered DN 9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd (10.2.0.7:9866).
+2023-11-21 05:13:32,606 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.5:9866, datanodeUuid=87350b76-1f1a-49ac-b771-1838d24e5c76, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 87350b76-1f1a-49ac-b771-1838d24e5c76
+2023-11-21 05:13:32,606 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.5:9866
+2023-11-21 05:13:32,606 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockReportLeaseManager: Registered DN 87350b76-1f1a-49ac-b771-1838d24e5c76 (10.2.0.5:9866).
+2023-11-21 05:13:32,613 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.7:9866, datanodeUuid=9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd
+2023-11-21 05:13:32,613 INFO org.apache.hadoop.net.NetworkTopology: Removing a node: /default-rack/10.2.0.7:9866
+2023-11-21 05:13:32,613 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.7:9866
+2023-11-21 05:13:32,613 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.5:9866, datanodeUuid=87350b76-1f1a-49ac-b771-1838d24e5c76, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 87350b76-1f1a-49ac-b771-1838d24e5c76
+2023-11-21 05:13:32,613 INFO org.apache.hadoop.net.NetworkTopology: Removing a node: /default-rack/10.2.0.5:9866
+2023-11-21 05:13:32,613 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.5:9866
+2023-11-21 05:13:32,939 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.6:9866, datanodeUuid=542667ec-b084-4e20-bb5d-5370cab61940, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 542667ec-b084-4e20-bb5d-5370cab61940
+2023-11-21 05:13:32,939 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.6:9866
+2023-11-21 05:13:32,939 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockReportLeaseManager: Registered DN 542667ec-b084-4e20-bb5d-5370cab61940 (10.2.0.6:9866).
+2023-11-21 05:13:32,941 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* registerDatanode: from DatanodeRegistration(10.2.0.6:9866, datanodeUuid=542667ec-b084-4e20-bb5d-5370cab61940, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123) storage 542667ec-b084-4e20-bb5d-5370cab61940
+2023-11-21 05:13:32,941 INFO org.apache.hadoop.net.NetworkTopology: Removing a node: /default-rack/10.2.0.6:9866
+2023-11-21 05:13:32,941 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/10.2.0.6:9866
+2023-11-21 05:13:35,595 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeDescriptor: Adding new storage ID DS-06b9e776-9b8b-4ee7-983a-cca3a592f96d for DN 10.2.0.5:9866
+2023-11-21 05:13:35,597 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeDescriptor: Adding new storage ID DS-99d6121b-1747-4c6d-adc2-03304d810f8e for DN 10.2.0.7:9866
+2023-11-21 05:13:35,604 INFO BlockStateChange: BLOCK* processReport 0x61d44f2ff13115ad: Processing first storage report for DS-99d6121b-1747-4c6d-adc2-03304d810f8e from datanode 9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd
+2023-11-21 05:13:35,604 INFO BlockStateChange: BLOCK* processReport 0x61d44f2ff13115ad: from storage DS-99d6121b-1747-4c6d-adc2-03304d810f8e node DatanodeRegistration(10.2.0.7:9866, datanodeUuid=9fe1e262-6a04-4fa1-9fb3-493e8c7b43bd, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123), blocks: 0, hasStaleStorage: false, processing time: 0 msecs, invalidatedBlocks: 0
+2023-11-21 05:13:35,604 INFO BlockStateChange: BLOCK* processReport 0x9f460fc10f2696da: Processing first storage report for DS-06b9e776-9b8b-4ee7-983a-cca3a592f96d from datanode 87350b76-1f1a-49ac-b771-1838d24e5c76
+2023-11-21 05:13:35,604 INFO BlockStateChange: BLOCK* processReport 0x9f460fc10f2696da: from storage DS-06b9e776-9b8b-4ee7-983a-cca3a592f96d node DatanodeRegistration(10.2.0.5:9866, datanodeUuid=87350b76-1f1a-49ac-b771-1838d24e5c76, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123), blocks: 0, hasStaleStorage: false, processing time: 0 msecs, invalidatedBlocks: 0
+2023-11-21 05:13:35,938 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeDescriptor: Adding new storage ID DS-ecdb3366-e7a3-4b96-8c04-ab73380a274f for DN 10.2.0.6:9866
+2023-11-21 05:13:35,939 INFO BlockStateChange: BLOCK* processReport 0xa122596b80dea586: Processing first storage report for DS-ecdb3366-e7a3-4b96-8c04-ab73380a274f from datanode 542667ec-b084-4e20-bb5d-5370cab61940
+2023-11-21 05:13:35,939 INFO BlockStateChange: BLOCK* processReport 0xa122596b80dea586: from storage DS-ecdb3366-e7a3-4b96-8c04-ab73380a274f node DatanodeRegistration(10.2.0.6:9866, datanodeUuid=542667ec-b084-4e20-bb5d-5370cab61940, infoPort=9864, infoSecurePort=0, ipcPort=9867, storageInfo=lv=-57;cid=CID-a0d4e442-9ea9-4d21-8867-6d06ba132f13;nsid=113214950;c=1700543565123), blocks: 0, hasStaleStorage: false, processing time: 0 msecs, invalidatedBlocks: 0
+2023-11-21 05:13:37,292 INFO org.apache.hadoop.hdfs.server.namenode.ha.EditLogTailer: Triggering log roll on remote NameNode
+2023-11-21 05:13:37,341 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Reading org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream@6ff5d7bd expecting start txid #21; suppressed logging for 7 edit reads
+2023-11-21 05:13:37,341 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Start loading edits file http://jn1:8480/getJournal?jid=mycluster&segmentTxId=21&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=21&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true maxTxnsToRead = 9223372036854775807
+2023-11-21 05:13:37,341 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=21&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=21&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 21
+2023-11-21 05:13:37,341 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn1:8480/getJournal?jid=mycluster&segmentTxId=21&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 21
+2023-11-21 05:13:37,342 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded 1 edits file(s) (the last named http://jn1:8480/getJournal?jid=mycluster&segmentTxId=21&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn2:8480/getJournal?jid=mycluster&segmentTxId=21&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true) of total size 42.0, total edits 2.0, total load time 2.0 ms
+2023-11-21 05:13:37,342 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn2:8480/getJournal?jid=mycluster&segmentTxId=23&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true, http://jn1:8480/getJournal?jid=mycluster&segmentTxId=23&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 21
+2023-11-21 05:13:37,342 INFO org.apache.hadoop.hdfs.server.namenode.RedundantEditLogInputStream: Fast-forwarding stream 'http://jn2:8480/getJournal?jid=mycluster&segmentTxId=23&storageInfo=-66%3A113214950%3A1700543565123%3ACID-a0d4e442-9ea9-4d21-8867-6d06ba132f13&inProgressOk=true' to transaction ID 21
