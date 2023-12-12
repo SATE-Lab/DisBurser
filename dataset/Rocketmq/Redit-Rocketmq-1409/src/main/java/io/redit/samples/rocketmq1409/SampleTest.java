@@ -2,6 +2,7 @@ package io.redit.samples.rocketmq1409;
 
 import io.redit.ReditRunner;
 import io.redit.exceptions.RuntimeEngineException;
+import io.redit.execution.NetOp;
 import io.redit.helpers.RocketmqHelper;
 import org.apache.rocketmq.acl.common.AclClientRPCHook;
 import org.apache.rocketmq.acl.common.SessionCredentials;
@@ -20,6 +21,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeoutException;
 
 public class SampleTest {
@@ -64,6 +66,11 @@ public class SampleTest {
                 // 启动Producer实例
                 producer.start();
 
+                // simulate network delay in real-world so that messages won't go too fast
+                runner.runtime().networkOperation("server1", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server2", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server3", NetOp.delay(new Random().nextInt(101) + 50));
+
                 for (int i = 0; i < 10; i++) {
                     // 创建消息，并指定Topic，Tag和消息体
                     Message msg = new Message(TOPIC_NAME, "TagA", ("Hello RocketMQ " + i).getBytes("UTF-8"));
@@ -74,7 +81,6 @@ public class SampleTest {
                     producer.send(msg);
 
                 }
-                Thread.sleep(2000);
             } catch (MQClientException | RemotingException | MQBrokerException | InterruptedException |
                      UnsupportedEncodingException e) {
                 throw new RuntimeException(e);
@@ -90,6 +96,11 @@ public class SampleTest {
                 for (MessageExt messageExt : messageExtList) {
                     logger.info("query message: " + messageExt.toString());
                 }
+
+                runner.runtime().networkOperation("server1", NetOp.removeDelay());
+                runner.runtime().networkOperation("server2", NetOp.removeDelay());
+                runner.runtime().networkOperation("server3", NetOp.removeDelay());
+
             } catch (MQClientException e) {
                 throw new RuntimeException(e);
             } catch (InterruptedException e) {

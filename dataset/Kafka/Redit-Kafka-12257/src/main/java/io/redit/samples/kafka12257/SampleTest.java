@@ -2,6 +2,7 @@ package io.redit.samples.kafka12257;
 
 import io.redit.ReditRunner;
 import io.redit.exceptions.RuntimeEngineException;
+import io.redit.execution.NetOp;
 import io.redit.helpers.KafkaHelper;
 import io.redit.helpers.ZookeeperHelper;
 import org.apache.kafka.common.Node;
@@ -29,6 +30,7 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 import java.io.*;
+import java.util.Random;
 import java.util.concurrent.TimeoutException;
 
 public class SampleTest {
@@ -78,6 +80,11 @@ public class SampleTest {
                 // 创建主题
                 createTopic(TOPIC_NAME, 1, 1);
 
+                // simulate network delay in real-world so that producer won't go too fast
+                runner.runtime().networkOperation("server1", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server2", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server3", NetOp.delay(new Random().nextInt(101) + 50));
+
                 // 创建生产者
                 producer = createProducer();
                 produceMessages(producer, TOPIC_NAME, 10);
@@ -90,6 +97,11 @@ public class SampleTest {
 
                 // 读取数据
                 consumeMessages(consumer, TOPIC_NAME, 10);
+
+                runner.runtime().networkOperation("server1", NetOp.removeDelay());
+                runner.runtime().networkOperation("server2", NetOp.removeDelay());
+                runner.runtime().networkOperation("server3", NetOp.removeDelay());
+
 
             } catch (Exception e) {
                 e.printStackTrace();

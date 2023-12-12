@@ -68,7 +68,7 @@ public class SampleTest {
         }
     }
 
-    @Test
+    @Test(timeout = 60000)
     public void testTopicDeletionWithConsumerUsingPatternSubscribe() throws RuntimeEngineException, TimeoutException {
         runner.runtime().enforceOrder("E1", () -> {
             try {

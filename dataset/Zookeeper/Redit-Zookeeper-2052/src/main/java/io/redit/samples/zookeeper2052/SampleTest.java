@@ -2,6 +2,7 @@ package io.redit.samples.zookeeper2052;
 
 import io.redit.ReditRunner;
 import io.redit.exceptions.RuntimeEngineException;
+import io.redit.execution.NetOp;
 import org.apache.zookeeper.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -13,6 +14,7 @@ import io.redit.helpers.ZookeeperHelper;
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeoutException;
 
@@ -49,6 +51,10 @@ public class SampleTest {
     public void testMultiRollback() throws RuntimeEngineException, TimeoutException, InterruptedException {
         runner.runtime().enforceOrder("E1", () -> {
             try {
+                // simulate network delay in real-world so that messages won't go too fast
+                runner.runtime().networkOperation("server1", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server2", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server3", NetOp.delay(new Random().nextInt(101) + 50));
                 CountDownLatch countDownLatchA = new CountDownLatch(1);
                 CountDownLatch countDownLatchB = new CountDownLatch(1);
                 multiOpList = Arrays.asList(Op.delete(ZNODE_PATH, -1), Op.delete("/metadata", -1));
@@ -82,9 +88,11 @@ public class SampleTest {
             try {
                 logger.info("Close zk2 to remove ephemeral node");
                 zk2.close();
-                Thread.sleep(500);
                 logger.info("try to recursively remove node tree again, should succeed");
                 zk1.multi(multiOpList);
+                runner.runtime().networkOperation("server1", NetOp.removeDelay());
+                runner.runtime().networkOperation("server2", NetOp.removeDelay());
+                runner.runtime().networkOperation("server3", NetOp.removeDelay());
                 zk1.close();
             } catch (InterruptedException | KeeperException e) {
                 throw new RuntimeException(e);

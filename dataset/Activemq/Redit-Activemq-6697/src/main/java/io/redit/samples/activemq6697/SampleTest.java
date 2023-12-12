@@ -2,6 +2,7 @@ package io.redit.samples.activemq6697;
 
 import io.redit.ReditRunner;
 import io.redit.exceptions.RuntimeEngineException;
+import io.redit.execution.NetOp;
 import io.redit.helpers.ActivemqHelper;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.transport.stomp.StompFrame;
@@ -15,6 +16,7 @@ import org.apache.activemq.transport.stomp.Stomp;
 import org.apache.activemq.transport.stomp.StompConnection;
 
 import javax.jms.*;
+import java.util.Random;
 
 public class SampleTest {
     private static final Logger logger = LoggerFactory.getLogger(SampleTest.class);
@@ -70,6 +72,10 @@ public class SampleTest {
             StompConnection stompConnection = new StompConnection();
             stompConnection.open(runner.runtime().ip("server1"), 61613);
 
+            // simulate network delay in real-world so that message exchanges won't go too fast
+            runner.runtime().networkOperation("server1", NetOp.delay(new Random().nextInt(201) + 100));
+            runner.runtime().networkOperation("server2", NetOp.delay(new Random().nextInt(201) + 100));
+
             String frame = "STOMP\n" + "login:system\n" + "passcode:manager\n" +
                     "accept-version:1.1\n" + "host:localhost\n" + "client-id:test\n" + "\n" + Stomp.NULL;
             stompConnection.sendFrame(frame);
@@ -108,7 +114,6 @@ public class SampleTest {
                     received.getHeaders().get("message-id") + "\n\n" + Stomp.NULL;
             stompConnection.sendFrame(frame);
 
-            Thread.sleep(1000);
             // expect queue size is 0
             logger.info("queue size after 2nd attempt to ask: " + getQueueSize());
 
@@ -118,6 +123,9 @@ public class SampleTest {
 
             String receipt = stompConnection.receiveFrame();
             logger.info("Expect to receive RECEIPT frame: \n" + receipt + "\n");
+
+            runner.runtime().networkOperation("server1", NetOp.removeDelay());
+            runner.runtime().networkOperation("server2", NetOp.removeDelay());
 
             session.close();
             connection.close();

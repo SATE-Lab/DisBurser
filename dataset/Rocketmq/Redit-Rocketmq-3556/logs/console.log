@@ -1,35 +1,36 @@
-17:13:05.157 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
-RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.InternalThreadLocalMap).
+19:12:28.080 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+19:12:28.128 [main] INFO  i.r.e.NetworkOperationManager - Applying network operation network delay (118) on node server1
+19:12:28.232 [main] INFO  i.r.e.NetworkOperationManager - Applying network operation network delay (122) on node server2
+RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.PlatformDependent0).
 RocketMQLog:WARN Please initialize the logger system properly.
-17:13:05.276 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 48], transactionId='null'}
-Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001C81D18B4AAC2320B0E690000, offsetMsgId=0A02000200002A9F0000000000000000, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=2], queueOffset=0]
-17:13:05.777 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 49], transactionId='null'}
-Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001C81D18B4AAC2320B0FF10001, offsetMsgId=0A02000200002A9F00000000000000C9, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=3], queueOffset=0]
-17:13:06.277 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 50], transactionId='null'}
-Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001C81D18B4AAC2320B11E50002, offsetMsgId=0A02000200002A9F0000000000000192, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=2], queueOffset=1]
-17:13:06.777 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 51], transactionId='null'}
-Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001C81D18B4AAC2320B13DA0003, offsetMsgId=0A02000200002A9F000000000000025B, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=0], queueOffset=0]
-17:13:07.278 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 52], transactionId='null'}
-Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001C81D18B4AAC2320B15CE0004, offsetMsgId=0A02000200002A9F0000000000000324, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=0], queueOffset=1]
-17:13:07.778 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 53], transactionId='null'}
-Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001C81D18B4AAC2320B17C20005, offsetMsgId=0A02000200002A9F00000000000003ED, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=2], queueOffset=2]
-17:13:08.278 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 54], transactionId='null'}
-Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001C81D18B4AAC2320B19B60006, offsetMsgId=0A02000200002A9F00000000000004B6, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=0], queueOffset=2]
-17:13:08.778 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 55], transactionId='null'}
-Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001C81D18B4AAC2320B1BAB0007, offsetMsgId=0A02000200002A9F000000000000057F, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=0], queueOffset=3]
-17:13:09.279 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 56], transactionId='null'}
-17:13:09.279 [main] INFO  i.r.s.rocketmqexample.SampleTest - stop server2
-17:13:09.279 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Stopping node server2 ...
-17:13:12.627 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server2 is stopped!
-17:13:15.127 [main] INFO  i.r.s.rocketmqexample.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 57], transactionId='null'}
-Send message FAILED!, msg Message{topic='testTopic', flag=0, properties={UNIQ_KEY=7F000001C81D18B4AAC2320B32830008, WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 56], transactionId='null'} failed with following exception:
-org.apache.rocketmq.client.exception.MQClientException: Send [1] times, still failed, cost [3001]ms, Topic: testTopic, BrokersSent: [broker-a]
-See http://rocketmq.apache.org/docs/faq/ for further details.
-Send message FAILED!, msg Message{topic='testTopic', flag=0, properties={UNIQ_KEY=7F000001C81D18B4AAC2320B34780009, WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 57], transactionId='null'} failed with following exception:
-org.apache.rocketmq.client.exception.MQClientException: Send [1] times, still failed, cost [2502]ms, Topic: testTopic, BrokersSent: [broker-a]
-See http://rocketmq.apache.org/docs/faq/ for further details.
-17:13:20.633 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[10.2.0.3:9876] result: true
-17:13:20.633 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[] result: true
-17:13:20.633 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
-17:13:20.826 [qtp112466394-22] INFO  io.redit.execution.EventService - Event E1 received!
-17:13:20.826 [main] INFO  i.r.s.rocketmqexample.SampleTest - completed !!!
+19:12:28.346 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 48], transactionId='null'}
+19:12:28.346 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 49], transactionId='null'}
+19:12:28.346 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 50], transactionId='null'}
+19:12:28.347 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 51], transactionId='null'}
+19:12:28.347 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 52], transactionId='null'}
+19:12:28.347 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 53], transactionId='null'}
+19:12:28.347 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 54], transactionId='null'}
+19:12:28.347 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 55], transactionId='null'}
+19:12:28.347 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 56], transactionId='null'}
+19:12:28.347 [main] INFO  i.r.samples.rocketmq3556.SampleTest - stop server2
+19:12:28.347 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Stopping node server2 ...
+Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001E6D718B4AAC23CC515D80002, offsetMsgId=0A02000200002A9F0000000000000000, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=2], queueOffset=0]
+Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001E6D718B4AAC23CC514EA0000, offsetMsgId=0A02000200002A9F00000000000000C9, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=0], queueOffset=0]
+Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001E6D718B4AAC23CC515600001, offsetMsgId=0A02000200002A9F0000000000000192, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=2], queueOffset=1]
+Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001E6D718B4AAC23CC516500003, offsetMsgId=0A02000200002A9F000000000000025B, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=1], queueOffset=0]
+Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001E6D718B4AAC23CC516C70004, offsetMsgId=0A02000200002A9F0000000000000324, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=2], queueOffset=2]
+Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001E6D718B4AAC23CC5173F0005, offsetMsgId=0A02000200002A9F00000000000003ED, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=3], queueOffset=0]
+Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001E6D718B4AAC23CC517B70006, offsetMsgId=0A02000200002A9F00000000000004B6, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=1], queueOffset=1]
+Send success: SendResult [sendStatus=SEND_OK, msgId=7F000001E6D718B4AAC23CC5182F0007, offsetMsgId=0A02000200002A9F000000000000057F, messageQueue=MessageQueue [topic=testTopic, brokerName=broker-a, queueId=2], queueOffset=3]
+19:12:31.668 [main] INFO  i.r.e.s.SingleNodeRuntimeEngine - Node server2 is stopped!
+19:12:33.668 [main] INFO  i.r.samples.rocketmq3556.SampleTest - sending message: Message{topic='testTopic', flag=0, properties={WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 57], transactionId='null'}
+19:12:33.669 [main] INFO  i.r.e.NetworkOperationManager - Applying network operation remove network delay on node server1
+Send message FAILED!, msg Message{topic='testTopic', flag=0, properties={UNIQ_KEY=7F000001E6D718B4AAC23CC527850009, WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 57], transactionId='null'} failed with following exception:
+Send message FAILED!, msg Message{topic='testTopic', flag=0, properties={UNIQ_KEY=7F000001E6D718B4AAC23CC527840008, WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 56], transactionId='null'} failed with following exception:
+org.apache.rocketmq.remoting.exception.RemotingTooMuchRequestException: invokeAsync call timeout
+org.apache.rocketmq.remoting.exception.RemotingTooMuchRequestException: invokeAsync call timeout
+19:12:39.783 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[10.2.0.3:9876] result: true
+19:12:39.783 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+19:12:39.784 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[10.2.0.2:10911] result: true
+19:12:39.971 [qtp741669172-22] INFO  io.redit.execution.EventService - Event E1 received!
+19:12:39.971 [main] INFO  i.r.samples.rocketmq3556.SampleTest - completed !!!

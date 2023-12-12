@@ -2,6 +2,7 @@ package io.redit.samples.kafka9254;
 
 import io.redit.ReditRunner;
 import io.redit.exceptions.RuntimeEngineException;
+import io.redit.execution.NetOp;
 import io.redit.helpers.KafkaHelper;
 import io.redit.helpers.Utils;
 import io.redit.helpers.ZookeeperHelper;
@@ -21,6 +22,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import java.util.Collections;
 import java.util.Properties;
 import java.io.*;
+import java.util.Random;
 
 public class SampleTest {
     private static final Logger logger = LoggerFactory.getLogger(SampleTest.class);
@@ -60,8 +62,18 @@ public class SampleTest {
             try {
                 createTopic(TOPIC_NAME, 1, 3);
                 producer = createProducer();
+
+                // simulate network delay in real-world
+                runner.runtime().networkOperation("server1", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server2", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server3", NetOp.delay(new Random().nextInt(101) + 50));
+
                 produceMessages(producer, TOPIC_NAME, 20);
-                Thread.sleep(3000);
+
+                runner.runtime().networkOperation("server1", NetOp.removeDelay());
+                runner.runtime().networkOperation("server2", NetOp.removeDelay());
+                runner.runtime().networkOperation("server3", NetOp.removeDelay());
+
 
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -108,7 +120,6 @@ public class SampleTest {
             ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
             producer.send(record);
             producer.flush();
-            Thread.sleep(800);
             System.out.printf("Produced record with key %s and value %s%n", key, value);
             if (i == 5) {
                 alterConfig();

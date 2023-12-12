@@ -2,6 +2,7 @@ package io.redit.samples.hbase24135;
 
 import io.redit.ReditRunner;
 import io.redit.exceptions.RuntimeEngineException;
+import io.redit.execution.NetOp;
 import io.redit.helpers.HbaseHelper;
 import io.redit.helpers.HdfsHelper;
 import io.redit.helpers.ZookeeperHelper;
@@ -17,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.util.Random;
 
 public class SampleTest {
     private static final Logger logger = LoggerFactory.getLogger(SampleTest.class);
@@ -76,7 +78,10 @@ public class SampleTest {
 
                 getConnection();
 
-                Thread.sleep(2000);
+                // simulate network delay in real-world so that messages won't go too fast
+                runner.runtime().networkOperation("server1", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server2", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server3", NetOp.delay(new Random().nextInt(101) + 50));
 
                 Table table = createTable();
 
@@ -86,6 +91,11 @@ public class SampleTest {
                 put.addColumn(Bytes.toBytes("cf1"), Bytes.toBytes("age"), Bytes.toBytes(20));
 
                 table.put(put);
+
+                runner.runtime().networkOperation("server1", NetOp.removeDelay());
+                runner.runtime().networkOperation("server2", NetOp.removeDelay());
+                runner.runtime().networkOperation("server3", NetOp.removeDelay());
+
 
                 table.close();
                 connection.close();

@@ -83,9 +83,10 @@ Steps to reproduce：
 5. Check the number of rows returned by the query statement, some row count is incorrect.
 
 ```
-16:01:14.124 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 10--------
-16:01:14.161 [main] INFO  i.r.s.cassandra14242.SampleTest - PageSize: 10, count: 111
-16:01:15.161 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 100--------
-16:01:15.166 [main] INFO  i.r.s.cassandra14242.SampleTest - PageSize: 100, count: 101
-16:01:16.166 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 1000--
+18:32:13.065 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 10--------
+18:32:13.438 [main] INFO  i.r.s.cassandra14242.SampleTest - PageSize: 10, count: 111
+18:32:13.439 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 100--------
+18:32:13.500 [main] INFO  i.r.s.cassandra14242.SampleTest - PageSize: 100, count: 101
+18:32:13.500 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 1000--------
+18:32:13.531 [main] INFO  i.r.s.cassandra14242.SampleTest - PageSize: 1000, count: 100
 ```

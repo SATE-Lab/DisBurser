@@ -21,7 +21,7 @@ public class ReditHelper {
     private static int numOfJNs = 3;
     public static final String hadoopDir = "hadoop-3.1.2";
     public static final String zookeeperDir = "apache-zookeeper-3.7.1-bin";
-    public static final String hbaseDir = "hbase-2.2.6";
+    public static final String hbaseDir = "hbase-2.2.2";
     public static String getHadoopHomeDir(){
         return "/hadoop/" + hadoopDir;
     }

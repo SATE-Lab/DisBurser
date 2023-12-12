@@ -2,6 +2,7 @@ package io.redit.samples.hbase24189;
 
 import io.redit.ReditRunner;
 import io.redit.exceptions.RuntimeEngineException;
+import io.redit.execution.NetOp;
 import io.redit.helpers.HbaseHelper;
 import io.redit.helpers.HdfsHelper;
 import io.redit.helpers.ZookeeperHelper;
@@ -22,6 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.List;
+import java.util.Random;
 
 public class SampleTest {
     private static final Logger logger = LoggerFactory.getLogger(SampleTest.class);
@@ -84,7 +86,10 @@ public class SampleTest {
 
                 getConnection();
 
-                Thread.sleep(2000);
+                // simulate network delay in real-world so that messages won't go too fast
+                runner.runtime().networkOperation("server1", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server2", NetOp.delay(new Random().nextInt(101) + 50));
+                runner.runtime().networkOperation("server3", NetOp.delay(new Random().nextInt(101) + 50));
 
                 Table table = createTable();
 
@@ -99,14 +104,13 @@ public class SampleTest {
                 table.put(put1);
                 table.put(put2);
 
-            } catch (IOException | InterruptedException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });
 
         runner.runtime().enforceOrder("E2", () -> {
             try {
-                Thread.sleep(1000);
                 serverToKill = connection.getRegionLocator(TABLE_NAME).getAllRegionLocations().get(0).getServerName().getHostname();
                 System.out.println("serverToKill: " + serverToKill);
 
@@ -114,7 +118,11 @@ public class SampleTest {
                 admin.disableTable(TABLE_NAME);
                 admin.deleteTable(TABLE_NAME);
 
-            } catch (IOException | InterruptedException e) {
+                runner.runtime().networkOperation("server1", NetOp.removeDelay());
+                runner.runtime().networkOperation("server2", NetOp.removeDelay());
+                runner.runtime().networkOperation("server3", NetOp.removeDelay());
+
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });

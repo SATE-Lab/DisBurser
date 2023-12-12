@@ -3,6 +3,7 @@ package io.redit.samples.cassandra14242;
 import com.datastax.driver.core.*;
 import io.redit.ReditRunner;
 import io.redit.exceptions.RuntimeEngineException;
+import io.redit.execution.NetOp;
 import io.redit.helpers.CassandraHelper;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -11,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.util.Random;
 import java.util.concurrent.TimeoutException;
 
 public class SampleTest {
@@ -82,13 +84,16 @@ public class SampleTest {
                 }
             }
 
-            queryByPageSize(10, session);
-            Thread.sleep(1000);
-            queryByPageSize(100, session);
-            Thread.sleep(1000);
-            queryByPageSize(1000, session);
-            Thread.sleep(1000);
+            // simulate network delay in real-world so that messages won't go too fast
+            runner.runtime().networkOperation("server1", NetOp.delay(new Random().nextInt(31) + 10));
+            runner.runtime().networkOperation("server2", NetOp.delay(new Random().nextInt(31) + 10));
 
+            queryByPageSize(10, session);
+            queryByPageSize(100, session);
+            queryByPageSize(1000, session);
+
+            runner.runtime().networkOperation("server1", NetOp.removeDelay());
+            runner.runtime().networkOperation("server2", NetOp.removeDelay());
 
 
         } catch (Exception e) {
