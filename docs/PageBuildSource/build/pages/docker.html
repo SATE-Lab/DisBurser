@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Running Redit in Docker &mdash; Redit 0.1.0 documentation</title>
+  <title>Running RediB in Docker &mdash; RediB 0.1.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,18 +29,14 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Redit
+            <a href="../index.html" class="icon icon-home"> RediB
           </a>
               <div class="version">
                 0.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -54,7 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="runseq.html">Run Sequence Instrumentation Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="newnode.html">Adding New Nodes Dynamically</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jvmservice.html">Creating a Service From JVM Classpath</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Running Redit in Docker</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running RediB in Docker</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#why-it-may-be-needed">Why it may be needed?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-do-this">How to do this?</a></li>
 </ul>
@@ -68,15 +64,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Redit</a>
+          <a href="../index.html">RediB</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Running Redit in Docker</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Running RediB in Docker</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/pages/docker.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,10 +83,10 @@
            <div itemprop="articleBody">
              
   <section id="running-projectname-in-docker">
-<h1>Running Redit in Docker<a class="headerlink" href="#running-projectname-in-docker" title="Permalink to this heading"></a></h1>
+<h1>Running RediB in Docker<a class="headerlink" href="#running-projectname-in-docker" title="Permalink to this heading"></a></h1>
 <section id="why-it-may-be-needed">
 <h2>Why it may be needed?<a class="headerlink" href="#why-it-may-be-needed" title="Permalink to this heading"></a></h2>
-<p>There could be two reasons that you want to run Redit test cases in a Docker container:</p>
+<p>There could be two reasons that you want to run RediB test cases in a Docker container:</p>
 <ul class="simple">
 <li><p>Your CI nodes are Docker containers and you don’t have any other options</p></li>
 <li><p>You are developing in a non-Linux operating system (e.g. MacOS or Windows) and the final binary is native to your build
@@ -98,7 +94,7 @@ environment. As such, you are not able to run the built artifact in a docker con
 require doing the whole build for testing inside a container.</p></li>
 <li><p>Your client needs to access the nodes using their hostname or on any port number (without exposing them).
 Either of these cases requires the client to be in the same network namespace as the nodes and that is only
-possible if you run Redit in a Docker container.</p></li>
+possible if you run RediB in a Docker container.</p></li>
 </ul>
 </section>
 <section id="how-to-do-this">
@@ -124,8 +120,8 @@ following docker run arguments:</p>
 </ul>
 </div></blockquote>
 <p>Your final command to start the container should be something like this:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w">  </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>/var/run/docker.sock:/var/run/docker.sock<span class="w"> </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/path/to/my/project
--w<span class="w"> </span>/path/to/my/project<span class="w"> </span>myImage:1.0<span class="w"> </span>mvn<span class="w"> </span>verify
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$  docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/path/to/my/project
+-w /path/to/my/project myImage:1.0 mvn verify
 </pre></div>
 </div>
 </section>

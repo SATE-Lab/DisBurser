@@ -21,7 +21,7 @@ import os
 
 # -- Project information -----------------------------------------------------
 
-project = u'Redit'
+project = u'RediB'
 copyright = u'2023, SATE-Lab'
 author = u'SATE-Lab'
 

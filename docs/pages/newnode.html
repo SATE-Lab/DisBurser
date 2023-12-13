@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adding New Nodes Dynamically &mdash; Redit 0.1.0 documentation</title>
+  <title>Adding New Nodes Dynamically &mdash; RediB 0.1.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,18 +29,14 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Redit
+            <a href="../index.html" class="icon icon-home"> RediB
           </a>
               <div class="version">
                 0.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -54,7 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="runseq.html">Run Sequence Instrumentation Engine</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Adding New Nodes Dynamically</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jvmservice.html">Creating a Service From JVM Classpath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">Running Redit in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Running RediB in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 
@@ -64,14 +60,14 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Redit</a>
+          <a href="../index.html">RediB</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Adding New Nodes Dynamically</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/pages/newnode.rst.txt" rel="nofollow"> View page source</a>
@@ -90,26 +86,26 @@ similar to the one in <a class="reference internal" href="quickstart.html"><span
 <code class="docutils literal notranslate"><span class="pre">Node.limitedBuilder</span></code> method returns an instance of <code class="docutils literal notranslate"><span class="pre">Node.LimitedBuilder</span></code> which then can be further customized by chaining the proper
 method calls. This builder wouldn’t allow the definition of internal events for the node. However, all the other node configurations
 are available.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SampleTest</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ReditRunner</span><span class="w"> </span><span class="n">runner</span><span class="p">;</span>
-<span class="linenos"> 3</span><span class="w">    </span><span class="nd">@Test</span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">simpleDefinition</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">DeploymentVerificationException</span><span class="p">,</span><span class="w"> </span><span class="n">RuntimeEngineException</span><span class="p">,</span><span class="w"> </span><span class="n">TimeoutException</span><span class="p">,</span><span class="w"> </span><span class="n">WorkspaceException</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 5</span><span class="w">        </span><span class="n">Deployment</span><span class="w"> </span><span class="n">deployment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Deployment</span><span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;sample-multithread&quot;</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="w">                </span><span class="c1">// Service Definitions</span>
-<span class="linenos"> 7</span><span class="w">                </span><span class="p">.</span><span class="na">withServiceFromJvmClasspath</span><span class="p">(</span><span class="s">&quot;s1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;**commons-io*.jar&quot;</span><span class="p">)</span>
-<span class="linenos"> 8</span><span class="w">                    </span><span class="p">.</span><span class="na">startCommand</span><span class="p">(</span><span class="s">&quot;java -cp ${REDIT_JVM_CLASSPATH} io.redit.samples.multithread.Main&quot;</span><span class="p">)</span>
-<span class="linenos"> 9</span><span class="w">                    </span><span class="p">.</span><span class="na">dockerImageName</span><span class="p">(</span><span class="s">&quot;redit/sample-multithread&quot;</span><span class="p">)</span>
-<span class="linenos">10</span><span class="w">                    </span><span class="p">.</span><span class="na">dockerFileAddress</span><span class="p">(</span><span class="s">&quot;../sample-multithread/docker/Dockerfile&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
-<span class="linenos">11</span><span class="w">                    </span><span class="p">.</span><span class="na">logFile</span><span class="p">(</span><span class="s">&quot;/var/log/sample1&quot;</span><span class="p">)</span>
-<span class="linenos">12</span><span class="w">                    </span><span class="p">.</span><span class="na">logDirectory</span><span class="p">(</span><span class="s">&quot;/var/log/samples&quot;</span><span class="p">)</span>
-<span class="linenos">13</span><span class="w">                    </span><span class="p">.</span><span class="na">serviceType</span><span class="p">(</span><span class="n">ServiceType</span><span class="p">.</span><span class="na">JAVA</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
-<span class="linenos">14</span><span class="w">                </span><span class="c1">// Node Definitions</span>
-<span class="linenos">15</span><span class="w">                </span><span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s1&quot;</span><span class="p">)</span>
-<span class="linenos">16</span><span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
-<span class="linenos">17</span><span class="w">        </span><span class="n">ReditRunner</span><span class="w"> </span><span class="n">runner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReditRunner</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">deployment</span><span class="p">);</span>
-<span class="linenos">18</span><span class="w">        </span><span class="c1">// Adding new nodes to the deployed environment</span>
-<span class="linenos">19</span><span class="w">        </span><span class="n">runner</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="n">Node</span><span class="p">.</span><span class="na">limitedBuilder</span><span class="p">(</span><span class="s">&quot;n52&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s1&quot;</span><span class="p">));</span>
-<span class="linenos">20</span><span class="w">    </span><span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleTest</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="kd">protected</span> <span class="kd">static</span> <span class="n">ReditRunner</span> <span class="n">runner</span><span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nd">@Test</span>
+<span class="linenos"> 4</span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleDefinition</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">DeploymentVerificationException</span><span class="p">,</span> <span class="n">RuntimeEngineException</span><span class="p">,</span> <span class="n">TimeoutException</span><span class="p">,</span> <span class="n">WorkspaceException</span> <span class="p">{</span>
+<span class="linenos"> 5</span>        <span class="n">Deployment</span> <span class="n">deployment</span> <span class="o">=</span> <span class="n">Deployment</span><span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;sample-multithread&quot;</span><span class="p">)</span>
+<span class="linenos"> 6</span>                <span class="c1">// Service Definitions</span>
+<span class="linenos"> 7</span>                <span class="p">.</span><span class="na">withServiceFromJvmClasspath</span><span class="p">(</span><span class="s">&quot;s1&quot;</span><span class="p">,</span> <span class="s">&quot;target/classes&quot;</span><span class="p">,</span> <span class="s">&quot;**commons-io*.jar&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span>                    <span class="p">.</span><span class="na">startCommand</span><span class="p">(</span><span class="s">&quot;java -cp ${REDIT_JVM_CLASSPATH} io.redit.samples.multithread.Main&quot;</span><span class="p">)</span>
+<span class="linenos"> 9</span>                    <span class="p">.</span><span class="na">dockerImageName</span><span class="p">(</span><span class="s">&quot;redit/sample-multithread&quot;</span><span class="p">)</span>
+<span class="linenos">10</span>                    <span class="p">.</span><span class="na">dockerFileAddress</span><span class="p">(</span><span class="s">&quot;../sample-multithread/docker/Dockerfile&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+<span class="linenos">11</span>                    <span class="p">.</span><span class="na">logFile</span><span class="p">(</span><span class="s">&quot;/var/log/sample1&quot;</span><span class="p">)</span>
+<span class="linenos">12</span>                    <span class="p">.</span><span class="na">logDirectory</span><span class="p">(</span><span class="s">&quot;/var/log/samples&quot;</span><span class="p">)</span>
+<span class="linenos">13</span>                    <span class="p">.</span><span class="na">serviceType</span><span class="p">(</span><span class="n">ServiceType</span><span class="p">.</span><span class="na">JAVA</span><span class="p">).</span><span class="na">and</span><span class="p">()</span>
+<span class="linenos">14</span>                <span class="c1">// Node Definitions</span>
+<span class="linenos">15</span>                <span class="p">.</span><span class="na">withNode</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">)</span>
+<span class="linenos">16</span>                <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="linenos">17</span>        <span class="n">ReditRunner</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">ReditRunner</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">deployment</span><span class="p">);</span>
+<span class="linenos">18</span>        <span class="c1">// Adding new nodes to the deployed environment</span>
+<span class="linenos">19</span>        <span class="n">runner</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="n">Node</span><span class="p">.</span><span class="na">limitedBuilder</span><span class="p">(</span><span class="s">&quot;n52&quot;</span><span class="p">,</span> <span class="s">&quot;s1&quot;</span><span class="p">));</span>
+<span class="linenos">20</span>    <span class="p">}</span>
 <span class="linenos">21</span><span class="p">}</span>
 </pre></div>
 </div>
