@@ -45,7 +45,8 @@ Steps:
 1. Clone code
 2. Check build.sh under the specific system version
 3. Confirm the issue which is need for trigger or not, delete the unnecessary macro definiton in bash
-4. Run bash and will get the package of the reuqired version of issue
+4. Download the required **source code** of the specific version.
+5. Run bash and will get the package of the reuqired version of issue
 
 
 

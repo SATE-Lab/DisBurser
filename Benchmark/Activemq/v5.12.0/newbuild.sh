@@ -1,9 +1,5 @@
 #!/bin/bash
-#def123用于定义需要注入的bug，没有注释就说明要注入
-#在build前确认java版本为1.8，有mvn
-#build前需要将release版本和sourcecode版本丢进相应的文件夹
-#在release版本对应的目录下需要新建/mq{?}和/mq{?}/lib，然后在redithelper中，指定新的工作目录为这俩
-#build自动打包，就进去了
+
 def1=-D'AMQ_6010'
 def2=-D'AMQ_6059'
 def3=-D'AMQ_6062'
@@ -16,14 +12,16 @@ libJar2=activemq-broker-5.12.0.jar
 libJar3=activemq-amqp-5.12.0.jar
 tar=activemq-5.12.0.tar.gz
 
-if [ -f $cFile ]
-then
+# Compile C file if exists
+if [ -f $cFile ]; then
     gcc $def1 $def2 $def3 $cFile -o $exeFile
     echo "gcc compile success"
     ./$exeFile
 else
-  echo "Error: $cFile not found !"
+  echo "Error: $cFile not found!"
 fi
+
+# Change directory to compile ActiveMQ
 
 cd ./$srcName/activemq-all
 echo "current working directory: `pwd`"
@@ -40,16 +38,21 @@ echo "current working directory: `pwd`"
 mvn -DskipTests clean install
 cp ./target/$libJar3 ../../
 
-cd ..
-cd ..
-cp $libJar1 ./$system/mq1/
-cp $libJar1 ./$system/mq2/
-cp $libJar1 ./$system/mq3/
-cp $libJar2 ./$system/mq1/lib/
-cp $libJar2 ./$system/mq2/lib/
-cp $libJar2 ./$system/mq3/lib/
-cp $libJar3 ./$system/mq1/lib/
-cp $libJar3 ./$system/mq2/lib/
-cp $libJar3 ./$system/mq3/lib/
-tar -zcvf $tar $system
-rm -rf $libJar1 $libJar2 $libJar3
+# ... Add ActiveMQ compilation commands here ...
+# Replace JAR files
+cp ./target/$libJar1 ../../
+cp ./target/$libJar2 ../../
+cp ./target/$libJar3 ../../
+
+# Check if directory exists and create if not
+for mq_dir in "$system/mq1" "$system/mq2"; do
+    if [ ! -d "$mq_dir" ]; then
+        echo "Directory $mq_dir not found. Creating..."
+        mkdir -p "$mq_dir"
+    fi
+    cp "$libJar1" "$mq_dir/"
+done
+
+# Package the modified content
+tar -czvf $tar $system
+echo "Packaging complete: $tar"
