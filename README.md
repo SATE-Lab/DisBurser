@@ -17,7 +17,7 @@ For Java, we can force a specific order between nodes in order to reproduce a sp
 We provide bugs in each version of each distributed system and their error injection scripts. You can quickly switch between error and repair versions through the instructions in the data set, and test RediT or your tool on different versions.
 
 # Testcase
-We provide recurring test cases for DisBurser. You can use the recurring test cases according to the instructions in the Testcase folder, so that you can quickly get started with our framework.
+We provide recurring test cases for RediI. You can use the recurring test cases according to the instructions in the Testcase folder, so that you can quickly get started with our framework.
 
 
 # Questions
