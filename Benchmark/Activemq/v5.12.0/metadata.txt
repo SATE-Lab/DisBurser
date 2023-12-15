@@ -1,0 +1,394 @@
+issue_id: AMQ-6000
+patch_url: https://github.com/apache/activemq/commit/7875e97
+files: activemq-broker/src/main/java/org/apache/activemq/broker/region/Queue.java
+affects_v: 5.12.0
+fix_v: 5.12.2
+
+issue_id: AMQ-6010
+patch_url: https://github.com/apache/activemq/commit/95a9a80
+files: activemq-amqp/src/main/java/org/apache/activemq/transport/amqp/AmqpProtocolDiscriminator.java
+affects_v: 5.12.0
+fix_v: 5.12.2
+
+issue_id: AMQ-6059
+patch_url: https://github.com/apache/activemq/commit/b04cfeb
+files: activemq-broker/src/main/java/org/apache/activemq/util/BrokerSupport.java
+affects_v: 5.12.0
+fix_v: 5.13.1
+
+issue_id: AMQ-6430
+patch_url: https://github.com/apache/activemq/commit/d3b86e7, https://github.com/apache/activemq/commit/e0c70b8
+files: activemq-broker/src/main/java/org/apache/activemq/broker/region/TopicRegion.java, activemq-broker/src/main/java/org/apache/activemq/broker/region/Topic.java, activemq-broker/src/main/java/org/apache/activemq/broker/region/TopicRegion.java, activemq-broker/src/main/java/org/apache/activemq/store/NoLocalSubscriptionAware.java, activemq-broker/src/main/java/org/apache/activemq/store/memory/MemoryPersistenceAdapter.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/KahaDBPersistenceAdapter.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/KahaDBStore.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/MultiKahaDBPersistenceAdapter.java
+affects_v: 5.14.0
+fix_v: 5.14.1
+
+issue_id: AMQ-6697
+patch_url: https://github.com/apache/activemq/commit/1c141ea, https://github.com/apache/activemq/commit/0be8b63#diff-c8d46af1c48deab5979acdc1a09cb150984fa928bcae2f2ae95991f07228271b, https://github.com/apache/activemq/commit/e38ac94
+files: activemq-stomp/src/main/java/org/apache/activemq/transport/stomp/StompSubscription.java
+affects_v: 5.14.0
+fix_v: 5.14.6
+
+issue_id: AMQ-6847
+patch_url: https://github.com/apache/activemq/commit/e62705a, https://github.com/apache/activemq/commit/185160c, https://github.com/apache/activemq/commit/a5d32da
+files: activemq-broker/src/main/java/org/apache/activemq/broker/region/Queue.java
+affects_v: 5.14.0
+fix_v: 5.14.6
+
+issue_id: AMQ-6500
+patch_url: https://github.com/apache/activemq/commit/65d789b#diff-9f1c660cea412a240898dbc6b0d29c27a135bcc2c4a8c048eecd72f6af3fb362
+files: activemq-broker/src/main/java/org/apache/activemq/broker/region/TopicSubscription.java
+affects_v: 5.14.1
+fix_v: 5.14.2
+
+issue_id: AMQ-6796
+patch_url: https://github.com/apache/activemq/commit/8e9f80e
+files: activemq-stomp/src/main/java/org/apache/activemq/transport/stomp/StompSubscription.java
+affects_v: 5.15.0
+fix_v: 5.15.1
+
+issue_id: AMQ-6823
+patch_url: https://github.com/apache/activemq/commit/eccbd75
+files: activemq-client/src/main/java/org/apache/activemq/command/MessagePull.java
+affects_v: 5.15.0
+fix_v: 5.15.1
+
+issue_id: AMQ-7129
+patch_url: https://github.com/apache/activemq/commit/24b5944, https://github.com/apache/activemq/commit/602e382, https://github.com/apache/activemq/commit/0b88dab, https://github.com/apache/activemq/commit/5acd930
+files: activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/KahaDBStore.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/MessageDatabase.java
+affects_v: 5.15.0
+fix_v: 5.15.9
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+issue_id: CAS_10968
+patch_url: https://github.com/apache/cassandra/commit/976096abd2ba786f747774ee5160c4cba6fefce2
+files: src/java/org/apache/cassandra/db/ColumnFamilyStore.java
+affects_v: 2.2.16
+fix_v: 2.2.17
+
+issue_id: CAS_14365
+patch_url: https://github.com/apache/cassandra/commit/ae326eed2aa8f9c761fc7a0a872ce8172fde2f0f
+files: src/java/org/apache/cassandra/serializers/MapSerializer.java, src/java/org/apache/cassandra/serializers/SetSerializer.java
+affects_v: 2.2.16
+fix_v: 2.2.17
+
+issue_id: CAS_15814
+patch_url: https://github.com/apache/cassandra/commit/9f8d5b8d069a1db88e70deafff6c0edc23c896d0
+files: src/java/org/apache/cassandra/cql3/Lists.java, src/java/org/apache/cassandra/cql3/Maps.java, src/java/org/apache/cassandra/cql3/Maps.java, src/java/org/apache/cassandra/cql3/Sets.java
+affects_v: 2.2.16
+fix_v: 2.2.18
+
+issue_id: CASSANDRA-12424
+patch_url: https://github.com/pcmanus/cassandra/commit/76ca513076da7be7bb16e51228b03f2b7a437aa8
+files: src/java/org/apache/cassandra/db/view/ViewUpdateGenerator.java
+affects_v: 3.7
+fix_v: 3.8
+
+issue_id: CASSANDRA-13666
+patch_url: https://github.com/apache/cassandra/commit/86e1590042116b35a63a705676ecdffd5dfcde6c
+files: src/java/org/apache/cassandra/index/internal/composites/CompositesSearcher.java
+affects_v: 3.11.3
+fix_v: 3.11.7
+
+issue_id: CASSANDRA-14242
+patch_url: https://github.com/apache/cassandra/commit/6cd2d07d9ae00fafa460fa1613264c43a283e24d
+files: src/java/org/apache/cassandra/service/pager/AbstractQueryPager.java, src/java/org/apache/cassandra/service/pager/MultiPartitionPager.java, src/java/org/apache/cassandra/service/pager/PartitionRangeQueryPager.java
+affects_v: 3.11.3
+fix_v: 3.11.7
+
+issue_id: CASSANDRA-13669
+patch_url: https://github.com/apache/cassandra/commit/ea62d8862c311e3d9b64d622bea0a68d3825aa7d
+files: src/java/org/apache/cassandra/index/sasi/SASIIndex.java, src/java/org/apache/cassandra/index/sasi/analyzer/AbstractAnalyzer.java, src/java/org/apache/cassandra/index/sasi/analyzer/DelimiterAnalyzer.java, src/java/org/apache/cassandra/index/sasi/analyzer/NoOpAnalyzer.java, src/java/org/apache/cassandra/index/sasi/analyzer/NonTokenizingAnalyzer.java, src/java/org/apache/cassandra/index/sasi/analyzer/StandardAnalyzer.java, src/java/org/apache/cassandra/index/sasi/conf/IndexMode.java
+affects_v: 3.11.2
+fix_v: 3.11.3
+nodes: patch rollback
+
+issue_id: CASSANDRA-13464
+patch_url: https://github.com/apache/cassandra/commit/44604b7316fcbfd7d0d7425e75cd7ebe267e3247#diff-7fb55db150f8d59107d2e4905c58a9409de9c483662d21ed2d77c7359c3a1be2
+files: src/java/org/apache/cassandra/cql3/WhereClause.java, src/java/org/apache/cassandra/cql3/statements/CreateViewStatement.java
+affects_v: 3.11.6
+fix_v: 3.11.11
+
+issue_id: CASSANDRA-15297
+patch_url: https://github.com/apache/cassandra/commit/e773bbd9c6c52a2fedc127cb7ab77a1fdbeb63d2#diff-dac68155054f2160a7e13aa567cf33209e03d05181736540acbeaea61a35b731
+files: src/java/org/apache/cassandra/tools/nodetool/Snapshot.java
+affects_v: 3.11.6
+fix_v: 4.0.4
+
+issue_id: CASSANDRA-16836
+patch_url: https://github.com/apache/cassandra/commit/99e1fcc251bd498abab17a59a9fc9593d242671b
+files: src/java/org/apache/cassandra/cql3/functions/FunctionName.java, src/java/org/apache/cassandra/cql3/functions/FunctionCall.java
+affects_v: 3.11.6
+fix_v: 3.11.12
+
+issue_id: CASSANDRA-17628
+patch_url: https://github.com/apache/cassandra/commit/09692d5a58d96089c699f59e9b7daacd066e902d#diff-fec8a0773f2b5bb4edbc54658575939f7d1804bdde8936efc750643c98c38c97
+files: doc/cql3/CQL.textile, src/java/org/apache/cassandra/cql3/selection/Selectable.java
+affects_v: 3.11.6
+fix_v: 3.11.14
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+issue_id: HDFS-8950
+patch_url: https://issues.apache.org/jira/secure/attachment/12769015/HDFS-8950.branch-2.7.patch
+files: /hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/DatanodeManager.java, /hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/HostFileManager.java
+affects_v: 2.7.0
+fix_v: 2.7.2
+
+issue_id: HDFS-10239
+patch_url: https://issues.apache.org/jira/secure/attachment/12796561/HDFS-10239.002.patch
+files: hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/shell/MoveCommands.java
+affects_v: 2.7.0
+fix_v: 2.7.3
+
+issue_id: HDFS-11379
+patch_url: https://issues.apache.org/jira/secure/attachment/12852611/HDFS-11379.branch-2.7.patch
+files: /hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/DFSInputStream.java
+affects_v: 2.7.0
+fix_v: 2.7.4
+
+issue_id: HDFS-14504
+patch_url: https://issues.apache.org/jira/secure/attachment/12999559/HDFS-14504.002.patch
+files: /hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSDirectory.java
+affects_v: 3.1.2
+fix_v: 3.3.1
+
+issue_id: HDFS-14987
+patch_url: https://issues.apache.org/jira/secure/attachment/12958270/HDFS-14266-02.patch
+files: /hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NamenodeFsck.java
+affects_v: 3.1.2
+fix_v: 3.1.3
+
+issue_id: HDFS-14869
+patch_url: https://github.com/apache/hadoop/pull/1530/files
+files: hadoop-tools/hadoop-distcp/src/main/java/org/apache/hadoop/tools/DistCp.java, hadoop-tools/hadoop-distcp/src/main/java/org/apache/hadoop/tools/DistCpSync.java
+affects_v: 3.1.2
+fix_v: 3.1.4
+
+issue_id: HDFS-14499
+patch_url: https://issues.apache.org/jira/secure/attachment/12974368/HDFS-14499.002.patch
+files: /hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/INodeReference.java
+affects_v: 3.2.0
+fix_v: 3.2.2
+
+issue_id: HDFS-15446
+patch_url: https://issues.apache.org/jira/secure/attachment/13006845/HDFS-15446.003.patch
+files: /hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSDirectory.java, /hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSEditLogLoader.java
+affects_v: 3.2.0
+fix_v: 3.2.2
+
+issue_id: HDFS-15398
+patch_url: https://issues.apache.org/jira/secure/attachment/13005292/HDFS-15398.004.patch
+files: /hadoop-hdfs-project/hadoop-hdfs-client/src/main/java/org/apache/hadoop/hdfs/DFSStripedOutputStream.java
+affects_v: 3.2.0
+fix_v: 3.3.1
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+issue_id: HBASE-19850
+patch_url: https://issues.apache.org/jira/secure/attachment/12919332/HBASE-19850.branch-1.001.patch
+files: /hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/RestoreSnapshotHandler.java
+affects_v: 1.4.0
+fix_v: 1.5.0
+
+issue_id: HBASE-23682
+patch_url: https://github.com/apache/hbase/pull/1151/files
+files: hbase-procedure/src/main/java/org/apache/hadoop/hbase/procedure2/ProcedureExecutor.java
+affects_v: 2.2.2
+fix_v: 2.3.0
+
+issue_id: HBASE-24189
+patch_url: hbase-server/src/main/java/org/apache/hadoop/hbase/wal/WALSplitter.java
+files: hbase-common/src/main/java/org/apache/hadoop/hbase/util/CommonFSUtils.java, hbase-server/src/main/java/org/apache/hadoop/hbase/wal/WALSplitter.java
+affects_v: 2.2.2
+fix_v: 2.2.6
+
+issue_id: HBASE-24135
+patch_url: https://github.com/apache/hbase/pull/1550/files#diff-52b3b4e6d1770a5bbc312ed1e7b1e1c79ec9512ff5f4c4ad80bf9863564d99a1
+files: hbase-rsgroup/src/main/java/org/apache/hadoop/hbase/rsgroup/RSGroupAdminEndpoint.java, hbase-rsgroup/src/main/java/org/apache/hadoop/hbase/rsgroup/RSGroupInfoManager.java, hbase-rsgroup/src/main/java/org/apache/hadoop/hbase/rsgroup/RSGroupInfoManagerImpl.java, hbase-rsgroup/src/main/java/org/apache/hadoop/hbase/rsgroup/RSGroupUtil.java
+affects_v: 2.2.2
+fix_v: 2.2.5
+
+issue_id: HBASE-26742
+patch_url: https://github.com/apache/hbase/pull/4105/files
+files: hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+affects_v: 2.4.9
+fix_v: 2.4.10
+
+issue_id: HBASE-26901
+patch_url: https://github.com/apache/hbase/pull/4295/files
+files: hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/querymatcher/NewVersionBehaviorTracker.java
+affects_v: 2.4.9
+fix_v: 2.4.12
+
+issue_id: HBASE-26027
+patch_url: https://github.com/apache/hbase/pull/3925/files
+files: hbase-client/src/main/java/org/apache/hadoop/hbase/client/AsyncRequestFutureImpl.java
+affects_v: 2.4.9
+fix_v: 2.5.0
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+issue_id: KAFKA-9254
+patch_url: https://github.com/apache/kafka/pull/7870/files
+files: core/src/main/scala/kafka/server/DynamicBrokerConfig.scala
+affects_v: 2.0.0
+fix_v: 2.0.2
+
+issue_id: KAFKA-5098
+patch_url: https://github.com/apache/kafka/pull/3223/files, https://github.com/apache/kafka/pull/5247/files
+files: clients/src/main/java/org/apache/kafka/clients/producer/ProducerRecord.java, clients/src/main/java/org/apache/kafka/clients/Metadata.java, clients/src/main/java/org/apache/kafka/clients/consumer/KafkaConsumer.java, clients/src/main/java/org/apache/kafka/clients/consumer/internals/ConsumerCoordinator.java, clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java, clients/src/main/java/org/apache/kafka/common/Cluster.java, clients/src/main/java/org/apache/kafka/common/errors/InvalidTopicException.java, clients/src/main/java/org/apache/kafka/common/requests/MetadataResponse.java
+affects_v: 2.0.0
+fix_v: 2.1.0
+
+issue_id: KAFKA-7496
+patch_url: https://github.com/apache/kafka/pull/5774/files
+files: clients/src/main/java/org/apache/kafka/clients/admin/KafkaAdminClient.java
+affects_v: 2.0.0
+fix_v: 2.1.0
+
+issue_id: KAFKA-12257
+patch_url: https://github.com/apache/kafka/pull/11004/files
+files: clients/src/main/java/org/apache/kafka/clients/Metadata.java, clients/src/main/java/org/apache/kafka/clients/MetadataCache.java
+affects_v: 2.8.0
+fix_v: 2.8.2
+
+issue_id: KAFKA-12866
+patch_url: https://github.com/apache/kafka/pull/10795/files
+files: core/src/main/scala/kafka/zk/KafkaZkClient.scala
+affects_v: 2.8.0
+fix_v: 3.0.0
+
+issue_id: KAFKA-13310
+patch_url: https://github.com/apache/kafka/pull/11340/files
+files: clients/src/main/java/org/apache/kafka/clients/consumer/internals/AbstractCoordinator.java, clients/src/main/java/org/apache/kafka/clients/consumer/internals/ConsumerCoordinator.java, connect/runtime/src/main/java/org/apache/kafka/connect/runtime/distributed/WorkerCoordinator.java
+affects_v: 2.8.0
+fix_v: 3.2.0
+
+issue_id: KAFKA-13964
+patch_url: https://github.com/apache/kafka/pull/13114/files
+files: checkstyle/import-control.xml, clients/src/main/resources/common/message/AlterUserScramCredentialsRequest.json, clients/src/main/resources/common/message/DescribeUserScramCredentialsRequest.json, core/src/main/scala/kafka/security/CredentialProvider.scala, core/src/main/scala/kafka/server/BrokerServer.scala, core/src/main/scala/kafka/server/ControllerApis.scala, core/src/main/scala/kafka/server/KafkaApis.scala, core/src/main/scala/kafka/server/metadata/BrokerMetadataPublisher.scala, core/src/main/scala/kafka/server/metadata/KRaftMetadataCache.scala, metadata/src/main/java/org/apache/kafka/controller/Controller.java, metadata/src/main/java/org/apache/kafka/controller/ControllerMetricsManager.java, metadata/src/main/java/org/apache/kafka/controller/QuorumController.java, metadata/src/main/java/org/apache/kafka/controller/ScramControlManager.java, metadata/src/main/java/org/apache/kafka/image/MetadataDelta.java, metadata/src/main/java/org/apache/kafka/image/MetadataImage.java, metadata/src/main/java/org/apache/kafka/image/ScramCredentialData.java, metadata/src/main/java/org/apache/kafka/image/ScramDelta.java, metadata/src/main/java/org/apache/kafka/image/ScramImage.java, metadata/src/main/resources/common/metadata/RemoveUserScramCredentialRecord.json, metadata/src/main/resources/common/metadata/UserScramCredentialRecord.json, server-common/src/main/java/org/apache/kafka/server/common/MetadataVersion.java
+affects_v: 3.0.0
+fix_v: 3.5.0
+
+issue_id: KAFKA-13488
+patch_url: https://github.com/apache/kafka/pull/11552/files
+files: clients/src/main/java/org/apache/kafka/clients/Metadata.java
+affects_v: 3.0.0
+fix_v: 3.0.1
+
+issue_id: KAFKA-14303
+patch_url: https://github.com/apache/kafka/pull/12872/files
+files: clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java, clients/src/main/java/org/apache/kafka/clients/producer/internals/BuiltInPartitioner.java
+affects_v: 3.3.1
+fix_v: 3.3.2
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+issue_id: ROCKETMQ-281
+patch_url: https://github.com/apache/rocketmq/pull/158/files
+files: broker/src/main/java/org/apache/rocketmq/broker/BrokerStartup.java, store/src/main/java/org/apache/rocketmq/store/DefaultMessageStore.java, store/src/main/java/org/apache/rocketmq/store/config/StorePathConfigHelper.java
+affects_v: 4.0.0
+fix_v: 4.2.0
+
+issue_id: ROCKETMQ-231
+patch_url: https://github.com/apache/rocketmq/pull/126/files
+files: store/src/main/java/org/apache/rocketmq/store/DefaultMessageStore.java
+affects_v: 4.1.0
+fix_v: 4.2.0
+
+issue_id: ROCKETMQ-255
+patch_url: https://github.com/apache/rocketmq/pull/142/files
+files: client/src/main/java/org/apache/rocketmq/client/impl/consumer/DefaultMQPullConsumerImpl.java, client/src/main/java/org/apache/rocketmq/client/impl/consumer/DefaultMQPushConsumerImpl.java
+affects_v: 4.1.0
+fix_v: 4.2.0
+
+issue_id: ROCKETMQ-266
+patch_url: https://github.com/apache/rocketmq/pull/147/files
+files: client/src/main/java/org/apache/rocketmq/client/impl/consumer/DefaultMQPushConsumerImpl.java
+affects_v: 4.1.0
+fix_v: 4.2.0
+
+issue_id: RMQ-1409
+patch_url: https://github.com/apache/rocketmq/pull/1756/files
+files: acl/src/main/java/org/apache/rocketmq/acl/plain/PlainAccessValidator.java
+affects_v: 4.5.0
+fix_v: 4.7.0
+
+issue_id: RMQ-3175
+patch_url: https://github.com/apache/rocketmq/pull/3176/files
+files: acl/src/main/java/org/apache/rocketmq/acl/plain/PlainPermissionManager.java
+affects_v: 4.9.0
+fix_v: 4.9.1
+
+issue_id: RMQ-3281
+patch_url: https://github.com/apache/rocketmq/pull/3280/files
+files: acl/src/main/java/org/apache/rocketmq/acl/plain/PlainPermissionManager.java, broker/src/main/java/org/apache/rocketmq/broker/processor/AdminBrokerProcessor.java, client/src/main/java/org/apache/rocketmq/client/impl/MQClientAPIImpl.java, common/src/main/java/org/apache/rocketmq/common/UtilAll.java, tools/src/main/java/org/apache/rocketmq/tools/command/acl/DeleteAccessConfigSubCommand.java, tools/src/main/java/org/apache/rocketmq/tools/command/acl/UpdateGlobalWhiteAddrSubCommand.java
+affects_v: 4.9.0
+fix_v: 4.9.2
+
+issue_id: RMQ-3556
+patch_url: https://github.com/apache/rocketmq/pull/3555/files
+files: client/src/main/java/org/apache/rocketmq/client/impl/MQClientAPIImpl.java
+affects_v: 4.9.0
+fix_v: 4.9.3
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+issue_id: ZOOKEEPER-706
+patch_url: https://issues.apache.org/jira/secure/attachment/12739331/ZOOKEEPER-706.patch
+files: src/java/main/org/apache/zookeeper/ClientCnxn.java
+affects_v: 3.5.0
+fix_v: 3.5.2
+
+issue_id: ZOOKEEPER-1366
+patch_url: https://issues.apache.org/jira/secure/attachment/12696794/ZOOKEEPER-1366.patch
+files: src/java/main/org/apache/zookeeper/ClientCnxn.java, src/java/main/org/apache/zookeeper/ClientCnxnSocket.java, src/java/main/org/apache/zookeeper/Login.java, src/java/main/org/apache/zookeeper/Shell.java, src/java/main/org/apache/zookeeper/ZKUtil.java, src/java/main/org/apache/zookeeper/common/Time.java, src/java/main/org/apache/zookeeper/server/ConnectionBean.java, src/java/main/org/apache/zookeeper/server/ExpiryQueue.java, src/java/main/org/apache/zookeeper/server/FinalRequestProcessor.java, src/java/main/org/apache/zookeeper/server/PrepRequestProcessor.java, src/java/main/org/apache/zookeeper/server/RateLogger.java, src/java/main/org/apache/zookeeper/server/Request.java, src/java/main/org/apache/zookeeper/server/ServerStats.java, src/java/main/org/apache/zookeeper/server/SessionTrackerImpl.java, src/java/main/org/apache/zookeeper/server/WorkerService.java, src/java/main/org/apache/zookeeper/server/ZKDatabase.java, src/java/main/org/apache/zookeeper/server/ZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/quorum/AuthFastLeaderElection.java, src/java/main/org/apache/zookeeper/server/quorum/FastLeaderElection.java, src/java/main/org/apache/zookeeper/server/quorum/Follower.java, src/java/main/org/apache/zookeeper/server/quorum/Leader.java, src/java/main/org/apache/zookeeper/server/quorum/LearnerSnapshotThrottler.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java, 
+affects_v: 3.5.0
+fix_v: 3.5.1
+
+issue_id: ZOOKEEPER-2052
+patch_url: https://issues.apache.org/jira/secure/attachment/12675054/ZOOKEEPER-2052-v5.patch
+files: src/java/main/org/apache/zookeeper/server/PrepRequestProcessor.java, 
+affects_v: 3.5.0
+fix_v: 3.5.1
+
+issue_id: ZOOKEEPER-4466
+patch_url: https://github.com/apache/zookeeper/pull/1859/files
+files: zookeeper-server/src/main/java/org/apache/zookeeper/server/DataTree.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/IWatchManager.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchManager.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchStats.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatcherMode.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatcherModeManager.java
+affects_v: 3.7.1
+fix_v: 3.9.0
+
+issue_id: ZOOKEEPER-4508
+patch_url: https://github.com/apache/zookeeper/pull/1847/commits/d741b0a63e47b540c2f19f6d64c85ecc1e70a0fe
+files: zookeeper-server/src/main/java/org/apache/zookeeper/ClientCnxn.java
+affects_v: 3.7.1
+fix_v: 
+notes: patch not release yet
+
+issue_id: ZOOKEEPER-4473
+patch_url: https://github.com/apache/zookeeper/pull/1818/files
+files: zookeeper-contrib/zookeeper-contrib-zooinspector/pom.xml, zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/gui/ZooInspectorTreeView.java, zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/manager/ZooInspectorManagerImpl.java
+affects_v: 3.7.1
+fix_v: 3.8.1
+
+issue_id: ZOOKEEPER-1367
+patch_url: https://issues.apache.org/jira/secure/attachment/12512280/ZOOKEEPER-1367.patch
+files: src/java/main/org/apache/zookeeper/server/quorum/LeaderZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/LearnerZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/ZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/FinalRequestProcessor.java, 
+affects_v: 3.4.3
+fix_v: 3.5.0
+
+issue_id: ZOOKEEPER-2355
+patch_url: https://github.com/apache/zookeeper/pull/304/files
+files: src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java
+affects_v: 3.5.3
+fix_v: 3.5.4
+
+issue_id: ZOOKEEPER-3895
+patch_url: https://github.com/apache/zookeeper/pull/1407/files
+files: zookeeper-server/src/main/java/org/apache/zookeeper/ClientCnxn.java, zookeeper-server/src/main/java/org/apache/zookeeper/ZooKeeper.java
+affects_v: 3.6.0
+fix_v: 3.7.0
+
+# TODO 1367 3.4.3   2355 3.4.3   
+
