@@ -8,7 +8,7 @@ import io.redit.exceptions.RuntimeEngineException;
 
 public class ReditHelper {
     public static int numOfServers = 2;
-    public static final String dir = "apache-activemq-5.14.0";
+    public static final String dir = "activemq-5.14.0";
 
     public static String getActiveMQHomeDir() {
         return "/activemq/" + dir;

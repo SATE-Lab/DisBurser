@@ -2,7 +2,7 @@
 
 def1=-D'AMQ_6430'
 def2=-D'AMQ_6697'
-def3=-D'AMQ_6823'
+def3=-D'AMQ_6847'
 cFile=inject.c
 exeFile=inject
 srcName=activemq-parent-5.14.0-src
@@ -11,6 +11,7 @@ libJar1=activemq-all-5.14.0.jar
 libJar2=activemq-broker-5.14.0.jar
 libJar3=activemq-stomp-5.14.0.jar
 libJar4=activemq-client-5.14.0.jar
+libJar5=activemq-kahadb-store-5.14.0.jar
 tar=activemq-5.14.0.tar.gz
 
 if [ -f $cFile ]
@@ -42,19 +43,17 @@ echo "current working directory: `pwd`"
 mvn -DskipTests clean install
 cp ./target/$libJar4 ../../
 
+cd ../activemq-kahadb-store
+echo "current working directory: `pwd`"
+mvn -DskipTests clean install
+cp ./target/$libJar5 ../../
+
 cd ..
 cd ..
-cp $libJar1 ./$system/mq1/
-cp $libJar1 ./$system/mq2/
-cp $libJar1 ./$system/mq3/
-cp $libJar2 ./$system/mq1/lib/
-cp $libJar2 ./$system/mq2/lib/
-cp $libJar2 ./$system/mq3/lib/
-cp $libJar3 ./$system/mq1/lib/
-cp $libJar3 ./$system/mq2/lib/
-cp $libJar3 ./$system/mq3/lib/
-cp $libJar4 ./$system/mq1/lib/
-cp $libJar4 ./$system/mq2/lib/
-cp $libJar4 ./$system/mq3/lib/
+cp $libJar1 ./$system/
+cp $libJar2 ./$system/lib/
+cp $libJar3 ./$system/lib/optional/
+cp $libJar4 ./$system/lib/
+cp $libJar5 ./$system/lib/
 tar -zcvf $tar $system
-rm -rf $libJar1 $libJar2 $libJar3 $libJar4
+rm -rf $libJar1 $libJar2 $libJar3 $libJar4 $libJar5
