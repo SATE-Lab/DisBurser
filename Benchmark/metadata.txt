@@ -18,7 +18,7 @@ fix_v: 5.13.1
 
 issue_id: AMQ-6430
 patch_url: https://github.com/apache/activemq/commit/d3b86e7, https://github.com/apache/activemq/commit/e0c70b8
-files: activemq-broker/src/main/java/org/apache/activemq/broker/region/TopicRegion.java, activemq-broker/src/main/java/org/apache/activemq/broker/region/Topic.java, activemq-broker/src/main/java/org/apache/activemq/broker/region/TopicRegion.java, activemq-broker/src/main/java/org/apache/activemq/store/NoLocalSubscriptionAware.java, activemq-broker/src/main/java/org/apache/activemq/store/memory/MemoryPersistenceAdapter.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/KahaDBPersistenceAdapter.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/KahaDBStore.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/MultiKahaDBPersistenceAdapter.java
+files: activemq-broker/src/main/java/org/apache/activemq/broker/region/Topic.java, activemq-broker/src/main/java/org/apache/activemq/broker/region/TopicRegion.java, activemq-broker/src/main/java/org/apache/activemq/store/NoLocalSubscriptionAware.java, activemq-broker/src/main/java/org/apache/activemq/store/memory/MemoryPersistenceAdapter.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/KahaDBPersistenceAdapter.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/KahaDBStore.java, activemq-kahadb-store/src/main/java/org/apache/activemq/store/kahadb/MultiKahaDBPersistenceAdapter.java
 affects_v: 5.14.0
 fix_v: 5.14.1
 
@@ -26,13 +26,15 @@ issue_id: AMQ-6697
 patch_url: https://github.com/apache/activemq/commit/1c141ea, https://github.com/apache/activemq/commit/0be8b63#diff-c8d46af1c48deab5979acdc1a09cb150984fa928bcae2f2ae95991f07228271b, https://github.com/apache/activemq/commit/e38ac94
 files: activemq-stomp/src/main/java/org/apache/activemq/transport/stomp/StompSubscription.java
 affects_v: 5.14.0
-fix_v: 5.14.6
+fix_v: 5.15.0
+notes: 5.14.6 never released, change to 5.15.0
 
 issue_id: AMQ-6847
 patch_url: https://github.com/apache/activemq/commit/e62705a, https://github.com/apache/activemq/commit/185160c, https://github.com/apache/activemq/commit/a5d32da
 files: activemq-broker/src/main/java/org/apache/activemq/broker/region/Queue.java
 affects_v: 5.14.0
-fix_v: 5.14.6
+fix_v: 5.15.3
+notes: 5.14.6 never released, change to 5.15.3
 
 issue_id: AMQ-6500
 patch_url: https://github.com/apache/activemq/commit/65d789b#diff-9f1c660cea412a240898dbc6b0d29c27a135bcc2c4a8c048eecd72f6af3fb362
@@ -60,21 +62,21 @@ fix_v: 5.15.9
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-issue_id: CAS_10968
+issue_id: CASSANDRA-10968
 patch_url: https://github.com/apache/cassandra/commit/976096abd2ba786f747774ee5160c4cba6fefce2
 files: src/java/org/apache/cassandra/db/ColumnFamilyStore.java
 affects_v: 2.2.16
 fix_v: 2.2.17
 
-issue_id: CAS_14365
+issue_id: CASSANDRA-14365
 patch_url: https://github.com/apache/cassandra/commit/ae326eed2aa8f9c761fc7a0a872ce8172fde2f0f
 files: src/java/org/apache/cassandra/serializers/MapSerializer.java, src/java/org/apache/cassandra/serializers/SetSerializer.java
 affects_v: 2.2.16
 fix_v: 2.2.17
 
-issue_id: CAS_15814
+issue_id: CASSANDRA-15814
 patch_url: https://github.com/apache/cassandra/commit/9f8d5b8d069a1db88e70deafff6c0edc23c896d0
-files: src/java/org/apache/cassandra/cql3/Lists.java, src/java/org/apache/cassandra/cql3/Maps.java, src/java/org/apache/cassandra/cql3/Maps.java, src/java/org/apache/cassandra/cql3/Sets.java
+files: src/java/org/apache/cassandra/cql3/Lists.java, src/java/org/apache/cassandra/cql3/Maps.java, src/java/org/apache/cassandra/cql3/Sets.java
 affects_v: 2.2.16
 fix_v: 2.2.18
 
@@ -233,7 +235,8 @@ issue_id: KAFKA-9254
 patch_url: https://github.com/apache/kafka/pull/7870/files
 files: core/src/main/scala/kafka/server/DynamicBrokerConfig.scala
 affects_v: 2.0.0
-fix_v: 2.0.2
+fix_v: 2.1.0
+notes: 2.0.2 is never released, using 2.1.0
 
 issue_id: KAFKA-5098
 patch_url: https://github.com/apache/kafka/pull/3223/files, https://github.com/apache/kafka/pull/5247/files
@@ -309,25 +312,25 @@ files: client/src/main/java/org/apache/rocketmq/client/impl/consumer/DefaultMQPu
 affects_v: 4.1.0
 fix_v: 4.2.0
 
-issue_id: RMQ-1409
+issue_id: ROCKETMQ-1409
 patch_url: https://github.com/apache/rocketmq/pull/1756/files
 files: acl/src/main/java/org/apache/rocketmq/acl/plain/PlainAccessValidator.java
 affects_v: 4.5.0
 fix_v: 4.7.0
 
-issue_id: RMQ-3175
+issue_id: ROCKETMQ-3175
 patch_url: https://github.com/apache/rocketmq/pull/3176/files
 files: acl/src/main/java/org/apache/rocketmq/acl/plain/PlainPermissionManager.java
 affects_v: 4.9.0
 fix_v: 4.9.1
 
-issue_id: RMQ-3281
+issue_id: ROCKETMQ-3281
 patch_url: https://github.com/apache/rocketmq/pull/3280/files
 files: acl/src/main/java/org/apache/rocketmq/acl/plain/PlainPermissionManager.java, broker/src/main/java/org/apache/rocketmq/broker/processor/AdminBrokerProcessor.java, client/src/main/java/org/apache/rocketmq/client/impl/MQClientAPIImpl.java, common/src/main/java/org/apache/rocketmq/common/UtilAll.java, tools/src/main/java/org/apache/rocketmq/tools/command/acl/DeleteAccessConfigSubCommand.java, tools/src/main/java/org/apache/rocketmq/tools/command/acl/UpdateGlobalWhiteAddrSubCommand.java
 affects_v: 4.9.0
 fix_v: 4.9.2
 
-issue_id: RMQ-3556
+issue_id: ROCKETMQ-3556
 patch_url: https://github.com/apache/rocketmq/pull/3555/files
 files: client/src/main/java/org/apache/rocketmq/client/impl/MQClientAPIImpl.java
 affects_v: 4.9.0
@@ -343,13 +346,13 @@ fix_v: 3.5.2
 
 issue_id: ZOOKEEPER-1366
 patch_url: https://issues.apache.org/jira/secure/attachment/12696794/ZOOKEEPER-1366.patch
-files: src/java/main/org/apache/zookeeper/ClientCnxn.java, src/java/main/org/apache/zookeeper/ClientCnxnSocket.java, src/java/main/org/apache/zookeeper/Login.java, src/java/main/org/apache/zookeeper/Shell.java, src/java/main/org/apache/zookeeper/ZKUtil.java, src/java/main/org/apache/zookeeper/common/Time.java, src/java/main/org/apache/zookeeper/server/ConnectionBean.java, src/java/main/org/apache/zookeeper/server/ExpiryQueue.java, src/java/main/org/apache/zookeeper/server/FinalRequestProcessor.java, src/java/main/org/apache/zookeeper/server/PrepRequestProcessor.java, src/java/main/org/apache/zookeeper/server/RateLogger.java, src/java/main/org/apache/zookeeper/server/Request.java, src/java/main/org/apache/zookeeper/server/ServerStats.java, src/java/main/org/apache/zookeeper/server/SessionTrackerImpl.java, src/java/main/org/apache/zookeeper/server/WorkerService.java, src/java/main/org/apache/zookeeper/server/ZKDatabase.java, src/java/main/org/apache/zookeeper/server/ZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/quorum/AuthFastLeaderElection.java, src/java/main/org/apache/zookeeper/server/quorum/FastLeaderElection.java, src/java/main/org/apache/zookeeper/server/quorum/Follower.java, src/java/main/org/apache/zookeeper/server/quorum/Leader.java, src/java/main/org/apache/zookeeper/server/quorum/LearnerSnapshotThrottler.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java, 
+files: src/java/main/org/apache/zookeeper/ClientCnxn.java, src/java/main/org/apache/zookeeper/ClientCnxnSocket.java, src/java/main/org/apache/zookeeper/Login.java, src/java/main/org/apache/zookeeper/Shell.java, src/java/main/org/apache/zookeeper/ZKUtil.java, src/java/main/org/apache/zookeeper/common/Time.java, src/java/main/org/apache/zookeeper/server/ConnectionBean.java, src/java/main/org/apache/zookeeper/server/ExpiryQueue.java, src/java/main/org/apache/zookeeper/server/FinalRequestProcessor.java, src/java/main/org/apache/zookeeper/server/PrepRequestProcessor.java, src/java/main/org/apache/zookeeper/server/RateLogger.java, src/java/main/org/apache/zookeeper/server/Request.java, src/java/main/org/apache/zookeeper/server/ServerStats.java, src/java/main/org/apache/zookeeper/server/SessionTrackerImpl.java, src/java/main/org/apache/zookeeper/server/WorkerService.java, src/java/main/org/apache/zookeeper/server/ZKDatabase.java, src/java/main/org/apache/zookeeper/server/ZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/quorum/AuthFastLeaderElection.java, src/java/main/org/apache/zookeeper/server/quorum/FastLeaderElection.java, src/java/main/org/apache/zookeeper/server/quorum/Follower.java, src/java/main/org/apache/zookeeper/server/quorum/Leader.java, src/java/main/org/apache/zookeeper/server/quorum/LearnerSnapshotThrottler.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java
 affects_v: 3.5.0
 fix_v: 3.5.1
 
 issue_id: ZOOKEEPER-2052
 patch_url: https://issues.apache.org/jira/secure/attachment/12675054/ZOOKEEPER-2052-v5.patch
-files: src/java/main/org/apache/zookeeper/server/PrepRequestProcessor.java, 
+files: src/java/main/org/apache/zookeeper/server/PrepRequestProcessor.java
 affects_v: 3.5.0
 fix_v: 3.5.1
 
@@ -363,7 +366,7 @@ issue_id: ZOOKEEPER-4508
 patch_url: https://github.com/apache/zookeeper/pull/1847/commits/d741b0a63e47b540c2f19f6d64c85ecc1e70a0fe
 files: zookeeper-server/src/main/java/org/apache/zookeeper/ClientCnxn.java
 affects_v: 3.7.1
-fix_v: 
+fix_v: 3.7.1
 notes: patch not release yet
 
 issue_id: ZOOKEEPER-4473
@@ -374,13 +377,13 @@ fix_v: 3.8.1
 
 issue_id: ZOOKEEPER-1367
 patch_url: https://issues.apache.org/jira/secure/attachment/12512280/ZOOKEEPER-1367.patch
-files: src/java/main/org/apache/zookeeper/server/quorum/LeaderZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/LearnerZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/ZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/FinalRequestProcessor.java, 
+files: src/java/main/org/apache/zookeeper/server/quorum/LeaderZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/LearnerZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/ZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/FinalRequestProcessor.java
 affects_v: 3.4.3
 fix_v: 3.5.0
 
 issue_id: ZOOKEEPER-2355
 patch_url: https://github.com/apache/zookeeper/pull/304/files
-files: src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java
+files: src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java
 affects_v: 3.5.3
 fix_v: 3.5.4
 
@@ -390,5 +393,4 @@ files: zookeeper-server/src/main/java/org/apache/zookeeper/ClientCnxn.java, zook
 affects_v: 3.6.0
 fix_v: 3.7.0
 
-# TODO 1367 3.4.3   2355 3.4.3   
 
