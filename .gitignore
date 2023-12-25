@@ -30,3 +30,7 @@ dependency-reduced-pom.xml
 
 apache-*.tar.gz
 rocketmq-*.tar.gz
+
+# others
+/Benchmark/Benchmark/*
+inject
