@@ -228,9 +228,9 @@ function download_hdfs {
 
 
 function download_hbase {
-	local hbase_1_4_0_tar_path="$(pwd)/Benchmark/HBase/v1.4.0/tar"
-	local hbase_2_2_2_tar_path="$(pwd)/Benchmark/HBase/v2.2.2/tar"
-	local hbase_2_4_9_tar_path="$(pwd)/Benchmark/HBase/v2.4.9/tar"
+	local hbase_1_4_0_tar_path="$(pwd)/Benchmark/Hbase/v1.4.0/tar"
+	local hbase_2_2_2_tar_path="$(pwd)/Benchmark/Hbase/v2.2.2/tar"
+	local hbase_2_4_9_tar_path="$(pwd)/Benchmark/Hbase/v2.4.9/tar"
 	
 	mkdir "$hbase_1_4_0_tar_path"
 	mkdir "$hbase_2_2_2_tar_path"
@@ -513,9 +513,13 @@ download_amq
 
 download_cas
 
+download_hdfs
+
+download_hbase
+
 chmod_files "$(pwd)/Benchmark"
 
-# generate_tar "$(pwd)/Benchmark"
+generate_tar "$(pwd)/Benchmark"
 
 
 
