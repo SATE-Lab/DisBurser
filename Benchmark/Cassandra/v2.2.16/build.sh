@@ -1,7 +1,7 @@
 #!/bin/bash
 
-def1=-D'CAS_14365'
-def2=-D'CAS_13528'
+def1=-D'CAS_10968'
+def2=-D'CAS_14365'
 def3=-D'CAS_15814'
 cFile=inject.c
 exeFile=inject

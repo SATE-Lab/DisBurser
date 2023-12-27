@@ -3,20 +3,16 @@
 int main()
 {
 #ifdef ZK_2355
-    system("cp ./buggy/Learner.java ./zookeeper-3.5.3-src/src/java/main/org/apache/zookeeper/server/quorum/");
-    printf("inject ZK_2355 ...\n");
+	system("cp ./buggy/Learner.java ./apache-zookeeper-3.5.3/src/java/main/org/apache/zookeeper/server/quorum/Learner.java");
+	system("cp ./buggy/QuorumPeer.java ./apache-zookeeper-3.5.3/src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java");
+	system("cp ./buggy/QuorumPeerMain.java ./apache-zookeeper-3.5.3/src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java");
+	printf("inject ZK_2355...\n");
 #else
-    system("cp ./fixed/Learner.java ./zookeeper-3.5.3-src/src/java/main/org/apache/zookeeper/server/quorum/");
-    printf("don't inject ZK_2355 ...\n");
+	system("cp ./fixed/Learner.java ./apache-zookeeper-3.5.3/src/java/main/org/apache/zookeeper/server/quorum/Learner.java");
+	system("cp ./fixed/QuorumPeer.java ./apache-zookeeper-3.5.3/src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java");
+	system("cp ./fixed/QuorumPeerMain.java ./apache-zookeeper-3.5.3/src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java");
+	printf("don't inject ZK_2355...\n");
 #endif
 
 
-#ifdef ZK_3531
-    system("cp ./buggy/ReferenceCountedACLCache.java ./zookeeper-3.5.3-src/src/java/main/org/apache/zookeeper/server/");
-    printf("inject ZK_3531 ...\n");
-#else
-    system("cp ./fixed/ReferenceCountedACLCache.java ./zookeeper-3.5.3-src/src/java/main/org/apache/zookeeper/server/");
-    printf("don't inject ZK_3531 ...\n");
-#endif
 }
-

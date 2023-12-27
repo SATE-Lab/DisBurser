@@ -18,7 +18,7 @@ tar=activemq-5.12.0.tar.gz
 
 if [ -f $cFile ]
 then
-    gcc $cFile -o $exeFile
+    gcc $def1 $def2 $def3 $cFile -o $exeFile
     echo "gcc compile success"
     ./$exeFile
 else
@@ -44,6 +44,6 @@ cd ..
 cd ..
 cp $libJar1 ./$system/
 cp $libJar2 ./$system/lib/
-cp $libJar3 ./$system/lib/optional/
+cp $libJar3 ./$system/lib/optional/ 
 tar -zcvf $tar $system
 rm -rf $libJar1 $libJar2 $libJar3

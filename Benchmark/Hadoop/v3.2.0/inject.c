@@ -2,33 +2,33 @@
 #include <stdlib.h>
 int main()
 {
-#ifdef HDFS_14527
-    system("cp ./buggy/BlockPlacementPolicyDefault.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/");
-    system("cp ./buggy/BlockPlacementPolicyRackFaultTolerant.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/");
-    printf("inject HDFS_14527 ...\n");
+#ifdef HDFS_14499
+	system("cp ./buggy/INodeReference.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/INodeReference.java");
+	printf("inject HDFS_14499...\n");
 #else
-    system("cp ./fixed/BlockPlacementPolicyDefault.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/");
-    system("cp ./fixed/BlockPlacementPolicyRackFaultTolerant.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/");
-    printf("don't inject HDFS_14527 ...\n");
+	system("cp ./fixed/INodeReference.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/INodeReference.java");
+	printf("don't inject HDFS_14499...\n");
 #endif
 
 
-#ifdef HDFS_14557
-    system("cp ./buggy/EditLogFileInputStream.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/");
-    system("cp ./buggy/FSEditLogLoader.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/");
-    printf("inject HDFS_14557 ...\n");
+#ifdef HDFS_15446
+	system("cp ./buggy/FSDirectory.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSDirectory.java");
+	system("cp ./buggy/FSEditLogLoader.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSEditLogLoader.java");
+	printf("inject HDFS_15446...\n");
 #else
-    system("cp ./fixed/EditLogFileInputStream.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/");
-    system("cp ./fixed/FSEditLogLoader.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/");
-    printf("don't inject HDFS_14557 ...\n");
+	system("cp ./fixed/FSDirectory.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSDirectory.java");
+	system("cp ./fixed/FSEditLogLoader.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSEditLogLoader.java");
+	printf("don't inject HDFS_15446...\n");
 #endif
 
 
-#ifdef HDFS_14946
-    system("cp ./buggy/BlockManager.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/");
-    printf("inject HDFS_14946 ...\n");
+#ifdef HDFS_15398
+	system("cp ./buggy/DFSStripedOutputStream.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs-client/src/main/java/org/apache/hadoop/hdfs/DFSStripedOutputStream.java");
+	printf("inject HDFS_15398...\n");
 #else
-    system("cp ./fixed/BlockManager.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/");
-    printf("don't inject HDFS_14946 ...\n");
+	system("cp ./fixed/DFSStripedOutputStream.java ./hadoop-3.2.0-src/hadoop-hdfs-project/hadoop-hdfs-client/src/main/java/org/apache/hadoop/hdfs/DFSStripedOutputStream.java");
+	printf("don't inject HDFS_15398...\n");
 #endif
+
+
 }

@@ -84,6 +84,10 @@ public final class FunctionName
         return keyspace == null ? name : keyspace + "." + name;
     }
 
+    /**
+     * Returns a string representation of the function name that is safe to use directly in CQL queries.
+     * If necessary, the name components will be double-quoted, and any quotes inside the names will be escaped.
+     */
     public String toCQLString()
     {
         String maybeQuotedName = equalsNativeFunction(TOKEN_FUNCTION_NAME)

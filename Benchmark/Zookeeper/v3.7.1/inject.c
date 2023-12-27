@@ -2,61 +2,45 @@
 #include <stdlib.h>
 int main()
 {
-    FILE *fp1;
-    FILE *fp2;
-    int i = 0;
-    char str[500];
-    char str1[200]    = 	"                        changeZkState(States.CLOSED);\n";
-    char str2[6][200] =  {	"            if (closing) {\n",
-    				"                eventThread.queueEvent(new WatchedEvent(Event.EventType.None, KeeperState.Closed, null));\n",
-    				"            } else if (state == States.CLOSED) {\n",
-    				"                eventThread.queueEvent(new WatchedEvent(Event.EventType.None, KeeperState.Expired, null));\n",
-    				"            }\n",
-    				"            eventThread.queueEventOfDeath();\n"};
+#ifdef ZK_4466
+	system("cp ./buggy/DataTree.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/DataTree.java");
+	system("cp ./buggy/IWatchManager.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/IWatchManager.java");
+	system("cp ./buggy/WatchManager.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchManager.java");
+	system("cp ./buggy/WatchStats.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchStats.java");
+	system("cp ./buggy/WatcherMode.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatcherMode.java");
+	system("cp ./buggy/WatcherModeManager.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatcherModeManager.java");
+	printf("inject ZK_4466...\n");
+#else
+	system("cp ./fixed/DataTree.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/DataTree.java");
+	system("cp ./fixed/IWatchManager.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/IWatchManager.java");
+	system("cp ./fixed/WatchManager.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchManager.java");
+	system("cp ./fixed/WatchStats.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchStats.java");
+	system("cp ./fixed/WatcherMode.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatcherMode.java");
+	system("cp ./fixed/WatcherModeManager.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatcherModeManager.java");
+	printf("don't inject ZK_4466...\n");
+#endif
+
 
 #ifdef ZK_4508
-    system("cp ./buggy/ClientCnxn.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/");
-    printf("inject ZK_4508 ...\n");
+	system("cp ./buggy/ClientCnxn.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/ClientCnxn.java");
+	printf("inject ZK_4508...\n");
 #else
-    fp1 = fopen("./buggy/ClientCnxn.java", "r");
-    if (fp1 == NULL)
-    {
-        perror("open file error");
-        return -1;
-    }
-    fp2 = fopen("./fixed/ClientCnxn.java", "w+");
-    if (fp2 == NULL)
-    {
-        perror("open file error");
-        return -1;
-    }
-    while (fgets(str, 500, fp1) != NULL)
-    {
-        if (i == 1203)
-        {
-        }
-        else if (i == 1250)
-        {
-            fputs(str1, fp2);
-            fputs(str, fp2);
-        }
-        else if (i == 1316)
-        {
-            for (int j = 0; j < 6; j++)
-            {
-                fputs(str2[j], fp2);
-            }
-        }
-        else
-        {
-            fputs(str, fp2);
-        }
-        i++;
-    }
-    i = 0;
-    fclose(fp1);
-    fclose(fp2);
-    system("cp ./fixed/ClientCnxn.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/");
-    printf("don't inject ZK_4508 ...\n");
+	system("cp ./fixed/ClientCnxn.java ./apache-zookeeper-3.7.1/zookeeper-server/src/main/java/org/apache/zookeeper/ClientCnxn.java");
+	printf("don't inject ZK_4508...\n");
 #endif
+
+
+#ifdef ZK_4473
+	system("cp ./buggy/pom.xml ./apache-zookeeper-3.7.1/zookeeper-contrib/zookeeper-contrib-zooinspector/pom.xml");
+	system("cp ./buggy/ZooInspectorTreeView.java ./apache-zookeeper-3.7.1/zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/gui/ZooInspectorTreeView.java");
+	system("cp ./buggy/ZooInspectorManagerImpl.java ./apache-zookeeper-3.7.1/zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/manager/ZooInspectorManagerImpl.java");
+	printf("inject ZK_4473...\n");
+#else
+	system("cp ./fixed/pom.xml ./apache-zookeeper-3.7.1/zookeeper-contrib/zookeeper-contrib-zooinspector/pom.xml");
+	system("cp ./fixed/ZooInspectorTreeView.java ./apache-zookeeper-3.7.1/zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/gui/ZooInspectorTreeView.java");
+	system("cp ./fixed/ZooInspectorManagerImpl.java ./apache-zookeeper-3.7.1/zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/manager/ZooInspectorManagerImpl.java");
+	printf("don't inject ZK_4473...\n");
+#endif
+
+
 }
