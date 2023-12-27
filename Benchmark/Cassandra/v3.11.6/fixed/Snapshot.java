@@ -19,12 +19,13 @@ package org.apache.cassandra.tools.nodetool;
 
 import static com.google.common.collect.Iterables.toArray;
 import static org.apache.commons.lang3.StringUtils.join;
-import io.airlift.command.Arguments;
-import io.airlift.command.Command;
-import io.airlift.command.Option;
+import io.airlift.airline.Arguments;
+import io.airlift.airline.Command;
+import io.airlift.airline.Option;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,6 +55,7 @@ public class Snapshot extends NodeToolCmd
     @Override
     public void execute(NodeProbe probe)
     {
+        PrintStream out = probe.output().out;
         try
         {
             StringBuilder sb = new StringBuilder();
@@ -63,11 +65,10 @@ public class Snapshot extends NodeToolCmd
             Map<String, String> options = new HashMap<String,String>();
             options.put("skipFlush", Boolean.toString(skipFlush));
 
-            if (!snapshotName.isEmpty() && snapshotName.contains(File.separator))
+            if (!snapshotName.isEmpty() && snapshotName.contains(File.pathSeparator))
             {
-                throw new IOException("Snapshot name cannot contain " + File.separator);
+                throw new IOException("Snapshot name cannot contain " + File.pathSeparatorChar);
             }
-
             // Create a separate path for kclist to avoid breaking of already existing scripts
             if (null != ktList && !ktList.isEmpty())
             {
@@ -77,14 +78,14 @@ public class Snapshot extends NodeToolCmd
                 else
                 {
                     throw new IOException(
-                            "When specifying the Keyspace columfamily list for a snapshot, you should not specify columnfamily");
+                            "When specifying the Keyspace table list (using -kt,--kt-list,-kc,--kc.list), you must not also specify keyspaces to snapshot");
                 }
                 if (!snapshotName.isEmpty())
                     sb.append(" with snapshot name [").append(snapshotName).append("]");
                 sb.append(" and options ").append(options.toString());
-                System.out.println(sb.toString());
+                out.println(sb.toString());
                 probe.takeMultipleTableSnapshot(snapshotName, options, ktList.split(","));
-                System.out.println("Snapshot directory: " + snapshotName);
+                out.println("Snapshot directory: " + snapshotName);
             }
             else
             {
@@ -96,10 +97,10 @@ public class Snapshot extends NodeToolCmd
                 if (!snapshotName.isEmpty())
                     sb.append(" with snapshot name [").append(snapshotName).append("]");
                 sb.append(" and options ").append(options.toString());
-                System.out.println(sb.toString());
+                out.println(sb.toString());
 
                 probe.takeSnapshot(snapshotName, table, options, toArray(keyspaces, String.class));
-                System.out.println("Snapshot directory: " + snapshotName);
+                out.println("Snapshot directory: " + snapshotName);
             }
         }
         catch (IOException e)

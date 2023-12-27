@@ -1,2 +1,0 @@
-zookeeper-server/src/main/java/org/apache/zookeeper/server/quorum/FastLeaderElection.java
-zookeeper-server/src/main/java/org/apache/zookeeper/server/quorum/QuorumPeer.java

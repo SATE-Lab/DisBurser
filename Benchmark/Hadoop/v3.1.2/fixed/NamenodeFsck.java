@@ -302,7 +302,6 @@ public class NamenodeFsck implements DataEncryptionKeyFactory {
       if (blockManager.getCorruptReplicas(block) != null) {
         corruptionRecord = blockManager.getCorruptReplicas(block);
       }
-
       // report block replicas status on datanodes
       if (blockInfo.isStriped()) {
         for (int idx = (blockInfo.getCapacity() - 1); idx >= 0; idx--) {
@@ -318,7 +317,7 @@ public class NamenodeFsck implements DataEncryptionKeyFactory {
           printDatanodeReplicaStatus(block, corruptionRecord, dn);
         }
       }
-    } catch (Exception e){
+    } catch (Exception e) {
       String errMsg = "Fsck on blockId '" + blockId;
       LOG.warn(errMsg, e);
       out.println(e.getMessage());
