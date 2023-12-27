@@ -31,6 +31,8 @@ dependency-reduced-pom.xml
 apache-*.tar.gz
 rocketmq-*.tar.gz
 activemq*.tar.gz
+hadoop*.tar.gz
+hbase*.tar.gz
 
 # others
 /Benchmark/Benchmark/*

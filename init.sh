@@ -509,21 +509,40 @@ function extract_and_compress {
 
 # delete_existing_tars "$(pwd)/Benchmark"
 
-download_amq
-
-download_cas
-
-download_hdfs
-
-download_hbase
-
-chmod_files "$(pwd)/Benchmark"
-
-generate_tar "$(pwd)/Benchmark"
 
 
 
-# TODO chmod 777 all files
+main() {
+    if [ "$#" -eq 0 ]; then
+        echo "Usage: $0 <amq|cas|hdfs|hbase|kafka|rmq|zk> [amq|cas|hdfs|hbase|kafka|rmq|zk] ..."
+        exit 1
+    fi
+    
+    # delete_existing_tars "$(pwd)/Benchmark"
+
+    for arg in "$@"; do
+        case "$arg" in
+            amq) download_amq ;;
+            cas) download_cas ;;
+            hdfs) download_hdfs ;;
+            hbase) download_hbase ;;
+            kafka) download_kafka ;;
+            rmq) download_rmq ;;
+            zk) download_zk ;;
+            *) echo "Invalid argument: $arg. Use one of amq, cas, hdfs, hbase, kafka, rmq, or zk." ;;
+        esac
+    done
+    
+    chmod_files "$(pwd)/Benchmark"
+
+	generate_tar "$(pwd)/Benchmark"
+    
+}
+
+# 执行主函数
+main "$@"
+
+
 # apt install wget unzip
 
 # TODO rocketmq 改名  /  所有系统命名一致性确认
