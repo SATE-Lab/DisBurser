@@ -14,14 +14,14 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 2;
     public static final int RPC_PORT = 9160;
-    public static final String dir = "apache-cassandra-3.11.3";
+    public static final String dir = "apache-cassandra-3.11.2";
     public static String getCassandraHomeDir(){
         return "/cassandra/" + dir;
     }
 
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
-        String compressedPath = workDir + "/../../../Benchmark/Cassandra/v3.11.3/" + dir + ".tar.gz";
+        String compressedPath = workDir + "/../../../Benchmark/Cassandra/v3.11.2/" + dir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-cassandra")
                 .withService("cassandra")

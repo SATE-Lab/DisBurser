@@ -43,9 +43,12 @@ function build_from_source {
 	libJar5=activemq-kahadb-store-5.15.0.jar
 	tar=activemq-5.15.0.tar.gz
 
+	gcc_cmd="gcc ${defs[@]} $cFile -o $exeFile"
+	echo $gcc_cmd
+
 	if [ -f $cFile ]
 	then
-	    gcc $def1 $def2 $def3 $cFile -o $exeFile
+	    $gcc_cmd
 	    echo "gcc compile success"
 	    ./$exeFile
 	else

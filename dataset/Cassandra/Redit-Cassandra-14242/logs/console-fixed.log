@@ -1,0 +1,169 @@
+23:40:03.183 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+23:40:03.220 [main] INFO  i.r.s.cassandra14242.SampleTest - ---------create ks and table---------
+23:40:03.221 [main] INFO  com.datastax.driver.core - DataStax Java driver 3.11.2 for Apache Cassandra
+23:40:03.224 [main] INFO  c.d.driver.core.GuavaCompatibility - Detected Guava >= 19 in the classpath, using modern compatibility layer
+23:40:03.224 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NEW_NODE_DELAY_SECONDS is undefined, using default value 1
+23:40:03.224 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NOTIF_LOCK_TIMEOUT_SECONDS is undefined, using default value 60
+23:40:03.231 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.USE_NATIVE_CLOCK is undefined, using default value true
+23:40:03.274 [main] INFO  c.datastax.driver.core.ClockFactory - Using native clock to generate timestamps.
+23:40:03.280 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NON_BLOCKING_EXECUTOR_SIZE is undefined, using default value 16
+23:40:03.297 [main] DEBUG com.datastax.driver.core.Cluster - Starting new cluster with contact points [/10.2.0.3:9042]
+23:40:03.319 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.FORCE_NIO is undefined, using default value false
+23:40:03.319 [main] INFO  com.datastax.driver.core.NettyUtil - Did not find Netty's native epoll transport in the classpath, defaulting to NIO.
+23:40:03.333 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.EXTENDED_PEER_CHECK is undefined, using default value true
+23:40:03.366 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 1
+23:40:03.367 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.DISABLE_COALESCING is undefined, using default value false
+23:40:03.367 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.FLUSHER_SCHEDULE_PERIOD_NS is undefined, using default value 10000
+23:40:03.406 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=false] Connection established, initializing transport
+23:40:03.432 [cluster1-nio-worker-0] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NATIVE_TRANSPORT_MAX_FRAME_SIZE_IN_MB is undefined, using default value 256
+23:40:03.433 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - [/10.2.0.3:9042] Host does not support protocol version V5
+23:40:03.434 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] closing connection
+23:40:03.434 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] closed, remaining = 0
+23:40:03.434 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] has already terminated
+23:40:03.434 [main] INFO  com.datastax.driver.core.Cluster - Cannot connect with protocol version V5, trying with V4
+23:40:03.434 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 1
+23:40:03.435 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-2, inFlight=0, closed=false] Connection established, initializing transport
+23:40:03.442 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-2, inFlight=0, closed=false] Transport initialized, connection ready
+23:40:03.457 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing node list and token map
+23:40:03.478 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema
+23:40:03.520 [main] DEBUG com.datastax.driver.core.Host.STATES - [Control connection] established to /10.2.0.3:9042
+23:40:03.520 [main] INFO  c.d.d.c.p.DCAwareRoundRobinPolicy - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+23:40:03.521 [main] INFO  com.datastax.driver.core.Cluster - New Cassandra host /10.2.0.3:9042 added
+23:40:03.522 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.CHECK_IO_DEADLOCKS is undefined, using default value true
+23:40:03.523 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 2
+23:40:03.524 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=0, closed=false] Connection established, initializing transport
+23:40:03.528 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-3, inFlight=0, closed=false] Transport initialized, connection ready
+23:40:03.529 [cluster1-nio-worker-2] DEBUG c.d.driver.core.HostConnectionPool - Created connection pool to host /10.2.0.3:9042 (1 connections needed, 1 successfully opened)
+23:40:03.529 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Session - Added connection pool for /10.2.0.3:9042
+23:40:03.582 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT CREATED KEYSPACE ks, scheduling delivery
+23:40:03.589 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for ks
+23:40:03.592 [cluster1-worker-0] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [e6d86139-0845-3566-92c7-fdb57bfe4f07]
+23:40:03.592 [cluster1-worker-1] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for ks
+23:40:03.603 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Setting keyspace ks
+23:40:03.603 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Keyspace set to ks
+23:40:03.740 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT CREATED TABLE ks.t, scheduling delivery
+23:40:03.747 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for ks.t (TABLE)
+23:40:03.750 [cluster1-worker-2] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [72279c45-f644-39aa-8054-2afa03c8f7f9]
+23:40:03.750 [cluster1-worker-3] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for ks.t (TABLE)
+23:40:03.947 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT UPDATED TABLE ks.t, scheduling delivery
+23:40:03.949 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for ks.t (TABLE)
+23:40:03.953 [cluster1-worker-4] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [5801ab77-2e7e-354d-9b78-5b07367cb851]
+23:40:03.953 [cluster1-worker-5] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for ks.t (TABLE)
+23:40:03.956 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 0--------
+23:40:04.163 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 1--------
+23:40:04.165 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 2--------
+23:40:04.166 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 3--------
+23:40:04.168 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 4--------
+23:40:04.169 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 5--------
+23:40:04.171 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 6--------
+23:40:04.173 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 7--------
+23:40:04.174 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 8--------
+23:40:04.175 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 9--------
+23:40:04.177 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 10--------
+23:40:04.378 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 11--------
+23:40:04.380 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 12--------
+23:40:04.381 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 13--------
+23:40:04.382 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 14--------
+23:40:04.384 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 15--------
+23:40:04.385 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 16--------
+23:40:04.386 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 17--------
+23:40:04.388 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 18--------
+23:40:04.389 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 19--------
+23:40:04.390 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 20--------
+23:40:04.591 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 21--------
+23:40:04.593 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 22--------
+23:40:04.595 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 23--------
+23:40:04.596 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 24--------
+23:40:04.598 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 25--------
+23:40:04.600 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 26--------
+23:40:04.601 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 27--------
+23:40:04.603 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 28--------
+23:40:04.604 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 29--------
+23:40:04.605 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 30--------
+23:40:04.807 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 31--------
+23:40:04.809 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 32--------
+23:40:04.810 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 33--------
+23:40:04.811 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 34--------
+23:40:04.813 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 35--------
+23:40:04.814 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 36--------
+23:40:04.815 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 37--------
+23:40:04.817 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 38--------
+23:40:04.818 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 39--------
+23:40:04.820 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 40--------
+23:40:05.021 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 41--------
+23:40:05.023 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 42--------
+23:40:05.025 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 43--------
+23:40:05.026 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 44--------
+23:40:05.027 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 45--------
+23:40:05.029 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 46--------
+23:40:05.030 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 47--------
+23:40:05.032 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 48--------
+23:40:05.033 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 49--------
+23:40:05.034 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 50--------
+23:40:05.235 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 51--------
+23:40:05.238 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 52--------
+23:40:05.239 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 53--------
+23:40:05.240 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 54--------
+23:40:05.241 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 55--------
+23:40:05.242 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 56--------
+23:40:05.243 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 57--------
+23:40:05.244 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 58--------
+23:40:05.245 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 59--------
+23:40:05.247 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 60--------
+23:40:05.448 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 61--------
+23:40:05.450 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 62--------
+23:40:05.451 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 63--------
+23:40:05.452 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 64--------
+23:40:05.454 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 65--------
+23:40:05.455 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 66--------
+23:40:05.456 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 67--------
+23:40:05.457 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 68--------
+23:40:05.458 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 69--------
+23:40:05.459 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 70--------
+23:40:05.660 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 71--------
+23:40:05.662 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 72--------
+23:40:05.663 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 73--------
+23:40:05.665 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 74--------
+23:40:05.665 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 75--------
+23:40:05.666 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 76--------
+23:40:05.667 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 77--------
+23:40:05.668 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 78--------
+23:40:05.670 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 79--------
+23:40:05.671 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 80--------
+23:40:05.873 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 81--------
+23:40:05.875 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 82--------
+23:40:05.876 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 83--------
+23:40:05.877 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 84--------
+23:40:05.878 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 85--------
+23:40:05.880 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 86--------
+23:40:05.881 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 87--------
+23:40:05.882 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 88--------
+23:40:05.883 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 89--------
+23:40:05.885 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 90--------
+23:40:06.086 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 91--------
+23:40:06.088 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 92--------
+23:40:06.089 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 93--------
+23:40:06.090 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 94--------
+23:40:06.091 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 95--------
+23:40:06.093 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 96--------
+23:40:06.094 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 97--------
+23:40:06.095 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 98--------
+23:40:06.096 [main] INFO  i.r.s.cassandra14242.SampleTest - -------insert row 99--------
+23:40:06.098 [main] INFO  i.r.e.NetworkOperationManager - Applying network operation network delay (13) on node server1
+23:40:06.172 [main] INFO  i.r.e.NetworkOperationManager - Applying network operation network delay (11) on node server2
+23:40:06.243 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 10--------
+23:40:06.424 [main] INFO  i.r.s.cassandra14242.SampleTest - PageSize: 10, count: 100
+23:40:06.424 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 100--------
+23:40:06.455 [main] INFO  i.r.s.cassandra14242.SampleTest - PageSize: 100, count: 100
+23:40:06.456 [main] INFO  i.r.s.cassandra14242.SampleTest - -------query by page size 1000--------
+23:40:06.473 [main] INFO  i.r.s.cassandra14242.SampleTest - PageSize: 1000, count: 100
+23:40:06.473 [main] INFO  i.r.e.NetworkOperationManager - Applying network operation remove network delay on node server1
+23:40:06.544 [main] INFO  i.r.e.NetworkOperationManager - Applying network operation remove network delay on node server2
+23:40:06.575 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=0, closed=true] closing connection
+23:40:06.575 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-3, inFlight=0, closed=true] closed, remaining = 1
+23:40:06.576 [main] DEBUG com.datastax.driver.core.Cluster - Shutting down
+23:40:06.576 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-2, inFlight=0, closed=true] closing connection
+23:40:06.576 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-2, inFlight=0, closed=true] closed, remaining = 0
+23:40:08.583 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+23:40:08.718 [qtp1261153343-27] INFO  io.redit.execution.EventService - Event E1 received!
+23:40:08.719 [main] INFO  i.r.s.cassandra14242.SampleTest - completed !!!

@@ -1,0 +1,68 @@
+23:38:51.397 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+23:38:51.493 [main] INFO  com.datastax.driver.core - DataStax Java driver 3.11.3 for Apache Cassandra
+23:38:51.496 [main] INFO  c.d.driver.core.GuavaCompatibility - Detected Guava >= 19 in the classpath, using modern compatibility layer
+23:38:51.496 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NEW_NODE_DELAY_SECONDS is undefined, using default value 1
+23:38:51.496 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NOTIF_LOCK_TIMEOUT_SECONDS is undefined, using default value 60
+23:38:51.502 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.USE_NATIVE_CLOCK is undefined, using default value true
+23:38:51.589 [main] INFO  c.datastax.driver.core.ClockFactory - Using native clock to generate timestamps.
+23:38:51.597 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NON_BLOCKING_EXECUTOR_SIZE is undefined, using default value 16
+23:38:51.637 [main] DEBUG com.datastax.driver.core.Cluster - Starting new cluster with contact points [/10.2.0.3:9042]
+23:38:51.665 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.FORCE_NIO is undefined, using default value false
+23:38:51.665 [main] INFO  com.datastax.driver.core.NettyUtil - Did not find Netty's native epoll transport in the classpath, defaulting to NIO.
+23:38:51.684 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.EXTENDED_PEER_CHECK is undefined, using default value true
+23:38:51.794 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 1
+23:38:51.796 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.DISABLE_COALESCING is undefined, using default value false
+23:38:51.796 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.FLUSHER_SCHEDULE_PERIOD_NS is undefined, using default value 10000
+23:38:51.916 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=false] Connection established, initializing transport
+23:38:51.985 [cluster1-nio-worker-0] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.NATIVE_TRANSPORT_MAX_FRAME_SIZE_IN_MB is undefined, using default value 256
+23:38:51.988 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - [/10.2.0.3:9042] Host does not support protocol version V5
+23:38:51.990 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] closing connection
+23:38:51.995 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] closed, remaining = 0
+23:38:51.997 [main] INFO  com.datastax.driver.core.Cluster - Cannot connect with protocol version V5, trying with V4
+23:38:51.997 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 1
+23:38:51.997 [cluster1-nio-worker-0] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-1, inFlight=0, closed=true] has already terminated
+23:38:52.001 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-2, inFlight=0, closed=false] Connection established, initializing transport
+23:38:52.021 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-2, inFlight=0, closed=false] Transport initialized, connection ready
+23:38:52.050 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing node list and token map
+23:38:52.111 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema
+23:38:52.226 [main] DEBUG com.datastax.driver.core.Host.STATES - [Control connection] established to /10.2.0.3:9042
+23:38:52.226 [main] INFO  c.d.d.c.p.DCAwareRoundRobinPolicy - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+23:38:52.226 [main] INFO  com.datastax.driver.core.Cluster - New Cassandra host /10.2.0.3:9042 added
+23:38:52.228 [main] DEBUG c.d.driver.core.SystemProperties - com.datastax.driver.CHECK_IO_DEADLOCKS is undefined, using default value true
+23:38:52.230 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] preparing to open 1 new connections, total = 2
+23:38:52.231 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=0, closed=false] Connection established, initializing transport
+23:38:52.241 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-3, inFlight=0, closed=false] Transport initialized, connection ready
+23:38:52.242 [cluster1-nio-worker-2] DEBUG c.d.driver.core.HostConnectionPool - Created connection pool to host /10.2.0.3:9042 (1 connections needed, 1 successfully opened)
+23:38:52.242 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Session - Added connection pool for /10.2.0.3:9042
+23:38:52.318 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT CREATED KEYSPACE ks, scheduling delivery
+23:38:52.327 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for ks
+23:38:52.354 [cluster1-worker-0] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [5968bc8e-9017-34cb-b100-6dafb8c71672]
+23:38:52.356 [cluster1-worker-1] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for ks
+23:38:52.387 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Setting keyspace ks
+23:38:52.394 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Keyspace set to ks
+23:38:52.541 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT CREATED TABLE ks.t, scheduling delivery
+23:38:52.559 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for ks.t (TABLE)
+23:38:52.563 [cluster1-worker-2] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [ed55d974-a46d-3b94-af1d-2b25f424133d]
+23:38:52.564 [cluster1-worker-3] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for ks.t (TABLE)
+23:38:52.806 [cluster1-nio-worker-1] DEBUG com.datastax.driver.core.Cluster - Received event EVENT UPDATED TABLE ks.t, scheduling delivery
+23:38:52.808 [cluster1-nio-worker-2] DEBUG com.datastax.driver.core.Cluster - Refreshing schema for ks.t (TABLE)
+23:38:52.813 [cluster1-worker-4] DEBUG c.d.driver.core.ControlConnection - Checking for schema agreement: versions are [5e297182-3bb4-3513-9852-3cfcaff66f89]
+23:38:52.813 [cluster1-worker-5] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema for ks.t (TABLE)
+23:38:52.868 [main] INFO  i.r.s.cassandra13666.SampleTest - ----- first select: -----
+Row[4, 1, 1, 9, 1]
+Row[1, 1, 1, 9, 1]
+Row[1, 1, 2, 9, 2]
+Row[3, 1, 1, 9, 1]
+23:38:52.892 [main] INFO  i.r.s.cassandra13666.SampleTest - ----- second select after deletion: ------
+Row[4, 1, 1, 9, 1]
+Row[1, 1, 1, 9, 1]
+Row[1, 1, 2, 9, 2]
+Row[3, 1, NULL, 9, NULL]
+23:38:52.902 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=0, closed=true] closing connection
+23:38:52.902 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-3, inFlight=0, closed=true] closed, remaining = 1
+23:38:52.907 [main] DEBUG com.datastax.driver.core.Cluster - Shutting down
+23:38:52.908 [main] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-2, inFlight=0, closed=true] closing connection
+23:38:52.910 [main] DEBUG com.datastax.driver.core.Host.STATES - [/10.2.0.3:9042] Connection[/10.2.0.3:9042-2, inFlight=0, closed=true] closed, remaining = 0
+23:38:55.005 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+23:38:55.344 [qtp1961176822-28] INFO  io.redit.execution.EventService - Event E1 received!
+23:38:55.345 [main] INFO  i.r.s.cassandra13666.SampleTest - completed !!!
