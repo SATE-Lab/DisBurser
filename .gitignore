@@ -28,6 +28,7 @@ docs/_build
 dependency-reduced-pom.xml
 /aspectj-1.9.6/
 
+# tar binary
 apache-*.tar.gz
 rocketmq-*.tar.gz
 activemq*.tar.gz
@@ -37,3 +38,7 @@ hbase*.tar.gz
 # others
 /Benchmark/Benchmark/*
 inject
+
+# extracted sources and binaries for distributed systems
+/Benchmark/Activemq/*/activemq-*/*
+!/Benchmark/Activemq/*/activemq-*/README.md

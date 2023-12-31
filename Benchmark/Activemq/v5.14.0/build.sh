@@ -12,12 +12,13 @@ function get_defs {
 	# 读取FaultSeed.h文件
 	i=1
 	while read line; do
-	  # 判断是否有类似于/* #define AMQ_6059 */这种格式的宏定义
-	  if [[ $line =~ ^/\*\ #define\ ([A-Z0-9_]+)\ \*/ ]]; then
-		# 获取宏名称
+	  # 判断是否有类似于/* #define AMQ_6059 */或 // #define AMQ_6059 这种格式的宏定义
+	  if [[ $line =~ ^/\*[[:space:]]*#define\ ([A-Z0-9_]+)[[:space:]]*\*/ ]]; then
 		macro=${BASH_REMATCH[1]}
-		# 赋值给对应的变量
-		defs[$i]=-D"'$macro'"
+		defs[$i]=-D"$macro"
+	  elif [[ $line =~ ^//[[:space:]]*#define\ ([A-Z0-9_]+) ]]; then
+	  	macro=${BASH_REMATCH[1]}
+	    defs[$i]=-D"$macro"
 	  fi
 	  # 增加行号
 	  i=$((i+1))
@@ -27,7 +28,6 @@ function get_defs {
 	for ((i=1; i<=n; i++)); do
 	  echo "def$i = ${defs[$i]}"
 	done
-	
 }
 
 
