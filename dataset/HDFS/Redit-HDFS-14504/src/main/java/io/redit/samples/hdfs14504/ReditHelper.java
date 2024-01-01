@@ -14,7 +14,7 @@ public class ReditHelper {
     public static int numOfNNs = 3;
     private static int numOfDNs = 3;
     private static int numOfJNs = 3;
-    public static final String dir = "hadoop-3.3.1";
+    public static final String dir = "hadoop-3.1.2";
     public static String getHadoopHomeDir() { return "/hadoop/" + dir; }
 
     public static Deployment getDeployment(){
@@ -52,7 +52,7 @@ public class ReditHelper {
         builder.node("nn1").initCommand(getHadoopHomeDir() + "/bin/hdfs namenode -format").and()
                 .testCaseEvents("E1", "E2", "E3", "E4").runSequence("E1 * E2 * E3 * E4");
 
-        addInstrumentablePath(builder, "/share/hadoop/hdfs/hadoop-hdfs-3.3.1.jar");
+        // addInstrumentablePath(builder, "/share/hadoop/hdfs/hadoop-hdfs-3.1.2.jar");
 
         return builder.build();
     }

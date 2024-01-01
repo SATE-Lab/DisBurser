@@ -52,7 +52,7 @@ public class ReditHelper {
         builder.node("nn1").initCommand(getHadoopHomeDir() + "/bin/hdfs namenode -format").and()
                 .testCaseEvents("E1", "E2").runSequence("E1 * E2");
 
-        addInstrumentablePath(builder, "/share/hadoop/hdfs/hadoop-hdfs-3.2.0.jar");
+        // addInstrumentablePath(builder, "/share/hadoop/hdfs/hadoop-hdfs-3.2.0.jar");
 
         return builder.build();
     }
