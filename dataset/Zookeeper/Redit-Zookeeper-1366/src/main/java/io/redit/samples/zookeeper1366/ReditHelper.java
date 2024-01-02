@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 3;
     public static final int HTTP_PORT = 2181;
-    public static final String dir = "zookeeper-3.5.0-alpha";
+    public static final String dir = "zookeeper-3.5.0";
     public static String getZookeeperHomeDir(){
         return "/zookeeper/" + dir;
     }
