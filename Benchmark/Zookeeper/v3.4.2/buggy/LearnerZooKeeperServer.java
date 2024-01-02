@@ -18,85 +18,69 @@
 package org.apache.zookeeper.server.quorum;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Map;
+import java.util.HashMap;
 
 import org.apache.zookeeper.jmx.MBeanRegistry;
-import org.apache.zookeeper.KeeperException.SessionExpiredException;
 import org.apache.zookeeper.server.DataTreeBean;
-import org.apache.zookeeper.server.quorum.LearnerSessionTracker;
 import org.apache.zookeeper.server.ServerCnxn;
-import org.apache.zookeeper.server.SyncRequestProcessor;
 import org.apache.zookeeper.server.ZKDatabase;
 import org.apache.zookeeper.server.ZooKeeperServerBean;
 import org.apache.zookeeper.server.persistence.FileTxnSnapLog;
 
 /**
- * Parent class for all ZooKeeperServers for Learners
+ * Parent class for all ZooKeeperServers for Learners 
  */
-public abstract class LearnerZooKeeperServer extends QuorumZooKeeperServer {
-
-    /*
-     * Request processors
-     */
-    protected CommitProcessor commitProcessor;
-    protected SyncRequestProcessor syncProcessor;
-
+public abstract class LearnerZooKeeperServer extends QuorumZooKeeperServer {    
     public LearnerZooKeeperServer(FileTxnSnapLog logFactory, int tickTime,
             int minSessionTimeout, int maxSessionTimeout,
-            ZKDatabase zkDb, QuorumPeer self)
+            DataTreeBuilder treeBuilder, ZKDatabase zkDb, QuorumPeer self)
         throws IOException
     {
-        super(logFactory, tickTime, minSessionTimeout, maxSessionTimeout, zkDb, self);
+        super(logFactory, tickTime, minSessionTimeout, maxSessionTimeout,
+                treeBuilder, zkDb, self);
     }
 
     /**
      * Abstract method to return the learner associated with this server.
      * Since the Learner may change under our feet (when QuorumPeer reassigns
-     * it) we can't simply take a reference here. Instead, we need the
-     * subclasses to implement this.
+     * it) we can't simply take a reference here. Instead, we need the 
+     * subclasses to implement this.     
      */
-    abstract public Learner getLearner();
-
+    abstract public Learner getLearner();        
+    
     /**
      * Returns the current state of the session tracker. This is only currently
      * used by a Learner to build a ping response packet.
-     *
+     * 
      */
-    protected Map<Long, Integer> getTouchSnapshot() {
+    protected HashMap<Long, Integer> getTouchSnapshot() {
         if (sessionTracker != null) {
             return ((LearnerSessionTracker) sessionTracker).snapshot();
         }
-        Map<Long, Integer> map = Collections.emptyMap();
-        return map;
+        return new HashMap<Long, Integer>();
     }
-
+    
     /**
      * Returns the id of the associated QuorumPeer, which will do for a unique
-     * id of this server.
+     * id of this server. 
      */
     @Override
     public long getServerId() {
         return self.getId();
-    }
-
+    }    
+    
     @Override
-    public void createSessionTracker() {
-        sessionTracker = new LearnerSessionTracker(
-                this, getZKDatabase().getSessionWithTimeOuts(),
-                this.tickTime, self.getId(), self.areLocalSessionsEnabled());
+    protected void createSessionTracker() {
+        sessionTracker = new LearnerSessionTracker(this, getZKDatabase().getSessionWithTimeOuts(),
+                self.getId());
     }
-
+    
     @Override
     protected void revalidateSession(ServerCnxn cnxn, long sessionId,
             int sessionTimeout) throws IOException {
-        if (upgradeableSessionTracker.isLocalSession(sessionId)) {
-            super.revalidateSession(cnxn, sessionId, sessionTimeout);
-        } else {
-            getLearner().validateSession(cnxn, sessionId, sessionTimeout);
-        }
+        getLearner().validateSession(cnxn, sessionId, sessionTimeout);
     }
-
+    
     @Override
     protected void registerJMX() {
         // register with JMX
@@ -154,23 +138,5 @@ public abstract class LearnerZooKeeperServer extends QuorumZooKeeperServer {
             LOG.warn("Failed to unregister with JMX", e);
         }
         jmxServerBean = null;
-    }
-
-    @Override
-    public void shutdown() {
-        LOG.info("Shutting down");
-        try {
-            super.shutdown();
-        } catch (Exception e) {
-            LOG.warn("Ignoring unexpected exception during shutdown", e);
-        }
-        try {
-            if (syncProcessor != null) {
-                syncProcessor.shutdown();
-            }
-        } catch (Exception e) {
-            LOG.warn("Ignoring unexpected exception in syncprocessor shutdown",
-                    e);
-        }
     }
 }

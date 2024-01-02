@@ -25,98 +25,67 @@ import org.apache.zookeeper.jmx.MBeanRegistry;
 import org.apache.zookeeper.server.DataTreeBean;
 import org.apache.zookeeper.server.FinalRequestProcessor;
 import org.apache.zookeeper.server.PrepRequestProcessor;
-import org.apache.zookeeper.server.Request;
 import org.apache.zookeeper.server.RequestProcessor;
 import org.apache.zookeeper.server.ServerCnxn;
+import org.apache.zookeeper.server.SessionTrackerImpl;
 import org.apache.zookeeper.server.ZKDatabase;
 import org.apache.zookeeper.server.persistence.FileTxnSnapLog;
 
 /**
- *
+ * 
  * Just like the standard ZooKeeperServer. We just replace the request
  * processors: PrepRequestProcessor -> ProposalRequestProcessor ->
  * CommitProcessor -> Leader.ToBeAppliedRequestProcessor ->
  * FinalRequestProcessor
  */
 public class LeaderZooKeeperServer extends QuorumZooKeeperServer {
-
     CommitProcessor commitProcessor;
-
-    PrepRequestProcessor prepRequestProcessor;
 
     /**
      * @param port
      * @param dataDir
      * @throws IOException
      */
-    LeaderZooKeeperServer(FileTxnSnapLog logFactory, QuorumPeer self, ZKDatabase zkDb) throws IOException {
-        super(logFactory, self.tickTime, self.minSessionTimeout, self.maxSessionTimeout, zkDb, self);
+    LeaderZooKeeperServer(FileTxnSnapLog logFactory, QuorumPeer self,
+            DataTreeBuilder treeBuilder, ZKDatabase zkDb) throws IOException {
+        super(logFactory, self.tickTime, self.minSessionTimeout,
+                self.maxSessionTimeout, treeBuilder, zkDb, self);
     }
 
     public Leader getLeader(){
         return self.leader;
     }
-
+    
     @Override
     protected void setupRequestProcessors() {
         RequestProcessor finalProcessor = new FinalRequestProcessor(this);
-        RequestProcessor toBeAppliedProcessor = new Leader.ToBeAppliedRequestProcessor(finalProcessor, getLeader());
+        RequestProcessor toBeAppliedProcessor = new Leader.ToBeAppliedRequestProcessor(
+                finalProcessor, getLeader().toBeApplied);
         commitProcessor = new CommitProcessor(toBeAppliedProcessor,
                 Long.toString(getServerId()), false);
         commitProcessor.start();
         ProposalRequestProcessor proposalProcessor = new ProposalRequestProcessor(this,
                 commitProcessor);
         proposalProcessor.initialize();
-        prepRequestProcessor = new PrepRequestProcessor(this, proposalProcessor);
-        prepRequestProcessor.start();
-        firstProcessor = new LeaderRequestProcessor(this, prepRequestProcessor);
+        firstProcessor = new PrepRequestProcessor(this, proposalProcessor);
+        ((PrepRequestProcessor)firstProcessor).start();
     }
 
     @Override
     public int getGlobalOutstandingLimit() {
-        int divisor = self.getQuorumSize() > 2 ? self.getQuorumSize() - 1 : 1;
-        return super.getGlobalOutstandingLimit() / divisor;
+        return super.getGlobalOutstandingLimit() / (self.getQuorumSize() - 1);
+    }
+    
+    @Override
+    protected void createSessionTracker() {
+        sessionTracker = new SessionTrackerImpl(this, getZKDatabase().getSessionWithTimeOuts(),
+                tickTime, self.getId());
+        ((SessionTrackerImpl)sessionTracker).start();
     }
 
-    @Override
-    public void createSessionTracker() {
-        sessionTracker = new LeaderSessionTracker(
-                this, getZKDatabase().getSessionWithTimeOuts(),
-                tickTime, self.getId(), self.areLocalSessionsEnabled());
-    }
 
     public boolean touch(long sess, int to) {
         return sessionTracker.touchSession(sess, to);
-    }
-
-    public boolean checkIfValidGlobalSession(long sess, int to) {
-        if (self.areLocalSessionsEnabled() &&
-            !upgradeableSessionTracker.isGlobalSession(sess)) {
-            return false;
-        }
-        return sessionTracker.touchSession(sess, to);
-    }
-
-    /**
-     * Requests coming from the learner should go directly to
-     * PrepRequestProcessor
-     *
-     * @param request
-     */
-    public void submitLearnerRequest(Request request) {
-        /*
-         * Requests coming from the learner should have gone through
-         * submitRequest() on each server which already perform some request
-         * validation, so we don't need to do it again.
-         *
-         * Additionally, LearnerHandler should start submitting requests into
-         * the leader's pipeline only when the leader's server is started, so we
-         * can submit the request directly into PrepRequestProcessor.
-         *
-         * This is done so that requests from learners won't go through
-         * LeaderRequestProcessor which perform local session upgrade.
-         */
-        prepRequestProcessor.processRequest(request);
     }
 
     @Override
@@ -177,7 +146,7 @@ public class LeaderZooKeeperServer extends QuorumZooKeeperServer {
         }
         jmxServerBean = null;
     }
-
+    
     @Override
     public String getState() {
         return "leader";
@@ -185,13 +154,13 @@ public class LeaderZooKeeperServer extends QuorumZooKeeperServer {
 
     /**
      * Returns the id of the associated QuorumPeer, which will do for a unique
-     * id of this server.
+     * id of this server. 
      */
     @Override
     public long getServerId() {
         return self.getId();
-    }
-
+    }    
+    
     @Override
     protected void revalidateSession(ServerCnxn cnxn, long sessionId,
         int sessionTimeout) throws IOException {

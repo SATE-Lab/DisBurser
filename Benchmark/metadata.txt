@@ -384,8 +384,8 @@ fix_v: 3.8.1
 issue_id: ZOOKEEPER-1367
 patch_url: https://issues.apache.org/jira/secure/attachment/12512280/ZOOKEEPER-1367.patch
 files: src/java/main/org/apache/zookeeper/server/quorum/LeaderZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/LearnerZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/ZooKeeperServer.java, src/java/main/org/apache/zookeeper/server/FinalRequestProcessor.java
-affects_v: 3.4.3
-fix_v: 3.5.0
+affects_v: 3.4.2
+fix_v: 3.4.3
 
 issue_id: ZOOKEEPER-3895
 patch_url: https://github.com/apache/zookeeper/pull/1407/files

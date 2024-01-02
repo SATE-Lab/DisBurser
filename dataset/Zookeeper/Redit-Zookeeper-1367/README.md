@@ -90,7 +90,7 @@ I will upload a tar containing the debug logs and data directories from the fail
 
 ### Testcase
 
-Reproduced version：3.4.3、3.6.0
+Reproduced version：3.4.2、3.4.3、3.6.0
 
 Steps to reproduce：
 1. Start a three-node zookeeper cluster and elect a leader.

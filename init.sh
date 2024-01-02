@@ -384,14 +384,12 @@ function download_rmq {
 function download_zk {
 	local zk_3_5_0_tar_path="$(pwd)/Benchmark/Zookeeper/v3.5.0/tar"
 	local zk_3_7_1_tar_path="$(pwd)/Benchmark/Zookeeper/v3.7.1/tar"
-	local zk_3_4_3_tar_path="$(pwd)/Benchmark/Zookeeper/v3.4.3/tar"
-	# local zk_3_5_3_tar_path="$(pwd)/Benchmark/Zookeeper/v3.5.3/tar"
+	local zk_3_4_2_tar_path="$(pwd)/Benchmark/Zookeeper/v3.4.2/tar"
 	local zk_3_6_0_tar_path="$(pwd)/Benchmark/Zookeeper/v3.6.0/tar"
 	
 	mkdir "$zk_3_5_0_tar_path"
 	mkdir "$zk_3_7_1_tar_path"
-	mkdir "$zk_3_4_3_tar_path"
-	# mkdir "$zk_3_5_3_tar_path"
+	mkdir "$zk_3_4_2_tar_path"
 	mkdir "$zk_3_6_0_tar_path"
 	
 	# 3.5.0(3.5.0, 3.5.1, 3.5.2)
@@ -419,21 +417,14 @@ function download_zk {
 	download_resource $zk_3_8_1_web "$zk_3_7_1_tar_path" $zk_3_8_1_tar_name
 	download_resource $zk_3_9_0_web "$zk_3_7_1_tar_path" $zk_3_9_0_tar_name
 	
-	# 3.4.3(3.4.3, 3.5.0)
+	# 3.4.2(3.4.2, 3.4.3)
+	local zk_3_4_2_web="https://archive.apache.org/dist/zookeeper/zookeeper-3.4.2/zookeeper-3.4.2.tar.gz"
 	local zk_3_4_3_web="https://archive.apache.org/dist/zookeeper/zookeeper-3.4.3/zookeeper-3.4.3.tar.gz"
-	local zk_3_5_0_web="https://archive.apache.org/dist/zookeeper/zookeeper-3.5.0-alpha/zookeeper-3.5.0-alpha.tar.gz"
+	local zk_3_4_2_tar_name="zookeeper-3.4.2.tar.gz"
 	local zk_3_4_3_tar_name="zookeeper-3.4.3.tar.gz"
-	local zk_3_5_0_tar_name="zookeeper-3.5.0.tar.gz"
-	download_resource $zk_3_4_3_web "$zk_3_4_3_tar_path" $zk_3_4_3_tar_name
-	download_resource $zk_3_5_0_web "$zk_3_4_3_tar_path" $zk_3_5_0_tar_name
+	download_resource $zk_3_4_2_web "$zk_3_4_2_tar_path" $zk_3_4_2_tar_name
+	download_resource $zk_3_4_3_web "$zk_3_4_2_tar_path" $zk_3_4_3_tar_name
 	
-	# 3.5.3(3.5.3, 3.5.4)
-	# local zk_3_5_3_web="https://archive.apache.org/dist/zookeeper/zookeeper-3.5.3-beta/zookeeper-3.5.3-beta.tar.gz"
-	# local zk_3_5_4_web="https://archive.apache.org/dist/zookeeper/zookeeper-3.5.4-beta/zookeeper-3.5.4-beta.tar.gz"
-	# local zk_3_5_3_tar_name="zookeeper-3.5.3.tar.gz"
-	# local zk_3_5_4_tar_name="zookeeper-3.5.4.tar.gz"
-	# download_resource $zk_3_5_3_web "$zk_3_5_3_tar_path" $zk_3_5_3_tar_name
-	# download_resource $zk_3_5_4_web "$zk_3_5_3_tar_path" $zk_3_5_4_tar_name
 	
 	# 3.6.0(3.6.0, 3.7.0)
 	local zk_3_6_0_web="https://archive.apache.org/dist/zookeeper/zookeeper-3.6.0/apache-zookeeper-3.6.0-bin.tar.gz"
