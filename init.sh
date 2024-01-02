@@ -470,12 +470,7 @@ function extract_and_compress {
 
     # 提取文件名（不包括扩展名）
     local base_name=$(basename "$input_file" | sed 's/\.\(tar\.gz\|zip\)$//')
-    
-    # TODO delete this line!
-    
-    if [[ ! $base_name =~ "zookeeper" ]]; then
-    	return 0
-    fi
+
 
     # 提取目录路径
     local dir_path=$(dirname "$input_file")
