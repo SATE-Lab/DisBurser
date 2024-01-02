@@ -26,7 +26,7 @@ function download_resource {
 
     # 检查本地文件是否存在
     if [ -e "$full_path" ]; then
-        echo "文件已存在，无需下载。"
+        echo "file [$file_name] already exists in $full_path, skip download"
     else
         # 使用 wget 下载资源
         wget -O "$full_path" "$url"
@@ -449,6 +449,10 @@ function chmod_files {
             echo "found file: $file"
             chmod 777 $file
         elif [[ -d "$file" ]]; then
+        	base_name=$(basename "$file")
+        	if [[ $base_name == 'tar' ]]; then
+        		chmod 777 $file
+    		fi
             chmod_files "$file"
         fi
     done
@@ -483,32 +487,30 @@ function extract_and_compress {
     if [[ "$input_file" == *.tar.gz ]]; then
         tar -xzf "$input_file" -C "$temp_dir"
         orginal_folder_name=$(ls "$temp_dir")
-	mv "$temp_dir/${orginal_folder_name}" "$temp_dir/${base_name}"
+        if [[ $orginal_folder_name !=  $base_name ]]; then
+        	echo "renaming ${orginal_folder_name} to ${base_name}"
+			mv "$temp_dir/${orginal_folder_name}" "$temp_dir/${base_name}"
+		fi
     elif [[ "$input_file" == *.zip ]]; then
         unzip "$input_file" -d "$temp_dir"
     else
-        echo "不支持的文件格式。"
+        echo "unsupported file"
         return 1
     fi
 
     # 重新压缩
     if [[ "$input_file" == *.tar.gz ]]; then
         tar -czf "$dir_path/${base_name}.tar.gz" -C "$temp_dir" "$base_name"
-        echo
     elif [[ "$input_file" == *.zip ]]; then
         cd "$temp_dir" && zip -r "$dir_path/${base_name}.zip" "$base_name"
-        echo
     fi
 
     # 清理临时目录
     rm -rf "$temp_dir"
 
-    echo "解压和重新压缩完成  $1"
+    echo "extract and recompress done for $1"
+    echo 
 }
-
-
-# delete_existing_tars "$(pwd)/Benchmark"
-
 
 
 
@@ -535,7 +537,7 @@ main() {
     
     chmod_files "$(pwd)/Benchmark"
 
-	generate_tar "$(pwd)/Benchmark"
+    generate_tar "$(pwd)/Benchmark"
     
 }
 

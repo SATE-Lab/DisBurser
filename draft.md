@@ -89,4 +89,8 @@ using [AMQ-6500](https://issues.apache.org/jira/browse/AMQ-6500) as an example
 
 
 
-todo: build notice
+todo: 
+
+- build notice
+- naming notice：
+  - 
