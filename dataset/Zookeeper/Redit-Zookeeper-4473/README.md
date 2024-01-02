@@ -35,3 +35,4 @@ java.lang.IllegalArgumentException: Invalid path string "//test" caused by empty
   ...
 ```
 
+Notice: when using zookeeper-3.7.1.tar.gz(with fault injection), you may need to change zookeeper-contrib-zooinspector and zookeeper in pom.xml to 3.7.1 to get expected symptoms.

@@ -12,6 +12,7 @@ import io.redit.helpers.ZookeeperHelper;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeoutException;
 
@@ -47,7 +48,7 @@ public class SampleTest {
             try {
                 zooKeeper[0] = new ZooKeeper(helper.connectionStr, 4000, watchedEvent -> countDownLatch.countDown());
                 countDownLatch.await();
-                zooKeeper[0].multi(Arrays.asList());
+                zooKeeper[0].multi(Collections.emptyList());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

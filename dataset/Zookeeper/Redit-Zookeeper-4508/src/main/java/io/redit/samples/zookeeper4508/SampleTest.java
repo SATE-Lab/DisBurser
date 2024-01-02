@@ -40,7 +40,7 @@ public class SampleTest {
         }
     }
 
-    @Test
+    @Test(timeout = 60000)
     public void sampleTest() throws Exception {
         runner.runtime().enforceOrder("E1", () -> {
             try {

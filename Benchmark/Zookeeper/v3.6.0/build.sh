@@ -34,9 +34,9 @@ function get_defs {
 function build_from_source {
 	cFile=inject.c
 	exeFile=inject
-	srcName=zookeeper-3.7.1-src
-	system=zookeeper-3.7.1
-	tar=zookeeper-3.7.1.tar.gz
+	srcName=zookeeper-3.6.0-src
+	system=zookeeper-3.6.0
+	tar=zookeeper-3.6.0.tar.gz
 
 	gcc_cmd="gcc ${defs[@]} $cFile -o $exeFile"
 	echo $gcc_cmd
@@ -63,8 +63,8 @@ function build_from_source {
 }
 
 function overwrite_tar {
-	tar1="zookeeper-3.7.1.tar.gz"
-	tar2="zookeeper-3.9.0.tar.gz"
+	tar1="zookeeper-3.6.0.tar.gz"
+	tar2="zookeeper-3.7.0.tar.gz"
 	
 	cd "$current_directory"
 	

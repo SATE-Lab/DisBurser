@@ -75,3 +75,4 @@ Two testcases to reproduce：
 1. Start a three-node zookeeper cluster, create a client and add two watchers for path `/a`: a persistent recursive watcher and a standard watcher. Next we create and delete some nodes and monitor the changes in the event queue recorded by persistent recursive watcher. The result shows that the event queue attached to the persistent recursive watcher is affected by both of the watchers.
 2. Similar to 1, but the two watchers are the persistent recursive watcher added to path `/a` and the persistent watcher added to path `/a/b`. The results are also similar to 1.
 
+Notice: you may need to change zookeeper version in pom.xml to 3.7.1 to get injected test if you use original zookeeper-3.7.1.tar.gz

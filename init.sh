@@ -515,7 +515,7 @@ main() {
         exit 1
     fi
     
-    # delete_existing_tars "$(pwd)/Benchmark"
+    delete_existing_tars "$(pwd)/Benchmark"
 
     for arg in "$@"; do
         case "$arg" in

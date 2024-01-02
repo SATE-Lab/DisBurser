@@ -47,3 +47,5 @@ Steps to reproduce：
 1. Start a three-node zookeeper cluster and elect a leader.
 2. Create client zk1 to connect to the zookeeper cluster.
 3. Operate multi operation on zk1 with empty operations list.
+
+Notice: you may need to change zookeeper version in pom.xml to get the injected/ fixed result
