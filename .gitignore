@@ -34,6 +34,7 @@ rocketmq-*.tar.gz
 activemq*.tar.gz
 hadoop*.tar.gz
 hbase*.tar.gz
+zookeeper*.tar.gz
 
 # others
 /Benchmark/Benchmark/*

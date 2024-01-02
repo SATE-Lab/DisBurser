@@ -356,6 +356,12 @@ files: src/java/main/org/apache/zookeeper/server/PrepRequestProcessor.java
 affects_v: 3.5.0
 fix_v: 3.5.1
 
+issue_id: ZOOKEEPER-2355
+patch_url: https://github.com/apache/zookeeper/pull/304/files
+files: src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java
+affects_v: 3.5.0
+fix_v: 3.5.4
+
 issue_id: ZOOKEEPER-4466
 patch_url: https://github.com/apache/zookeeper/pull/1859/files
 files: zookeeper-server/src/main/java/org/apache/zookeeper/server/DataTree.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/IWatchManager.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchManager.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchStats.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatcherMode.java, zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatcherModeManager.java
@@ -381,16 +387,11 @@ files: src/java/main/org/apache/zookeeper/server/quorum/LeaderZooKeeperServer.ja
 affects_v: 3.4.3
 fix_v: 3.5.0
 
-issue_id: ZOOKEEPER-2355
-patch_url: https://github.com/apache/zookeeper/pull/304/files
-files: src/java/main/org/apache/zookeeper/server/quorum/Learner.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java, src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java
-affects_v: 3.5.3
-fix_v: 3.5.4
-
 issue_id: ZOOKEEPER-3895
 patch_url: https://github.com/apache/zookeeper/pull/1407/files
 files: zookeeper-server/src/main/java/org/apache/zookeeper/ClientCnxn.java, zookeeper-server/src/main/java/org/apache/zookeeper/ZooKeeper.java
 affects_v: 3.6.0
 fix_v: 3.7.0
+
 
 

@@ -29,7 +29,7 @@ The scenario is as follows:
 
 ### Testcase
 
-Reproduced version：3.5.3
+Reproduced version：3.5.3, 3,5,0
 
 Steps to reproduce：
 1. Start a three-node zookeeper cluster and elect a leader.
