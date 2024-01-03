@@ -286,13 +286,16 @@ function download_kafka {
 	mkdir "$kaf_3_0_0_tar_path"
 	mkdir "$kaf_3_3_1_tar_path"
 	
-	# 2.0.0(2.0.0, 2.1.0)
+	# 2.0.0(2.0.0, 2.1.0, 2.4.1)
 	local kaf_2_0_0_web="https://archive.apache.org/dist/kafka/2.0.0/kafka_2.12-2.0.0.tgz"
 	local kaf_2_1_0_web="https://archive.apache.org/dist/kafka/2.1.0/kafka_2.12-2.1.0.tgz"
+	local kaf_2_4_1_web="https://archive.apache.org/dist/kafka/2.4.1/kafka_2.12-2.4.1.tgz"
 	local kaf_2_0_0_tar_name="kafka_2.12-2.0.0.tar.gz"
 	local kaf_2_1_0_tar_name="kafka_2.12-2.1.0.tar.gz"
+	local kaf_2_4_1_tar_name="kafka_2.12-2.4.1.tar.gz"
 	download_resource $kaf_2_0_0_web "$kaf_2_0_0_tar_path" $kaf_2_0_0_tar_name
 	download_resource $kaf_2_1_0_web "$kaf_2_0_0_tar_path" $kaf_2_1_0_tar_name
+	download_resource $kaf_2_4_1_web "$kaf_2_0_0_tar_path" $kaf_2_4_1_tar_name
 	
 	# 2.8.0(2.8.0, 2.8.2, 3.0.0, 3.2.0)
 	local kaf_2_8_0_web="https://archive.apache.org/dist/kafka/2.8.0/kafka_2.13-2.8.0.tgz"
@@ -471,6 +474,10 @@ function extract_and_compress {
     # 提取文件名（不包括扩展名）
     local base_name=$(basename "$input_file" | sed 's/\.\(tar\.gz\|zip\)$//')
 
+    # TODO delete this line after DONE
+    if [[ ! "$base_name" =~ "kafka" ]]; then
+        return
+    fi
 
     # 提取目录路径
     local dir_path=$(dirname "$input_file")
@@ -515,7 +522,7 @@ main() {
         exit 1
     fi
     
-    delete_existing_tars "$(pwd)/Benchmark"
+    # delete_existing_tars "$(pwd)/Benchmark"
 
     for arg in "$@"; do
         case "$arg" in
@@ -538,11 +545,5 @@ main() {
 
 # 执行主函数
 main "$@"
-
-
-# apt install wget unzip
-
-# TODO rocketmq 改名  /  所有系统命名一致性确认
-# 解压之后内层名称
 
 

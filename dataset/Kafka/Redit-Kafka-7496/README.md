@@ -54,3 +54,5 @@ Steps to reproduce：
 2. Create a kafkaAdminClient.
 3. Create an invalid filter and call KafkaAdminClient#describeAcls.
 4. KafkaAdminClient will hang forever.
+
+Notice: change kafka-clients version to 2.0.0 in pom.xml to get the injected result, and change it back to 2.4.1 to get the fixed result.

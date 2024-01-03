@@ -42,4 +42,4 @@ int main()
 	printf("don't inject KA_7496...\n");
 #endif
 
-
+}

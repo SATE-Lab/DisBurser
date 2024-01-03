@@ -72,3 +72,5 @@ Steps to reproduce：
 1. Start kafka in a three-node cluster.
 2. Create a producer and send some message to an invalid topic name.
 3. Exception is not thrown until max.block.ms passed.
+
+Notice: change kafka-clients version to 2.0.0 in pom.xml to get the injected result, and change it back to 2.4.1 to get the fixed result.
