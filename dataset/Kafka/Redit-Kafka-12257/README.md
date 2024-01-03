@@ -67,3 +67,5 @@ Steps to reproduce：
 6. Create another topic with the same name
 7. Publish data for the new topic
 8. The consumer will not receive data for the new topic, and there will be a high rate of metadata requests.
+
+Notice: If the testcase results differ from expectations, consider adjusting the kafka-client version in the pom.xml to the injected/fix version.

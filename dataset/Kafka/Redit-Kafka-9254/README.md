@@ -46,5 +46,4 @@ Steps to reproduce：
 5. Dynamically modify the configuration twice.
 6. Stop a Kafka Server and found the NotEnoughReplicasException is shown in another broker's log.
 
-```
-
+Notice: If the testcase results differ from expectations, consider adjusting the kafka-client version in the pom.xml to the injected/fix version.

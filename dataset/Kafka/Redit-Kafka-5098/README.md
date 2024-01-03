@@ -73,4 +73,4 @@ Steps to reproduce：
 2. Create a producer and send some message to an invalid topic name.
 3. Exception is not thrown until max.block.ms passed.
 
-Notice: change kafka-clients version to 2.0.0 in pom.xml to get the injected result, and change it back to 2.4.1 to get the fixed result.
+Notice: If the testcase results differ from expectations, consider adjusting the kafka-client version in the pom.xml to the injected/fix version.
