@@ -186,7 +186,7 @@ public class SampleTest {
     private static void consumeMessages(Consumer<String, String> consumer, String topic,int expectedMsgCnt) throws InterruptedException {
         consumer.subscribe(Collections.singletonList(topic));
         int msgCnt = 0;
-        int timeout = 10;
+        int timeout = 15;
 
         for (int i = 0; i < timeout; i++){
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));

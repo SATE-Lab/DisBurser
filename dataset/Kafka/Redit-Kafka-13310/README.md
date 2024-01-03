@@ -198,3 +198,4 @@ Steps to reproduce：
 ```
 [main] WARN  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-rivenReassign-1, groupId=rivenReassign] Offset commit failed on partition rivenTest88-0 at offset 10: This server does not host this topic-partition.
 ```
+Notice: change kafka-clients version to 2.8.0 in pom.xml to get the injected test result, and change it to 3.2.0 to get the fixed test result.
