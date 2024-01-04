@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 2;
     private static final int HTTP_PORT = 9876;
-    private static final String dir = "rocketmq-all-4.9.0";
+    private static final String dir = "rocketmq-4.9.0";
     public static String getRocketmqHomeDir(){
         return "/rocketmq/" + dir;
     }

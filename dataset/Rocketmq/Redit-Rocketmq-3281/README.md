@@ -58,3 +58,4 @@ Steps to reproduce：
 4. Update acl config again, and set `-g ""` to delete groupPerms.
 5. Check acl config using `mqadmin  getAccessConfigSubCommand`, groupPerms is still `groupa=SUB`
 
+Notice: If the testcase results differ from expectations, consider adjusting the rocketmq-client version in the pom.xml to the injected/fix version.

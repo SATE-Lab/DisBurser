@@ -218,3 +218,5 @@ Steps to reproduce：
 3. Shut down the broker, and continue send messages.
 4. Message send failed without any retry.
 
+This issue seems stills exists in 4.9.3
+
