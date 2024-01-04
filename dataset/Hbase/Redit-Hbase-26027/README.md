@@ -110,3 +110,5 @@ Steps to reproduce：
 4. Apply network delay to both of the region servers.
 5. Call batch api to read data.
 6. Check the log of the client (shown in console), it will stuck at `AsyncRequestFutureImpl.waitUntilDone` forever rather than timeout.
+
+Notice: If the testcase results differ from expectations, consider adjusting the hbase-client version in the pom.xml to the injected/fix version.
