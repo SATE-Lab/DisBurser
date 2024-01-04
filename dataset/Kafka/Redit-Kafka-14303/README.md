@@ -57,3 +57,5 @@ Steps to reproduce：
 2. Create a topic.
 3. Create a producer with `batch.size=0` and send a message without a key.
 4. The producer will go into an infinite loop in Producer.send.
+
+Notice: If the testcase results differ from expectations, consider adjusting the kafka-client version in the pom.xml to the injected/fix version.

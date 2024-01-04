@@ -152,3 +152,5 @@ Steps to reproduce：
 5. Delete the topic.
 6. Try to write message with the same producer again.
 7. Producer with hang forever or until timeout.
+
+Notice: If the testcase results differ from expectations, consider adjusting the kafka-client version in the pom.xml to the injected/fix version.
