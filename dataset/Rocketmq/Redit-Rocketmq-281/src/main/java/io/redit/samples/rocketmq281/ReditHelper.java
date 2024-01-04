@@ -14,14 +14,14 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 2;
     private static final int HTTP_PORT = 9876;
-    private static final String dir = "rocketmq-all-4.2.0-incubating";
+    private static final String dir = "rocketmq-4.0.0";
     public static String getRocketmqHomeDir(){
         return "/rocketmq/" + dir;
     }
 
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
-        String compressedPath = workDir + "/../../../Benchmark/Rocketmq/v4.1.0/" + dir + ".tar.gz";
+        String compressedPath = workDir + "/../../../Benchmark/Rocketmq/v4.0.0/" + dir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-rocketmq")
                 .withService("rocketmq")

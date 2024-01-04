@@ -31,6 +31,7 @@ dependency-reduced-pom.xml
 # tar binary
 apache-*.tar.gz
 rocketmq-*.tar.gz
+rocketmq-*.zip
 activemq*.tar.gz
 hadoop*.tar.gz
 hbase*.tar.gz

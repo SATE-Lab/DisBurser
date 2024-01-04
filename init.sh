@@ -475,7 +475,7 @@ function extract_and_compress {
     local base_name=$(basename "$input_file" | sed 's/\.\(tar\.gz\|zip\)$//')
 
     # TODO delete this line after DONE
-    if [[ ! "$base_name" =~ "hbase" ]]; then
+    if [[ ! "$base_name" =~ "rocketmq" ]]; then
         return
     fi
 
@@ -483,29 +483,46 @@ function extract_and_compress {
     local dir_path=$(dirname "$input_file")
 
     # 创建临时目录用于解压
-    local temp_dir=$(mktemp -d)    
+    local temp_dir=$(mktemp -d)
+    
+	if [[ "$input_file" != *.tar.gz && "$input_file" != *.zip ]]; then
+		echo "unsupported file"
+		rm -rf "$temp_dir"
+        return 1
+    fi
 
     # 检查文件类型并进行相应的解压
     if [[ "$input_file" == *.tar.gz ]]; then
         tar -xzf "$input_file" -C "$temp_dir"
-        orginal_folder_name=$(ls "$temp_dir")
-        if [[ $orginal_folder_name !=  $base_name ]]; then
-        	echo "renaming ${orginal_folder_name} to ${base_name}"
-			mv "$temp_dir/${orginal_folder_name}" "$temp_dir/${base_name}"
-		fi
     elif [[ "$input_file" == *.zip ]]; then
-        unzip "$input_file" -d "$temp_dir"
-    else
-        echo "unsupported file"
-        return 1
-    fi
+        unzip -q "$input_file" -d "$temp_dir"
+	fi
+	
+	# 检查解压之后是否只有1个子文件夹，如果不是，创建$base_name文件夹并将解压之后的所有子文件（夹）装进去
+	count=$(find "$temp_dir" -maxdepth 1 -mindepth 1 -type d | grep -E -v '/\.' | wc -l)
+	if [[ "$count" != 1 ]]; then
+		echo "The directory has more than one subfolder"
+		echo "base_name $base_name"
+    	ls "$temp_dir"
+    	mkdir "$temp_dir/${base_name}"
+    	# 移动除了 ., .. 和 $base_name 之外的所有文件到 $base_name 文件夹
+		find "$temp_dir" -mindepth 1 -maxdepth 1 ! -name "." ! -name ".." ! -name "$base_name" -type d -exec mv -t "$temp_dir/$base_name/" {} +
+		find "$temp_dir" -mindepth 1 -maxdepth 1 ! -name "." ! -name ".." ! -name "$base_name" -type f -exec mv -t "$temp_dir/$base_name/" {} +
+		echo 1111111111
+		ls "$temp_dir"
+		ls "$temp_dir/$base_name"
+	fi
+    	
+	
+	# 检查内外层文件名是否一致，不一致的话将内层文件夹名命名为和tar包一致
+	orginal_folder_name=$(ls "$temp_dir")
+    if [[ $orginal_folder_name !=  $base_name ]]; then
+    	echo "renaming ${orginal_folder_name} to ${base_name}"
+		mv "$temp_dir/${orginal_folder_name}" "$temp_dir/${base_name}"
+	fi
 
     # 重新压缩
-    if [[ "$input_file" == *.tar.gz ]]; then
-        tar -czf "$dir_path/${base_name}.tar.gz" -C "$temp_dir" "$base_name"
-    elif [[ "$input_file" == *.zip ]]; then
-        cd "$temp_dir" && zip -r "$dir_path/${base_name}.zip" "$base_name"
-    fi
+    tar -czf "$dir_path/${base_name}.tar.gz" -C "$temp_dir" "$base_name"
 
     # 清理临时目录
     rm -rf "$temp_dir"
@@ -540,6 +557,8 @@ main() {
     chmod_files "$(pwd)/Benchmark"
 
     generate_tar "$(pwd)/Benchmark"
+    
+    chmod_files "$(pwd)/Benchmark"
     
 }
 

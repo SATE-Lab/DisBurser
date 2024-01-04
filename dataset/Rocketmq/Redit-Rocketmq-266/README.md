@@ -30,4 +30,4 @@ See http://rocketmq.apache.org/docs/faq/ for further details.
 	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.checkConfig(DefaultMQPushConsumerImpl.java:705)
 	...
 ```
-
+Notice: If the testcase results differ from expectations, consider adjusting the rocketmq-client version in the pom.xml to the injected/fix version.
