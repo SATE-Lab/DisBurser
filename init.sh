@@ -475,7 +475,7 @@ function extract_and_compress {
     local base_name=$(basename "$input_file" | sed 's/\.\(tar\.gz\|zip\)$//')
 
     # TODO delete this line after DONE
-    if [[ ! "$base_name" =~ "kafka" ]]; then
+    if [[ ! "$base_name" =~ "hbase" ]]; then
         return
     fi
 

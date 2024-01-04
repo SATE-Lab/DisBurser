@@ -20,7 +20,7 @@ public class ReditHelper {
     private static int numOfDNs = 3;
     private static int numOfJNs = 3;
     public static final String hadoopDir = "hadoop-3.1.2";
-    public static final String zookeeperDir = "apache-zookeeper-3.7.1-bin";
+    public static final String zookeeperDir = "zookeeper-3.7.1";
     public static final String hbaseDir = "hbase-1.4.0";
     public static String getHadoopHomeDir(){
         return "/hadoop/" + hadoopDir;
@@ -82,7 +82,7 @@ public class ReditHelper {
 
         builder.node("nn1").initCommand(getHadoopHomeDir() + "/bin/hdfs namenode -format").and();
         addRuntimeLibsToDeployment(builder, getHadoopHomeDir());
-        addInstrumentablePath(builder, "/share/hadoop/hdfs/hadoop-hdfs-3.1.2.jar");
+        // addInstrumentablePath(builder, "/share/hadoop/hdfs/hadoop-hdfs-3.1.2.jar");
 
         builder.withService("server", "hbase").and()
                 .nodeInstances(numOfServers, "server", "server", true)

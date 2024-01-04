@@ -18,7 +18,7 @@
   </property>
   <property>
     <name>hbase.zookeeper.property.dataDir</name>
-    <value>/zookeeper/apache-zookeeper-3.7.1-bin/zkdata</value>
+    <value>/zookeeper/zookeeper-3.7.1/zkdata</value>
   </property>
   <!--add zookeeper配置-->
   <property>
