@@ -1,4 +1,4 @@
-# run redil
+# How to run redil
 
 requirements：
 
@@ -15,7 +15,7 @@ cd <project_root>/helper
 mvn install
 ```
 
-## nmethod1: using download script
+## method1: using download script
 
 1. download tars of the specific system
 
@@ -91,14 +91,13 @@ using [AMQ-6500](https://issues.apache.org/jira/browse/AMQ-6500) as an example
 ## Notices
 
 - If build from source failed, please consider using download script to perform tar replacement.
-- 
-
-
-
-
-
-todo: 
-
-- build notice
-- naming notice：
-- change pom.xml version(notice)
+- The name of the tar package should match the name of its internal folder and adhere to the following naming conventions:
+  - `activemq-<version>.tar.gz`
+  - `apache-cassandra-<version>.tar.gz`
+  - `hadoop-<version>.tar.gz`
+  - `hdfs-<version>.tar.gz`
+  - `kafka-<scala_version>_<kafka_version>.tar.gz`
+  - `rocketmq-<version>.tar.gz`
+  - `zookeeper-<version>.tar.gz`
+- It is worth noting that the naming conventions do not include certain special components such as 'alpha,' 'beta,' 'incubating,' etc.
+- If the testcase results differ from expectations, consider adjusting the client version of target system in the pom.xml to the injected/fix version

@@ -1,65 +1,103 @@
-# DisBurser_Benchmark
-Dataset include the Benchmark we collect from JIRA, with various versions of specific distributed systems.
+# How to run redil
 
-## Environment Requirement
-1. Ubuntu 20.04.1 LTS recommended
-2. Git lfs. **Attention: git lfs must be explicitly stated**
-3. Java 8 recommended
-4. Maven 3.x
-5. Run under ROOT authority 
-## Environment Setting
-Steps:
+requirements：
 
-<!-- 1. Download docker
-```python
-# Install curl tool
-sudo apt install curl
+- ubuntu22.04 (20.04 may also work)
+- docker
+- java8
+- maven 3.x
+- Run under ROOT authority 
 
-# Download docker from Aliyun
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+install redit helper
+
 ```
-Enter following command to promise the docker can use the local port.
-```python
-# Add docker group
-sudo groupadd docker
+cd <project_root>/helper
+mvn install
+```
 
-# Add current user to docker group
-sudo usermod -aG docker $USER
+## method1: using download script
 
-# Restart docker service to enable the setting
-sudo systemctl restart docker
-``` -->
+1. download tars of the specific system
 
-1. Setting environment variable.
+   ```
+   sudo apt install wget unzip
+   cd <project_root>
+   sudo ./init.sh amq  # [amq|cas|hdfs|hbase|kafka|rmq|zk]
+   ```
 
-Clean all openjdk on machine.
+2. using [AMQ-6500](https://issues.apache.org/jira/browse/AMQ-6500) as an example
 
-Set the path of JDK, Maven3, AspectJ. 
-**DON'T use the apt tool to download them. It will need more effort to set them.**
+   ```
+   cd <project_root>/Benchmark/Activemq/v5.14.1
+   ```
 
-For IDEA user, you have to enter the ASPECTJ_HOME manually in "Run - Edit Configurations -Environment variables"
+3. (optional)  comment `build_from_source` function call in build.sh, if this step is not performed, lots of mvn failure will be thrown, however testcases can still run
 
+4. generate tars for target system
 
-## Switch Version
-Steps:
-1. Clone code
-2. Check build.sh under the specific system version
-3. Confirm the issue which is need for trigger or not, delete the unnecessary macro definiton in bash
-4. Download the required **source code** of the specific version.
-5. Run bash and will get the package of the reuqired version of issue
+   ```
+   sudo ./build.sh
+   ```
 
+5. run testcase
 
+   ```
+   cd <project_root>/Activemq/Redit-Activemq-6500
+   mvn test
+   ```
 
-## Explanation
+6. uncomment issue_id in FaultSeed.h to cancel injection of specific fault
 
-- Due to the large storage space occupied by the source code packages and binary packages of the distributed system, these packages in this anonymous project will be omitted and download URLs will be provided.
+   ```
+   cd <project_root>/Benchmark/Activemq/v5.14.1
+   vi ./FaultSeed.h   # uncomment /* #define AMQ_6500 */ in FaultSeed.h
+   ```
 
-- We provide two implementation methods for simulating patch repairs in the benchmark test suite file inject.c in this anonymous project:
+7. run the testcase again and output or test result should be different
 
-  1. Use the io stream to dynamically repair the buggy version file to obtain the fixed version file.
+   ```
+   cd <project_root>/Activemq/Redit-Activemq-6500
+   mvn test
+   ```
 
-  2. Provide the fixed version file directly.
+   - server logs or console logs are attached in `log` directory of each testcase, for example: `<project_root>/dataset/Activemq/Redit-Activemq-6430/logs` shows  the log differences before and after the issue patch.
+   - After the testcase has been executed, you can find the server logs in the corresponding project's `.ReditWorkingDirectory` directory
 
-  In short, the first method is more in line with the patch repair process, and the second method is more convenient and simple.
+   
 
-- We involved some other system versions when building test cases, so some additional versions are included in the benchmark for use by test cases, which are temporarily out of the scope of benchmark and do not include test suites. I think these versions will be involved in the subsequent expansion of the benchmark.
+## method2: build from source
+
+using [AMQ-6500](https://issues.apache.org/jira/browse/AMQ-6500) as an example
+
+1. Download source code tar file and unzip it to `<project_root>/Benchmark/Activemq/v5.14.1/activemq-parent-5.14.1-src/`
+
+2. Download binary tar file and  `<project_root>/Benchmark/Activemq/v5.14.1/activemq-5.14.1/`
+
+3. comment `overwrite_tar` function call in build.sh
+
+4. generate tars for target system
+
+   ```
+   sudo ./build.sh
+   ```
+
+5. run testcase
+
+   ```
+   cd <project_root>/Activemq/Redit-Activemq-6500
+   mvn test
+   ```
+
+## Notices
+
+- If build from source failed, please consider using download script to perform tar replacement.
+- The name of the tar package should match the name of its internal folder and adhere to the following naming conventions:
+  - `activemq-<version>.tar.gz`
+  - `apache-cassandra-<version>.tar.gz`
+  - `hadoop-<version>.tar.gz`
+  - `hdfs-<version>.tar.gz`
+  - `kafka-<scala_version>_<kafka_version>.tar.gz`
+  - `rocketmq-<version>.tar.gz`
+  - `zookeeper-<version>.tar.gz`
+- It is worth noting that the naming conventions do not include certain special components such as 'alpha,' 'beta,' 'incubating,' etc.
+- If the testcase results differ from expectations, consider adjusting the client version of target system in the pom.xml to the injected/fix version
