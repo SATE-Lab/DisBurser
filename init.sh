@@ -474,10 +474,7 @@ function extract_and_compress {
     # 提取文件名（不包括扩展名）
     local base_name=$(basename "$input_file" | sed 's/\.\(tar\.gz\|zip\)$//')
 
-    # TODO delete this line after DONE
-    if [[ ! "$base_name" =~ "rocketmq" ]]; then
-        return
-    fi
+    # if [[ ! "$base_name" =~ "rocketmq" ]]; then (return)
 
     # 提取目录路径
     local dir_path=$(dirname "$input_file")
@@ -539,7 +536,7 @@ main() {
         exit 1
     fi
     
-    # delete_existing_tars "$(pwd)/Benchmark"
+    delete_existing_tars "$(pwd)/Benchmark"
 
     for arg in "$@"; do
         case "$arg" in

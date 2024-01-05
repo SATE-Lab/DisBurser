@@ -34,8 +34,8 @@ function get_defs {
 function build_from_source {
 	cFile=inject.c
 	exeFile=inject
-	srcName=rocketmq-all-4.1.0-incubating-src
-	system=rocketmq-4.1.0-incubating
+	srcName=rocketmq-4.1.0-src
+	system=rocketmq-4.1.0
 	buildJar1=rocketmq-client-4.1.0-incubating.jar
 	buildJar2=rocketmq-common-4.1.0-incubating.jar
 	libJar1=rocketmq-client-4.2.0-incubating-SNAPSHOT.jar

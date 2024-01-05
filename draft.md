@@ -15,7 +15,7 @@ cd <project_root>/helper
 mvn install
 ```
 
-## method1: using download script
+## nmethod1: using download script
 
 1. download tars of the specific system
 
@@ -31,7 +31,7 @@ mvn install
    cd <project_root>/Benchmark/Activemq/v5.14.1
    ```
 
-3. (optional)  comment `build_from_source` function call in build.sh, if not perform this step, lots of mvn failure will be thrown but testcases can still run smoothly
+3. (optional)  comment `build_from_source` function call in build.sh, if this step is not performed, lots of mvn failure will be thrown, however testcases can still run
 
 4. generate tars for target system
 
@@ -50,7 +50,7 @@ mvn install
 
    ```
    cd <project_root>/Benchmark/Activemq/v5.14.1
-   # uncomment /* #define AMQ_6500 */ in FaultSeed.h
+   vi ./FaultSeed.h   # uncomment /* #define AMQ_6500 */ in FaultSeed.h
    ```
 
 7. run the testcase again and output or test result should be different
@@ -60,7 +60,8 @@ mvn install
    mvn test
    ```
 
-   server log or console log is attached in `log` directory of each testcase, for example: `<project_root>/dataset/Activemq/Redit-Activemq-6430/logs` shows  the log differences before and after the issue patch.
+   - server logs or console logs are attached in `log` directory of each testcase, for example: `<project_root>/dataset/Activemq/Redit-Activemq-6430/logs` shows  the log differences before and after the issue patch.
+   - After the testcase has been executed, you can find the server logs in the corresponding project's `.ReditWorkingDirectory` directory
 
    
 
@@ -86,6 +87,13 @@ using [AMQ-6500](https://issues.apache.org/jira/browse/AMQ-6500) as an example
    cd <project_root>/Activemq/Redit-Activemq-6500
    mvn test
    ```
+
+## Notices
+
+- If build from source failed, please consider using download script to perform tar replacement.
+- 
+
+
 
 
 
