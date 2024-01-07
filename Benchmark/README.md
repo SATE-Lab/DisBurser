@@ -101,3 +101,12 @@ using [AMQ-6500](https://issues.apache.org/jira/browse/AMQ-6500) as an example
   - `zookeeper-<version>.tar.gz`
 - It is worth noting that the naming conventions do not include certain special components such as 'alpha,' 'beta,' 'incubating,' etc.
 - If the testcase results differ from expectations, consider adjusting the client version of target system in the pom.xml to the injected/fix version
+- If you run into docker permission denied issue, please consider following steps
+
+	```
+	# add non-root user to the docker group
+	sudo groupadd docker
+	sudo usermod -aG docker $USER
+	# authorize docker.sock
+	sudo chmod 666 /var/run/docker.sock
+	```
