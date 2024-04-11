@@ -94,6 +94,7 @@ using [AMQ-6500](https://issues.apache.org/jira/browse/AMQ-6500) as an example
 
 ## Notices
 
+- Docker 25.x and 26.x do not work with Redil by now.
 - If build from source failed, please consider using download script to perform tar replacement.
 - The name of the tar package should match the name of its internal folder and adhere to the following naming conventions:
   - `activemq-<version>.tar.gz`

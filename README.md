@@ -11,7 +11,7 @@ Currently, node failure, network partition, network delay, network packet loss, 
 
 For Java, we can force a specific order between nodes in order to reproduce a specific time-sensitive scenario and inject failures before or after a specific method is called when a specific stack trace is present. -->
 
-Please refer to dataset/README.md for more information on how to run RediT.
+Please refer to benchmark/README.md for more information on how to run RediT.
 
 
 # Dataset
