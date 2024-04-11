@@ -1,12 +1,16 @@
-# How to run redil
+# How to run Redil
 
 requirements：
 
-- ubuntu22.04 (20.04 may also work)
-- docker
-- java8
+- ubuntu 22.04 (20.04 may also work)
+- docker 24.0.5
+- java 8
 - maven 3.x
 - Run under ROOT authority 
+
+> Notice: Docker 25.x and 26.x do not work with Redil by now
+> 
+> For information on how to install a specific version of docker please refer to https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
 install redit helper
 
