@@ -14,15 +14,7 @@ For Java, we can force a specific order between nodes in order to reproduce a sp
 Please refer to benchmark/README.md for more information on how to run RediT.
 
 # Events
-With Redil, for a few supported languages, it is possible to inject a failure right before or after a method call where a specific stack trace is present. This happens through defining a set of named internal and test case events, ordering those events in a run sequence string, and let the RediT’s runtime engine enforce the specified order between the nodes. Currently, node start, kill, restart, network partition, network delay, network packet loss, and clock drift is supported.
- ## Network Events. 
- Network events refer to changes or disruptions in the communication between nodes within a distributed system. These events can include network failures, packet loss, andnetwork partitioning, all of which can significantly impact the system's performance and reliability.
- ## Node Events. 
-Node events refer to changes in the state of a node within a distributed system, which can include actions such as starting, restarting, stopping, or crashing.
- ## Clock Events. 
- Clock events refer to the deviations in time between nodes within a distributed system, caused by differences in local clock design, such as clock drift or synchronization issues.
- 
-
+With Redil, for a few supported languages, it is possible to inject a failure right before or after a method call where a specific stack trace is present. This happens through defining a set of named internal and test case events, ordering those events in a run sequence string, and let the RediT’s runtime engine enforce the specified order between the nodes. Currently, node start, kill, restart, network partition, network delay, network packet loss, and clock drift are supported.
 | Event type    | Event name                | Corresponding java file                                  |
 | ------------- | ------------------------- | -------------------------------------------------------- |
 | Node event    | start node                | `io.redit.execution.single_node.SingleNodeRuntimeEngine` |
@@ -37,6 +29,15 @@ Node events refer to changes in the state of a node within a distributed system,
 |               | network loss              | `io.redit.execution.NetOp`                               |
 |               | remove network loss       | `io.redit.execution.NetOp`                               |
 | Clock event   | clock drift               | `io.redit.execution.single_node.SingleNodeRuntimeEngine` |
+ ## Network Events. 
+ Network events refer to changes or disruptions in the communication between nodes within a distributed system. These events can include network failures, packet loss, andnetwork partitioning, all of which can significantly impact the system's performance and reliability.
+ ## Node Events. 
+Node events refer to changes in the state of a node within a distributed system, which can include actions such as starting, restarting, stopping, or crashing.
+ ## Clock Events. 
+ Clock events refer to the deviations in time between nodes within a distributed system, caused by differences in local clock design, such as clock drift or synchronization issues.
+ 
+
+
 
 
 # Dataset
