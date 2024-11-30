@@ -13,6 +13,24 @@ For Java, we can force a specific order between nodes in order to reproduce a sp
 
 Please refer to benchmark/README.md for more information on how to run RediT.
 
+# Events
+With Redil, for a few supported languages, it is possible to inject a failure right before or after a method call where a specific stack trace is present. This happens through defining a set of named internal and test case events, ordering those events in a run sequence string, and let the RediB’s runtime engine enforce the specified order between the nodes.
+
+| Event type    | Event name                | Corresponding java file                                  |
+| ------------- | ------------------------- | -------------------------------------------------------- |
+| Node event    | start node                | `io.redit.execution.single_node.SingleNodeRuntimeEngine` |
+|               | restart node              | `io.redit.execution.single_node.SingleNodeRuntimeEngine` |
+|               | stop node                 | `io.redit.execution.single_node.SingleNodeRuntimeEngine` |
+|               | kill node                 | `io.redit.execution.single_node.SingleNodeRuntimeEngine` |
+| Network event | network partation         | `io.redit.execution.NetworkPartitionManager`             |
+|               | remove network partation  | `io.redit.execution.NetworkPartitionManager`             |
+|               | reapply network partation | `io.redit.execution.NetworkPartitionManager`             |
+|               | network delay             | `io.redit.execution.NetOp`                               |
+|               | remove network delay      | `io.redit.execution.NetOp`                               |
+|               | network loss              | `io.redit.execution.NetOp`                               |
+|               | remove network loss       | `io.redit.execution.NetOp`                               |
+| Clock event   | clock drift               | `io.redit.execution.single_node.SingleNodeRuntimeEngine` |
+
 
 # Dataset
 
