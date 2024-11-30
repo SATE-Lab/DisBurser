@@ -35,7 +35,23 @@ With Redil, for a few supported languages, it is possible to inject a failure ri
 Node events refer to changes in the state of a node within a distributed system, which can include actions such as starting, restarting, stopping, or crashing.
  ## Clock Events. 
  Clock events refer to the deviations in time between nodes within a distributed system, caused by differences in local clock design, such as clock drift or synchronization issues.
- 
+
+ # Event timing
+| Opeartor | Corresponding java file                   |
+| :------: | ----------------------------------------- |
+|    \|    | io.redit.verification.RunSequenceVerifier |
+|    *     | io.redit.verification.RunSequenceVerifier |
+|    ()    | io.redit.verification.RunSequenceVerifier |
+
+# event dependency
+|    Event Type     |    Event Name     | Corresponding java file                             |
+| :---------------: | :---------------: | --------------------------------------------------- |
+|       Block       |    blockBefore    | io.redit.dsl.events.internal.BlockingEvent          |
+|                   |    blockAfter     | io.redit.dsl.events.internal.BlockingEvent          |
+|                   |   unblockBefore   | io.redit.dsl.events.internal.BlockingEvent          |
+|       <br>        |   unblockAfter    | io.redit.dsl.events.internal.BlockingEvent          |
+|    StackTrace     |    stackTrace     | io.redit.dsl.events.internal.StackTraceEvent        |
+| GarbageCollection | garbageCollection | io.redit.dsl.events.internal.GarbageCollectionEvent |
 
 
 
