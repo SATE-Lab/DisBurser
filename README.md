@@ -37,13 +37,13 @@ Node events refer to changes in the state of a node within a distributed system,
  Clock events refer to the deviations in time between nodes within a distributed system, caused by differences in local clock design, such as clock drift or synchronization issues.
 
  # Event timing
-| Opeartor | Corresponding java file                   |
+| Operator | Corresponding java file                   |
 | :------: | ----------------------------------------- |
 |    \|    | io.redit.verification.RunSequenceVerifier |
 |    *     | io.redit.verification.RunSequenceVerifier |
 |    ()    | io.redit.verification.RunSequenceVerifier |
 
-# event dependency
+# Event dependency
 |    Event Type     |    Event Name     | Corresponding java file                             |
 | :---------------: | :---------------: | --------------------------------------------------- |
 |       Block       |    blockBefore    | io.redit.dsl.events.internal.BlockingEvent          |
